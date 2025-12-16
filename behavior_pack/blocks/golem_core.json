@@ -2,6 +2,47 @@
     "format_version": "1.20.0",
     "minecraft:block": {
         "description": {
+            "identifier": "addon:golem_core"
+        },
+        "components": {
+            "minecraft:destroy_time": 3.0,
+            "minecraft:explosion_resistance": 6.0,
+            "minecraft:on_interact": {
+                "condition": "query.block_property('minecraft:block_face') == 'up'",
+                "event": "addon:check_golem_structure"
+            }
+        },
+        "events": {
+            "addon:check_golem_structure": {
+                "sequence": [
+                    {
+                        "condition": "query.block_neighbor_has_any_tag(0, 2, 0, 'pumpkin')",
+                        "run_command": {
+                            "command": [
+                                "execute if block ~ ~2 ~ carved_pumpkin",
+                                "execute if block ~-1 ~1 ~ stone",
+                                "execute if block ~1 ~1 ~ stone",
+                                "execute if block ~ ~ ~ stone",
+                                "setblock ~ ~2 ~ air",
+                                "setblock ~-1 ~1 ~ air",
+                                "setblock ~ ~1 ~ air",
+                                "setblock ~1 ~1 ~ air",
+                                "setblock ~ ~ ~ air",
+                                "execute positioned ~ ~ ~ run event entity @s addon:spawn_stone_golem",
+                                "tag @p[r=3] add golem_creator"
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
+
+{
+    "format_version": "1.20.0",
+    "minecraft:block": {
+        "description": {
             "identifier": "golems:golem_core"
         },
         "components": {
