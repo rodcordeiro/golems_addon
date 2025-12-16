@@ -1,0 +1,27 @@
+{
+    "format_version": "1.20.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "golems:stone_projectile",
+            "is_spawnable": false,
+            "is_summonable": true
+        },
+        "components": {
+            "minecraft:projectile": {
+                "on_hit": {
+                    "impact_damage": {
+                        "damage": 12,
+                        "knockback": true
+                    },
+                    "remove_on_hit": {}
+                },
+                "power": 1.6,
+                "gravity": 0.05
+            },
+            "minecraft:collision_box": {
+                "width": 0.3,
+                "height": 0.3
+            }
+        }
+    }
+}

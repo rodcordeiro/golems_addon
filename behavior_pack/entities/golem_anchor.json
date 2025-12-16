@@ -1,0 +1,23 @@
+{
+    "format_version": "1.20.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "golems:golem_anchor",
+            "is_spawnable": false,
+            "is_summonable": false
+        },
+        "components": {
+            "minecraft:health": {
+                "value": 1
+            },
+            "minecraft:collision_box": {
+                "width": 0.1,
+                "height": 0.1
+            },
+            "minecraft:invisible": {},
+            "minecraft:pushable": {
+                "is_pushable": false
+            }
+        }
+    }
+}

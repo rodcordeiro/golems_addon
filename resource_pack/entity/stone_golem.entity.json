@@ -1,0 +1,27 @@
+{
+    "format_version": "1.20.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "golems:stone_golem",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "textures": {
+                "default": "textures/entity/stone_golem"
+            },
+            "geometry": {
+                "default": "geometry.stone_golem"
+            },
+            "animations": {
+                "walk": "animation.stone_golem.walk",
+                "spawn": "animation.stone_golem.spawn",
+                "throw": "animation.stone_golem.throw"
+            },
+            "scripts": {
+                "animate": [
+                    "controller.animation.stone_golem"
+                ]
+            }
+        }
+    }
+}

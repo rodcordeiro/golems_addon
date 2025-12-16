@@ -1,0 +1,16 @@
+{
+    "format_version": "1.20.0",
+    "minecraft:item": {
+        "description": {
+            "identifier": "golems:golem_core"
+        },
+        "components": {
+            "minecraft:icon": "golem_core",
+            "minecraft:placeable_on": {
+                "blocks": [
+                    "minecraft:air"
+                ]
+            }
+        }
+    }
+}
