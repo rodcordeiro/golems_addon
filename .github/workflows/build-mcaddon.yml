@@ -21,18 +21,21 @@ jobs:
           cp -r behavior_pack build/
           cp -r resource_pack build/
 
+      - name: Set version
+        run: echo "VERSION=${GITHUB_REF_NAME#v}" >> $GITHUB_ENV
+
       - name: Create mcaddon
         run: |
           cd build
-          zip -r stone_golems.${{ github.ref_name#v }}.mcaddon behavior_pack resource_pack
+          zip -r stone_golems.$VERSION.mcaddon behavior_pack resource_pack
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: stone-golems-mcaddon
-          path: build/stone_golems.${{ github.ref_name#v }}.mcaddon
+          path: build/stone_golems.${{ env.VERSION }}.mcaddon
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: build/stone_golems.${{ github.ref_name#v }}.mcaddon
+          files: build/stone_golems.${{ env.VERSION }}.mcaddon
