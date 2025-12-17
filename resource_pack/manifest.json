@@ -4,7 +4,7 @@
     "name": "Stone Golem Resource Pack",
     "description": "Resources for Stone Golems",
     "uuid": "8c884fca-dfe5-4c26-baf2-34194cea0c99",
-    "version": [1, 0, 3],
+    "version": [1, 0, 4],
     "min_engine_version": [1, 20, 10]
   },
   "modules": [

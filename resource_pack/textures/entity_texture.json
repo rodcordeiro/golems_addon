@@ -1,0 +1,9 @@
+{
+    "resource_pack_name": "stone_golems",
+    "texture_name": "atlas.entity",
+    "texture_data": {
+        "stone_golem": {
+            "textures": "textures/entity/stone_golem"
+        }
+    }
+}

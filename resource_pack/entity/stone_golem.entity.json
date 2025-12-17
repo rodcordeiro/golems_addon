@@ -4,7 +4,7 @@
         "description": {
             "identifier": "addon:stone_golem",
             "materials": {
-                "default": "entity_alphatest"
+                "default": "entity"
             },
             "textures": {
                 "default": "textures/entity/stone_golem"
@@ -21,7 +21,10 @@
                 "animate": [
                     "controller.animation.stone_golem"
                 ]
-            }
+            },
+            "render_controllers": [
+                "controller.render.stone_golem"
+            ]
         }
     }
 }
