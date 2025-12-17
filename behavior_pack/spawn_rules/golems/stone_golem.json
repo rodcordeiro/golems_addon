@@ -2,7 +2,7 @@
     "format_version": "1.20.0",
     "minecraft:spawn_rules": {
         "description": {
-            "identifier": "addon:stone_golem",
+            "identifier": "addon:stone_golem_spawn",
             "population_control": "monster"
         },
         "conditions": [

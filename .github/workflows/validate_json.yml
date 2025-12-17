@@ -17,4 +17,9 @@ jobs:
           find . -name "*.json" -print0 | xargs -0 -n1 jq empty
       - name: Check duplicated identifiers
         run: |
-          grep -R "\"identifier\"" behavior_pack | sort | uniq -d && exit 1 || true
+          DUPLICATES=$(grep -R "\"identifier\"" behavior_pack | sort | uniq -d)
+          if [ ! -z "$DUPLICATES" ]; then
+            echo "❌ Identifiers duplicados encontrados:"
+            echo "$DUPLICATES"
+            exit 1
+          fi
