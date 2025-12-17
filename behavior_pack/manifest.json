@@ -4,7 +4,7 @@
     "name": "Stone Golem Behavior Pack",
     "description": "Adds Stone Golems",
     "uuid": "dec0d563-bcb4-4e80-a543-fb3861689567",
-    "version": [1, 0, 0],
+    "version": [1, 0, 1],
     "min_engine_version": [1, 20, 10]
   },
   "modules": [

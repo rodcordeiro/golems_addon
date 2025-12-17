@@ -2,7 +2,7 @@
     "format_version": "1.20.10",
     "minecraft:entity": {
         "description": {
-            "identifier": "golems:stone_golem",
+            "identifier": "addon:stone_golem",
             "is_spawnable": true,
             "is_summonable": true,
             "is_experimental": false
@@ -102,7 +102,7 @@
                 "attack_radius": 25
             },
             "minecraft:shooter": {
-                "def": "golems:stone_projectile"
+                "def": "addon:stone_projectile"
             },
             "minecraft:behavior.look_at_player": {
                 "priority": 5,
@@ -118,7 +118,7 @@
                 "gravity": 0.05
             },
             "minecraft:shoot": {
-                "projectile": "golems:stone_projectile",
+                "projectile": "addon:stone_projectile",
                 "sound": "mob.irongolem.throw"
             },
             "minecraft:home": {
@@ -155,7 +155,7 @@
             "minecraft:on_death": {
                 "run_command": {
                     "command": [
-                        "kill @e[type=golems:golem_anchor, distance=..2]"
+                        "kill @e[type=addon:golem_anchor, distance=..2]"
                     ]
                 }
             }

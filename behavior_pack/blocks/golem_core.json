@@ -38,33 +38,3 @@
         }
     }
 }
-
-{
-    "format_version": "1.20.0",
-    "minecraft:block": {
-        "description": {
-            "identifier": "golems:golem_core"
-        },
-        "components": {
-            "minecraft:on_player_placing": {
-                "event": "try_spawn"
-            }
-        },
-        "events": {
-            "try_spawn": {
-                "run_command": {
-                    "command": [
-                        "execute positioned ~ ~ ~ if block ~ ~1 ~ minecraft:carved_pumpkin if block ~-1 ~ ~ minecraft:stone if block ~1 ~ ~ minecraft:stone if block ~1 ~-1 ~ minecraft:stone run summon golems:stone_golem ~ ~ ~ player_created",
-                        "execute positioned ~ ~ ~ if block ~ ~1 ~ minecraft:carved_pumpkin run summon golems:golem_anchor ~ ~ ~",
-                        "tag @p[r=3] add golem_creator",
-                        "setblock ~ ~ ~ air",
-                        "setblock ~ ~1 ~ air",
-                        "setblock ~-1 ~ ~ air",
-                        "setblock ~1 ~ ~ air",
-                        "setblock ~1 ~-1 ~ air"
-                    ]
-                }
-            }
-        }
-    }
-}

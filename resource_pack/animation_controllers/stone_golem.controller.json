@@ -3,30 +3,39 @@
   "animation_controllers": {
     "controller.animation.stone_golem": {
       "initial_state": "idle",
-
       "states": {
-
         "idle": {
-          "animations": ["hide_ground_block", "hide_rock"],
-          "transitions": [
-            { "pull": "query.is_using_item" }
-          ]
-        },
-
-        "pull": {
-          "animations": ["pull_block"],
-          "on_entry": [
-            "/particle golems:ground_break ~ ~ ~"
+          "animations": [
+            "hide_ground_block",
+            "hide_rock"
           ],
           "transitions": [
-            { "throw": "query.is_using_item" }
+            {
+              "pull": "query.is_using_item"
+            }
           ]
         },
-
-        "throw": {
-          "animations": ["throw"],
+        "pull": {
+          "animations": [
+            "pull_block"
+          ],
+          "on_entry": [
+            "/particle addon:ground_break ~ ~ ~"
+          ],
           "transitions": [
-            { "idle": "query.is_using_item == false" }
+            {
+              "throw": "query.is_using_item"
+            }
+          ]
+        },
+        "throw": {
+          "animations": [
+            "throw"
+          ],
+          "transitions": [
+            {
+              "idle": "query.is_using_item == false"
+            }
           ]
         }
       }

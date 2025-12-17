@@ -1,0 +1,27 @@
+name: Validate Bedrock Structure
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  structure-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check required folders
+        run: |
+          test -d behavior_pack || (echo "Missing behavior_pack" && exit 1)
+          test -d resource_pack || (echo "Missing resource_pack" && exit 1)
+
+      - name: Check manifests
+        run: |
+          test -f behavior_pack/manifest.json || exit 1
+          test -f resource_pack/manifest.json || exit 1
+
+      - name: Validate manifest identifiers
+        run: |
+          jq -e '.header.uuid != null' behavior_pack/manifest.json
+          jq -e '.header.uuid != null' resource_pack/manifest.json

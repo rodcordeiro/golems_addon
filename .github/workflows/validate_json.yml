@@ -1,0 +1,20 @@
+name: Validate JSON
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  json-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate JSON files
+        run: |
+          sudo apt-get install -y jq
+          find . -name "*.json" -print0 | xargs -0 -n1 jq empty
+      - name: Check duplicated identifiers
+        run: |
+          grep -R "\"identifier\"" behavior_pack | sort | uniq -d && exit 1 || true

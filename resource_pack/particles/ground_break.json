@@ -2,7 +2,7 @@
     "format_version": "1.10.0",
     "particle_effect": {
         "description": {
-            "identifier": "golems:ground_break"
+            "identifier": "addon:ground_break"
         },
         "components": {
             "minecraft:emitter_rate_instant": {

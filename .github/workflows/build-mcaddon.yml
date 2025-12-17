@@ -1,0 +1,37 @@
+name: Build mcaddon
+
+on:
+  push:
+    branches: [ main ]
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prepare build folder
+        run: |
+          mkdir build
+          cp -r behavior_pack build/
+          cp -r resource_pack build/
+
+      - name: Create mcaddon
+        run: |
+          cd build
+          zip -r stone_golems.mcaddon behavior_pack resource_pack
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: stone-golems-mcaddon
+          path: build/stone_golems.mcaddon
+          
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/stone_golems.mcaddon
+

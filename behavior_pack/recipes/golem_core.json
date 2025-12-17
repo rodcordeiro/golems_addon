@@ -2,7 +2,7 @@
     "format_version": "1.20.0",
     "minecraft:recipe_shaped": {
         "description": {
-            "identifier": "golems:golem_core"
+            "identifier": "addon:golem_core"
         },
         "tags": [
             "crafting_table"
@@ -17,14 +17,14 @@
                 "item": "minecraft:gold_block"
             },
             "R": {
-                "item": "minecraft:redstone"
+                "item": "minecraft:redstone_dust"
             },
             "S": {
                 "item": "minecraft:stone"
             }
         },
         "result": {
-            "item": "golems:golem_core",
+            "item": "addon:golem_core",
             "count": 1
         }
     }
