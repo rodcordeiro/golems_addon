@@ -11,7 +11,7 @@ Este projeto e um addon de Minecraft Bedrock formado por:
 - `.github/workflows/`: validacao de JSON, checagem estrutural Bedrock e empacotamento `.mcaddon` em tags `v*`.
 - `assets/`: recursos de apoio/referencia fora dos packs carregados diretamente pelo Bedrock.
 
-Alvo atual observado nos manifests: Minecraft Bedrock `1.20.10+`, versao do pack `1.0.9`.
+Alvo atual observado nos manifests: Minecraft Bedrock `1.20.10+`, versao do pack `1.0.11`.
 
 ## Prioridades de trabalho
 

@@ -19,6 +19,7 @@ O conteudo principal esta implementado nos arquivos do addon, mas o fluxo de cri
 - Loot table para o golem de pedra.
 - Spawn natural em superficie de biomas com tag `mountain`.
 - Modelo, textura, render controller, animation controller, animacoes e particulas.
+- Texturas otimizadas para MCPE: entidade `128x128`, item `32x32` e particula `16x16`.
 
 ## Estrutura
 
@@ -118,7 +119,8 @@ Quando nasce naturalmente, o golem entra no grupo `wild` e mira jogadores. O gru
 - `behavior_pack/recipes/golem_core.json` retorna `addon:golem_core_block`, enquanto tambem existe o item placeable `addon:golem_core`.
 - `behavior_pack/blocks/golem_core.json` verifica `stone` na posicao do proprio bloco interagido, o que conflita com a expectativa de o bloco atual ser `addon:golem_core_block`.
 - O bloco executa `event entity @s addon:spawn_stone_golem`, mas a entidade `addon:stone_golem` nao define um evento `addon:spawn_stone_golem`.
-- A textura atual `resource_pack/textures/entity/stone_golem.png` tem dimensoes `1024x1536`, enquanto o modelo declara atlas `128x128`; isso pode gerar comportamento visual inconsistente em MCPE.
+- A textura atual `resource_pack/textures/entity/stone_golem.png` foi recriada como atlas `128x128`, alinhada ao `texture_width` e `texture_height` declarados no modelo.
+- As texturas do item `golem_core` e da particula `stone` foram reduzidas para formatos leves e transparentes, mais adequados para MCPE.
 - Ha workflows de validacao e empacotamento em `.github/workflows`, mas nao ha
   script local dedicado neste repositorio.
 
