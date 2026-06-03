@@ -15,7 +15,10 @@
             "animations": {
                 "walk": "animation.stone_golem.walk",
                 "spawn": "animation.stone_golem.spawn",
-                "throw": "animation.stone_golem.throw"
+                "throw": "animation.stone_golem.throw",
+                "hide_rock": "animation.stone_golem.hide_rock",
+                "hide_ground_block": "animation.stone_golem.hide_ground_block",
+                "pull_block": "animation.stone_golem.pull_block"
             },
             "scripts": {
                 "animate": [
