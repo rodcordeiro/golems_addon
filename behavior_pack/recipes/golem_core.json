@@ -24,7 +24,7 @@
             }
         },
         "result": {
-            "item": "addon:golem_core_block",
+            "item": "addon:golem_core",
             "count": 1
         }
     }

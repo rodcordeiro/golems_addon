@@ -14,7 +14,7 @@ Evidencias usadas:
 - `assets/debugging/stone_golem.jpeg` mostra o Stone Golem deformado/torto em jogo.
 - `assets/redstone_rpg_gollem.png` e a Image #1 enviada pelo usuario sao referencia visual para recriar a aparencia do Stone Golem: corpo blocado robusto, proporcoes pesadas e inscricoes magicas brilhantes. O material/base do addon continua sendo pedra, nao redstone.
 - `assets/stone_golem.png` e `assets/stone_golem.geo.json` sao referencia direta para atualizar o atlas visual e a geometria do Stone Golem.
-- `behavior_pack/recipes/golem_core.json` retorna `addon:golem_core_block`, enquanto o item placeable existente e `addon:golem_core`.
+- Antes do GOLEM-002, `behavior_pack/recipes/golem_core.json` retornava `addon:golem_core_block`, enquanto o item placeable existente era `addon:golem_core`.
 - `behavior_pack/blocks/golem_core.json` chama `addon:spawn_stone_golem`, mas esse evento nao esta definido em `addon:stone_golem`.
 - `assets/texturas minecraft/textures/item/spawn_egg.png` e `spawn_egg_overlay.png` existem como referencias vanilla para textura de ovo.
 - O alinhamento entre modelos, client entities, render controllers, animacoes e arquivos de textura ainda precisa ser revisado para identificar referencias ausentes ou incompatibilidades.
@@ -69,6 +69,14 @@ Criterios de aceite:
 ### GOLEM-002 - Alinhar receita do Golem Core
 
 Prioridade: P0 Bloqueante
+
+Status: Concluido por validacao local em 2026-06-06; pendente apenas teste manual no Minecraft via `./test_world`.
+
+Evidencias locais:
+
+- `behavior_pack/recipes/golem_core.json` retorna `addon:golem_core`.
+- O item retornado pela receita e o mesmo item validado no GOLEM-001 como placeable para `addon:golem_core_block`.
+- BP/RP foram incrementados e sincronizados para `1.0.15` antes da validacao local.
 
 Problema: a receita atual retorna `addon:golem_core_block`, mas o item usado para placeable e `addon:golem_core`. Isso tambem explica a receita nao apresentar o core esperado no craft.
 
@@ -290,3 +298,4 @@ Criterios de aceite:
 - Mudar contratos de identificador pode quebrar mundos que ja referenciam itens/blocos antigos.
 - Se houver alteracao funcional no addon, a versao deve ser incrementada igualmente em `behavior_pack/manifest.json` e `resource_pack/manifest.json`.
 - Validacao por JSON e insuficiente para eventos de bloco, spawn natural, IA, combate e rendering.
+Sepa

@@ -99,6 +99,8 @@ Onde:
 - `R` = bloco de redstone
 - `S` = pedra
 
+Resultado: `addon:golem_core`, o item usado para colocar `addon:golem_core_block` no mundo.
+
 ## Comportamento do Stone Golem
 
 O golem tem:
@@ -116,7 +118,6 @@ Quando nasce naturalmente, o golem entra no grupo `wild` e mira jogadores. O gru
 
 ## Pontos de atencao
 
-- `behavior_pack/recipes/golem_core.json` retorna `addon:golem_core_block`, enquanto tambem existe o item placeable `addon:golem_core`.
 - `behavior_pack/blocks/golem_core.json` verifica `stone` na posicao do proprio bloco interagido, o que conflita com a expectativa de o bloco atual ser `addon:golem_core_block`.
 - O bloco executa `event entity @s addon:spawn_stone_golem`, mas a entidade `addon:stone_golem` nao define um evento `addon:spawn_stone_golem`.
 - A textura atual `resource_pack/textures/entity/stone_golem.png` foi recriada como atlas `128x128`, alinhada ao `texture_width` e `texture_height` declarados no modelo.
