@@ -1,290 +1,318 @@
 {
-    "format_version": "1.8.0",
-    "animations": {
-        "animation.stone_golem.spawn": {
-            "animation_length": 1.5,
-            "loop": false,
-            "bones": {
-                "body": {
-                    "rotation": {
-                        "0.0": [
-                            0,
-                            0,
-                            0
-                        ],
-                        "0.5": [
-                            0,
-                            0,
-                            0
-                        ],
-                        "1.5": [
-                            0,
-                            360,
-                            0
-                        ]
-                    }
-                },
-                "left_arm": {
-                    "rotation": {
-                        "0.0": [
-                            -90,
-                            0,
-                            0
-                        ],
-                        "1.5": [
-                            0,
-                            0,
-                            0
-                        ]
-                    }
-                },
-                "right_arm": {
-                    "rotation": {
-                        "0.0": [
-                            -90,
-                            0,
-                            0
-                        ],
-                        "1.5": [
-                            0,
-                            0,
-                            0
-                        ]
-                    }
-                }
-            }
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.stone_golem.spawn": {
+      "animation_length": 1.2,
+      "loop": false,
+      "bones": {
+        "body": {
+          "position": {
+            "0.0": [
+              0,
+              -1,
+              0
+            ],
+            "1.2": [
+              0,
+              0,
+              0
+            ]
+          }
         },
-        "animation.stone_golem.walk": {
-            "animation_length": 1.0,
-            "loop": true,
-            "bones": {
-                "left_leg": {
-                    "rotation": {
-                        "0.0": [
-                            30,
-                            0,
-                            0
-                        ],
-                        "0.5": [
-                            -30,
-                            0,
-                            0
-                        ],
-                        "1.0": [
-                            30,
-                            0,
-                            0
-                        ]
-                    }
-                },
-                "right_leg": {
-                    "rotation": {
-                        "0.0": [
-                            -30,
-                            0,
-                            0
-                        ],
-                        "0.5": [
-                            30,
-                            0,
-                            0
-                        ],
-                        "1.0": [
-                            -30,
-                            0,
-                            0
-                        ]
-                    }
-                },
-                "left_arm": {
-                    "rotation": {
-                        "0.0": [
-                            -20,
-                            0,
-                            0
-                        ],
-                        "0.5": [
-                            20,
-                            0,
-                            0
-                        ],
-                        "1.0": [
-                            -20,
-                            0,
-                            0
-                        ]
-                    }
-                },
-                "right_arm": {
-                    "rotation": {
-                        "0.0": [
-                            20,
-                            0,
-                            0
-                        ],
-                        "0.5": [
-                            -20,
-                            0,
-                            0
-                        ],
-                        "1.0": [
-                            20,
-                            0,
-                            0
-                        ]
-                    }
-                }
-            }
+        "head": {
+          "rotation": {
+            "0.0": [
+              8,
+              0,
+              0
+            ],
+            "1.2": [
+              0,
+              0,
+              0
+            ]
+          }
         },
-        "animation.stone_golem.throw": {
-            "animation_length": 0.8,
-            "loop": false,
-            "bones": {
-                "rock": {
-                    "scale": {
-                        "0.0": [
-                            1,
-                            1,
-                            1
-                        ],
-                        "0.45": [
-                            1,
-                            1,
-                            1
-                        ],
-                        "0.5": [
-                            0,
-                            0,
-                            0
-                        ]
-                    }
-                },
-                "right_arm": {
-                    "rotation": {
-                        "0.0": [
-                            -20,
-                            0,
-                            0
-                        ],
-                        "0.4": [
-                            -120,
-                            0,
-                            0
-                        ],
-                        "0.8": [
-                            0,
-                            0,
-                            0
-                        ]
-                    }
-                },
-                "body": {
-                    "rotation": {
-                        "0.0": [
-                            0,
-                            0,
-                            0
-                        ],
-                        "0.4": [
-                            0,
-                            -20,
-                            0
-                        ],
-                        "0.8": [
-                            0,
-                            0,
-                            0
-                        ]
-                    }
-                }
-            }
+        "left_arm": {
+          "rotation": {
+            "0.0": [
+              -18,
+              0,
+              -5
+            ],
+            "1.2": [
+              0,
+              0,
+              0
+            ]
+          }
         },
-        "animation.stone_golem.hide_rock": {
-            "animation_length": 0.01,
-            "loop": true,
-            "bones": {
-                "rock": {
-                    "scale": [
-                        0,
-                        0,
-                        0
-                    ]
-                }
-            }
-        },
-        "animation.stone_golem.pull_block": {
-            "animation_length": 0.7,
-            "loop": false,
-            "bones": {
-                "ground_block": {
-                    "position": {
-                        "0.0": [
-                            0,
-                            0,
-                            0
-                        ],
-                        "0.4": [
-                            0,
-                            10,
-                            0
-                        ],
-                        "0.7": [
-                            0,
-                            20,
-                            0
-                        ]
-                    },
-                    "scale": {
-                        "0.0": [
-                            1,
-                            1,
-                            1
-                        ],
-                        "0.6": [
-                            1,
-                            1,
-                            1
-                        ],
-                        "0.7": [
-                            0,
-                            0,
-                            0
-                        ]
-                    }
-                },
-                "right_arm": {
-                    "rotation": {
-                        "0.0": [
-                            -10,
-                            0,
-                            0
-                        ],
-                        "0.4": [
-                            -80,
-                            0,
-                            0
-                        ],
-                        "0.7": [
-                            -20,
-                            0,
-                            0
-                        ]
-                    }
-                }
-            }
-        },
-        "animation.stone_golem.hide_ground_block": {
-            "animation_length": 0.01,
-            "loop": true,
-            "bones": {
-                "ground_block": {
-                    "scale": [
-                        0,
-                        0,
-                        0
-                    ]
-                }
-            }
+        "right_arm": {
+          "rotation": {
+            "0.0": [
+              -18,
+              0,
+              5
+            ],
+            "1.2": [
+              0,
+              0,
+              0
+            ]
+          }
         }
+      }
+    },
+    "animation.stone_golem.walk": {
+      "animation_length": 1.2,
+      "loop": true,
+      "bones": {
+        "body": {
+          "position": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.6": [
+              0,
+              -0.35,
+              0
+            ],
+            "1.2": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "left_leg": {
+          "rotation": {
+            "0.0": [
+              10,
+              0,
+              0
+            ],
+            "0.6": [
+              -10,
+              0,
+              0
+            ],
+            "1.2": [
+              10,
+              0,
+              0
+            ]
+          }
+        },
+        "right_leg": {
+          "rotation": {
+            "0.0": [
+              -10,
+              0,
+              0
+            ],
+            "0.6": [
+              10,
+              0,
+              0
+            ],
+            "1.2": [
+              -10,
+              0,
+              0
+            ]
+          }
+        },
+        "left_arm": {
+          "rotation": {
+            "0.0": [
+              -7,
+              0,
+              -2
+            ],
+            "0.6": [
+              7,
+              0,
+              2
+            ],
+            "1.2": [
+              -7,
+              0,
+              -2
+            ]
+          }
+        },
+        "right_arm": {
+          "rotation": {
+            "0.0": [
+              7,
+              0,
+              2
+            ],
+            "0.6": [
+              -7,
+              0,
+              -2
+            ],
+            "1.2": [
+              7,
+              0,
+              2
+            ]
+          }
+        }
+      }
+    },
+    "animation.stone_golem.throw": {
+      "animation_length": 0.8,
+      "loop": false,
+      "bones": {
+        "rock": {
+          "scale": {
+            "0.0": [
+              1,
+              1,
+              1
+            ],
+            "0.45": [
+              1,
+              1,
+              1
+            ],
+            "0.5": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "right_arm": {
+          "rotation": {
+            "0.0": [
+              -15,
+              0,
+              0
+            ],
+            "0.35": [
+              -70,
+              0,
+              8
+            ],
+            "0.8": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "body": {
+          "rotation": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.35": [
+              0,
+              -8,
+              0
+            ],
+            "0.8": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    },
+    "animation.stone_golem.hide_rock": {
+      "animation_length": 0.01,
+      "loop": true,
+      "bones": {
+        "rock": {
+          "scale": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.stone_golem.pull_block": {
+      "animation_length": 0.7,
+      "loop": false,
+      "bones": {
+        "ground_block": {
+          "position": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.4": [
+              0,
+              10,
+              0
+            ],
+            "0.7": [
+              0,
+              18,
+              0
+            ]
+          },
+          "scale": {
+            "0.0": [
+              1,
+              1,
+              1
+            ],
+            "0.6": [
+              1,
+              1,
+              1
+            ],
+            "0.7": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "right_arm": {
+          "rotation": {
+            "0.0": [
+              -8,
+              0,
+              0
+            ],
+            "0.4": [
+              -45,
+              0,
+              6
+            ],
+            "0.7": [
+              -12,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    },
+    "animation.stone_golem.hide_ground_block": {
+      "animation_length": 0.01,
+      "loop": true,
+      "bones": {
+        "ground_block": {
+          "scale": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
     }
+  }
 }

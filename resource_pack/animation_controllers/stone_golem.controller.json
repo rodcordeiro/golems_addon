@@ -11,7 +11,25 @@
           ],
           "transitions": [
             {
+              "walk": "query.modified_move_speed > 0.03"
+            },
+            {
               "pull": "query.is_using_item"
+            }
+          ]
+        },
+        "walk": {
+          "animations": [
+            "hide_ground_block",
+            "hide_rock",
+            "walk"
+          ],
+          "transitions": [
+            {
+              "pull": "query.is_using_item"
+            },
+            {
+              "idle": "query.modified_move_speed <= 0.03"
             }
           ]
         },
