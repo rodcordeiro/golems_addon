@@ -1,0 +1,14 @@
+{
+  "format_version": "1.20.10",
+  "addon:golem_core_block": {
+    "sound": "stone",
+    "textures": {
+      "up": "golem_core_top",
+      "down": "golem_core_bottom",
+      "north": "golem_core_north",
+      "south": "golem_core_south",
+      "east": "golem_core_east",
+      "west": "golem_core_west"
+    }
+  }
+}

@@ -13,6 +13,7 @@ Evidencias usadas:
 - `assets/debugging/golem_egg.jpeg` mostra o ovo com label `item.spawn_egg.entity.addon:stone_golem.name`.
 - `assets/debugging/stone_golem.jpeg` mostra o Stone Golem deformado/torto em jogo.
 - `assets/redstone_rpg_gollem.png` e a Image #1 enviada pelo usuario sao referencia visual para recriar a aparencia do Stone Golem: corpo blocado robusto, proporcoes pesadas e inscricoes magicas brilhantes. O material/base do addon continua sendo pedra, nao redstone.
+- `assets/stone_golem.png` e `assets/stone_golem.geo.json` sao referencia direta para atualizar o atlas visual e a geometria do Stone Golem.
 - `behavior_pack/recipes/golem_core.json` retorna `addon:golem_core_block`, enquanto o item placeable existente e `addon:golem_core`.
 - `behavior_pack/blocks/golem_core.json` chama `addon:spawn_stone_golem`, mas esse evento nao esta definido em `addon:stone_golem`.
 - `assets/texturas minecraft/textures/item/spawn_egg.png` e `spawn_egg_overlay.png` existem como referencias vanilla para textura de ovo.
@@ -32,12 +33,23 @@ Evidencias usadas:
 | 8 | GOLEM-008 | Visual da entidade | P1 Alto | Revisar modelos/entities contra texturas e referencias visuais | GOLEM-004 |
 | 9 | GOLEM-009 | Visual da entidade | P2 Medio | Aparencia do Stone Golem esta torta/deformada | GOLEM-008 |
 | 10 | GOLEM-010 | Validacao | P0 Gate de release | Validar o addon end-to-end em `./test_world` | Todos os tickets funcionais e visuais |
+| 11 | GOLEM-011 | Validacao | P0 Gate de release | Validar receita/estrutura survival para criar o Stone Golem | GOLEM-001, GOLEM-002, GOLEM-003 |
 
 ## Tickets
 
 ### GOLEM-001 - Corrigir colocacao do `golem_core`
 
 Prioridade: P0 Bloqueante
+
+Status: Concluido por validacao local em 2026-06-06; pendente apenas teste manual no Minecraft via `./test_world`.
+
+Evidencias locais:
+
+- `behavior_pack/items/golem_core.json` usa `minecraft:block_placer` apontando para `addon:golem_core_block`.
+- `behavior_pack/blocks/golem_core.json` define o bloco `addon:golem_core_block` com geometria de bloco cheio e material instances por face.
+- `resource_pack/blocks.json` e `resource_pack/textures/terrain_texture.json` registram as texturas do bloco.
+- `resource_pack/textures/items/golem_core.png` existe em `32x32`; texturas do bloco existem em `128x128`.
+- `./test_world` foi sincronizado com BP/RP `1.0.14`.
 
 Problema: o jogador consegue obter `addon:golem_core` via `/give`, mas nao consegue colocar o item no mundo. Sem isso, o fluxo de criacao manual de golems fica bloqueado.
 
@@ -205,6 +217,7 @@ Escopo:
 - Revisar textura `resource_pack/textures/entity/stone_golem.png`.
 - Revisar animation controller e animacoes que possam rotacionar/deformar bones.
 - Usar a Image #1 / `assets/redstone_rpg_gollem.png` como referencia de arte para proporcoes, volumes, blocos segmentados, postura e inscricoes magicas.
+- Usar `assets/stone_golem.png` e `assets/stone_golem.geo.json` como referencia direta de atlas, UVs, coordenadas de eixo e partes do golem.
 - Adaptar a referencia para pedra: manter paleta mineral/pedregosa, mas incluir fendas, runas ou inscricoes magicas brilhantes inspiradas no golem de redstone.
 - Separar problema de rig/modelo de problema de IA parada.
 
@@ -237,6 +250,29 @@ Criterios de aceite:
 - Evidencia de validacao registrada no README, em docs ou em snapshot de memoria.
 - Qualquer limitacao restante fica documentada antes de release.
 
+### GOLEM-011 - Validar receita survival do Stone Golem
+
+Prioridade: P0 Gate de release
+
+Problema: mesmo apos corrigir item, receita, estrutura e evento de criacao, e necessario validar no Minecraft/MCPE se o jogador consegue obter o core em survival e transformar a estrutura em `addon:stone_golem` sem comandos administrativos.
+
+Escopo:
+
+- Validar crafting do `addon:golem_core` em crafting table no modo sobrevivencia.
+- Validar colocacao do core no mundo sem comandos.
+- Validar montagem da estrutura documentada para criar o Stone Golem.
+- Validar que interagir com a estrutura consome os blocos corretos e instancia `addon:stone_golem`.
+- Validar que o golem criado por survival recebe comportamento de `player_created`.
+
+Criterios de aceite:
+
+- Jogador em survival consegue craftar o core.
+- Jogador em survival consegue colocar o core.
+- Estrutura survival documentada cria `addon:stone_golem`.
+- Blocos da estrutura sao consumidos ou transformados conforme contrato documentado.
+- O golem criado pela estrutura usa comportamento de guardiao.
+- Validado em `./test_world`.
+
 ## Ordem recomendada de execucao
 
 1. Resolver GOLEM-001 e GOLEM-002 para fechar o contrato de item/bloco/receita.
@@ -246,7 +282,8 @@ Criterios de aceite:
 5. Resolver GOLEM-006 e GOLEM-007 para corrigir nomes e ovo.
 6. Resolver GOLEM-008 para auditar modelos/entities/texturas.
 7. Resolver GOLEM-009 para ajustar o visual.
-8. Executar GOLEM-010 como gate antes de considerar a versao pronta.
+8. Executar GOLEM-011 para validar a receita/estrutura survival.
+9. Executar GOLEM-010 como gate end-to-end antes de considerar a versao pronta.
 
 ## Riscos
 

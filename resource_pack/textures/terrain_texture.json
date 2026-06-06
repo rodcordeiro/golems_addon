@@ -1,0 +1,27 @@
+{
+  "resource_pack_name": "Stone Golem Resource Pack",
+  "texture_name": "atlas.terrain",
+  "texture_data": {
+    "golem_core_block": {
+      "textures": "textures/blocks/golem_core_block"
+    },
+    "golem_core_top": {
+      "textures": "textures/blocks/golem_core_top"
+    },
+    "golem_core_bottom": {
+      "textures": "textures/blocks/golem_core_bottom"
+    },
+    "golem_core_north": {
+      "textures": "textures/blocks/golem_core_north"
+    },
+    "golem_core_south": {
+      "textures": "textures/blocks/golem_core_south"
+    },
+    "golem_core_east": {
+      "textures": "textures/blocks/golem_core_east"
+    },
+    "golem_core_west": {
+      "textures": "textures/blocks/golem_core_west"
+    }
+  }
+}

@@ -6,7 +6,7 @@
         },
         "components": {
             "minecraft:icon": "golem_core",
-            "minecraft:placeable": {
+            "minecraft:block_placer": {
                 "block": "addon:golem_core_block"
             }
         }

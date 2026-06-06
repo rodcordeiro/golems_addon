@@ -2,18 +2,49 @@
     "format_version": "1.20.0",
     "minecraft:block": {
         "description": {
-            "identifier": "addon:golem_core_block"
+            "identifier": "addon:golem_core_block",
+            "menu_category": {
+                "category": "construction"
+            }
         },
         "components": {
             "minecraft:destroy_time": 3.0,
             "minecraft:explosion_resistance": 6.0,
+            "minecraft:geometry": "geometry.full_block",
+            "minecraft:material_instances": {
+                "up": {
+                    "texture": "golem_core_top",
+                    "render_method": "opaque"
+                },
+                "down": {
+                    "texture": "golem_core_bottom",
+                    "render_method": "opaque"
+                },
+                "north": {
+                    "texture": "golem_core_north",
+                    "render_method": "opaque"
+                },
+                "south": {
+                    "texture": "golem_core_south",
+                    "render_method": "opaque"
+                },
+                "east": {
+                    "texture": "golem_core_east",
+                    "render_method": "opaque"
+                },
+                "west": {
+                    "texture": "golem_core_west",
+                    "render_method": "opaque"
+                },
+                "*": {
+                    "texture": "golem_core_top",
+                    "render_method": "opaque"
+                }
+            },
             "minecraft:on_interact": {
                 "condition": "query.block_property('minecraft:block_face') == 'up'",
                 "event": "addon:check_golem_structure"
             }
-        },
-        "menu_category": {
-            "category": "construction"
         },
         "events": {
             "addon:check_golem_structure": {
