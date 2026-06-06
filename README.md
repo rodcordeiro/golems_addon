@@ -6,7 +6,7 @@ Addon de Minecraft Bedrock que adiciona um golem de pedra com comportamento host
 
 Este repositorio contem um Behavior Pack e um Resource Pack para Minecraft Bedrock `1.20.10+`.
 
-O conteudo principal esta implementado nos arquivos do addon, mas o fluxo de criacao manual do golem ainda precisa de validacao em jogo. Em especial, ha indicios de que o evento acionado pelo bloco de nucleo nao instancia a entidade corretamente no estado atual. Veja a secao "Pontos de atencao".
+O conteudo principal esta implementado nos arquivos do addon, mas o fluxo de criacao manual do golem ainda precisa de validacao final dentro do Minecraft Bedrock/MCPE. A validacao local de arquivos ja cobre JSON, contrato de item/bloco/receita e estrutura de comandos.
 
 ## Conteudo
 
@@ -101,6 +101,24 @@ Onde:
 
 Resultado: `addon:golem_core`, o item usado para colocar `addon:golem_core_block` no mundo.
 
+## Criacao manual do Stone Golem
+
+Monte a estrutura abaixo e interaja com o `Golem Core` colocado na base:
+
+```text
+  P
+ SSS
+  C
+```
+
+Onde:
+
+- `P` = carved pumpkin
+- `S` = stone
+- `C` = Golem Core (`addon:golem_core_block`)
+
+Quando a estrutura esta completa, o bloco de core executa `golems/spawn_stone_golem`, consome o core, as tres pedras e a carved pumpkin, e invoca `addon:stone_golem` com o spawn event `player_created`.
+
 ## Comportamento do Stone Golem
 
 O golem tem:
@@ -114,12 +132,11 @@ O golem tem:
 - restricao de casa em raio de `60` blocos;
 - loot com redstone dust, glowstone dust ou diamond.
 
-Quando nasce naturalmente, o golem entra no grupo `wild` e mira jogadores. O grupo `player_created` esta desenhado para mirar monstros e jogadores que nao sejam o dono, mas o fluxo de criacao pelo jogador ainda precisa ser fechado.
+Quando nasce naturalmente, o golem entra no grupo `wild` e mira jogadores. Quando nasce pela estrutura manual, o spawn event `player_created` remove o grupo `wild` e aplica o grupo `player_created`, desenhado para mirar monstros e jogadores que nao sejam o dono.
 
 ## Pontos de atencao
 
-- `behavior_pack/blocks/golem_core.json` verifica `stone` na posicao do proprio bloco interagido, o que conflita com a expectativa de o bloco atual ser `addon:golem_core_block`.
-- O bloco executa `event entity @s addon:spawn_stone_golem`, mas a entidade `addon:stone_golem` nao define um evento `addon:spawn_stone_golem`.
+- O fluxo de criacao manual foi corrigido por contrato de arquivos, mas ainda precisa de teste visual/funcional dentro do Minecraft Bedrock/MCPE em `./test_world`.
 - A textura atual `resource_pack/textures/entity/stone_golem.png` foi recriada como atlas `128x128`, alinhada ao `texture_width` e `texture_height` declarados no modelo.
 - As texturas do item `golem_core` e da particula `stone` foram reduzidas para formatos leves e transparentes, mais adequados para MCPE.
 - Ha workflows de validacao e empacotamento em `.github/workflows`, mas nao ha

@@ -15,11 +15,43 @@ Evidencias usadas:
 - `assets/redstone_rpg_gollem.png` e a Image #1 enviada pelo usuario sao referencia visual para recriar a aparencia do Stone Golem: corpo blocado robusto, proporcoes pesadas e inscricoes magicas brilhantes. O material/base do addon continua sendo pedra, nao redstone.
 - `assets/stone_golem.png` e `assets/stone_golem.geo.json` sao referencia direta para atualizar o atlas visual e a geometria do Stone Golem.
 - Antes do GOLEM-002, `behavior_pack/recipes/golem_core.json` retornava `addon:golem_core_block`, enquanto o item placeable existente era `addon:golem_core`.
-- `behavior_pack/blocks/golem_core.json` chama `addon:spawn_stone_golem`, mas esse evento nao esta definido em `addon:stone_golem`.
+- Antes do GOLEM-003, `behavior_pack/blocks/golem_core.json` chamava `addon:spawn_stone_golem`, mas esse evento nao estava definido em `addon:stone_golem`.
 - `assets/texturas minecraft/textures/item/spawn_egg.png` e `spawn_egg_overlay.png` existem como referencias vanilla para textura de ovo.
 - O alinhamento entre modelos, client entities, render controllers, animacoes e arquivos de textura ainda precisa ser revisado para identificar referencias ausentes ou incompatibilidades.
 
 ## Priorizacao
+
+## Milestones
+
+### Milestone 1 - Addon 100% funcional
+
+Objetivo: fechar o fluxo principal do addon com item, receita, criacao manual, entidade funcional, spawn, nomes, ovo, visual coerente e validacao end-to-end em `./test_world`.
+
+Tickets relacionados: GOLEM-001, GOLEM-002, GOLEM-003, GOLEM-004, GOLEM-005, GOLEM-006, GOLEM-007, GOLEM-008, GOLEM-009, GOLEM-010, GOLEM-011.
+
+### Milestone 2 - Insights e melhorias do Stone Golem
+
+Objetivo: evoluir balanceamento, comportamento, visual, feedbacks, experiencia survival e melhorias derivadas dos testes do Stone Golem depois que o addon base estiver funcional.
+
+Tickets relacionados: a detalhar apos fechamento do Milestone 1.
+
+### Milestone 3 - Sand Golem e Wood Golem
+
+Objetivo: adicionar novas variantes `sand_golem` e `wood_golem`, com contratos completos de Behavior Pack e Resource Pack.
+
+Tickets relacionados: a detalhar.
+
+### Milestone 4 - Nether Golem
+
+Objetivo: adicionar uma variante tematica do Nether, incluindo comportamento, spawn/obtencao, visual e balanceamento compativeis com biomas/dimensao do Nether.
+
+Tickets relacionados: a detalhar.
+
+### Milestone 5 - Crystal Golem e Redstone Golem
+
+Objetivo: adicionar `crystal_golem` de ametista e `redstone_golem`. O `redstone_golem` deve atuar como golem de suporte, responsavel por gerar buffs e capaz de "comandar" outros golems.
+
+Tickets relacionados: a detalhar.
 
 | Ordem | Ticket | Epico | Prioridade | Problemas cobertos | Dependencias |
 |---:|---|---|---|---|---|
@@ -97,13 +129,23 @@ Criterios de aceite:
 
 Prioridade: P0 Bloqueante
 
+Status: Concluido por validacao local em 2026-06-06; pendente apenas teste manual no Minecraft via `./test_world`.
+
+Evidencias locais:
+
+- A estrutura survival foi documentada no README: `carved_pumpkin` sobre tres `stone`, com `addon:golem_core_block` na base central.
+- `behavior_pack/blocks/golem_core.json` deixou de verificar `stone` na propria posicao do core.
+- O bloco nao chama mais `addon:spawn_stone_golem`; agora executa `function golems/spawn_stone_golem` somente se a estrutura existir.
+- `behavior_pack/functions/golems/spawn_stone_golem.mcfunction` invoca `addon:stone_golem` com spawn event `player_created` e consome core, pedras e pumpkin.
+- BP/RP foram incrementados e sincronizados para `1.0.16` antes da validacao local.
+
 Problema: nao ha uma receita clara para o Stone Golem em si. O addon tem uma receita para o core, mas o fluxo de estrutura/interacao que transforma blocos em `addon:stone_golem` esta incompleto.
 
 Escopo:
 
 - Definir formalmente a estrutura survival para criar o Stone Golem.
-- Corrigir `behavior_pack/blocks/golem_core.json`, que hoje verifica `stone` na propria posicao do bloco interagido.
-- Substituir ou implementar o evento `addon:spawn_stone_golem`, hoje chamado pelo bloco mas ausente na entidade.
+- Corrigir o comportamento antigo de `behavior_pack/blocks/golem_core.json`, que verificava `stone` na propria posicao do bloco interagido.
+- Substituir ou implementar o evento antigo `addon:spawn_stone_golem`, que era chamado pelo bloco mas ausente na entidade.
 - Garantir que o golem criado pelo jogador receba o evento/grupo `player_created`.
 
 Criterios de aceite:
