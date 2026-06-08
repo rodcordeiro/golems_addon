@@ -1,0 +1,241 @@
+{
+	"tiers": [
+		{
+			"trades": [
+				{
+					"wants": [
+						{
+							"item": "trial_key",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:golden_lucky_chest",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"wants": [
+						{
+							"item": "ominous_trial_key",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:diamond_lucky_chest",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"wants": [
+						{
+							"item": "fv:illager_snow_badge",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:snow_clan_medal",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1,
+					"reward_exp": true
+				},
+				{
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 2
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:command_flag",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:melee_banner_tp",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:ranged_banner_tp",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:clumper_banner_tp",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"max_uses": -1,
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 8
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:discharge_letter"
+						}
+					]
+				},
+				{
+					"max_uses": 6,
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": {
+								"min": 6,
+								"max": 8
+							}
+						}
+					],
+					"gives": [
+						{
+							"item": "minecraft:goat_horn"
+						}
+					]
+				},
+				{
+					"wants": [
+						{
+							"item": "minecraft:bread",
+							"quantity": {
+								"min": 8,
+								"max": 64
+							}
+						}
+					],
+					"gives": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": {
+								"min": 1,
+								"max": 22
+							}
+						}
+					],
+					"max_uses": 10
+				},
+				{
+					"max_uses": 32,
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 2
+						}
+					],
+					"gives": [
+						{
+							"choice": [
+								{
+									"item": "minecraft:arrow:6",
+									"quantity": 1
+								},
+								{
+									"item": "minecraft:arrow:8",
+									"quantity": 1
+								},
+								{
+									"item": "minecraft:arrow:10",
+									"quantity": 1
+								},
+								{
+									"item": "minecraft:arrow:13",
+									"quantity": 1
+								},
+								{
+									"item": "minecraft:arrow:15",
+									"quantity": 1
+								},
+								{
+									"item": "minecraft:arrow:18",
+									"quantity": 1
+								},
+								{
+									"item": "minecraft:arrow:20",
+									"quantity": 1
+								},
+								{
+									"item": "minecraft:arrow:22",
+									"quantity": 1
+								},
+								{
+									"item": "minecraft:arrow:24",
+									"quantity": 1
+								},
+								{
+									"item": "minecraft:arrow:26",
+									"quantity": 1
+								},
+								{
+									"item": "minecraft:arrow:29",
+									"quantity": 1
+								},
+								{
+									"item": "minecraft:arrow:32",
+									"quantity": 1
+								},
+								{
+									"item": "minecraft:arrow:35",
+									"quantity": 1
+								},
+								{
+									"item": "minecraft:arrow:37",
+									"quantity": 1
+								},
+								{
+									"item": "minecraft:arrow:38",
+									"quantity": 1
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

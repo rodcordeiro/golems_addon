@@ -1,0 +1,96 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:illager_savanna_cavalry",
+			"materials": {
+				"default": "pillager"
+			},
+			"textures": {
+				"default": "textures/entity/new_illagers/savanna/illager",
+				"armor": "textures/entity/new_illagers/savanna/cowboyhat2",
+				"horse_black": "textures/entity/fv_steed/horse_black",
+				"horse_brown": "textures/entity/fv_steed/horse_brown",
+				"horse_chestnut": "textures/entity/fv_steed/horse_chestnut",
+				"horse_creamy": "textures/entity/fv_steed/horse_creamy",
+				"horse_darkbrown": "textures/entity/fv_steed/horse_darkbrown",
+				"horse_gray": "textures/entity/fv_steed/horse_gray",
+				"horse_white": "textures/entity/fv_steed/horse_white",
+				"gun": "textures/items/weapons/guns/3d_fv_flintlock_pistol"
+			},
+			"geometry": {
+				"default": "geometry.repillager",
+				"horse": "geometry.illager_horse",
+				"armor": "geometry.cowboyhat",
+				"gun": "geometry.fv_flintlock_pistol_entity"
+			},
+			"spawn_egg": {
+				"texture": "fv_spawn_egg_savanna_illager"
+			},
+			"scripts": {
+				"scale": "0.9375",
+				"pre_animation": [
+					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+					"v.horse_skin = query.property('fv:cavalry_random_skin');"
+				],
+				"animate": [
+					"controller_humanoid_base_pose",
+					"controller_look_at_target",
+					"controller_move",
+					"controller_bob",
+					"default",
+					{
+						"dead": "!query.is_alive"
+					},
+					"horse_armor_default",
+					"controller_pillager_attack",
+					"flintlock_scale"
+				]
+			},
+			"animations": {
+				"humanoid_base_pose": "animation.humanoid.base_pose",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"move": "animation.illager_horse.moving",
+				"riding.arms": "animation.humanoid.riding.arms",
+				"riding.legs": "animation.humanoid.riding.legs",
+				"holding": "animation.humanoid.holding",
+				"attack.rotations": "animation.humanoid.attack.rotations",
+				"bob": "animation.humanoid.bob",
+				"crossbow_hold": "animation.villager_noarmor.crossbow.hold",
+				"crossbow_charge": "animation.villager_noarmor.crossbow.charge",
+				"celebrating": "animation.humanoid.celebrating",
+				"controller_humanoid_base_pose": "controller.animation.humanoid.base_pose",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				"controller_move": "controller.animation.humanoid.move",
+				"controller_bob": "controller.animation.humanoid.bob",
+				"controller_pillager_attack": "controller.animation.illager.cavalry.changemode",
+				"melee_attack_controller": "controller.animation.villager.horse.attack",
+				"horse_hold_attack": "animation.villager_noarmor.horse_hold_attack",
+				"horse_attack": "animation.villager_noarmor.horse_attack",
+				"horse_default": "animation.villager_noarmor.horse_default",
+				"default": "animation.illager_horse.default",
+				"dead": "animation.illager_horse.dead",
+				"horse_armor_default": "animation.illager_horse_armor.default",
+				"flintlock_scale": "animation.repillager.gun.flintlock_scale",
+				"flintlock_has_target": "animation.repillager.gun.flintlock_has_target",
+				"flintlock_shooted": "animation.repillager.gun.flintlock_shooted",
+				"flintlock_reloading": "animation.repillager.gun.flintlock_reloading",
+				"bow_and_arrow": "animation.pillager.onehand.hold",
+				"gun_shooting": "controller.animation.illager.gun.shooting",
+				"gun_controller": "controller.animation.illager.cavalry.gun_controller"
+			},
+			"render_controllers": [
+				"controller.render.fv_pillager",
+				"controller.render.horse.skin",
+				"controller.render.fv_pillager_armor",
+				{
+					"controller.render.fv_pillager_gun": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_pistol')"
+				}
+			],
+			"hide_armor": true,
+			"enable_attachables": false
+		}
+	}
+}

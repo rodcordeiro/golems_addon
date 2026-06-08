@@ -1,0 +1,33 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:illasteel_sword"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"i": {
+				"item": "fv:illasteel_ingot"
+			},
+			"s": {
+				"item": "stick"
+			}
+		},
+		"pattern": [
+			"i",
+			"i",
+			"s"
+		],
+		"result": {
+			"item": "fv:illasteel_sword",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "fv:illasteel_ingot"
+			}
+		]
+	}
+}

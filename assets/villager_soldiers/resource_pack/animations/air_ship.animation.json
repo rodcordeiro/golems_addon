@@ -1,0 +1,99 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.air_ship.scale": {
+			"loop": true,
+			"bones": {
+				"airship": {
+					"scale": 4
+				}
+			}
+		},
+		"animation.air_ship.flying": {
+			"loop": true,
+			"bones": {
+				"canhquat": {
+					"rotation": [
+						0,
+						0,
+						"query.life_time*200"
+					]
+				},
+				"dongco": {
+					"position": [
+						0,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.air_ship.starting": {
+			"loop": true,
+			"bones": {
+				"canhquat": {
+					"rotation": [
+						0,
+						0,
+						"query.life_time*(10*query.life_time)"
+					]
+				}
+			}
+		},
+		"animation.air_ship.flying_smoke_left": {
+			"loop": true,
+			"particle_effects": {
+				"0.0": {
+					"effect": "flying_smoke",
+					"locator": "flysmoke_left"
+				}
+			}
+		},
+		"animation.air_ship.flying_smoke_right": {
+			"loop": true,
+			"particle_effects": {
+				"0.0": {
+					"effect": "flying_smoke",
+					"locator": "flysmoke_right"
+				}
+			}
+		},
+		"animation.air_ship.cannon": {
+			"loop": true,
+			"bones": {
+				"cannon": {
+					"rotation": [
+						0,
+						"-query.target_y_rotation",
+						0
+					]
+				},
+				"gun": {
+					"rotation": [
+						"query.target_x_rotation",
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.air_ship.fire_smoke": {
+			"loop": true,
+			"particle_effects": {
+				"0.0": {
+					"effect": "flying_smoke",
+					"locator": "fire_smoke"
+				}
+			}
+		},
+		"animation.air_ship.fire_smoke2": {
+			"loop": true,
+			"particle_effects": {
+				"0.0": {
+					"effect": "flying_smoke",
+					"locator": "fire_smoke2"
+				}
+			}
+		}
+	}
+}

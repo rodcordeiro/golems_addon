@@ -1,0 +1,49 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.target.irongolem": {
+			"loop": true,
+			"bones": {
+				"target": {
+					"position": [
+						0,
+						21,
+						0
+					]
+				}
+			}
+		},
+		"animation.target.pop": {
+			"animation_length": 0.25,
+			"bones": {
+				"target": {
+					"scale": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.125": [
+							1.5,
+							1.5,
+							1.5
+						],
+						"0.25": [
+							1,
+							1,
+							1
+						]
+					}
+				}
+			}
+		},
+		"animation.target.default": {
+			"loop": true,
+			"bones": {
+				"target": {
+					"scale": 0
+				}
+			}
+		}
+	}
+}

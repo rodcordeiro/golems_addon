@@ -1,0 +1,33 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:steel_saber"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"i": {
+				"item": "fv:steel_ingot"
+			},
+			"s": {
+				"item": "minecraft:stick"
+			}
+		},
+		"pattern": [
+			"  i",
+			" i ",
+			"s  "
+		],
+		"result": {
+			"item": "fv:steel_saber",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "fv:steel_ingot"
+			}
+		]
+	}
+}

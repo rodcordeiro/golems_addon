@@ -1,0 +1,32 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:iron_javelin"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"i": {
+				"item": "minecraft:iron_ingot"
+			},
+			"s": {
+				"item": "fv:long_stick"
+			}
+		},
+		"pattern": [
+			"  i",
+			" s "
+		],
+		"result": {
+			"item": "fv:iron_javelin",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "minecraft:iron_ingot"
+			}
+		]
+	}
+}

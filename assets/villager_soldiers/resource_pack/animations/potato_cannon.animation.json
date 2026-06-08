@@ -1,0 +1,51 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.potato_cannon.shooting": {
+			"animation_length": 2,
+			"bones": {
+				"cannon": {
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.0208": [
+							0,
+							0,
+							2
+						],
+						"0.0625": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0208": {
+					"effect": "gunpower_shoot",
+					"locator": "smoke"
+				},
+				"0.25": {
+					"effect": "gunpower_smoke_up",
+					"locator": "smoke"
+				}
+			}
+		},
+		"animation.potato_cannon.default": {
+			"loop": true,
+			"bones": {
+				"cannon": {
+					"rotation": [
+						-25,
+						0,
+						0
+					]
+				}
+			}
+		}
+	}
+}

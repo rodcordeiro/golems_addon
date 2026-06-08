@@ -1,0 +1,73 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.elephant.general": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"idling": "!query.is_sitting"
+						}
+					],
+					"blend_transition": 0
+				},
+				"idling": {
+					"transitions": [
+						{
+							"moving": "variable.moving"
+						}
+					],
+					"blend_transition": 0.5
+				},
+				"moving": {
+					"animations": [
+						{
+							"moving": "math.min(1,math.lerp(0.4,1.25,query.modified_move_speed))"
+						}
+					],
+					"transitions": [
+						{
+							"idling": "!variable.moving"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.elephant.idle": {
+			"initial_state": "idling",
+			"states": {
+				"idling": {
+					"animations": [
+						"idle"
+					]
+				}
+			}
+		},
+		"controller.animation.elephant.attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"attack": "query.is_roaring"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"attack": {
+					"animations": [
+						"attack"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		}
+	}
+}

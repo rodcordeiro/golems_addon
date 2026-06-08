@@ -1,0 +1,524 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.vindicator.spearman_attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"hold": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_pike')"
+						}
+					],
+					"transitions": [
+						{
+							"has_target": "query.has_target&&variable.attack_time==0"
+						},
+						{
+							"attack": "query.has_target&&variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"has_target": {
+					"animations": [
+						"has_target"
+					],
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						},
+						{
+							"attack": "query.has_target&&variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"attack": {
+					"animations": [
+						"attack"
+					],
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						},
+						{
+							"has_target": "query.has_target&&variable.attack_time==0"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.illager.delay.attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"melee_attack": "query.is_delayed_attacking"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"melee_attack": {
+					"animations": [
+						"melee_attack"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished||!query.has_target"
+						}
+					],
+					"blend_transition": 2,
+					"blend_via_shortest_path": true
+				}
+			}
+		},
+		"controller.animation.illager.roaring": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"roaring": "query.is_roaring"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"roaring": {
+					"animations": [
+						"roaring"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.cape.running": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"caperun": "query.modified_move_speed>=0.2"
+						}
+					],
+					"blend_transition": 1
+				},
+				"caperun": {
+					"animations": [
+						"caperun"
+					],
+					"transitions": [
+						{
+							"default": "query.modified_move_speed<0.2"
+						}
+					],
+					"blend_transition": 0.8
+				}
+			}
+		},
+		"controller.animation.illager.delay.bow_attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"melee_attack": "query.is_delayed_attacking&&query.variant==1"
+						},
+						{
+							"ranged_attack": "query.has_target&&query.variant==2"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"melee_attack": {
+					"animations": [
+						"melee_attack"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished||!query.has_target"
+						},
+						{
+							"ranged_attack": "query.has_target&&query.variant==2"
+						}
+					],
+					"blend_transition": 0.3,
+					"blend_via_shortest_path": true
+				},
+				"ranged_attack": {
+					"animations": [
+						"bow_holding"
+					],
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						},
+						{
+							"melee_attack": "query.is_delayed_attacking&&query.variant==1"
+						}
+					],
+					"blend_transition": 0.3,
+					"blend_via_shortest_path": true
+				}
+			}
+		},
+		"controller.animation.illager.delay.crossbow_attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"melee_attack": "query.is_delayed_attacking&&query.variant==1"
+						},
+						{
+							"ranged_attack": "query.has_target&&query.variant==2"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"melee_attack": {
+					"animations": [
+						"melee_attack"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished||!query.has_target"
+						},
+						{
+							"ranged_attack": "query.has_target&&query.variant==2"
+						}
+					],
+					"blend_transition": 0.3,
+					"blend_via_shortest_path": true
+				},
+				"ranged_attack": {
+					"animations": [
+						"crossbow_attack"
+					],
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						},
+						{
+							"melee_attack": "query.is_delayed_attacking&&query.variant==1"
+						}
+					],
+					"blend_transition": 0.3,
+					"blend_via_shortest_path": true
+				}
+			}
+		},
+		"controller.animation.illager.hand_gun.controller": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"rifle_default": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:deadlight_rifle')"
+						}
+					],
+					"transitions": [
+						{
+							"towhand_gun": "query.has_target&&query.equipped_item_any_tag('slot.weapon.mainhand','fv:long_gun')&&query.property('fv:is_reloading')==false"
+						},
+						{
+							"onehand_gun": "query.has_target&&query.equipped_item_any_tag('slot.weapon.mainhand','fv:short_gun')&&query.property('fv:is_reloading')==false"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"towhand_gun": {
+					"animations": [
+						"gun_two_hand"
+					],
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						},
+						{
+							"onehand_gun": "query.has_target&&query.equipped_item_any_tag('slot.weapon.mainhand','fv:short_gun')&&query.property('fv:is_reloading')==false"
+						}
+					],
+					"blend_transition": 0.3,
+					"blend_via_shortest_path": true
+				},
+				"onehand_gun": {
+					"animations": [
+						"gun_one_hand"
+					],
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						},
+						{
+							"towhand_gun": "query.has_target&&query.equipped_item_any_tag('slot.weapon.mainhand','fv:long_gun')&&query.property('fv:is_reloading')==false"
+						}
+					],
+					"blend_transition": 0.3,
+					"blend_via_shortest_path": true
+				}
+			}
+		},
+		"controller.animation.cowboy.reload": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"rifle_reload": "variable.reloading=='deadlight_rifle'"
+						},
+						{
+							"reaper_reload": "variable.reloading=='golden_reaper'"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"rifle_reload": {
+					"animations": [
+						"rifle_reloading"
+					],
+					"transitions": [
+						{
+							"default": "variable.reloading=='none'"
+						},
+						{
+							"reaper_reload": "variable.reloading=='golden_reaper'"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"reaper_reload": {
+					"animations": [
+						"reaper_reloading"
+					],
+					"transitions": [
+						{
+							"default": "variable.reloading=='none'"
+						},
+						{
+							"rifle_reload": "variable.reloading=='deadlight_rifle'"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.cowboy.shooting": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shooted": "variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"shooted": {
+					"animations": [
+						{
+							"lendan": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:deadlight_rifle')"
+						},
+						{
+							"reaper_shooting": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:golden_reaper')"
+						}
+					],
+					"transitions": [
+						{
+							"default": "variable.attack_time<=0"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.illager.cavalry.changemode": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"melee_attack": "query.variant==1"
+						},
+						{
+							"ranged_attack": "query.variant==2"
+						},
+						{
+							"reloading": "query.property('fv:is_reloading')==true"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"melee_attack": {
+					"animations": [
+						"melee_attack_controller"
+					],
+					"transitions": [
+						{
+							"ranged_attack": "query.variant==2"
+						},
+						{
+							"reloading": "query.property('fv:is_reloading')==true"
+						}
+					],
+					"blend_transition": 0.3,
+					"blend_via_shortest_path": true
+				},
+				"ranged_attack": {
+					"animations": [
+						"gun_controller"
+					],
+					"transitions": [
+						{
+							"melee_attack": "query.variant==1"
+						},
+						{
+							"reloading": "query.property('fv:is_reloading')==true"
+						}
+					],
+					"blend_transition": 0.3,
+					"blend_via_shortest_path": true
+				},
+				"reloading": {
+					"animations": [
+						"flintlock_reloading"
+					],
+					"transitions": [
+						{
+							"default": "query.property('fv:is_reloading')==false"
+						}
+					],
+					"blend_transition": 0.3,
+					"blend_via_shortest_path": true
+				}
+			}
+		},
+		"controller.animation.illager.cavalry.gun_controller": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"has_target": "query.has_target&&query.variant==2"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"has_target": {
+					"animations": [
+						"bow_and_arrow",
+						"gun_shooting"
+					],
+					"transitions": [
+						{
+							"default": "!query.has_target||query.variant!=2"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.illager.gun.shooting": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"flintlock_has_target"
+					],
+					"transitions": [
+						{
+							"shooted": "variable.attack_time>0&&query.variant==2"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"shooted": {
+					"animations": [
+						"flintlock_shooted"
+					],
+					"transitions": [
+						{
+							"default": "variable.attack_time<=0&&query.variant==2"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.illager.airship.flying": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"starting": "query.is_shaking"
+						},
+						{
+							"flying": "!query.is_on_ground&&query.is_sheared"
+						}
+					],
+					"blend_transition": 3
+				},
+				"starting": {
+					"animations": [
+						"starting"
+					],
+					"transitions": [
+						{
+							"flying": "query.is_sheared"
+						}
+					],
+					"blend_transition": 3
+				},
+				"flying": {
+					"animations": [
+						"flying",
+						"flying_smoke_left",
+						"flying_smoke_right"
+					],
+					"transitions": [
+						{
+							"default": "query.is_on_ground&&query.is_sheared"
+						}
+					],
+					"blend_transition": 6
+				}
+			}
+		},
+		"controller.animation.codaituong.attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"giuco"
+					],
+					"transitions": [
+						{
+							"camco": "query.is_casting"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"camco": {
+					"animations": [
+						"camco",
+						"coxuathien"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		}
+	}
+}

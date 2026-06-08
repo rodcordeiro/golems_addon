@@ -1,0 +1,36 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:copper_boom"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"c": {
+				"item": "copper_ingot"
+			},
+			"g": {
+				"item": "gunpowder"
+			},
+			"s": {
+				"item": "string"
+			}
+		},
+		"pattern": [
+			" cs",
+			"cgc",
+			" c "
+		],
+		"result": {
+			"item": "fv:copper_boom",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "minecraft:copper_ingot"
+			}
+		]
+	}
+}

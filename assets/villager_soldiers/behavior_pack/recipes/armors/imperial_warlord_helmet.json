@@ -1,0 +1,33 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:imperial_warlord_helmet"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"i": {
+				"item": "fv:imperial_forge_ingot"
+			},
+			"w": {
+				"item": "minecraft:red_wool"
+			}
+		},
+		"pattern": [
+			" w ",
+			"iii",
+			"i i"
+		],
+		"result": {
+			"item": "fv:imperial_warlord_helmet",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "fv:imperial_forge_ingot"
+			}
+		]
+	}
+}

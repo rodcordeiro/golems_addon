@@ -1,0 +1,33 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:vanguard_marshals_diamorite_hilt"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"d": {
+				"item": "fv:diamorite_ingot"
+			},
+			"g": {
+				"item": "minecraft:gold_ingot"
+			}
+		},
+		"pattern": [
+			"dgd",
+			"ggg",
+			" d "
+		],
+		"result": {
+			"item": "fv:vanguard_marshals_diamorite_hilt",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "fv:diamorite_ingot"
+			}
+		]
+	}
+}

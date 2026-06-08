@@ -1,0 +1,23 @@
+{
+	"format_version": "1.20.0",
+	"minecraft:recipe_smithing_transform": {
+		"description": {
+			"identifier": "fv:imperial_commander_helmet"
+		},
+		"tags": [
+			"smithing_table"
+		],
+		"template": {
+			"item": "fv:imperial_overforge_plate"
+		},
+		"base": {
+			"item": "fv:imperial_warlord_helmet"
+		},
+		"addition": {
+			"item": "minecraft:netherite_ingot"
+		},
+		"result": {
+			"item": "fv:imperial_commander_helmet"
+		}
+	}
+}

@@ -1,0 +1,166 @@
+{
+	"tiers": [
+		{
+			"trades": [
+				{
+					"wants": [
+						{
+							"item": "trial_key",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:golden_lucky_chest",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"wants": [
+						{
+							"item": "ominous_trial_key",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:diamond_lucky_chest",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"wants": [
+						{
+							"item": "fv:illager_mesa_badge",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:swamp_clan_medal",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1,
+					"reward_exp": true
+				},
+				{
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 2
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:command_flag",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:melee_banner_tp",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:ranged_banner_tp",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:clumper_banner_tp",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"max_uses": -1,
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 8
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:discharge_letter"
+						}
+					]
+				},
+				{
+					"wants": [
+						{
+							"item": "minecraft:cooked_salmon",
+							"quantity": {
+								"min": 2,
+								"max": 16
+							}
+						}
+					],
+					"gives": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": {
+								"min": 4,
+								"max": 32
+							}
+						}
+					],
+					"max_uses": 10
+				},
+				{
+					"max_uses": 40,
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": {
+								"min": 8,
+								"max": 12
+							}
+						}
+					],
+					"gives": [
+						{
+							"item": "minecraft:gunpowder"
+						}
+					]
+				}
+			]
+		}
+	]
+}

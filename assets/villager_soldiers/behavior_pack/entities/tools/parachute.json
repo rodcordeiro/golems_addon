@@ -1,0 +1,258 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fv:parachute",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"animations": {
+				"change_mode": "controller.animation.parachute.change_mode"
+			},
+			"scripts": {
+				"animate": [
+					"change_mode"
+				]
+			}
+		},
+		"component_groups": {
+			"fv:despawn": {
+				"minecraft:instant_despawn": {
+					"remove_child_entities": true
+				}
+			},
+			"fv:despawn_drop": {
+				"minecraft:instant_despawn": {
+					"remove_child_entities": true
+				}
+			},
+			"from_balloon": {
+				"minecraft:addrider": {
+					"entity_type": "fv:pillager_boomer"
+				}
+			},
+			"random_illager1": {
+				"minecraft:addrider": {
+					"entity_type": "fv:pillager_melee"
+				}
+			},
+			"random_illager2": {
+				"minecraft:addrider": {
+					"entity_type": "fv:pillager_gunner"
+				}
+			},
+			"random_illager3": {
+				"minecraft:addrider": {
+					"entity_type": "fv:pillager_tanker"
+				}
+			},
+			"random_illager4": {
+				"minecraft:addrider": {
+					"entity_type": "fv:dwarf_pillager"
+				}
+			},
+			"random_illager5": {
+				"minecraft:addrider": {
+					"entity_type": "fv:pillager_pikeman"
+				}
+			},
+			"drop_general": {
+				"minecraft:addrider": {
+					"entity_type": "fv:dwarf_pillager_general"
+				}
+			},
+			"from_illager": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "fall",
+							"deals_damage": "no"
+						},
+						{
+							"cause": "entity_attack",
+							"deals_damage": "no"
+						},
+						{
+							"cause": "falling_block",
+							"deals_damage": "no"
+						},
+						{
+							"on_damage": {
+								"filters": {
+									"test": "is_family",
+									"subject": "other",
+									"value": "illager"
+								}
+							},
+							"deals_damage": "no"
+						}
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.5
+			},
+			"minecraft:type_family": {
+				"family": [
+					"parachute"
+				]
+			},
+			"minecraft:health": {
+				"value": 5,
+				"max": 5
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": "no"
+					},
+					{
+						"cause": "entity_attack",
+						"deals_damage": "no"
+					},
+					{
+						"cause": "falling_block",
+						"deals_damage": "no"
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "phuongtiensapno"
+							}
+						},
+						"deals_damage": "no"
+					}
+				]
+			},
+			"minecraft:rideable": {
+				"seat_count": 1,
+				"seats": {
+					"position": [
+						0,
+						0.5,
+						0
+					],
+					"lock_rider_rotation": 180,
+					"third_person_camera_radius": 4
+				},
+				"pull_in_entities": true
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:behavior.controlled_by_player": {
+				"priority": 0,
+				"fractional_rotation": 0.5,
+				"fractional_rotation_limit": 5,
+				"mount_speed_multiplier": 0
+			}
+		},
+		"events": {
+			"sky": {
+				"queue_command": {
+					"command": "effect @s slow_falling infinite 2 true"
+				},
+				"remove": {
+					"component_groups": [
+						"fv:despawn",
+						"fv:despawn_drop"
+					]
+				}
+			},
+			"ground": {
+				"add": {
+					"component_groups": [
+						"fv:despawn"
+					]
+				},
+				"queue_command": {
+					"command": "effect @s clear slow_falling"
+				}
+			},
+			"fv:from_balloon": {
+				"add": {
+					"component_groups": [
+						"from_balloon"
+					]
+				}
+			},
+			"fv:from_player": {
+				"queue_command": {
+					"command": "ride @p start_riding @s teleport_ride"
+				}
+			},
+			"fv:drop_general": {
+				"add": {
+					"component_groups": [
+						"drop_general"
+					]
+				}
+			},
+			"fv:from_airship": {
+				"randomize": [
+					{
+						"add": {
+							"component_groups": [
+								"from_illager",
+								"random_illager1"
+							]
+						},
+						"weight": 16
+					},
+					{
+						"add": {
+							"component_groups": [
+								"from_illager",
+								"random_illager2"
+							]
+						},
+						"weight": 16
+					},
+					{
+						"add": {
+							"component_groups": [
+								"from_illager",
+								"random_illager3"
+							]
+						},
+						"weight": 16
+					},
+					{
+						"add": {
+							"component_groups": [
+								"from_illager",
+								"from_balloon"
+							]
+						},
+						"weight": 16
+					},
+					{
+						"add": {
+							"component_groups": [
+								"from_illager",
+								"random_illager4"
+							]
+						},
+						"weight": 70
+					},
+					{
+						"add": {
+							"component_groups": [
+								"from_illager",
+								"random_illager5"
+							]
+						},
+						"weight": 15
+					}
+				]
+			}
+		}
+	}
+}

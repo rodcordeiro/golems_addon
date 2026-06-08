@@ -1,0 +1,50 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:hay_golem",
+			"materials": {
+				"default": "entity_alphatest",
+				"tamed_color": "entity_alphatest_change_color"
+			},
+			"textures": {
+				"default": "textures/entity/hay_golem/hay_golem",
+				"tamed_color": "textures/entity/hay_golem/tamed_scarf"
+			},
+			"geometry": {
+				"default": "geometry.hay_golem",
+				"tamed_color": "geometry.tamed_scarf"
+			},
+			"animations": {
+				"stand": "animation.copper_golem.stand",
+				"attack": "animation.copper_golem.attack",
+				"look_at_target": "animation.humanoid.look_at_target.default",
+				"attacking": "controller.animation.copper.golem.attack",
+				"walking": "animation.copper_golem.walking",
+				"digging": "animation.hay_golem.digging"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+				],
+				"animate": [
+					"walking",
+					"attacking",
+					"look_at_target",
+					{
+						"stand": "query.is_sitting"
+					}
+				]
+			},
+			"render_controllers": [
+				"controller.render.iron_golem_tamed",
+				{
+					"controller.render.tamed_color": "query.is_tamed"
+				}
+			],
+			"spawn_egg": {
+				"texture": "hay_golem"
+			}
+		}
+	}
+}

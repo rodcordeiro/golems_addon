@@ -1,0 +1,74 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.mysterious_merchant.baby": {
+			"initial_state": "baby",
+			"states": {
+				"baby": {
+					"animations": [
+						{
+							"baby_transform": "query.is_baby"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mysterious_merchant.general": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"general",
+						{
+							"look_at_target": "!query.is_sleeping"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mysterious_merchant.move": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"move": "query.modified_move_speed"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.boss.chest": {
+			"initial_state": "start",
+			"states": {
+				"start": {
+					"animations": [
+						"spawn"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						},
+						{
+							"dead": "query.variant==1"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"default": {
+					"transitions": [
+						{
+							"dead": "query.variant==1"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"dead": {
+					"animations": [
+						"open"
+					]
+				}
+			}
+		}
+	}
+}

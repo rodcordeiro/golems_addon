@@ -1,0 +1,33 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:illudiamondite_tanker_chestplate"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"i": {
+				"item": "fv:illudiamondite_ingot"
+			},
+			"a": {
+				"item": "fv:illasteel_tanker_chestplate"
+			}
+		},
+		"pattern": [
+			"iii",
+			"iai",
+			"iii"
+		],
+		"result": {
+			"item": "fv:illudiamondite_tanker_chestplate",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "fv:illasteel_tanker_chestplate"
+			}
+		]
+	}
+}

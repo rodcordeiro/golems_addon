@@ -1,0 +1,67 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:pillager_gunner",
+			"materials": {
+				"default": "pillager"
+			},
+			"textures": {
+				"default": "textures/entity/fv_vanilla/pillager",
+				"armor": "textures/entity/illager_armor/pillager_armor",
+				"gun": "textures/items/weapons/guns/3d_percussion_cap_musket"
+			},
+			"geometry": {
+				"default": "geometry.repillager",
+				"armor": "geometry.fv_pillager_armor",
+				"gun": "geometry.fv_percission_cap_musket_illager"
+			},
+			"spawn_egg": {
+				"texture": "spawn_egg_pillager"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+				],
+				"animate": [
+					"pillager_root_controller"
+				]
+			},
+			"animations": {
+				"humanoid_base_pose": "animation.humanoid.base_pose",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"move": "animation.humanoid.move",
+				"riding.arms": "animation.humanoid.riding.arms",
+				"riding.legs": "animation.humanoid.riding.legs",
+				"holding": "animation.humanoid.holding",
+				"attack.rotations": "animation.humanoid.attack.rotations",
+				"bob": "animation.humanoid.bob",
+				"celebrating": "animation.humanoid.celebrating",
+				"controller_humanoid_base_pose": "controller.animation.humanoid.base_pose",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				"controller_move": "controller.animation.humanoid.move",
+				"controller_riding": "controller.animation.humanoid.riding",
+				"controller_attack": "controller.animation.pillager.gunner.root",
+				"controller_bob": "controller.animation.humanoid.bob",
+				"pillager_root_controller": "controller.animation.fv_pillager.root",
+				"gun_default": "animation.repillager.gun.default",
+				"ready_for_shoot": "animation.repillager.gun.ready_for_shoot",
+				"default_ready": "animation.repillager.gun.default_ready",
+				"has_target": "animation.repillager.gun.has_target",
+				"shooted": "animation.repillager.gun.shooted",
+				"reloading": "animation.repillager.gun.musket_reloading",
+				"hold": "animation.villager_noarmor.crossbow.hold",
+				"controller_has_target": "controller.animation.pillager.gunner_has_taget"
+			},
+			"render_controllers": [
+				"controller.render.fv_pillager",
+				"controller.render.fv_pillager_armor",
+				"controller.render.fv_pillager_gun"
+			],
+			"enable_attachables": false,
+			"hide_armor": true
+		}
+	}
+}

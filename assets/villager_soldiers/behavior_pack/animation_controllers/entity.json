@@ -1,0 +1,842 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.change.mode": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"on_entry": [
+						"/event entity @s no_weapon"
+					],
+					"transitions": [
+						{
+							"bow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:bow')"
+						},
+						{
+							"crossbow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:crossbow')"
+						},
+						{
+							"copper_boom": "query.is_item_name_any('slot.weapon.mainhand',0,'fv:copper_boom')"
+						},
+						{
+							"wingcharge_ball": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:wind_charge')"
+						},
+						{
+							"javelin": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_javelin')"
+						},
+						{
+							"flintlock_style": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_musket')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_pistol')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:percussion_cap_musket')"
+						},
+						{
+							"rifle_attack": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:deadlight_rifle')"
+						},
+						{
+							"reaper_attack": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:golden_reaper')"
+						},
+						{
+							"handle_cannon": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:small_cannon')"
+						}
+					]
+				},
+				"bow": {
+					"on_entry": [
+						"/event entity @s bow"
+					],
+					"transitions": [
+						{
+							"crossbow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:crossbow')"
+						},
+						{
+							"copper_boom": "query.is_item_name_any('slot.weapon.mainhand',0,'fv:copper_boom')"
+						},
+						{
+							"wingcharge_ball": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:wind_charge')"
+						},
+						{
+							"default": "!query.is_item_equipped"
+						},
+						{
+							"javelin": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_javelin')"
+						},
+						{
+							"flintlock_style": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_musket')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_pistol')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:percussion_cap_musket')"
+						},
+						{
+							"rifle_attack": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:deadlight_rifle')"
+						},
+						{
+							"reaper_attack": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:golden_reaper')"
+						},
+						{
+							"handle_cannon": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:small_cannon')"
+						}
+					]
+				},
+				"crossbow": {
+					"on_entry": [
+						"/event entity @s crossbow"
+					],
+					"transitions": [
+						{
+							"bow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:bow')"
+						},
+						{
+							"copper_boom": "query.is_item_name_any('slot.weapon.mainhand',0,'fv:copper_boom')"
+						},
+						{
+							"wingcharge_ball": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:wind_charge')"
+						},
+						{
+							"default": "!query.is_item_equipped"
+						},
+						{
+							"javelin": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_javelin')"
+						},
+						{
+							"flintlock_style": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_musket')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_pistol')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:percussion_cap_musket')"
+						},
+						{
+							"rifle_attack": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:deadlight_rifle')"
+						},
+						{
+							"reaper_attack": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:golden_reaper')"
+						},
+						{
+							"handle_cannon": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:small_cannon')"
+						}
+					]
+				},
+				"copper_boom": {
+					"on_entry": [
+						"/event entity @s copper_boom"
+					],
+					"transitions": [
+						{
+							"bow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:bow')"
+						},
+						{
+							"crossbow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:crossbow')"
+						},
+						{
+							"wingcharge_ball": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:wind_charge')"
+						},
+						{
+							"default": "!query.is_item_equipped"
+						},
+						{
+							"javelin": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_javelin')"
+						},
+						{
+							"flintlock_style": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_musket')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_pistol')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:percussion_cap_musket')"
+						},
+						{
+							"rifle_attack": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:deadlight_rifle')"
+						},
+						{
+							"reaper_attack": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:golden_reaper')"
+						},
+						{
+							"handle_cannon": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:small_cannon')"
+						}
+					]
+				},
+				"wingcharge_ball": {
+					"on_entry": [
+						"/event entity @s wingcharge_ball"
+					],
+					"transitions": [
+						{
+							"bow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:bow')"
+						},
+						{
+							"crossbow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:crossbow')"
+						},
+						{
+							"copper_boom": "query.is_item_name_any('slot.weapon.mainhand',0,'fv:copper_boom')"
+						},
+						{
+							"default": "!query.is_item_equipped"
+						},
+						{
+							"javelin": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_javelin')"
+						},
+						{
+							"flintlock_style": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_musket')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_pistol')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:percussion_cap_musket')"
+						},
+						{
+							"rifle_attack": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:deadlight_rifle')"
+						},
+						{
+							"reaper_attack": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:golden_reaper')"
+						},
+						{
+							"handle_cannon": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:small_cannon')"
+						}
+					]
+				},
+				"javelin": {
+					"on_entry": [
+						"/event entity @s javelin"
+					],
+					"transitions": [
+						{
+							"bow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:bow')"
+						},
+						{
+							"crossbow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:crossbow')"
+						},
+						{
+							"copper_boom": "query.is_item_name_any('slot.weapon.mainhand',0,'fv:copper_boom')"
+						},
+						{
+							"default": "!query.is_item_equipped"
+						},
+						{
+							"wingcharge_ball": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:wind_charge')"
+						},
+						{
+							"flintlock_style": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_musket')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_pistol')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:percussion_cap_musket')"
+						},
+						{
+							"rifle_attack": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:deadlight_rifle')"
+						},
+						{
+							"reaper_attack": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:golden_reaper')"
+						},
+						{
+							"handle_cannon": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:small_cannon')"
+						}
+					]
+				},
+				"flintlock_style": {
+					"animations": [
+						{
+							"musket_and_cap": "query.equipped_item_any_tag('slot.weapon.mainhand', 'fv:flintlock_musket') || query.equipped_item_any_tag('slot.weapon.mainhand', 'fv:percussion_cap_musket')"
+						},
+						{
+							"flintlock_pistol": "query.equipped_item_any_tag('slot.weapon.mainhand', 'fv:flintlock_pistol')"
+						}
+					],
+					"on_entry": [
+						"/event entity @s flintlock_style"
+					],
+					"transitions": [
+						{
+							"bow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:bow')"
+						},
+						{
+							"crossbow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:crossbow')"
+						},
+						{
+							"copper_boom": "query.is_item_name_any('slot.weapon.mainhand',0,'fv:copper_boom')"
+						},
+						{
+							"wingcharge_ball": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:wind_charge')"
+						},
+						{
+							"javelin": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_javelin')"
+						},
+						{
+							"rifle_attack": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:deadlight_rifle')"
+						},
+						{
+							"reaper_attack": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:golden_reaper')"
+						},
+						{
+							"handle_cannon": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:small_cannon')"
+						}
+					]
+				},
+				"reaper_attack": {
+					"animations": [
+						"golden_reaper"
+					],
+					"on_entry": [
+						"/event entity @s reaper_attack"
+					],
+					"transitions": [
+						{
+							"bow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:bow')"
+						},
+						{
+							"crossbow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:crossbow')"
+						},
+						{
+							"copper_boom": "query.is_item_name_any('slot.weapon.mainhand',0,'fv:copper_boom')"
+						},
+						{
+							"wingcharge_ball": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:wind_charge')"
+						},
+						{
+							"javelin": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_javelin')"
+						},
+						{
+							"flintlock_style": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_musket')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_pistol')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:percussion_cap_musket')"
+						},
+						{
+							"rifle_attack": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:deadlight_rifle')"
+						},
+						{
+							"handle_cannon": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:small_cannon')"
+						}
+					]
+				},
+				"rifle_attack": {
+					"animations": [
+						"deadlight_rifle"
+					],
+					"on_entry": [
+						"/event entity @s rifle_attack"
+					],
+					"transitions": [
+						{
+							"bow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:bow')"
+						},
+						{
+							"crossbow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:crossbow')"
+						},
+						{
+							"copper_boom": "query.is_item_name_any('slot.weapon.mainhand',0,'fv:copper_boom')"
+						},
+						{
+							"wingcharge_ball": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:wind_charge')"
+						},
+						{
+							"javelin": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_javelin')"
+						},
+						{
+							"flintlock_style": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_musket')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_pistol')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:percussion_cap_musket')"
+						},
+						{
+							"reaper_attack": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:golden_reaper')"
+						},
+						{
+							"handle_cannon": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:small_cannon')"
+						}
+					]
+				},
+				"handle_cannon": {
+					"on_entry": [
+						"/event entity @s handle_cannon"
+					],
+					"transitions": [
+						{
+							"bow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:bow')"
+						},
+						{
+							"crossbow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:crossbow')"
+						},
+						{
+							"copper_boom": "query.is_item_name_any('slot.weapon.mainhand',0,'fv:copper_boom')"
+						},
+						{
+							"wingcharge_ball": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:wind_charge')"
+						},
+						{
+							"javelin": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_javelin')"
+						},
+						{
+							"flintlock_style": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_musket')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_pistol')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:percussion_cap_musket')"
+						},
+						{
+							"rifle_attack": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:deadlight_rifle')"
+						},
+						{
+							"reaper_attack": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:golden_reaper')"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.change.melee.mode": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"sword": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_sword')||!query.is_item_equipped"
+						},
+						{
+							"axe": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_axe')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_hammer')"
+						},
+						{
+							"spear": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_spear')"
+						},
+						{
+							"pike": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_pike')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_lance')"
+						},
+						{
+							"halberd": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_halberd')"
+						},
+						{
+							"bow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:bow')"
+						}
+					]
+				},
+				"sword": {
+					"on_entry": [
+						"/event entity @s sword"
+					],
+					"transitions": [
+						{
+							"axe": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_axe')"
+						},
+						{
+							"spear": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_spear')"
+						},
+						{
+							"pike": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_pike')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_lance')"
+						},
+						{
+							"halberd": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_halberd')"
+						},
+						{
+							"bow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:bow')"
+						}
+					]
+				},
+				"axe": {
+					"on_entry": [
+						"/event entity @s axe"
+					],
+					"transitions": [
+						{
+							"sword": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_sword')||!query.is_item_equipped"
+						},
+						{
+							"spear": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_spear')"
+						},
+						{
+							"pike": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_pike')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_lance')"
+						},
+						{
+							"halberd": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_halberd')"
+						},
+						{
+							"bow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:bow')"
+						}
+					]
+				},
+				"spear": {
+					"on_entry": [
+						"/event entity @s spear"
+					],
+					"transitions": [
+						{
+							"sword": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_sword')||!query.is_item_equipped"
+						},
+						{
+							"axe": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_axe')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_hammer')"
+						},
+						{
+							"pike": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_pike')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_lance')"
+						},
+						{
+							"halberd": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_halberd')"
+						},
+						{
+							"bow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:bow')"
+						}
+					]
+				},
+				"pike": {
+					"on_entry": [
+						"/event entity @s pike"
+					],
+					"transitions": [
+						{
+							"sword": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_sword')||!query.is_item_equipped"
+						},
+						{
+							"axe": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_axe')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_hammer')"
+						},
+						{
+							"spear": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_spear')"
+						},
+						{
+							"halberd": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_halberd')"
+						},
+						{
+							"bow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:bow')"
+						}
+					]
+				},
+				"halberd": {
+					"on_entry": [
+						"/event entity @s halberd"
+					],
+					"transitions": [
+						{
+							"sword": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_sword')||!query.is_item_equipped"
+						},
+						{
+							"axe": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_axe')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_hammer')"
+						},
+						{
+							"spear": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_spear')"
+						},
+						{
+							"pike": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_pike')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_lance')"
+						},
+						{
+							"bow": "query.is_item_name_any('slot.weapon.mainhand',0,'minecraft:bow')"
+						}
+					]
+				},
+				"bow": {
+					"on_entry": [
+						"/event entity @s bow"
+					],
+					"transitions": [
+						{
+							"sword": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_sword')||!query.is_item_equipped"
+						},
+						{
+							"axe": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_axe')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_hammer')"
+						},
+						{
+							"spear": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_spear')"
+						},
+						{
+							"pike": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_pike')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_lance')"
+						},
+						{
+							"halberd": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_halberd')"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.stay_and_move": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"stay": "query.property('fv:stay_mode')==true"
+						}
+					]
+				},
+				"stay": {
+					"on_entry": [
+						"/effect @s slowness infinite 255 true"
+					],
+					"on_exit": [
+						"/effect @s clear slowness"
+					],
+					"transitions": [
+						{
+							"default": "query.property('fv:stay_mode')==false"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.structure_catapult": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"step1": "query.health<=83"
+						},
+						{
+							"step2": "query.health<=66"
+						},
+						{
+							"step3": "query.health<=49"
+						},
+						{
+							"step4": "query.health<=32"
+						},
+						{
+							"step5": "query.health<=16"
+						}
+					]
+				},
+				"step1": {
+					"on_entry": [
+						"/event entity @s step1"
+					],
+					"transitions": [
+						{
+							"step2": "query.health<=66"
+						}
+					]
+				},
+				"step2": {
+					"on_entry": [
+						"/event entity @s step2"
+					],
+					"transitions": [
+						{
+							"step3": "query.health<=49"
+						}
+					]
+				},
+				"step3": {
+					"on_entry": [
+						"/event entity @s step3"
+					],
+					"transitions": [
+						{
+							"step4": "query.health<=32"
+						}
+					]
+				},
+				"step4": {
+					"on_entry": [
+						"/event entity @s step4"
+					],
+					"transitions": [
+						{
+							"step5": "query.health<=16"
+						}
+					]
+				},
+				"step5": {
+					"on_entry": [
+						"/event entity @s step5"
+					]
+				}
+			}
+		},
+		"controller.animation.eatfull": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"full": "query.property('fv:can_eat')>=100"
+						}
+					]
+				},
+				"full": {
+					"on_entry": [
+						"/event entity @s full"
+					],
+					"transitions": [
+						{
+							"default": "query.property('fv:can_eat')==0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.scared": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"scared": "query.property('fv:scared')==true"
+						}
+					]
+				},
+				"scared": {
+					"on_entry": [
+						"/effect @s resistance infinite 2 true",
+						"/effect @s slowness infinite 100 true"
+					],
+					"on_exit": [
+						"/effect @s clear resistance",
+						"/effect @s clear slowness"
+					],
+					"transitions": [
+						{
+							"default": "query.property('fv:scared')==false"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.is_on_ground": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"grounded": "query.is_on_ground"
+						}
+					]
+				},
+				"grounded": {
+					"on_entry": [
+						"/event entity @s fv:on_ground"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_on_ground"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.cowboy.reload": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"rifle_reload": "query.property('fv:deadlight_rifle_ammo')==0"
+						},
+						{
+							"reaper_reload": "query.property('fv:golden_reaper_ammo')==0"
+						}
+					]
+				},
+				"rifle_reload": {
+					"on_entry": [
+						"/event entity @s fv:rife_reloading"
+					],
+					"transitions": [
+						{
+							"default": "query.property('fv:reloading')=='none'"
+						}
+					]
+				},
+				"reaper_reload": {
+					"on_entry": [
+						"/event entity @s fv:reaper_reloading"
+					],
+					"transitions": [
+						{
+							"default": "query.property('fv:reloading')=='none'"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.cowboy.shooted": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"rifle_shoot": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:deadlight_rifle')&&variable.attack_time>0"
+						},
+						{
+							"reaper_shoot": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:golden_reaper')&&variable.attack_time>0"
+						}
+					]
+				},
+				"rifle_shoot": {
+					"on_entry": [
+						"/event entity @s fv:rifle_shoot"
+					],
+					"transitions": [
+						{
+							"default": "variable.attack_time<=0"
+						}
+					]
+				},
+				"reaper_shoot": {
+					"on_entry": [
+						"/event entity @s fv:reaper_shoot"
+					],
+					"transitions": [
+						{
+							"default": "variable.attack_time<=0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.cavalry.reload": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"reloading": "query.property('fv:ammo')==0&&!query.has_target"
+						}
+					]
+				},
+				"reloading": {
+					"on_entry": [
+						"/event entity @s fv:reloading"
+					],
+					"transitions": [
+						{
+							"default": "query.property('fv:is_reloading')==false"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.cavalry.change_mode": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"melee_mode": "variable.attack_time>0&&query.variant==2"
+						}
+					]
+				},
+				"melee_mode": {
+					"on_entry": [
+						"/event entity @s melee_mode"
+					],
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.parachute.change_mode": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"sky": "!query.is_on_ground"
+						},
+						{
+							"ground": "query.is_on_ground"
+						}
+					]
+				},
+				"sky": {
+					"on_entry": [
+						"/event entity @s sky"
+					],
+					"transitions": [
+						{
+							"ground": "query.is_on_ground"
+						}
+					]
+				},
+				"ground": {
+					"on_entry": [
+						"/event entity @s ground"
+					],
+					"transitions": [
+						{
+							"sky": "!query.is_on_ground"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mainboos.chest": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"dead": "!query.is_alive"
+						}
+					]
+				},
+				"dead": {
+					"on_entry": [
+						"/summon fv:boss_chest ~ ~1 ~"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,81 @@
+{
+	"format_version": "1.21.130",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fv:netherite_lance",
+			"menu_category": {
+				"category": "equipment",
+				"group": "minecraft:itemGroup.name.spear"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true,
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:durability": {
+				"max_durability": 2031
+			},
+			"minecraft:icon": "fv_netherite_lance",
+			"minecraft:piercing_weapon": {
+				"reach": {
+					"min": 2,
+					"max": 4.5
+				},
+				"hitbox_margin": 0.25
+			},
+			"minecraft:damage": 6,
+			"minecraft:enchantable": {
+				"value": 14,
+				"slot": "sword"
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"minecraft:netherite_ingot"
+						],
+						"repair_amount": "query.max_durability*0.25"
+					},
+					{
+						"items": [
+							"fv:netherite_lance"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+					}
+				]
+			},
+			"minecraft:digger": {
+				"use_efficiency": true,
+				"destroy_speeds": [
+					{
+						"block": "minecraft:web",
+						"speed": 15
+					},
+					{
+						"block": "minecraft:bamboo",
+						"speed": 60
+					}
+				]
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_trident",
+					"fv:is_lance",
+					"minecraft:netherite_tier"
+				]
+			},
+			"fv:lance_third_persion_animation": {},
+			"fv:lance_hit": {},
+			"fv:lance_attack": {},
+			"minecraft:use_animation": "none",
+			"minecraft:use_modifiers": {
+				"use_duration": 3666,
+				"movement_modifier": 1
+			},
+			"minecraft:cooldown": {
+				"category": "lance",
+				"duration": 3
+			}
+		}
+	}
+}

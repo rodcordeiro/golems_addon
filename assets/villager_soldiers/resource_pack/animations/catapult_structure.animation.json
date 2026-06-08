@@ -1,0 +1,125 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.catapult_structure.default": {
+			"loop": true,
+			"bones": {
+				"step1": {
+					"scale": 0
+				},
+				"step3": {
+					"scale": 0
+				},
+				"step2": {
+					"scale": 0
+				},
+				"step4": {
+					"scale": 0
+				},
+				"step5": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.catapult_structure.step1": {
+			"loop": true,
+			"bones": {
+				"step1": {
+					"scale": 1
+				},
+				"step3": {
+					"scale": 0
+				},
+				"step2": {
+					"scale": 0
+				},
+				"step4": {
+					"scale": 0
+				},
+				"step5": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.catapult_structure.step2": {
+			"loop": true,
+			"bones": {
+				"step1": {
+					"scale": 1
+				},
+				"step3": {
+					"scale": 0
+				},
+				"step2": {
+					"scale": 1
+				},
+				"step4": {
+					"scale": 0
+				},
+				"step5": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.catapult_structure.step3": {
+			"loop": true,
+			"bones": {
+				"step1": {
+					"scale": 1
+				},
+				"step3": {
+					"scale": 1
+				},
+				"step2": {
+					"scale": 1
+				},
+				"step4": {
+					"scale": 0
+				},
+				"step5": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.catapult_structure.step4": {
+			"loop": true,
+			"bones": {
+				"step1": {
+					"scale": 1
+				},
+				"step3": {
+					"scale": 1
+				},
+				"step2": {
+					"scale": 1
+				},
+				"step4": {
+					"scale": 1
+				},
+				"step5": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.catapult_structure.step5": {
+			"loop": true,
+			"bones": {
+				"step1": {
+					"scale": 1
+				},
+				"step3": {
+					"scale": 1
+				},
+				"step2": {
+					"scale": 1
+				},
+				"step4": {
+					"scale": 1
+				},
+				"step5": {
+					"scale": 1
+				}
+			}
+		}
+	}
+}

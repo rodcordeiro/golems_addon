@@ -1,0 +1,58 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:villager_healer",
+			"materials": {
+				"default": "evoker"
+			},
+			"textures": {
+				"default": "textures/entity/villager2/villager_cleric_master",
+				"wrist_belt": "textures/entity/villager2/wrist_belt",
+				"tamed_color": "textures/entity/villager2/tamed_color"
+			},
+			"geometry": {
+				"default": "geometry.cleric_master",
+				"wrist_belt": "geometry.wrist_belt_evoker",
+				"tamed_color": "geometry.tamed_color_evoker"
+			},
+			"scripts": {
+				"scale": "0.9375",
+				"animate": [
+					"controller_general",
+					"controller_move",
+					{
+						"melee_attack": "variable.attack_time>0&&!query.is_casting"
+					}
+				]
+			},
+			"animations": {
+				"general": "animation.fv_evoker.general",
+				"casting": "animation.fv_evoker.casting",
+				"look_at_target": "animation.common.look_at_target",
+				"move": "animation.fv_evoker.move_with_hand",
+				"riding.legs": "animation.humanoid.riding.legs",
+				"celebrating": "animation.humanoid.celebrating",
+				"controller_general": "controller.animation.villager_clan_leader.general",
+				"controller_move": "controller.animation.fv_villager.move",
+				"controller_riding": "controller.animation.humanoid.riding_legs_only",
+				"melee_attack": "animation.piglin.hand.attack"
+			},
+			"particle_effects": {
+				"spell": "minecraft:evoker_spell"
+			},
+			"render_controllers": [
+				"controller.render.villager_healer",
+				{
+					"controller.render.wrist_belt_evoker": "query.is_sitting"
+				},
+				{
+					"controller.render.tamed_color_evoker": "query.is_tamed"
+				}
+			],
+			"spawn_egg": {
+				"texture": "fv_spawn_egg_villager_healer"
+			}
+		}
+	}
+}

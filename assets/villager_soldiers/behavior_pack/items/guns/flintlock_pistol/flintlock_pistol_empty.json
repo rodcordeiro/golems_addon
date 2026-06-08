@@ -1,0 +1,36 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fv:flintlock_pistol_empty",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fv_flintlock_pistol",
+			"minecraft:max_stack_size": 1,
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:custom_components": [],
+			"minecraft:durability": {
+				"max_durability": 800,
+				"damage_chance": {
+					"min": 20,
+					"max": 60
+				}
+			},
+			"minecraft:cooldown": {
+				"category": "flintlock_pistol_empty",
+				"duration": 2
+			},
+			"minecraft:tags": {
+				"tags": [
+					"fv:flintlock_pistol",
+					"fv:flintlock_pistol_empty",
+					"fv:short_gun",
+					"fv:guns"
+				]
+			}
+		}
+	}
+}

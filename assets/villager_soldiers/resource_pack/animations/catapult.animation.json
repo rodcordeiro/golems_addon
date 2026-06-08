@@ -1,0 +1,142 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.catapult.scale": {
+			"loop": true,
+			"bones": {
+				"catapult": {
+					"scale": 2
+				}
+			}
+		},
+		"animation.catapult.starting": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 2,
+			"bones": {
+				"stonehand": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.4167": [
+							-35,
+							0,
+							0
+						],
+						"0.5": [
+							-34,
+							0,
+							0
+						],
+						"0.7083": [
+							-35,
+							0,
+							0
+						],
+						"1.0": [
+							-52.5,
+							0,
+							0
+						],
+						"1.0833": [
+							-51,
+							0,
+							0
+						],
+						"1.25": [
+							-52.5,
+							0,
+							0
+						],
+						"1.8333": [
+							-85,
+							0,
+							0
+						],
+						"1.9167": [
+							-84,
+							0,
+							0
+						],
+						"2.0": [
+							-85,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.catapult.default": {
+			"loop": true,
+			"bones": {
+				"stone": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.catapult.loaded": {
+			"loop": true,
+			"bones": {
+				"stone": {
+					"scale": 1
+				}
+			}
+		},
+		"animation.catapult.shoot": {
+			"animation_length": 0.4167,
+			"bones": {
+				"stonehand": {
+					"rotation": {
+						"0.0": [
+							-85,
+							0,
+							0
+						],
+						"0.0833": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							-5,
+							0,
+							0
+						],
+						"0.25": [
+							0,
+							0,
+							0
+						],
+						"0.3333": [
+							-2.5,
+							0,
+							0
+						],
+						"0.4167": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"stone": {
+					"scale": {
+						"0.0": [
+							1,
+							1,
+							1
+						],
+						"0.0417": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		}
+	}
+}

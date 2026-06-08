@@ -1,0 +1,45 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:attachable": {
+		"description": {
+			"identifier": "fv:golden_reaper_empty",
+			"materials": {
+				"default": "entity_alphatest",
+				"enchanted": "entity_alphatest_glint"
+			},
+			"textures": {
+				"default": "textures/items/weapons/guns/3d_fv_golden_reaper",
+				"enchanted": "textures/misc/enchanted_item_glint"
+			},
+			"geometry": {
+				"default": "geometry.fv_golden_reaper"
+			},
+			"animations": {
+				"first_persion": "animation.fv_golden_reaper.first_person",
+				"third_persion": "animation.fv_golden_reaper.third_person",
+				"reloading_first_persion": "animation.fv_golden_reaper.first_person_reloading",
+				"reloading_third_persion": "animation.fv_golden_reaper.third_person_reloading",
+				"general_fpt": "controller.animation.guns.flintlock_musket_empty.reloading_fpt",
+				"general_tpt": "controller.animation.guns.golden_reaper_empty.reloading_tpt"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"general_fpt": "c.is_first_person"
+					},
+					{
+						"general_tpt": "!c.is_first_person"
+					}
+				]
+			},
+			"render_controllers": [
+				"controller.render.item_default"
+			],
+			"sound_effects": {
+				"loaded": "revoler.loaded",
+				"open": "revoler.open",
+				"off": "revoler.off"
+			}
+		}
+	}
+}

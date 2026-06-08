@@ -1,0 +1,39 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "flintlock_musket:bow",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fv_flintlock_musket",
+			"minecraft:max_stack_size": 1,
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:durability": {
+				"max_durability": 900,
+				"damage_chance": {
+					"min": 20,
+					"max": 60
+				}
+			},
+			"minecraft:cooldown": {
+				"category": "flintlock_musket",
+				"duration": 1
+			},
+			"minecraft:use_animation": "bow",
+			"minecraft:use_modifiers": {
+				"use_duration": 3666,
+				"movement_modifier": 0.5
+			},
+			"minecraft:tags": {
+				"tags": [
+					"fv:flintlock_musket",
+					"fv:long_gun",
+					"fv:guns"
+				]
+			}
+		}
+	}
+}

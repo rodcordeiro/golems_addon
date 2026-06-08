@@ -1,0 +1,43 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "fv:stone_javelin",
+      "materials": {
+        "default": "entity_alphatest",
+        "enchanted": "entity_alphatest_glint"
+      },
+      "textures": {
+        "default": "textures/items/weapons/javelin/stone",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.javelin"
+      },
+      "animations": {
+        "wield": "controller.animation.javelin.spear.wield",
+        "wield_first_person": "animation.javelin.spear.wield_first_person",
+        "wield_first_person_raise": "animation.javelin.spear.wield_first_person_raise",
+        "wield_first_person_raise_shake": "animation.javelin.spear.wield_first_person_raise_shake",
+        "wield_first_person_riptide": "animation.javelin.spear.wield_first_person_riptide",
+        "wield_third_person": "animation.javelin.spear.wield_third_person",
+        "wield_third_person_raise": "animation.javelin.spear.wield_third_person_raise",
+        "default": "animation.javelin.spear.default",
+        "scale": "animation.spear_item.64_scale_default"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.charge_amount = math.clamp((query.main_hand_item_max_duration - (query.main_hand_item_use_duration - query.frame_alpha + 1.0)) / 10.0, 0.0, 1.0f);"
+        ],
+        "animate": [
+          "wield",
+          "default",
+          "scale"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.item_default"
+      ]
+    }
+  }
+}

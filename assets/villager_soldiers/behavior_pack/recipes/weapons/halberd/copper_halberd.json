@@ -1,0 +1,36 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:copper_halberd"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"i": {
+				"item": "minecraft:copper_ingot"
+			},
+			"s": {
+				"item": "fv:long_stick"
+			}
+		},
+		"pattern": [
+			" ii",
+			" i ",
+			"s  "
+		],
+		"result": {
+			"item": "fv:copper_halberd",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "fv:long_stick"
+			},
+			{
+				"item": "minecraft:copper_ingot"
+			}
+		]
+	}
+}

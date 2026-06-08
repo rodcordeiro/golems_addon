@@ -1,0 +1,200 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.handle_cannon.fpp": {
+			"loop": true,
+			"bones": {
+				"gun": {
+					"rotation": [
+						90.31112,
+						66.33578,
+						-44.00509
+					],
+					"position": [
+						-7.374,
+						30.52052,
+						-1.76698
+					]
+				}
+			}
+		},
+		"animation.handle_cannon.fpp_pull": {
+			"loop": true,
+			"bones": {
+				"gun": {
+					"rotation": [
+						44.0337,
+						57.88985,
+						-90.05379
+					],
+					"position": [
+						-12.29013,
+						32.49678,
+						-1.87927
+					]
+				}
+			}
+		},
+		"animation.handle_cannon.tpp": {
+			"loop": true,
+			"bones": {
+				"gun": {
+					"rotation": [
+						90,
+						0,
+						0
+					],
+					"position": [
+						0,
+						26,
+						-1
+					]
+				}
+			}
+		},
+		"animation.handle_cannon.tpp_pull": {
+			"loop": true,
+			"bones": {
+				"gun": {
+					"rotation": [
+						90,
+						0,
+						0
+					],
+					"position": [
+						0,
+						32,
+						-1
+					]
+				}
+			}
+		},
+		"animation.handle_cannon.reloading": {
+			"animation_length": 2,
+			"bones": {
+				"ball": {
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.0417": [
+							0,
+							0,
+							-5
+						],
+						"0.25": [
+							0,
+							0,
+							-5
+						],
+						"1.0": [
+							0,
+							0,
+							-4
+						],
+						"1.25": [
+							0,
+							0,
+							-5
+						],
+						"1.375": [
+							0,
+							0,
+							-3
+						],
+						"2.0": [
+							0,
+							0,
+							0
+						]
+					},
+					"scale": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							1,
+							1,
+							1
+						]
+					}
+				}
+			}
+		},
+		"animation.handle_cannon.v2_no_charged": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.25,
+			"bones": {
+				"trc": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.125": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							65,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.handle_cannon.v2_reloading": {
+			"animation_length": 1.5,
+			"bones": {
+				"ball": {
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.0417": [
+							0,
+							0,
+							-8
+						],
+						"0.3333": [
+							0,
+							0,
+							-8
+						],
+						"1.5": [
+							0,
+							0,
+							0
+						]
+					},
+					"scale": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							0,
+							0,
+							0
+						],
+						"0.3333": [
+							1,
+							1,
+							1
+						]
+					}
+				}
+			}
+		}
+	}
+}

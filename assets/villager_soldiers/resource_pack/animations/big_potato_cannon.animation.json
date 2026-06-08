@@ -1,0 +1,17 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.big_potato_cannon.default": {
+			"loop": true,
+			"bones": {
+				"cannon": {
+					"rotation": [
+						-10,
+						0,
+						0
+					]
+				}
+			}
+		}
+	}
+}

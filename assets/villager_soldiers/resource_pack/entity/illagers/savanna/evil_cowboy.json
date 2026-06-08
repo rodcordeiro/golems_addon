@@ -1,0 +1,105 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:evil_cowboy",
+			"materials": {
+				"default": "vindicator"
+			},
+			"textures": {
+				"default": "textures/entity/new_illagers/savanna/evil_cowboy",
+				"cape": "textures/entity/new_illagers/savanna/cape",
+				"armor": "textures/entity/new_illagers/savanna/cowboyhat",
+				"deadlight_rifle": "textures/items/weapons/guns/3d_fv_deadlight_rifle",
+				"golden_reaper": "textures/items/weapons/guns/3d_fv_golden_reaper"
+			},
+			"geometry": {
+				"default": "geometry.repillager",
+				"cape": "geometry.cape_illager",
+				"armor": "geometry.cowboyhat",
+				"deadlight_rifle": "geometry.deadlight_rifle_entity",
+				"golden_reaper": "geometry.fv_golden_reaper_entity"
+			},
+			"spawn_egg": {
+				"texture": "fv_spawn_egg_savanna_illager"
+			},
+			"scripts": {
+				"scale": "0.9375",
+				"pre_animation": [
+					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+					"variable.attack = Math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0) * 57.3;",
+					"variable.attack2 = Math.sin(variable.attack_time * 180.0) * 57.3;",
+					"variable.z_bob = Math.cos(query.life_time * 103.13244) * 2.865 + 2.865;",
+					"variable.x_bob = Math.sin(query.life_time * 76.776372) * 2.865;",
+					"variable.reloading = query.property('fv:reloading');"
+				],
+				"animate": [
+					"pillager_root_controller",
+					"cape",
+					"controllercaperun",
+					{
+						"riding_seat": "query.is_riding"
+					},
+					{
+						"rifle_scale": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:deadlight_rifle')"
+					},
+					{
+						"reaper_scale": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:golden_reaper')"
+					},
+					"hand_gun_controller",
+					"cowboy_reload_controller",
+					"cowboy_shooting_controller"
+				]
+			},
+			"animations": {
+				"humanoid_base_pose": "animation.humanoid.base_pose",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"move": "animation.humanoid.move",
+				"riding.arms": "animation.humanoid.riding.arms",
+				"riding.legs": "animation.humanoid.riding.legs",
+				"holding": "animation.humanoid.holding",
+				"attack.rotations": "animation.humanoid.attack.rotations",
+				"bob": "animation.humanoid.bob",
+				"celebrating": "animation.humanoid.celebrating",
+				"controller_humanoid_base_pose": "controller.animation.humanoid.base_pose",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				"controller_move": "controller.animation.humanoid.move",
+				"controller_riding": "controller.animation.humanoid.riding",
+				"controller_bob": "controller.animation.humanoid.bob",
+				"pillager_root_controller": "controller.animation.fv_pillager.root",
+				"cape": "animation.cape_illager.moving",
+				"caperun": "animation.cape_illager.run",
+				"controllercaperun": "controller.animation.cape.running",
+				"riding_seat": "animation.repillager.gun.riding_seat",
+				"gun_two_hand": "animation.humanoid.bow_and_arrow",
+				"gun_one_hand": "animation.pillager.onehand.hold",
+				"rifle_scale": "animation.repillager.gun.rifle_scale",
+				"rifle_default": "animation.repillager.gun.rifle_default",
+				"rifle_reloading": "animation.repillager.gun.rifle_reloading",
+				"lendan": "animation.repillager.gun.lendan",
+				"reaper_scale": "animation.repillager.gun.reaper_scale",
+				"reaper_has_target": "animation.repillager.gun.reaper_has_target",
+				"reaper_reloading": "animation.repillager.gun.reaper_reloading",
+				"reaper_shooting": "animation.repillager.gun.reaper_shooting",
+				"hand_gun_controller": "controller.animation.illager.hand_gun.controller",
+				"cowboy_reload_controller": "controller.animation.cowboy.reload",
+				"cowboy_shooting_controller": "controller.animation.cowboy.shooting"
+			},
+			"render_controllers": [
+				"controller.render.fv_pillager",
+				"controller.render.fv_default_cape",
+				"controller.render.fv_pillager_armor",
+				{
+					"controller.render.fv_deadlight_rifle_entity": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:deadlight_rifle')"
+				},
+				{
+					"controller.render.fv_golden_reaper_entity": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:golden_reaper')"
+				}
+			],
+			"enable_attachables": false,
+			"hide_armor": true
+		}
+	}
+}

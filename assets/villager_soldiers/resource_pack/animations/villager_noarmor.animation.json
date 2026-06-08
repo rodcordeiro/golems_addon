@@ -1,0 +1,268 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.villager_noarmor.armor": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"scale": 1.1
+				},
+				"head": {
+					"position": [
+						0,
+						1.3,
+						0
+					]
+				},
+				"head1": {
+					"position": [
+						0,
+						-1.3,
+						0
+					]
+				},
+				"body1": {
+					"scale": 0.9
+				}
+			}
+		},
+		"animation.villager_noarmor.noout": {
+			"loop": true,
+			"bones": {
+				"out": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.villager_noarmor.shield": {
+			"loop": true,
+			"bones": {
+				"leftarm": {
+					"rotation": [
+						"-69.8246-this",
+						"14.9416-this",
+						1.3378
+					]
+				},
+				"leftItem": {
+					"rotation": [
+						"-1.0583-this",
+						"16.8773-this",
+						"69.246-this"
+					],
+					"position": [
+						0.51567,
+						-1.81381,
+						-0.66647
+					]
+				}
+			}
+		},
+		"animation.villager_noarmor.horse_hold_attack": {
+			"loop": true,
+			"bones": {
+				"rightarm": {
+					"rotation": [
+						"-149.1635-this",
+						"-1.4213-this",
+						-21.34642
+					]
+				}
+			}
+		},
+		"animation.villager_noarmor.horse_attack": {
+			"loop": true,
+			"bones": {
+				"waist": {
+					"rotation": [
+						"25.7025-this",
+						"-16.9835-this",
+						"-4.1255-this"
+					]
+				},
+				"rightarm": {
+					"rotation": [
+						"-24.4567-this",
+						"9.7603-this",
+						6.26231
+					]
+				},
+				"rightItem": {
+					"rotation": [
+						"65-this",
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.villager_noarmor.horse_default": {
+			"loop": true,
+			"bones": {
+				"rightarm": {
+					"rotation": [
+						"-25-this",
+						0,
+						10
+					]
+				}
+			}
+		},
+		"animation.villager_noarmor.staying": {
+			"loop": true,
+			"bones": {
+				"rightarm": {
+					"rotation": [
+						"-42.8742-this",
+						"-43.5022-this",
+						28.29062
+					]
+				}
+			}
+		},
+		"animation.villager_noarmor.staying2": {
+			"loop": true,
+			"bones": {
+				"rightarm": {
+					"rotation": [
+						"-56.6994-this",
+						"-49.9583-this",
+						19.00267
+					]
+				},
+				"leftarm": {
+					"rotation": [
+						"-58.4712-this",
+						"10.5212-this",
+						36.65011
+					]
+				}
+			}
+		},
+		"animation.villager_noarmor.crossbow.charge": {
+			"loop": true,
+			"bones": {
+				"leftarm": {
+					"rotation": [
+						"math.lerp(-55.62,-90,variable.crossbow_charge)-this",
+						"math.lerp(22.92,48.7,variable.crossbow_charge)-this",
+						0
+					]
+				},
+				"rightarm": {
+					"rotation": [
+						"-55.62-this",
+						"-45.84-this",
+						0
+					]
+				}
+			}
+		},
+		"animation.villager_noarmor.crossbow.hold": {
+			"loop": true,
+			"bones": {
+				"leftarm": {
+					"rotation": [
+						"-85.94+query.target_x_rotation-this",
+						"34.38+math.clamp(query.target_y_rotation,-45,25)-this",
+						0
+					]
+				},
+				"rightarm": {
+					"rotation": [
+						"-84.27+query.target_x_rotation-this",
+						"-17.19+math.clamp(query.target_y_rotation,-25,45)-this",
+						0
+					]
+				}
+			}
+		},
+		"animation.villager_noarmor.sleeping": {
+			"loop": true,
+			"bones": {
+				"waist": {
+					"rotation": [
+						-90,
+						0,
+						0
+					],
+					"position": [
+						0,
+						-9,
+						-3
+					]
+				}
+			}
+		},
+		"animation.villager_noarmor.sleeping_head": {
+			"loop": true,
+			"animation_length": 9,
+			"bones": {
+				"head": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.5": [
+							0,
+							-32.5,
+							0
+						],
+						"0.75": [
+							0,
+							-60,
+							0
+						],
+						"1.0": [
+							0,
+							-70,
+							0
+						],
+						"1.25": [
+							0,
+							-70,
+							0
+						],
+						"3.75": [
+							0,
+							-70,
+							0
+						],
+						"4.5": [
+							0,
+							10,
+							0
+						],
+						"5.0": [
+							0,
+							52.5,
+							0
+						],
+						"5.5": [
+							0,
+							70,
+							0
+						],
+						"7.0": [
+							0,
+							75,
+							0
+						],
+						"8.0": [
+							0,
+							0,
+							0
+						],
+						"9.0": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		}
+	}
+}

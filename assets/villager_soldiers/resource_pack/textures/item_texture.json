@@ -1,0 +1,783 @@
+{
+	"resource_pack_name": "faction war vanilla",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"bamboo_turret": {
+			"textures": "textures/items/bamboo_turret_golem"
+		},
+		"small_irongolem": {
+			"textures": "textures/items/small_irongolem"
+		},
+		"melon_golem": {
+			"textures": "textures/items/melon_golem"
+		},
+		"copper_golem": {
+			"textures": "textures/items/copper_golem"
+		},
+		"shooter": {
+			"textures": "textures/items/shooter"
+		},
+		"minecart_shooter": {
+			"textures": "textures/items/minecart_shooter"
+		},
+		"fv_copper_boom": {
+			"textures": "textures/items/copper_boom"
+		},
+		"copper_watcher": {
+			"textures": "textures/items/copper_watcher"
+		},
+		"fv_baby_steed": {
+			"textures": "textures/items/horse_baby"
+		},
+		"fv_steed_saddled": {
+			"textures": "textures/items/horse_adult"
+		},
+		"fv_camel_war_baby": {
+			"textures": "textures/items/camel_war_baby"
+		},
+		"fv_camel_war_saddled": {
+			"textures": "textures/items/camel_war_saddled"
+		},
+		"fv_discharge_letter": {
+			"textures": "textures/items/discharge_letter"
+		},
+		"fv_copper_wrench": {
+			"textures": "textures/items/copper_wrench"
+		},
+		"fv_get_back_hammer": {
+			"textures": "textures/items/get_back_hammer"
+		},
+		"fv_command_flag": {
+			"textures": "textures/items/command_flag"
+		},
+		"hay_golem": {
+			"textures": "textures/items/hay_golem"
+		},
+		"fv_straw_hat_helmet": {
+			"textures": "textures/items/straw_hat_helmet"
+		},
+		"fv_ranged_banner_tp": {
+			"textures": "textures/items/ranged_banner_tp"
+		},
+		"fv_melee_banner_tp": {
+			"textures": "textures/items/melee_banner_tp"
+		},
+		"fv_villager_soldier_spawn_egg": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_villager_soldier"
+		},
+		"fv_villager_soldier_ranged_spawn_egg": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_villager_soldier_ranged"
+		},
+		"potato_cannon": {
+			"textures": "textures/items/potato_cannon"
+		},
+		"fv_potato_explode": {
+			"textures": "textures/items/potato_explode"
+		},
+		"fv_catapult": {
+			"textures": "textures/items/catapult"
+		},
+		"fv_paper_wriable": {
+			"textures": "textures/items/paper_writable"
+		},
+		"fv_freehand_decree": {
+			"textures": "textures/items/the_freehand_decree"
+		},
+		"fv_villager_builder_spawn_egg": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_villager_builder"
+		},
+		"fv_villager_clumper_spawn_egg": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_villager_clumper"
+		},
+		"fv_miner_trader_spawn_egg": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_miner_trader"
+		},
+		"fv_copper_shield": {
+			"textures": "textures/items/copper_shield/shield_item"
+		},
+		"fv_rock_tortois_spawn_egg": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_rock_tortois"
+		},
+		"fv_raw_iron_nugget": {
+			"textures": "textures/items/more_ore/raw_iron_nugget"
+		},
+		"fv_raw_gold_nugget": {
+			"textures": "textures/items/more_ore/raw_gold_nugget"
+		},
+		"fv_raw_copper_nugget": {
+			"textures": "textures/items/more_ore/raw_copper_nugget"
+		},
+		"fv_heart_of_stone": {
+			"textures": "textures/items/fv_heart_of_stone"
+		},
+		"fv_identification_soldier_card": {
+			"textures": "textures/items/fv_identification_soldier_card"
+		},
+		"fv_team_book_default": {
+			"textures": "textures/items/team_book/default"
+		},
+		"fv_team_book_red": {
+			"textures": "textures/items/team_book/red"
+		},
+		"fv_team_book_yellow": {
+			"textures": "textures/items/team_book/yellow"
+		},
+		"fv_team_book_blue": {
+			"textures": "textures/items/team_book/blue"
+		},
+		"fv_team_book_brown": {
+			"textures": "textures/items/team_book/brown"
+		},
+		"fv_team_book_white": {
+			"textures": "textures/items/team_book/white"
+		},
+		"fv_team_book_grey": {
+			"textures": "textures/items/team_book/grey"
+		},
+		"fv_team_book_green": {
+			"textures": "textures/items/team_book/green"
+		},
+		"fv_team_book_black": {
+			"textures": "textures/items/team_book/black"
+		},
+		"fv_team_book_purple": {
+			"textures": "textures/items/team_book/purple"
+		},
+		"fv_team_book_cyan": {
+			"textures": "textures/items/team_book/cyan"
+		},
+		"fv_team_book_lime": {
+			"textures": "textures/items/team_book/lime"
+		},
+		"fv_team_book_pink": {
+			"textures": "textures/items/team_book/pink"
+		},
+		"fv_team_book_orange": {
+			"textures": "textures/items/team_book/orange"
+		},
+		"fv_team_book_light_blue": {
+			"textures": "textures/items/team_book/light_blue"
+		},
+		"fv_team_call_horn": {
+			"textures": "textures/items/fv_team_horn"
+		},
+		"fv_team_attack_horn": {
+			"textures": "textures/items/fv_team_attack_horn"
+		},
+		"fv_team_stand_horn": {
+			"textures": "textures/items/fv_team_stand_horn"
+		},
+		"fv_golden_giant_sword": {
+			"textures": "textures/items/weapons/giant_sword/gold"
+		},
+		"fv_copper_giant_sword": {
+			"textures": "textures/items/weapons/giant_sword/copper"
+		},
+		"fv_iron_giant_sword": {
+			"textures": "textures/items/weapons/giant_sword/iron"
+		},
+		"fv_steel_giant_sword": {
+			"textures": "textures/items/weapons/giant_sword/steel"
+		},
+		"fv_illasteel_giant_sword": {
+			"textures": "textures/items/weapons/giant_sword/illasteel"
+		},
+		"fv_diamond_giant_sword": {
+			"textures": "textures/items/weapons/giant_sword/diamond"
+		},
+		"fv_netherite_giant_sword": {
+			"textures": "textures/items/weapons/giant_sword/netherite"
+		},
+		"fv_illudiamondite_giant_sword": {
+			"textures": "textures/items/weapons/giant_sword/illudiamondite"
+		},
+		"fv_diamet_giant_sword": {
+			"textures": "textures/items/weapons/giant_sword/diamet"
+		},
+		"fv_steel_ingot": {
+			"textures": "textures/items/vanillas/steel_ingot"
+		},
+		"fv_wooden_halberd": {
+			"textures": "textures/items/weapons/halberd/wood"
+		},
+		"fv_stone_halberd": {
+			"textures": "textures/items/weapons/halberd/stone"
+		},
+		"fv_copper_halberd": {
+			"textures": "textures/items/weapons/halberd/copper"
+		},
+		"fv_iron_halberd": {
+			"textures": "textures/items/weapons/halberd/iron"
+		},
+		"fv_steel_halberd": {
+			"textures": "textures/items/weapons/halberd/steel"
+		},
+		"fv_illasteel_halberd": {
+			"textures": "textures/items/weapons/halberd/illasteel"
+		},
+		"fv_diamond_halberd": {
+			"textures": "textures/items/weapons/halberd/diamond"
+		},
+		"fv_netherite_halberd": {
+			"textures": "textures/items/weapons/halberd/netherite"
+		},
+		"fv_illudiamondite_halberd": {
+			"textures": "textures/items/weapons/halberd/illudiamondite"
+		},
+		"fv_diamet_halberd": {
+			"textures": "textures/items/weapons/halberd/diamet"
+		},
+		"fv_copper_desert_sword": {
+			"textures": "textures/items/weapons/desert_sword/copper"
+		},
+		"fv_iron_desert_sword": {
+			"textures": "textures/items/weapons/desert_sword/iron"
+		},
+		"fv_steel_desert_sword": {
+			"textures": "textures/items/weapons/desert_sword/steel"
+		},
+		"fv_illasteel_desert_sword": {
+			"textures": "textures/items/weapons/desert_sword/illasteel"
+		},
+		"fv_diamond_desert_sword": {
+			"textures": "textures/items/weapons/desert_sword/diamond"
+		},
+		"fv_netherite_desert_sword": {
+			"textures": "textures/items/weapons/desert_sword/netherite"
+		},
+		"fv_illudiamondite_desert_sword": {
+			"textures": "textures/items/weapons/desert_sword/illudiamondite"
+		},
+		"fv_diamet_desert_sword": {
+			"textures": "textures/items/weapons/desert_sword/diamet"
+		},
+		"fv_steel_helmet": {
+			"textures": "textures/items/vanillas/steel_helmet"
+		},
+		"fv_steel_chestplate": {
+			"textures": "textures/items/vanillas/steel_chestplate"
+		},
+		"fv_steel_leggings": {
+			"textures": "textures/items/vanillas/steel_leggings"
+		},
+		"fv_steel_boots": {
+			"textures": "textures/items/vanillas/steel_boots"
+		},
+		"fv_steel_pickaxe": {
+			"textures": "textures/items/vanillas/steel_pickaxe"
+		},
+		"fv_steel_hoe": {
+			"textures": "textures/items/vanillas/steel_hoe"
+		},
+		"fv_steel_sword": {
+			"textures": "textures/items/vanillas/steel_sword"
+		},
+		"fv_steel_shovel": {
+			"textures": "textures/items/vanillas/steel_shovel"
+		},
+		"fv_steel_axe": {
+			"textures": "textures/items/vanillas/steel_axe"
+		},
+		"fv_wooden_javelin": {
+			"textures": "textures/items/weapons/javelin/wood"
+		},
+		"fv_stone_javelin": {
+			"textures": "textures/items/weapons/javelin/stone"
+		},
+		"fv_copper_javelin": {
+			"textures": "textures/items/weapons/javelin/copper"
+		},
+		"fv_iron_javelin": {
+			"textures": "textures/items/weapons/javelin/iron"
+		},
+		"fv_steel_javelin": {
+			"textures": "textures/items/weapons/javelin/steel"
+		},
+		"fv_illasteel_javelin": {
+			"textures": "textures/items/weapons/javelin/illasteel"
+		},
+		"fv_diamond_javelin": {
+			"textures": "textures/items/weapons/javelin/diamond"
+		},
+		"fv_netherite_javelin": {
+			"textures": "textures/items/weapons/javelin/netherite"
+		},
+		"fv_illudiamondite_javelin": {
+			"textures": "textures/items/weapons/javelin/illudiamondite"
+		},
+		"fv_diamet_javelin": {
+			"textures": "textures/items/weapons/javelin/diamet"
+		},
+		"fv_long_stick": {
+			"textures": "textures/items/longstick"
+		},
+		"fv_golden_saber": {
+			"textures": "textures/items/weapons/saber/gold"
+		},
+		"fv_copper_saber": {
+			"textures": "textures/items/weapons/saber/copper"
+		},
+		"fv_iron_saber": {
+			"textures": "textures/items/weapons/saber/iron"
+		},
+		"fv_steel_saber": {
+			"textures": "textures/items/weapons/saber/steel"
+		},
+		"fv_illasteel_saber": {
+			"textures": "textures/items/weapons/saber/illasteel"
+		},
+		"fv_diamond_saber": {
+			"textures": "textures/items/weapons/saber/diamond"
+		},
+		"fv_netherite_saber": {
+			"textures": "textures/items/weapons/saber/netherite"
+		},
+		"fv_illudiamondite_saber": {
+			"textures": "textures/items/weapons/saber/illudiamondite"
+		},
+		"fv_diamet_saber": {
+			"textures": "textures/items/weapons/saber/diamet"
+		},
+		"fv_stone_hammer": {
+			"textures": "textures/items/weapons/hammer/stone"
+		},
+		"fv_copper_hammer": {
+			"textures": "textures/items/weapons/hammer/copper"
+		},
+		"fv_iron_hammer": {
+			"textures": "textures/items/weapons/hammer/iron"
+		},
+		"fv_steel_hammer": {
+			"textures": "textures/items/weapons/hammer/steel"
+		},
+		"fv_illasteel_hammer": {
+			"textures": "textures/items/weapons/hammer/illasteel"
+		},
+		"fv_diamond_hammer": {
+			"textures": "textures/items/weapons/hammer/diamond"
+		},
+		"fv_netherite_hammer": {
+			"textures": "textures/items/weapons/hammer/netherite"
+		},
+		"fv_illudiamondite_hammer": {
+			"textures": "textures/items/weapons/hammer/illudiamondite"
+		},
+		"fv_diamet_hammer": {
+			"textures": "textures/items/weapons/hammer/diamet"
+		},
+		"fv_golden_battle_axe": {
+			"textures": "textures/items/weapons/battle_axe/gold"
+		},
+		"fv_copper_battle_axe": {
+			"textures": "textures/items/weapons/battle_axe/copper"
+		},
+		"fv_iron_battle_axe": {
+			"textures": "textures/items/weapons/battle_axe/iron"
+		},
+		"fv_steel_battle_axe": {
+			"textures": "textures/items/weapons/battle_axe/steel"
+		},
+		"fv_illasteel_battle_axe": {
+			"textures": "textures/items/weapons/battle_axe/illasteel"
+		},
+		"fv_diamond_battle_axe": {
+			"textures": "textures/items/weapons/battle_axe/diamond"
+		},
+		"fv_netherite_battle_axe": {
+			"textures": "textures/items/weapons/battle_axe/netherite"
+		},
+		"fv_illudiamondite_battle_axe": {
+			"textures": "textures/items/weapons/battle_axe/illudiamondite"
+		},
+		"fv_diamet_battle_axe": {
+			"textures": "textures/items/weapons/battle_axe/diamet"
+		},
+		"fv_flintlock_musket": {
+			"textures": "textures/items/weapons/guns/fv_flintlock_musket"
+		},
+		"fv_ammo": {
+			"textures": "textures/items/projectile/ammo"
+		},
+		"fv_flintlock_pistol": {
+			"textures": "textures/items/weapons/guns/fv_flintlock_pistol"
+		},
+		"fv_golden_reaper": {
+			"textures": "textures/items/weapons/guns/fv_golden_reaper"
+		},
+		"fv_cartridge": {
+			"textures": "textures/items/projectile/cartridge"
+		},
+		"fv_deadlight_rifle": {
+			"textures": "textures/items/weapons/guns/fv_deadlight_rifle"
+		},
+		"fv_illasteel_axe": {
+			"textures": "textures/items/weapons/illagers/illasteel_axe"
+		},
+		"cr_illasteel_sword": {
+			"textures": "textures/items/weapons/illagers/Illasteel_sword"
+		},
+		"cr_illasteel_ingot": {
+			"textures": "textures/items/more_ore/illasteel_ingot"
+		},
+		"cr_illasteel_helmet": {
+			"textures": "textures/items/illager_armors/illasteel_helmet"
+		},
+		"cr_illasteel_chestplate": {
+			"textures": "textures/items/illager_armors/illasteel_chestplate"
+		},
+		"cr_illasteel_leggings": {
+			"textures": "textures/items/illager_armors/illasteel_leggings"
+		},
+		"cr_illasteel_boots": {
+			"textures": "textures/items/illager_armors/illasteel_boots"
+		},
+		"cr_illasteel_tanker_helmet": {
+			"textures": "textures/items/illager_armors/illasteel_tanker_helmet"
+		},
+		"cr_illasteel_tanker_chestplate": {
+			"textures": "textures/items/illager_armors/illasteel_tanker_chestplate"
+		},
+		"cr_illudiamondite_helmet": {
+			"textures": "textures/items/illager_armors/illudiamondite_helmet"
+		},
+		"cr_illudiamondite_chestplate": {
+			"textures": "textures/items/illager_armors/illudiamondite_chestplate"
+		},
+		"cr_illudiamondite_leggings": {
+			"textures": "textures/items/illager_armors/illudiamondite_leggings"
+		},
+		"cr_illudiamondite_boots": {
+			"textures": "textures/items/illager_armors/illudiamondite_boots"
+		},
+		"cr_illudiamondite_tanker_helmet": {
+			"textures": "textures/items/illager_armors/illudiamondite_tanker_helmet"
+		},
+		"cr_illudiamondite_tanker_chestplate": {
+			"textures": "textures/items/illager_armors/illudiamondite_tanker_chestplate"
+		},
+		"cr_illudiamondite_ingot": {
+			"textures": "textures/items/more_ore/IlluDiamondite_ingot"
+		},
+		"cr_illudiamondite_sword": {
+			"textures": "textures/items/weapons/illagers/IlluDiamondite_sword"
+		},
+		"cr_illager_boom": {
+			"textures": "textures/items/illager_boom"
+		},
+		"fv_villager_skeleton_spawnegg": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_villager_skeleton"
+		},
+		"egg_fv_pillager_melee": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_pillager_melee"
+		},
+		"egg_fv_pillager_tanker": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_pillager_tanker"
+		},
+		"egg_fv_elephant_illager": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_illager_elephant"
+		},
+		"fv_illager_boom": {
+			"textures": "textures/items/illager_boom"
+		},
+		"fv_copper_lance": {
+			"textures": "textures/items/weapons/lance/copper"
+		},
+		"fv_iron_lance": {
+			"textures": "textures/items/weapons/lance/iron"
+		},
+		"fv_steel_lance": {
+			"textures": "textures/items/weapons/lance/steel"
+		},
+		"fv_illasteel_lance": {
+			"textures": "textures/items/weapons/lance/illasteel"
+		},
+		"fv_diamond_lance": {
+			"textures": "textures/items/weapons/lance/diamond"
+		},
+		"fv_netherite_lance": {
+			"textures": "textures/items/weapons/lance/netherite"
+		},
+		"fv_illudiamondite_lance": {
+			"textures": "textures/items/weapons/lance/illudiamondite"
+		},
+		"fv_diamet_lance": {
+			"textures": "textures/items/weapons/lance/diamet"
+		},
+		"fv_spawn_egg_vindicator_spearman": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_vindicator_spearman"
+		},
+		"fv_spawn_egg_evoker_undead_summoner": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_evoker_undead_summoner"
+		},
+		"fv_spawn_egg_iceologer": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_iceologer"
+		},
+		"fv_stone_pike": {
+			"textures": "textures/items/weapons/pike/stone"
+		},
+		"fv_copper_pike": {
+			"textures": "textures/items/weapons/pike/copper"
+		},
+		"fv_iron_pike": {
+			"textures": "textures/items/weapons/pike/iron"
+		},
+		"fv_steel_pike": {
+			"textures": "textures/items/weapons/pike/steel"
+		},
+		"fv_illasteel_pike": {
+			"textures": "textures/items/weapons/pike/illasteel"
+		},
+		"fv_diamond_pike": {
+			"textures": "textures/items/weapons/pike/diamond"
+		},
+		"fv_netherite_pike": {
+			"textures": "textures/items/weapons/pike/netherite"
+		},
+		"fv_illudiamondite_pike": {
+			"textures": "textures/items/weapons/pike/illudiamondite"
+		},
+		"fv_diamet_pike": {
+			"textures": "textures/items/weapons/pike/diamet"
+		},
+		"fv_spawn_egg_illager_plains_spearman": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_illager_plains_spearman"
+		},
+		"fv_withering_spear_lv1": {
+			"textures": "textures/items/weapons/withering_spear/lv1"
+		},
+		"fv_withering_spear_lv2": {
+			"textures": "textures/items/weapons/withering_spear/lv2"
+		},
+		"fv_withering_spear_lv3": {
+			"textures": "textures/items/weapons/withering_spear/lv3"
+		},
+		"fv_velocithief_blade_lv1": {
+			"textures": "textures/items/weapons/velocithief_blade/lv1"
+		},
+		"fv_velocithief_blade_lv2": {
+			"textures": "textures/items/weapons/velocithief_blade/lv2"
+		},
+		"fv_velocithief_blade_lv3": {
+			"textures": "textures/items/weapons/velocithief_blade/lv3"
+		},
+		"fv_spawn_egg_illager_desert": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_illager_desert"
+		},
+		"fv_regeneration_axe_lv1": {
+			"textures": "textures/items/weapons/regeneration_axe/lv1"
+		},
+		"fv_regeneration_axe_lv2": {
+			"textures": "textures/items/weapons/regeneration_axe/lv2"
+		},
+		"fv_regeneration_axe_lv3": {
+			"textures": "textures/items/weapons/regeneration_axe/lv3"
+		},
+		"fv_spawn_egg_hoglin_illager": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_hoglin_illager"
+		},
+		"fv_spawn_egg_illager_taiga": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_illager_taiga"
+		},
+		"fv_snow_bow": {
+			"textures": "textures/items/weapons/snowbow/standard"
+		},
+		"fv_snow_arrow": {
+			"textures": "textures/items/projectile/snow_arrow"
+		},
+		"fv_spawn_egg_savanna_illager": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_savanna_illager"
+		},
+		"fv_air_ship": {
+			"textures": "textures/items/fv_air_ship"
+		},
+		"fv_dispenser_auto_turret": {
+			"textures": "textures/items/fv_dispenser_auto_turret"
+		},
+		"fv_air_balloon": {
+			"textures": "textures/items/fv_air_balloon"
+		},
+		"fv_parachute": {
+			"textures": "textures/items/fv_parachute"
+		},
+		"fv_handle_cannon": {
+			"textures": "textures/items/weapons/guns/handle_cannon"
+		},
+		"fv_handle_cannon_v2": {
+			"textures": "textures/items/weapons/guns/handle_cannon_v2"
+		},
+		"fv_cannon_ball": {
+			"textures": "textures/items/projectile/cannon_ball"
+		},
+		"fv_spawn_egg_dwarf_pillager_general": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_dwarf_pillager_general"
+		},
+		"fv_spawn_egg_evoker_tongtulen_summoner": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_evoker_tongtulen_summoner"
+		},
+		"fv_spawn_egg_illager_daituong_summoner": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_evoker_daituong_summoner"
+		},
+		"fv_giant_gemheart_broadsword_v1": {
+			"textures": "textures/items/weapons/giant_gemheart_broadsword/lv1"
+		},
+		"fv_giant_gemheart_broadsword_v2": {
+			"textures": "textures/items/weapons/giant_gemheart_broadsword/lv2"
+		},
+		"fv_giant_gemheart_broadsword_v3": {
+			"textures": "textures/items/weapons/giant_gemheart_broadsword/lv3"
+		},
+		"fv_imperial_forge_plate": {
+			"textures": "textures/items/more_ore/imperial_forge_plate"
+		},
+		"fv_imperial_overforge_plate": {
+			"textures": "textures/items/more_ore/imperial_overforge_plate"
+		},
+		"fv_imperial_warlord_helmet": {
+			"textures": "textures/items/illager_armors/imperial_warlord_helmet"
+		},
+		"fv_imperial_warlord_chestplate": {
+			"textures": "textures/items/illager_armors/imperial_warlord_chestplate"
+		},
+		"fv_imperial_warlord_leggings": {
+			"textures": "textures/items/illager_armors/imperial_warlord_leggings"
+		},
+		"fv_imperial_warlord_boots": {
+			"textures": "textures/items/illager_armors/imperial_warlord_boots"
+		},
+		"fv_imperial_commander_helmet": {
+			"textures": "textures/items/illager_armors/imperial_commander_helmet"
+		},
+		"fv_imperial_commander_chestplate": {
+			"textures": "textures/items/illager_armors/imperial_commander_chestplate"
+		},
+		"fv_imperial_commander_leggings": {
+			"textures": "textures/items/illager_armors/imperial_commander_leggings"
+		},
+		"fv_imperial_commander_boots": {
+			"textures": "textures/items/illager_armors/imperial_commander_boots"
+		},
+		"fv_imperial_forge_ingot": {
+			"textures": "textures/items/more_ore/imperial_forge_ingot"
+		},
+		"fv_diamet_ingot": {
+			"textures": "textures/items/more_ore/diamet_ingot"
+		},
+		"fv_diamet_helmet": {
+			"textures": "textures/items/vanillas/diamet_helmet"
+		},
+		"fv_diamet_chestplate": {
+			"textures": "textures/items/vanillas/diamet_chestplate"
+		},
+		"fv_diamet_leggings": {
+			"textures": "textures/items/vanillas/diamet_leggings"
+		},
+		"fv_diamet_boots": {
+			"textures": "textures/items/vanillas/diamet_boots"
+		},
+		"fv_diamet_sword": {
+			"textures": "textures/items/vanillas/diamet_sword"
+		},
+		"fv_diamorite_helmet": {
+			"textures": "textures/items/vanillas/diamorite_helmet"
+		},
+		"fv_diamorite_chestplate": {
+			"textures": "textures/items/vanillas/diamorite_chestplate"
+		},
+		"fv_diamorite_leggings": {
+			"textures": "textures/items/vanillas/diamorite_leggings"
+		},
+		"fv_diamorite_boots": {
+			"textures": "textures/items/vanillas/diamorite_boots"
+		},
+		"fv_diamorite_ingot": {
+			"textures": "textures/items/more_ore/diamorite_ingot"
+		},
+		"fv_vanguard_marshals_diamorite_sword": {
+			"textures": "textures/items/weapons/vanguard_marshals_diamorite_sword/vanguard_marshals_diamorite_sword"
+		},
+		"fv_diamorite_sovereign_halberd": {
+			"textures": "textures/items/weapons/diamorite_sovereign_halberd/diamorite_sovereign_halberd"
+		},
+		"fv_spawn_egg_villager_clan_leader": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_villager_clan_leader"
+		},
+		"fv_spawn_egg_villager_league_soldier": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_villager_league_soldier"
+		},
+		"fv_league_medal": {
+			"textures": "textures/items/league_items/league_medal"
+		},
+		"fv_plains_clan_medal": {
+			"textures": "textures/items/league_items/plains_clan_medal"
+		},
+		"fv_desert_clan_medal": {
+			"textures": "textures/items/league_items/desert_clan_medal"
+		},
+		"fv_savanna_clan_medal": {
+			"textures": "textures/items/league_items/savanna_clan_medal"
+		},
+		"fv_jungle_clan_medal": {
+			"textures": "textures/items/league_items/jungle_clan_medal"
+		},
+		"fv_swamp_clan_medal": {
+			"textures": "textures/items/league_items/swamp_clan_medal"
+		},
+		"fv_taiga_clan_medal": {
+			"textures": "textures/items/league_items/taiga_clan_medal"
+		},
+		"fv_snow_clan_medal": {
+			"textures": "textures/items/league_items/snow_clan_medal"
+		},
+		"fv_general_league_badge": {
+			"textures": "textures/items/league_items/league_badge"
+		},
+		"fv_illager_plains_badge": {
+			"textures": "textures/items/black_empire_items/plains_badge"
+		},
+		"fv_illager_desert_badge": {
+			"textures": "textures/items/black_empire_items/desert_badge"
+		},
+		"fv_illager_mesa_badge": {
+			"textures": "textures/items/black_empire_items/mesa_badge"
+		},
+		"fv_illager_taiga_badge": {
+			"textures": "textures/items/black_empire_items/taiga_badge"
+		},
+		"fv_illager_savanna_badge": {
+			"textures": "textures/items/black_empire_items/savanna_badge"
+		},
+		"fv_illager_snow_badge": {
+			"textures": "textures/items/black_empire_items/snow_badge"
+		},
+		"fv_vanguard_marshals_diamorite_blade": {
+			"textures": "textures/items/weapons/vanguard_marshals_diamorite_sword/blade"
+		},
+		"fv_vanguard_marshals_diamorite_hilt": {
+			"textures": "textures/items/weapons/vanguard_marshals_diamorite_sword/body"
+		},
+		"fv_diamorite_sovereign_halberd_blade": {
+			"textures": "textures/items/weapons/diamorite_sovereign_halberd/blade"
+		},
+		"fv_diamorite_sovereign_halberd_spear_point": {
+			"textures": "textures/items/weapons/diamorite_sovereign_halberd/head"
+		},
+		"fv_diamorite_sovereign_halberd_shaft": {
+			"textures": "textures/items/weapons/diamorite_sovereign_halberd/handle"
+		},
+		"fv_golden_lucky_chest": {
+			"textures": "textures/items/fv_golden_lucky_chest"
+		},
+		"fv_diamond_lucky_chest": {
+			"textures": "textures/items/fv_diamond_lucky_chest"
+		},
+		"fv_ancient_tome_of_wisdom": {
+			"textures": "textures/items/ancient_tome_of_wisdom"
+		},
+		"fv_clumper_banner_tp": {
+			"textures": "textures/items/clumper_banner_tp"
+		},
+		"fv_spawn_egg_villager_healer": {
+			"textures": "textures/items/spawn_eggs/spawn_egg_villager_healer"
+		}
+	}
+}

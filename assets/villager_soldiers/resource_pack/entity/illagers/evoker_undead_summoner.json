@@ -1,0 +1,50 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:evoker_undead_summoner",
+			"materials": {
+				"default": "evoker"
+			},
+			"textures": {
+				"default": "textures/entity/new_illagers/evokers/summon_undead_evoker"
+			},
+			"geometry": {
+				"default": "geometry.evoker_hat"
+			},
+			"scripts": {
+				"scale": "0.9375",
+				"animate": [
+					"controller_general",
+					"controller_move"
+				],
+				"pre_animation": [
+					"variable.riding_y_offset_with_respect_to_player = 1.25;",
+					"variable.riding_y_offset_on_vehicle_where_other_entites_can_stand = query.is_riding_any_entity_of_type('minecraft:minecart', 'minecraft:boat', 'minecraft:chest_boat') ? -3.0 : 0.0;",
+					"variable.riding_y_offset = variable.riding_y_offset_with_respect_to_player + variable.riding_y_offset_on_vehicle_where_other_entites_can_stand;"
+				]
+			},
+			"animations": {
+				"general": "animation.fv_evoker.general",
+				"casting": "animation.fv_evoker.casting",
+				"look_at_target": "animation.common.look_at_target",
+				"move": "animation.fv_evoker.move",
+				"celebrating": "animation.humanoid.celebrating",
+				"controller_general": "controller.animation.fv_evoker.general",
+				"controller_move": "controller.animation.villager.move",
+				"riding.legs": "animation.humanoid.riding.legs",
+				"controller_riding": "controller.animation.humanoid.riding_legs_only",
+				"riding.body": "animation.humanoid.riding.body"
+			},
+			"particle_effects": {
+				"spell": "minecraft:evoker_spell"
+			},
+			"render_controllers": [
+				"controller.render.reevoker"
+			],
+			"spawn_egg": {
+				"texture": "fv_spawn_egg_evoker_undead_summoner"
+			}
+		}
+	}
+}

@@ -1,0 +1,72 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"AnhemSteve"
+		],
+		"generated_with": {
+			"bridge": [
+				"2.7.54"
+			],
+			"dash": [
+				"0.11.7"
+			]
+		},
+		"product_type": "addon"
+	},
+	"header": {
+		"name": "Villager Soldier 2 Version 3.1.4 The Rise",
+		"description": "Villager Soldier 2 Version 3.1.4 The Rise is an addon about Villager and Illager not faction war.",
+		"min_engine_version": [
+			1,
+			21,
+			130
+		],
+		"uuid": "85cd420b-b40f-48f3-8b70-bd839b72371d",
+		"version": [
+			1,
+			1,
+			4
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "14cd3bcf-aa41-4f80-b94a-f7e64766cd18",
+			"version": [
+				1,
+				0,
+				0
+			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "f2c5e2a0-6fd4-4376-b1c7-caec2765fb14",
+			"entry": "scripts/main.js",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "20046f92-e319-4f00-8a3c-2d13ab74f6e9",
+			"version": [
+				1,
+				1,
+				4
+			]
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "2.4.0"
+		},
+		{
+			"module_name": "@minecraft/server-ui",
+			"version": "2.0.0"
+		}
+	]
+}

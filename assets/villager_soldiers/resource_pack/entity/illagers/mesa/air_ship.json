@@ -1,0 +1,42 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:air_ship",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/new_illagers/mesa/airship"
+			},
+			"geometry": {
+				"default": "geometry.air_ship"
+			},
+			"animations": {
+				"flying": "animation.air_ship.flying",
+				"scale": "animation.air_ship.scale",
+				"is_flying": "controller.animation.illager.airship.flying",
+				"flying_smoke_left": "animation.air_ship.flying_smoke_left",
+				"flying_smoke_right": "animation.air_ship.flying_smoke_right",
+				"cannon": "animation.air_ship.cannon",
+				"starting": "animation.air_ship.starting"
+			},
+			"scripts": {
+				"animate": [
+					"scale",
+					"is_flying",
+					"cannon"
+				]
+			},
+			"render_controllers": [
+				"controller.render.fv_default_no_hurt"
+			],
+			"spawn_egg": {
+				"texture": "fv_air_ship"
+			},
+			"particle_effects": {
+				"flying_smoke": "fv:flying_smoke"
+			}
+		}
+	}
+}

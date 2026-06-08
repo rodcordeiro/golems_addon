@@ -1,0 +1,52 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:item": {
+		"description": {
+			"identifier": "handlecannonv2:crossbow",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:icon": "fv_handle_cannon_v2",
+			"minecraft:durability": {
+				"max_durability": 3048,
+				"damage_chance": {
+					"min": 20,
+					"max": 40
+				}
+			},
+			"minecraft:enchantable": {
+				"slot": "shield",
+				"value": 14
+			},
+			"minecraft:shooter": {
+				"ammunition": [
+					{
+						"item": "fv:cannon_ball",
+						"search_inventory": true,
+						"use_in_creative": true,
+						"use_offhand": true
+					}
+				],
+				"charge_on_draw": true,
+				"max_draw_duration": 1.5,
+				"max_launch_power": 4
+			},
+			"minecraft:use_animation": "crossbow",
+			"minecraft:use_modifiers": {
+				"use_duration": 1.5,
+				"movement_modifier": 0.3
+			},
+			"minecraft:tags": {
+				"tags": [
+					"fv:cannon",
+					"fv:crossbow_style",
+					"fv:handle_cannon_v2"
+				]
+			}
+		}
+	}
+}

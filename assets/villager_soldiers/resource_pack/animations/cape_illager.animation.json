@@ -1,0 +1,46 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.cape_illager.moving": {
+			"loop": true,
+			"bones": {
+				"cape": {
+					"rotation": [
+						"6*math.cos(query.life_time*80)+6",
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.cape_illager.run": {
+			"loop": true,
+			"bones": {
+				"cape": {
+					"rotation": [
+						20,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.cape_illager.dwarf": {
+			"loop": true,
+			"bones": {
+				"cape": {
+					"position": [
+						0,
+						-5,
+						-1
+					],
+					"scale": [
+						1,
+						0.9,
+						1
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.fv_crosshair.fpp": {
+			"loop": true,
+			"bones": {
+				"crosshair": {
+					"rotation": [
+						-92.00293,
+						-29.2777,
+						-44.86222
+					],
+					"position": [
+						37.56481,
+						-44.20744,
+						-15.84867
+					]
+				}
+			}
+		}
+	}
+}

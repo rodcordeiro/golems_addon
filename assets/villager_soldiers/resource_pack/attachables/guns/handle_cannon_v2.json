@@ -1,0 +1,56 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "handlecannonv2:crossbow",
+      "materials": {
+        "default": "entity_alphatest",
+        "enchanted": "entity_alphatest_glint"
+      },
+      "textures": {
+        "default": "textures/items/weapons/guns/3d_handle_cannon_v2",
+        "crossbow_pulling_0": "textures/items/weapons/guns/3d_handle_cannon_v2",
+        "crossbow_pulling_1": "textures/items/weapons/guns/3d_handle_cannon_v2",
+        "crossbow_pulling_2": "textures/items/weapons/guns/3d_handle_cannon_v2",
+        "crossbow_arrow": "textures/items/weapons/guns/3d_handle_cannon_v2",
+        "crossbow_rocket": "textures/items/weapons/guns/3d_handle_cannon_v2",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.handle_cannon_v2",
+        "crossbow_pulling_0": "geometry.handle_cannon_v2",
+        "crossbow_pulling_1": "geometry.handle_cannon_v2",
+        "crossbow_pulling_2": "geometry.handle_cannon_v2",
+        "crossbow_arrow": "geometry.handle_cannon_v2",
+        "crossbow_rocket": "geometry.handle_cannon_v2"
+      },
+      "animations": {
+        "fpp": "animation.handle_cannon.fpp",
+        "tpp": "animation.handle_cannon.tpp",
+        "wield_first_person_pull": "animation.crossbow.wield_first_person_pull",
+        "reloading": "animation.handle_cannon.v2_reloading",
+        "v2_no_charged": "animation.handle_cannon.v2_no_charged",
+        "general": "controller.animation.guns.handle_cannon_v2.reloading",
+        "charge_control": "controller.animation.guns.handle_cannon_v2.no_charged"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.charge_amount = math.clamp((query.main_hand_item_max_duration - (query.main_hand_item_use_duration - query.frame_alpha + 1.0)) / 10.0, 0.0, 1.0f);"
+        ],
+        "animate": [
+          "general",
+          "charge_control",
+          {
+            "fpp": "c.is_first_person"
+          },
+          {
+            "tpp": "!c.is_first_person"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.crossbow"
+      ]
+    }
+  }
+}

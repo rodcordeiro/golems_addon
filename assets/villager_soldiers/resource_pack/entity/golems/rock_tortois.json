@@ -1,0 +1,45 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:rock_tortois",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/rock_tortoise/rock_tortoise"
+			},
+			"geometry": {
+				"default": "geometry.rock_tortoise"
+			},
+			"animations": {
+				"move": "animation.rock_tortoise.move",
+				"eating": "animation.rock_tortoise.eating",
+				"look_at_target": "animation.rock_tortoise.look_at_target",
+				"hungry": "animation.rock_tortoise.hungry",
+				"hurting": "animation.rock_tortoise.hurting",
+				"root": "controller.animation.rock_tortois.root"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.moving = query.modified_move_speed > 0.05 || query.vertical_speed > 0.05;",
+					"variable.scared = query.property('fv:scared');",
+					"variable.hungry = query.property('fv:hungry');",
+					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 80) * query.modified_move_speed / variable.gliding_speed_value) * 70;"
+				],
+				"animate": [
+					"root"
+				]
+			},
+			"render_controllers": [
+				"controller.render.mob_default"
+			],
+			"spawn_egg": {
+				"texture": "fv_rock_tortois_spawn_egg"
+			},
+			"particle_effects": {
+				"stone_debris": "fv:stone_debris"
+			}
+		}
+	}
+}

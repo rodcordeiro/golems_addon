@@ -1,0 +1,154 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.lucky_chest",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "chest",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-7,
+								0,
+								-6
+							],
+							"size": [
+								14,
+								9,
+								12
+							],
+							"uv": [
+								0,
+								0
+							]
+						},
+						{
+							"origin": [
+								3,
+								8,
+								6
+							],
+							"size": [
+								2,
+								1,
+								1
+							],
+							"uv": [
+								7,
+								38
+							]
+						},
+						{
+							"origin": [
+								-5,
+								8,
+								6
+							],
+							"size": [
+								2,
+								1,
+								1
+							],
+							"uv": [
+								14,
+								38
+							]
+						}
+					]
+				},
+				{
+					"name": "napchest",
+					"parent": "chest",
+					"pivot": [
+						0,
+						9,
+						6
+					],
+					"cubes": [
+						{
+							"origin": [
+								-7,
+								9,
+								-6
+							],
+							"size": [
+								14,
+								3,
+								12
+							],
+							"uv": [
+								0,
+								22
+							]
+						},
+						{
+							"origin": [
+								3,
+								9,
+								6
+							],
+							"size": [
+								2,
+								1,
+								1
+							],
+							"uv": [
+								21,
+								38
+							]
+						},
+						{
+							"origin": [
+								-5,
+								9,
+								6
+							],
+							"size": [
+								2,
+								1,
+								1
+							],
+							"uv": [
+								28,
+								38
+							]
+						},
+						{
+							"origin": [
+								-1,
+								8,
+								-7
+							],
+							"size": [
+								2,
+								3,
+								1
+							],
+							"uv": [
+								0,
+								38
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

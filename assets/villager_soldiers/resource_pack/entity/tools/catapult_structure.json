@@ -1,0 +1,40 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:catapult_structure",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/structures/catapult"
+			},
+			"geometry": {
+				"default": "geometry.catapult_structure"
+			},
+			"animations": {
+				"default": "animation.catapult_structure.default",
+				"step1": "animation.catapult_structure.step1",
+				"step2": "animation.catapult_structure.step2",
+				"step3": "animation.catapult_structure.step3",
+				"step4": "animation.catapult_structure.step4",
+				"step5": "animation.catapult_structure.step5",
+				"controller_step": "controller.animation.catapult.structure"
+			},
+			"scripts": {
+				"pre_animation": [
+					"v.step = query.property('fv:step');"
+				],
+				"animate": [
+					"controller_step"
+				]
+			},
+			"render_controllers": [
+				"controller.render.structure"
+			],
+			"spawn_egg": {
+				"texture": "fv_catapult"
+			}
+		}
+	}
+}

@@ -1,0 +1,55 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:evoker_commandant",
+			"materials": {
+				"default": "evoker"
+			},
+			"textures": {
+				"default": "textures/entity/new_illagers/mainboss/evoker_tongtulenh",
+				"cape": "textures/entity/new_illagers/mainboss/commander_cape",
+				"armor": "textures/entity/illager_armor/tongtulen_armor"
+			},
+			"geometry": {
+				"default": "geometry.evoker_hat",
+				"cape": "geometry.cape_illager",
+				"armor": "geometry.pillager_tanker_armor"
+			},
+			"scripts": {
+				"scale": "0.9375",
+				"animate": [
+					"controller_general",
+					"controller_move",
+					"cape",
+					"controllercaperun"
+				]
+			},
+			"animations": {
+				"general": "animation.fv_evoker.general",
+				"casting": "animation.fv_evoker.casting",
+				"look_at_target": "animation.common.look_at_target",
+				"move": "animation.fv_evoker.move",
+				"riding.legs": "animation.humanoid.riding.legs",
+				"celebrating": "animation.humanoid.celebrating",
+				"controller_general": "controller.animation.fv_evoker.general",
+				"controller_move": "controller.animation.villager.move",
+				"controller_riding": "controller.animation.humanoid.riding_legs_only",
+				"cape": "animation.cape_illager.moving",
+				"caperun": "animation.cape_illager.run",
+				"controllercaperun": "controller.animation.cape.running"
+			},
+			"particle_effects": {
+				"spell": "minecraft:evoker_spell"
+			},
+			"render_controllers": [
+				"controller.render.reevoker",
+				"controller.render.fv_default_cape",
+				"controller.render.evoker_armor"
+			],
+			"spawn_egg": {
+				"texture": "fv_spawn_egg_evoker_tongtulen_summoner"
+			}
+		}
+	}
+}

@@ -1,0 +1,35 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:vanguard_marshals_diamorite_sword"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"b": {
+				"item": "fv:vanguard_marshals_diamorite_blade"
+			},
+			"h": {
+				"item": "fv:vanguard_marshals_diamorite_hilt"
+			}
+		},
+		"pattern": [
+			"b",
+			"h"
+		],
+		"result": {
+			"item": "fv:vanguard_marshals_diamorite_sword",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "fv:vanguard_marshals_diamorite_blade"
+			},
+			{
+				"item": "fv:vanguard_marshals_diamorite_hilt"
+			}
+		]
+	}
+}

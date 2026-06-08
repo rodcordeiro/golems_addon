@@ -1,0 +1,67 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fv:giant_gemheart_broadsword_lv2",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.sword"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true,
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:durability": {
+				"max_durability": 8500
+			},
+			"minecraft:icon": "fv_giant_gemheart_broadsword_v2",
+			"minecraft:damage": 15,
+			"minecraft:enchantable": {
+				"value": 14,
+				"slot": "sword"
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"fv:giant_gemheart_broadsword"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+					},
+					{
+						"items": [
+							"fv:giant_gemheart_broadsword_lv2"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.22*context.other->query.max_durability"
+					}
+				]
+			},
+			"minecraft:digger": {
+				"use_efficiency": true,
+				"destroy_speeds": [
+					{
+						"block": "minecraft:web",
+						"speed": 20
+					},
+					{
+						"block": "minecraft:bamboo",
+						"speed": 60
+					}
+				]
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_sword",
+					"minecraft:is_tool",
+					"fv:giant_gemheart_broadsword_lv2",
+					"fv:anti_tanker",
+					"minecraft:transformable_items"
+				]
+			},
+			"minecraft:custom_components": [
+				"fv:gemheart_broadsword_component"
+			]
+		}
+	}
+}

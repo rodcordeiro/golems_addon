@@ -1,0 +1,33 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:steel_shovel"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"c": {
+				"item": "fv:steel_ingot"
+			},
+			"s": {
+				"item": "minecraft:stick"
+			}
+		},
+		"pattern": [
+			"c",
+			"s",
+			"s"
+		],
+		"result": {
+			"item": "fv:steel_shovel",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "fv:steel_ingot"
+			}
+		]
+	}
+}

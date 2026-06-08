@@ -1,0 +1,33 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:diamet_sword"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"c": {
+				"item": "fv:diamet_ingot"
+			},
+			"s": {
+				"item": "minecraft:stick"
+			}
+		},
+		"pattern": [
+			"c",
+			"c",
+			"s"
+		],
+		"result": {
+			"item": "fv:diamet_sword",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "fv:diamet_ingot"
+			}
+		]
+	}
+}

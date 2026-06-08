@@ -1,0 +1,20 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fv:snow_arrow",
+			"menu_category": {
+				"category": "equipment",
+				"group": "minecraft:itemGroup.name.arrow"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 64,
+			"minecraft:icon": "fv_snow_arrow",
+			"minecraft:projectile": {
+				"projectile_entity": "fv:snow_arrow",
+				"minimum_critical_power": 1
+			}
+		}
+	}
+}

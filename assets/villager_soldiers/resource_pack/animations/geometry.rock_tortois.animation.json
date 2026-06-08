@@ -1,0 +1,225 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.rock_tortoise.eating": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"head": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.1667": [
+							2.5,
+							0,
+							0
+						],
+						"0.375": [
+							-2.5,
+							0,
+							0
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						],
+						"0.6667": [
+							-2.5,
+							0,
+							0
+						],
+						"0.8333": [
+							2.5,
+							0,
+							0
+						],
+						"1.0": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"jaw": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							15,
+							0,
+							0
+						],
+						"0.375": [
+							0,
+							0,
+							0
+						],
+						"0.5417": [
+							17.5,
+							0,
+							0
+						],
+						"0.6667": [
+							0,
+							0,
+							0
+						],
+						"0.8333": [
+							25,
+							0,
+							0
+						],
+						"1.0": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.375": {
+					"effect": "stone_debris"
+				}
+			}
+		},
+		"animation.rock_tortoise.hungry": {
+			"loop": true,
+			"bones": {
+				"jaw": {
+					"rotation": [
+						25,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.rock_tortoise.look_at_target": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": [
+						"query.target_x_rotation",
+						"query.target_y_rotation",
+						0
+					]
+				}
+			}
+		},
+		"animation.rock_tortoise.hurting": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"position": [
+						0,
+						-2,
+						0
+					]
+				},
+				"head": {
+					"position": [
+						0,
+						-2,
+						5
+					]
+				},
+				"leg_front_left": {
+					"rotation": [
+						-29.83757,
+						-19.20748,
+						-29.83757
+					],
+					"position": [
+						-2,
+						-1,
+						2
+					]
+				},
+				"leg_front_right": {
+					"rotation": [
+						-29.97638,
+						1.2497,
+						29.66541
+					],
+					"position": [
+						2,
+						-1,
+						2
+					]
+				},
+				"leg_back_left": {
+					"rotation": [
+						29.77755,
+						13.61863,
+						-29.21802
+					],
+					"position": [
+						-2,
+						-1,
+						-2
+					]
+				},
+				"leg_back_right": {
+					"rotation": [
+						29.92126,
+						-15.39956,
+						29.00681
+					],
+					"position": [
+						2,
+						-1,
+						-2
+					]
+				}
+			}
+		},
+		"animation.rock_tortoise.move": {
+			"loop": true,
+			"bones": {
+				"leg_front_left": {
+					"rotation": [
+						"variable.tcos0",
+						0,
+						0
+					]
+				},
+				"leg_front_right": {
+					"rotation": [
+						"-variable.tcos0",
+						0,
+						0
+					]
+				},
+				"leg_back_left": {
+					"rotation": [
+						"-variable.tcos0",
+						0,
+						0
+					]
+				},
+				"leg_back_right": {
+					"rotation": [
+						"variable.tcos0",
+						0,
+						0
+					]
+				},
+				"body": {
+					"rotation": [
+						0,
+						0,
+						"math.cos(query.modified_distance_moved*45)*4*query.modified_move_speed"
+					]
+				}
+			}
+		}
+	}
+}

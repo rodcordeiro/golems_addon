@@ -1,0 +1,107 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.dispenser_auto_turret",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "turret",
+					"pivot": [
+						10,
+						5,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-11,
+								0,
+								-11
+							],
+							"size": [
+								22,
+								5,
+								22
+							],
+							"uv": [
+								0,
+								0
+							]
+						},
+						{
+							"origin": [
+								-11,
+								5,
+								-4
+							],
+							"size": [
+								3,
+								16,
+								8
+							],
+							"uv": [
+								0,
+								61
+							],
+							"mirror": true
+						},
+						{
+							"origin": [
+								8,
+								5,
+								-4
+							],
+							"size": [
+								3,
+								16,
+								8
+							],
+							"uv": [
+								0,
+								61
+							]
+						}
+					]
+				},
+				{
+					"name": "gun",
+					"parent": "turret",
+					"pivot": [
+						0,
+						16,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-8,
+								8,
+								-8
+							],
+							"size": [
+								16,
+								16,
+								16
+							],
+							"uv": [
+								0,
+								28
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

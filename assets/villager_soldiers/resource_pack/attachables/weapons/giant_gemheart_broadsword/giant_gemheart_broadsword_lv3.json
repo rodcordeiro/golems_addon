@@ -1,0 +1,41 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "fv:giant_gemheart_broadsword_lv3",
+            "materials": {
+                "default": "entity_alphatest",
+                "enchanted": "entity_alphatest_glint"
+            },
+            "textures": {
+                "default": "textures/items/weapons/giant_gemheart_broadsword/lv3",
+                "enchanted": "textures/misc/enchanted_item_glint"
+            },
+            "geometry": {
+                "default": "geometry.spear_item"
+            },
+            "animations": {
+                "first_persion": "animation.spear_item.broad_sword_fp",
+                "third_persion": "animation.spear_item.broad_sword_tp",
+                "scale": "animation.spear_item.64_scale_default"
+            },
+            "scripts": {
+                "pre_animation": [
+                    "variable.charge_amount = math.clamp((query.main_hand_item_max_duration - (query.main_hand_item_use_duration - query.frame_alpha + 1.0)) / 10.0, 0.0, 1.0f);"
+                ],
+                "animate": [
+                    {
+                        "first_persion": "c.is_first_person"
+                    },
+                    {
+                        "third_persion": "!c.is_first_person"
+                    },
+                    "scale"
+                ]
+            },
+            "render_controllers": [
+                "controller.render.item_default"
+            ]
+        }
+    }
+}

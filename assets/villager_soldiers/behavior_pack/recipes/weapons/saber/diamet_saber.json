@@ -1,0 +1,33 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:diamet_saber"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"i": {
+				"item": "fv:diamet_ingot"
+			},
+			"s": {
+				"item": "minecraft:stick"
+			}
+		},
+		"pattern": [
+			"  i",
+			" i ",
+			"s  "
+		],
+		"result": {
+			"item": "fv:diamet_saber",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "fv:diamet_ingot"
+			}
+		]
+	}
+}

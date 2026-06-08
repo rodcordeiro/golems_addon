@@ -1,0 +1,157 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.copper_golem.walking": {
+			"loop": true,
+			"bones": {
+				"leftLeg": {
+					"rotation": [
+						"-variable.tcos0",
+						0,
+						0
+					]
+				},
+				"rightLeg": {
+					"rotation": [
+						"variable.tcos0",
+						0,
+						0
+					]
+				},
+				"leftArm": {
+					"rotation": [
+						"variable.tcos0",
+						0,
+						0
+					]
+				},
+				"rightArm": {
+					"rotation": [
+						"-variable.tcos0",
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.copper_golem.attack": {
+			"loop": true,
+			"bones": {
+				"leftArm": {
+					"rotation": [
+						-142.5,
+						0,
+						0
+					]
+				},
+				"rightArm": {
+					"rotation": [
+						-142.5,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.copper_golem.stand": {
+			"loop": true,
+			"bones": {
+				"stick": {
+					"position": [
+						0,
+						-3,
+						0
+					]
+				}
+			}
+		},
+		"animation.copper_golem.cannon_aim": {
+			"loop": true,
+			"bones": {
+				"cannon": {
+					"rotation": [
+						"query.target_x_rotation",
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.copper_golem.shoot": {
+			"loop": true,
+			"bones": {
+				"phao": {
+					"position": [
+						0,
+						0,
+						6
+					]
+				}
+			}
+		},
+		"animation.copper_golem.cannon_stay": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"position": [
+						0,
+						3,
+						10
+					]
+				},
+				"leftArm": {
+					"rotation": [
+						-85.58619,
+						17.07228,
+						-3.90399
+					]
+				},
+				"rightArm": {
+					"rotation": [
+						-86.04835,
+						-19.03771,
+						6.24605
+					]
+				}
+			}
+		},
+		"animation.copper.attack.spear": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [
+						0,
+						"math.sin(math.sqrt(variable.attack_time)*360)*11.46",
+						0
+					]
+				},
+				"leftarm": {
+					"rotation": [
+						"-(math.sin((1-(1-variable.attack_time)*(1-variable.attack_time))*180)+math.sin(variable.attack_time*180))*5.73",
+						0,
+						0
+					]
+				},
+				"rightarm": {
+					"rotation": [
+						"-(math.sin((1-(1-variable.attack_time)*(1-variable.attack_time))*180)*34.38+math.sin(variable.attack_time*180)*28.65)*(variable.is_brandishing_spear?-2.5:1)",
+						"variable.is_brandishing_spear?0:math.sin(math.sqrt(variable.attack_time)*360)*22.92",
+						0
+					]
+				}
+			}
+		},
+		"animation.copper.brandish_spear": {
+			"loop": true,
+			"bones": {
+				"rightarm": {
+					"rotation": [
+						"this*-0.5-143.5-22.5*variable.charge_amount",
+						"-this",
+						"-((math.cos(query.life_time*103.2)*2.865)+2.865)"
+					]
+				}
+			}
+		}
+	}
+}

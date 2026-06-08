@@ -1,0 +1,32 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:illasteel_hammer"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"i": {
+				"item": "fv:illasteel_ingot"
+			},
+			"s": {
+				"item": "minecraft:stick"
+			}
+		},
+		"pattern": [
+			" ii",
+			" ii",
+			"s  "
+		],
+		"result": {
+			"item": "fv:illasteel_hammer"
+		},
+		"unlock": [
+			{
+				"item": "fv:illasteel_ingot"
+			}
+		]
+	}
+}

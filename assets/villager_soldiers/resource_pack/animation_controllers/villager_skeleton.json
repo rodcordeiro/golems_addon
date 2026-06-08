@@ -1,0 +1,25 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.villager_skeleton.attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"skeleton_attack"
+					]
+				}
+			}
+		},
+		"controller.animation.villager_skeleton.helmet": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"helmet"
+					]
+				}
+			}
+		}
+	}
+}

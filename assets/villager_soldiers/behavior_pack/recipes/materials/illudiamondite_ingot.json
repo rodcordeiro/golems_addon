@@ -1,0 +1,33 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:illudiamondite_ingot"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"i": {
+				"item": "fv:illasteel_ingot"
+			},
+			"d": {
+				"item": "minecraft:diamond"
+			}
+		},
+		"pattern": [
+			"iii",
+			"idi",
+			"iii"
+		],
+		"result": {
+			"item": "fv:illudiamondite_ingot",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "minecraft:diamond"
+			}
+		]
+	}
+}

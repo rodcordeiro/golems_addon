@@ -1,0 +1,838 @@
+{
+	"format_version": "1.21.120",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fv:copy_past"
+		},
+		"component_groups": {
+			"ranged": {
+				"minecraft:shareables": {
+					"items": [
+						{
+							"priority": 0,
+							"item": "fv:imperial_commander_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 0,
+							"item": "fv:imperial_commander_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 0,
+							"item": "fv:imperial_commander_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 0,
+							"item": "fv:imperial_commander_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 1,
+							"item": "fv:imperial_warlord_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 1,
+							"item": "fv:imperial_warlord_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 1,
+							"item": "fv:imperial_warlord_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 1,
+							"item": "fv:imperial_warlord_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 2,
+							"item": "fv:diamorite_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 2,
+							"item": "fv:diamorite_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 2,
+							"item": "fv:diamorite_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 2,
+							"item": "fv:diamorite_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 3,
+							"item": "fv:diamet_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 3,
+							"item": "fv:diamet_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 3,
+							"item": "fv:diamet_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 3,
+							"item": "fv:diamet_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 3,
+							"item": "fv:illudiamondite_tanker_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 3,
+							"item": "fv:illudiamondite_tanker_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 3,
+							"item": "fv:illudiamondite_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 3,
+							"item": "fv:illudiamondite_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 4,
+							"item": "fv:illudiamondite_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 4,
+							"item": "fv:illudiamondite_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 5,
+							"item": "minecraft:netherite_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 5,
+							"item": "minecraft:netherite_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 5,
+							"item": "minecraft:netherite_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 5,
+							"item": "minecraft:netherite_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 6,
+							"item": "minecraft:diamond_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 6,
+							"item": "minecraft:diamond_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 6,
+							"item": "minecraft:diamond_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 6,
+							"item": "minecraft:diamond_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 7,
+							"item": "fv:steel_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 7,
+							"item": "fv:steel_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 7,
+							"item": "fv:steel_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 7,
+							"item": "fv:steel_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 7,
+							"item": "fv:illasteel_tanker_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 7,
+							"item": "fv:illasteel_tanker_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 7,
+							"item": "fv:illasteel_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 7,
+							"item": "fv:illasteel_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 8,
+							"item": "fv:illasteel_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 8,
+							"item": "fv:illasteel_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 9,
+							"item": "minecraft:iron_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 9,
+							"item": "minecraft:iron_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 9,
+							"item": "minecraft:iron_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 9,
+							"item": "minecraft:iron_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 10,
+							"item": "minecraft:chainmail_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 10,
+							"item": "minecraft:chainmail_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 10,
+							"item": "minecraft:chainmail_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 10,
+							"item": "minecraft:chainmail_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 11,
+							"item": "minecraft:copper_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 11,
+							"item": "minecraft:copper_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 11,
+							"item": "minecraft:copper_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 11,
+							"item": "minecraft:copper_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 12,
+							"item": "minecraft:golden_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 12,
+							"item": "minecraft:golden_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 12,
+							"item": "minecraft:golden_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 12,
+							"item": "minecraft:golden_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 12,
+							"item": "minecraft:leather_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 12,
+							"item": "minecraft:leather_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 12,
+							"item": "minecraft:leather_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 12,
+							"item": "minecraft:leather_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 13,
+							"item": "minecraft:turtle_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 0,
+							"item": "fv:handle_cannon_v2",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 0,
+							"item": "fv:guns",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 1,
+							"item": "fv:cannon",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 2,
+							"item": "minecraft:bow",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 2,
+							"item": "minecraft:crossbow",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 0,
+							"item": "fv:copper_boom",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 0,
+							"item": "minecraft:wind_charge",
+							"want_amount": 1,
+							"surplus_amount": 1
+						}
+					]
+				}
+			},
+			"melee": {
+				"minecraft:shareables": {
+					"items": [
+						{
+							"priority": 0,
+							"item": "fv:imperial_commander_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 0,
+							"item": "fv:imperial_commander_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 0,
+							"item": "fv:imperial_commander_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 0,
+							"item": "fv:imperial_commander_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 1,
+							"item": "fv:imperial_warlord_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 1,
+							"item": "fv:imperial_warlord_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 1,
+							"item": "fv:imperial_warlord_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 1,
+							"item": "fv:imperial_warlord_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 2,
+							"item": "fv:diamorite_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 2,
+							"item": "fv:diamorite_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 2,
+							"item": "fv:diamorite_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 2,
+							"item": "fv:diamorite_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 3,
+							"item": "fv:diamet_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 3,
+							"item": "fv:diamet_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 3,
+							"item": "fv:diamet_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 3,
+							"item": "fv:diamet_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 3,
+							"item": "fv:illudiamondite_tanker_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 3,
+							"item": "fv:illudiamondite_tanker_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 3,
+							"item": "fv:illudiamondite_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 3,
+							"item": "fv:illudiamondite_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 4,
+							"item": "fv:illudiamondite_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 4,
+							"item": "fv:illudiamondite_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 5,
+							"item": "minecraft:netherite_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 5,
+							"item": "minecraft:netherite_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 5,
+							"item": "minecraft:netherite_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 5,
+							"item": "minecraft:netherite_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 6,
+							"item": "minecraft:diamond_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 6,
+							"item": "minecraft:diamond_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 6,
+							"item": "minecraft:diamond_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 6,
+							"item": "minecraft:diamond_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 7,
+							"item": "fv:steel_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 7,
+							"item": "fv:steel_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 7,
+							"item": "fv:steel_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 7,
+							"item": "fv:steel_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 7,
+							"item": "fv:illasteel_tanker_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 7,
+							"item": "fv:illasteel_tanker_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 7,
+							"item": "fv:illasteel_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 7,
+							"item": "fv:illasteel_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 8,
+							"item": "fv:illasteel_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 8,
+							"item": "fv:illasteel_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 9,
+							"item": "minecraft:iron_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 9,
+							"item": "minecraft:iron_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 9,
+							"item": "minecraft:iron_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 9,
+							"item": "minecraft:iron_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 10,
+							"item": "minecraft:chainmail_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 10,
+							"item": "minecraft:chainmail_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 10,
+							"item": "minecraft:chainmail_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 10,
+							"item": "minecraft:chainmail_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 11,
+							"item": "minecraft:copper_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 11,
+							"item": "minecraft:copper_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 11,
+							"item": "minecraft:copper_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 11,
+							"item": "minecraft:copper_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 12,
+							"item": "minecraft:golden_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 12,
+							"item": "minecraft:golden_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 12,
+							"item": "minecraft:golden_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 12,
+							"item": "minecraft:golden_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 12,
+							"item": "minecraft:leather_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 12,
+							"item": "minecraft:leather_chestplate",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 12,
+							"item": "minecraft:leather_leggings",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 12,
+							"item": "minecraft:leather_boots",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 13,
+							"item": "minecraft:turtle_helmet",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 0,
+							"item": "minecraft:is_sword",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 0,
+							"item": "minecraft:is_axe",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 0,
+							"item": "fv:is_lance",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 0,
+							"item": "fv:is_halberd",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 0,
+							"item": "minecraft:is_spear",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 0,
+							"item": "fv:is_hammer",
+							"want_amount": 1,
+							"surplus_amount": 1
+						},
+						{
+							"priority": 0,
+							"item": "minecraft:shield",
+							"want_amount": 1,
+							"surplus_amount": 1
+						}
+					]
+				}
+			}
+		}
+	}
+}

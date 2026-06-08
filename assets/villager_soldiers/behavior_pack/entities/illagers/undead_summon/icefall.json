@@ -1,0 +1,87 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fv:icefall",
+			"is_summonable": true,
+			"is_spawnable": false,
+			"animations": {
+				"falldown": "controller.animation.falldown"
+			},
+			"scripts": {
+				"animate": [
+					"falldown"
+				]
+			}
+		},
+		"component_groups": {
+			"start": {
+				"minecraft:timer": {
+					"time": [
+						1.6,
+						1.6
+					],
+					"time_down_event": {
+						"event": "no",
+						"target": "self"
+					}
+				},
+				"minecraft:is_shaking": {}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"height": 0,
+				"width": 0
+			},
+			"minecraft:physics": {
+				"has_collision": true,
+				"has_gravity": true
+			},
+			"minecraft:type_family": {
+				"family": [
+					"illager"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": "no"
+				}
+			},
+			"minecraft:explode": {
+				"power": 6,
+				"breaks_blocks": false,
+				"fuse_length": {
+					"range_min": 1.6,
+					"range_max": 1.6
+				},
+				"fuse_lit": true,
+				"causes_fire": false
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:knockback_resistance": {
+				"value": 999
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"start"
+					]
+				}
+			},
+			"no": {
+				"remove": {
+					"component_groups": [
+						"start"
+					]
+				}
+			}
+		}
+	}
+}

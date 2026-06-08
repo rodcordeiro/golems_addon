@@ -1,0 +1,90 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.minecart_shooter.default": {
+			"loop": true,
+			"bones": {
+				"leftArm": {
+					"rotation": [
+						-84.87884,
+						-17.48281,
+						-0.78795
+					]
+				},
+				"rightArm": {
+					"rotation": [
+						-86.21298,
+						9.21648,
+						6.90774
+					]
+				}
+			}
+		},
+		"animation.minecart_shooter.has_target": {
+			"loop": true,
+			"bones": {
+				"leftArm": {
+					"rotation": [
+						-84.92327,
+						9.96156,
+						0.88045
+					]
+				},
+				"rightArm": {
+					"rotation": [
+						-97.56397,
+						-7.43547,
+						0.98448
+					]
+				},
+				"shoot": {
+					"rotation": [
+						"query.target_x_rotation",
+						0,
+						0
+					]
+				},
+				"controll": {
+					"rotation": [
+						"query.target_x_rotation",
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.minecart_shooter.moving": {
+			"loop": true,
+			"bones": {
+				"banh": {
+					"rotation": [
+						"query.modified_distance_moved*50",
+						0,
+						0
+					]
+				},
+				"banh2": {
+					"rotation": [
+						"query.modified_distance_moved*50",
+						0,
+						0
+					]
+				},
+				"banh3": {
+					"rotation": [
+						"query.modified_distance_moved*50",
+						0,
+						0
+					]
+				},
+				"banh4": {
+					"rotation": [
+						"query.modified_distance_moved*50",
+						0,
+						0
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,211 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.mokhoanong": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shooted": "variable.attack_time>0"
+						}
+					]
+				},
+				"shooted": {
+					"on_entry": [
+						"/event entity @s fv:shooted"
+					],
+					"transitions": [
+						{
+							"default": "variable.attack_time<=0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.reaload": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"realoading": "query.property('fv:ammo')==0"
+						}
+					]
+				},
+				"realoading": {
+					"on_entry": [
+						"/event entity @s fv:reloading"
+					],
+					"transitions": [
+						{
+							"default": "query.property('fv:reloading')==false"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.gun_shoot_two_mode": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shooted": "variable.attack_time>0&&query.variant==2"
+						}
+					]
+				},
+				"shooted": {
+					"on_entry": [
+						"/event entity @s fv:shooted"
+					],
+					"transitions": [
+						{
+							"default": "variable.attack_time<=0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.musket_and_cap": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shooted": "variable.attack_time>0"
+						},
+						{
+							"reload_musket_and_cap": "(query.property('fv:flintlock_musket_ammo')==0&&query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_musket'))||(query.property('fv:cap_musket_ammo')==0&&query.equipped_item_any_tag('slot.weapon.mainhand','fv:percussion_cap_musket'))"
+						}
+					]
+				},
+				"shooted": {
+					"on_entry": [
+						"/event entity @s flintlock_type_shooted"
+					],
+					"transitions": [
+						{
+							"default": "variable.attack_time<=0"
+						}
+					]
+				},
+				"reload_musket_and_cap": {
+					"on_entry": [
+						"/event entity @s reload_musket_and_cap"
+					],
+					"transitions": [
+						{
+							"default": "query.property('fv:reloading')==false"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.flintlock_pistol": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shooted": "variable.attack_time>0"
+						},
+						{
+							"reloading": "query.property('fv:flintlock_pistol_ammo')==0"
+						}
+					]
+				},
+				"shooted": {
+					"on_entry": [
+						"/event entity @s flintlock_type_shooted"
+					],
+					"transitions": [
+						{
+							"default": "variable.attack_time<=0"
+						}
+					]
+				},
+				"reloading": {
+					"on_entry": [
+						"/event entity @s reload_flintlock_pistol"
+					],
+					"transitions": [
+						{
+							"default": "query.property('fv:reloading')==false"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.deadlight_rifle": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shooted": "variable.attack_time>0"
+						},
+						{
+							"reloading": "query.property('fv:rife_ammo')==0"
+						}
+					]
+				},
+				"shooted": {
+					"on_entry": [
+						"/event entity @s rifle_shoot"
+					],
+					"transitions": [
+						{
+							"default": "variable.attack_time<=0"
+						}
+					]
+				},
+				"reloading": {
+					"on_entry": [
+						"/event entity @s rifle_reloading"
+					],
+					"transitions": [
+						{
+							"default": "query.property('fv:reloading')==false"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.golden_reaper": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shooted": "variable.attack_time>0"
+						},
+						{
+							"reloading": "query.property('fv:reaper_ammo')==0"
+						}
+					]
+				},
+				"shooted": {
+					"on_entry": [
+						"/event entity @s reaper_shoot"
+					],
+					"transitions": [
+						{
+							"default": "variable.attack_time<=0"
+						}
+					]
+				},
+				"reloading": {
+					"on_entry": [
+						"/event entity @s reaper_reloading"
+					],
+					"transitions": [
+						{
+							"default": "query.property('fv:reloading')==false"
+						}
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,33 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:wooden_halberd"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"i": {
+				"item": "planks"
+			},
+			"s": {
+				"item": "fv:long_stick"
+			}
+		},
+		"pattern": [
+			" ii",
+			" i ",
+			"s  "
+		],
+		"result": {
+			"item": "fv:wooden_halberd",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "fv:long_stick"
+			}
+		]
+	}
+}

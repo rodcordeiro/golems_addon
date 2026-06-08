@@ -1,0 +1,43 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:dead_air_ship",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/new_illagers/mesa/airship"
+			},
+			"geometry": {
+				"default": "geometry.air_ship"
+			},
+			"animations": {
+				"scale": "animation.air_ship.scale",
+				"is_flying": "controller.animation.illager.airship.flying",
+				"flying_smoke_left": "animation.air_ship.flying_smoke_left",
+				"flying_smoke_right": "animation.air_ship.flying_smoke_right",
+				"fire_smoke": "animation.air_ship.fire_smoke",
+				"fire_smoke2": "animation.air_ship.fire_smoke2"
+			},
+			"scripts": {
+				"animate": [
+					"scale",
+					"fire_smoke",
+					"fire_smoke2",
+					"flying_smoke_left",
+					"flying_smoke_right"
+				]
+			},
+			"render_controllers": [
+				"controller.render.fv_default_no_hurt"
+			],
+			"spawn_egg": {
+				"texture": "fv_air_ship"
+			},
+			"particle_effects": {
+				"flying_smoke": "minecraft:campfire_smoke_particle"
+			}
+		}
+	}
+}

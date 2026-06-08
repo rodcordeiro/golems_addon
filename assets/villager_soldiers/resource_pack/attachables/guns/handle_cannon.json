@@ -1,0 +1,49 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "handlecannon:crossbow",
+      "materials": {
+        "default": "entity_alphatest",
+        "enchanted": "entity_alphatest_glint"
+      },
+      "textures": {
+        "default": "textures/items/weapons/guns/3d_handle_cannon",
+        "crossbow_pulling_0": "textures/items/weapons/guns/3d_handle_cannon",
+        "crossbow_pulling_1": "textures/items/weapons/guns/3d_handle_cannon",
+        "crossbow_pulling_2": "textures/items/weapons/guns/3d_handle_cannon",
+        "crossbow_arrow": "textures/items/weapons/guns/3d_handle_cannon",
+        "crossbow_rocket": "textures/items/weapons/guns/3d_handle_cannon",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.handle_cannon",
+        "crossbow_pulling_0": "geometry.handle_cannon",
+        "crossbow_pulling_1": "geometry.handle_cannon",
+        "crossbow_pulling_2": "geometry.handle_cannon",
+        "crossbow_arrow": "geometry.handle_cannon",
+        "crossbow_rocket": "geometry.handle_cannon"
+      },
+      "animations": {
+        "fpp": "animation.handle_cannon.fpp",
+        "tpp": "animation.handle_cannon.tpp",
+        "wield_first_person_pull": "animation.crossbow.wield_first_person_pull",
+        "fpp_pull": "animation.handle_cannon.fpp_pull",
+        "tpp_pull": "animation.handle_cannon.tpp_pull",
+        "reloading": "animation.handle_cannon.reloading",
+        "general": "controller.animation.guns.handle_cannon.general"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.charge_amount = math.clamp((query.main_hand_item_max_duration - (query.main_hand_item_use_duration - query.frame_alpha + 1.0)) / 10.0, 0.0, 1.0f);"
+        ],
+        "animate": [
+          "general"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.crossbow"
+      ]
+    }
+  }
+}

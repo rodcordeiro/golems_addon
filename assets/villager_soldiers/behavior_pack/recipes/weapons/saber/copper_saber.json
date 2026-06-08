@@ -1,0 +1,33 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:copper_saber"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"i": {
+				"item": "minecraft:copper_ingot"
+			},
+			"s": {
+				"item": "minecraft:stick"
+			}
+		},
+		"pattern": [
+			"  i",
+			" i ",
+			"s  "
+		],
+		"result": {
+			"item": "fv:copper_saber",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "minecraft:copper_ingot"
+			}
+		]
+	}
+}

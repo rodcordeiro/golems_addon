@@ -1,0 +1,167 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.melon.golem.attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"attack": "variable.attack_time"
+						}
+					]
+				},
+				"attack": {
+					"animations": [
+						"attack"
+					],
+					"blend_transition": 1,
+					"transitions": [
+						{
+							"default": "!variable.attack_time"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.copper.golem.attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.08,
+					"transitions": [
+						{
+							"attack": "variable.attack_time"
+						}
+					]
+				},
+				"attack": {
+					"animations": [
+						"attack"
+					],
+					"blend_transition": 0.15,
+					"transitions": [
+						{
+							"default": "!variable.attack_time"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.potato.cannon.shoot": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shoot": "query.property('fv:shooting')==true"
+						}
+					]
+				},
+				"shoot": {
+					"animations": [
+						"shooting"
+					],
+					"transitions": [
+						{
+							"default": "query.property('fv:shooting')==false"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.catapult.status": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"ready": "v.catapult_status=='starting'"
+						}
+					]
+				},
+				"ready": {
+					"animations": [
+						"starting"
+					],
+					"transitions": [
+						{
+							"shoot": "v.catapult_status=='shooting'"
+						}
+					]
+				},
+				"shoot": {
+					"animations": [
+						"shoot"
+					],
+					"transitions": [
+						{
+							"default": "v.catapult_status=='default'"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.catapult.stone": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"default"
+					],
+					"transitions": [
+						{
+							"loaded": "v.reload_catapult!='empty'"
+						}
+					]
+				},
+				"loaded": {
+					"animations": [
+						"loaded"
+					],
+					"transitions": [
+						{
+							"default": "v.reload_catapult=='empty'"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.rock_tortois.root": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"look_at_target",
+						"move",
+						{
+							"eating": "query.property('fv:eating')==true"
+						},
+						{
+							"hungry": "query.has_target&&variable.hungry==true"
+						}
+					],
+					"blend_transition": 0.5,
+					"blend_via_shortest_path": true,
+					"transitions": [
+						{
+							"scared": "v.scared==true"
+						}
+					]
+				},
+				"scared": {
+					"animations": [
+						"hurting"
+					],
+					"blend_transition": 0.5,
+					"transitions": [
+						{
+							"default": "v.scared==false"
+						}
+					]
+				}
+			}
+		}
+	}
+}

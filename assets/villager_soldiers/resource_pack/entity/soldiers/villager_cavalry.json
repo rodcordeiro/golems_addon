@@ -1,0 +1,155 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:villager_cavalry",
+			"materials": {
+				"default": "pillager",
+				"tamed_color": "entity_alphatest_change_color"
+			},
+			"textures": {
+				"desert": "textures/entity/sword_soldier_villager/desert",
+				"jungle": "textures/entity/sword_soldier_villager/jungle",
+				"plains": "textures/entity/sword_soldier_villager/plains",
+				"savanna": "textures/entity/sword_soldier_villager/savanna",
+				"snow": "textures/entity/sword_soldier_villager/snow",
+				"swamp": "textures/entity/sword_soldier_villager/swamp",
+				"taiga": "textures/entity/sword_soldier_villager/taiga",
+				"horse_black": "textures/entity/fv_steed/horse_black",
+				"horse_brown": "textures/entity/fv_steed/horse_brown",
+				"horse_chestnut": "textures/entity/fv_steed/horse_chestnut",
+				"horse_creamy": "textures/entity/fv_steed/horse_creamy",
+				"horse_darkbrown": "textures/entity/fv_steed/horse_darkbrown",
+				"horse_gray": "textures/entity/fv_steed/horse_gray",
+				"horse_white": "textures/entity/fv_steed/horse_white",
+				"royal_desert": "textures/entity/captain_banner/desert",
+				"royal_jungle": "textures/entity/captain_banner/jungle",
+				"royal_plains": "textures/entity/captain_banner/plains",
+				"royal_savanna": "textures/entity/captain_banner/savanna",
+				"royal_snow": "textures/entity/captain_banner/snow",
+				"royal_swamp": "textures/entity/captain_banner/swamp",
+				"royal_taiga": "textures/entity/captain_banner/taiga",
+				"none": "textures/entity/fv_steed/armor/horse_armor_none",
+				"gold": "textures/entity/fv_steed/armor/horse_armor_gold",
+				"copper": "textures/entity/fv_steed/armor/horse_armor_copper",
+				"iron": "textures/entity/fv_steed/armor/horse_armor_iron",
+				"diamond": "textures/entity/fv_steed/armor/horse_armor_diamond",
+				"netherite": "textures/entity/fv_steed/armor/horse_armor_netherite",
+				"target": "textures/entity/target",
+				"wrist_belt": "textures/entity/villager2/wrist_belt",
+				"tamed_color": "textures/entity/villager2/tamed_color",
+				"stay_statue": "textures/entity/stay_statue"
+			},
+			"geometry": {
+				"default": "geometry.villager_handle",
+				"horse": "geometry.soldier_horse",
+				"captain_banner": "geometry.captain_banner",
+				"horse_armor": "geometry.soldier_horse_armor",
+				"target": "geometry.target",
+				"wrist_belt": "geometry.wrist_belt",
+				"tamed_color": "geometry.tamed_color",
+				"stay_statue": "geometry.stay_statue"
+			},
+			"spawn_egg": {
+				"texture": "fv_villager_soldier_spawn_egg"
+			},
+			"scripts": {
+				"scale": "0.9375",
+				"pre_animation": [
+					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+					"v.horse_skin = query.property('fv:cavalry_random_skin');"
+				],
+				"variables": {
+					"variable.item_use_normalized": "public",
+					"variable.tp_melee_spear_use_attachable_rotation_z": "public"
+				},
+				"initialize": [
+					"v.tp_melee_spear_base_arm_rotation_x = -30.0;"
+				],
+				"animate": [
+					"controller_humanoid_base_pose",
+					"controller_look_at_target",
+					"controller_move",
+					"controller_bob",
+					"armor",
+					{
+						"noout": "query.has_armor_slot(2)"
+					},
+					"default",
+					"banner",
+					{
+						"dead": "!query.is_alive"
+					},
+					"horse_armor_default",
+					"irongolem",
+					{
+						"attack_controller": "query.variant==2||query.variant==4"
+					},
+					{
+						"spear_attack": "query.variant==5"
+					},
+					{
+						"melee_spear_controller": "query.variant==3"
+					}
+				]
+			},
+			"animations": {
+				"humanoid_base_pose": "animation.humanoid.base_pose",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"move": "animation.soldier_horse.moving",
+				"riding.arms": "animation.humanoid.riding.arms",
+				"riding.legs": "animation.humanoid.riding.legs",
+				"holding": "animation.humanoid.holding",
+				"attack.rotations": "animation.humanoid.attack.rotations",
+				"bob": "animation.humanoid.bob",
+				"celebrating": "animation.humanoid.celebrating",
+				"controller_humanoid_base_pose": "controller.animation.humanoid.base_pose",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				"controller_move": "controller.animation.humanoid.move",
+				"controller_bob": "controller.animation.humanoid.bob",
+				"attack_controller": "controller.animation.villager.horse.attack",
+				"armor": "animation.villager_noarmor.armor",
+				"noout": "animation.villager_noarmor.noout",
+				"horse_hold_attack": "animation.villager_noarmor.horse_hold_attack",
+				"horse_attack": "animation.villager_noarmor.horse_attack",
+				"horse_default": "animation.villager_noarmor.horse_default",
+				"default": "animation.soldier_horse.default",
+				"banner": "animation.captain_banner.default",
+				"dead": "animation.soldier_horse.dead",
+				"horse_armor_default": "animation.soldier_horse_armor.default",
+				"sit": "animation.villager_noarmor.staying",
+				"irongolem": "animation.target.irongolem",
+				"has_target": "animation.repillager.spear.has_target",
+				"attack": "animation.repillager.spear.attacked",
+				"spear_attack": "controller.animation.vindicator.spearman_attack",
+				"melee_spear_use": "animation.humanoid.melee_spear_use",
+				"melee_spear_hold": "animation.humanoid.melee_spear_hold",
+				"melee_spear_controller": "controller.animation.villager.melee_spear",
+				"support_vanilla": "animation.repillager.spear.support_vanilla"
+			},
+			"render_controllers": [
+				"controller.render.vanilla.biome",
+				"controller.render.horse.skin",
+				"controller.render.horse.armor.soldier",
+				{
+					"controller.render.banner.biome": "query.is_saddled"
+				},
+				{
+					"controller.render.golem.target": "query.property('fv:kill_player_mode')==true"
+				},
+				{
+					"controller.render.wrist_belt": "query.is_sitting"
+				},
+				{
+					"controller.render.tamed_color": "query.is_tamed"
+				},
+				{
+					"controller.render.stay_statue": "query.property('fv:stay_mode')==true"
+				}
+			],
+			"enable_attachables": true
+		}
+	}
+}

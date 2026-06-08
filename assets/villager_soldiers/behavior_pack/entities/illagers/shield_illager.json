@@ -1,0 +1,163 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fv:shield_illager",
+			"is_summonable": true,
+			"is_spawnable": false
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {
+					"remove_child_entities": true
+				}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"illager",
+					"shieldillager"
+				]
+			},
+			"minecraft:area_attack": {
+				"cause": "entity_attack",
+				"damage_per_tick": 0,
+				"damage_range": 0,
+				"entity_filter": {
+					"any_of": [
+						{
+							"test": "is_family",
+							"subject": "other",
+							"value": "villager"
+						},
+						{
+							"test": "is_family",
+							"subject": "other",
+							"value": "irongolem"
+						},
+						{
+							"test": "is_family",
+							"subject": "other",
+							"value": "snowgolem"
+						},
+						{
+							"test": "is_family",
+							"subject": "other",
+							"value": "piglin"
+						},
+						{
+							"test": "is_family",
+							"subject": "other",
+							"value": "player"
+						}
+					]
+				}
+			},
+			"minecraft:health": {
+				"value": 336,
+				"max": 336
+			},
+			"minecraft:collision_box": {
+				"height": 2,
+				"width": 0.9
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0,
+				"breathes_air": true,
+				"breathes_water": true,
+				"breathes_lava": true,
+				"breathes_solids": true
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"on_damage": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "illager"
+									}
+								]
+							}
+						},
+						"deals_damage": "no"
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"test": "has_equipment_tag",
+								"subject": "other",
+								"operator": "==",
+								"value": "minecraft:is_axe"
+							}
+						},
+						"damage_multiplier": 999
+					},
+					{
+						"cause": "entity_attack",
+						"damage_multiplier": 0.1
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_damage",
+										"subject": "self",
+										"operator": "==",
+										"value": "fatal"
+									}
+								]
+							},
+							"event": "despawn",
+							"target": "self"
+						}
+					},
+					{
+						"cause": "drowning",
+						"deals_damage": "no"
+					},
+					{
+						"cause": "fire",
+						"deals_damage": "no"
+					},
+					{
+						"cause": "piston",
+						"deals_damage": "no"
+					}
+				]
+			},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_riding",
+									"subject": "self",
+									"operator": "==",
+									"value": false
+								}
+							]
+						},
+						"event": "despawn",
+						"target": "self"
+					}
+				]
+			}
+		},
+		"events": {
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,187 @@
+{
+	"tiers": [
+		{
+			"trades": [
+				{
+					"wants": [
+						{
+							"item": "trial_key",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:golden_lucky_chest",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"wants": [
+						{
+							"item": "ominous_trial_key",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:diamond_lucky_chest",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"wants": [
+						{
+							"item": "fv:illager_savanna_badge",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:savanna_clan_medal",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1,
+					"reward_exp": true
+				},
+				{
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 2
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:command_flag",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:melee_banner_tp",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:ranged_banner_tp",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:clumper_banner_tp",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"max_uses": -1,
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 8
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:discharge_letter"
+						}
+					]
+				},
+				{
+					"wants": [
+						{
+							"item": "melon_slice",
+							"quantity": {
+								"min": 8,
+								"max": 64
+							}
+						}
+					],
+					"gives": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": {
+								"min": 1,
+								"max": 16
+							}
+						}
+					],
+					"max_uses": 10
+				},
+				{
+					"max_uses": -1,
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": {
+								"min": 30,
+								"max": 38
+							}
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:flintlock_musket_empty"
+						}
+					]
+				},
+				{
+					"max_uses": 64,
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": {
+								"min": 5,
+								"max": 10
+							}
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:bullet",
+							"quantity": {
+								"min": 2,
+								"max": 4
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

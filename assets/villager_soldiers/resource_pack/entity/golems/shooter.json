@@ -1,0 +1,42 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:shooter",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/copper_golem/shooter",
+				"target": "textures/entity/target"
+			},
+			"geometry": {
+				"default": "geometry.shooter",
+				"target": "geometry.target"
+			},
+			"animations": {
+				"look_at_target": "animation.shooter.look_at_target",
+				"show": "animation.target.pop",
+				"hide": "animation.target.default"
+			},
+			"scripts": {
+				"animate": [
+					"look_at_target",
+					{
+						"hide": "!query.is_sheared"
+					},
+					{
+						"show": "query.is_sheared"
+					}
+				]
+			},
+			"render_controllers": [
+				"controller.render.iron_golem_tamed",
+				"controller.render.golem.target"
+			],
+			"spawn_egg": {
+				"texture": "shooter"
+			}
+		}
+	}
+}

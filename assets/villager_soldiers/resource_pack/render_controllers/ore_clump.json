@@ -1,0 +1,45 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.ore_clump": {
+			"arrays": {
+				"textures": {
+					"Array.ores": [
+						"Texture.default",
+						"Texture.stone_iron",
+						"Texture.stone_big_iron",
+						"Texture.stone_copper_iron",
+						"Texture.stone_bigiron_copper",
+						"Texture.stone_copper",
+						"Texture.stone_bigcopper",
+						"Texture.stone_bigcopper_iron",
+						"Texture.deepstone_iron",
+						"Texture.deepstone_diamond_iron",
+						"Texture.deepstone_diamond_iron_copper"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.ores[query.variant]"
+			],
+			"is_hurt_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			},
+			"on_fire_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			}
+		}
+	}
+}

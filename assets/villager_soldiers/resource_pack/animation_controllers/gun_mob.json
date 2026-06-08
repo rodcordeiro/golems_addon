@@ -1,0 +1,438 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.pillager.gunner_has_taget": {
+			"initial_state": "ready_for_shoot",
+			"states": {
+				"ready_for_shoot": {
+					"animations": [
+						"ready_for_shoot"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"default": {
+					"animations": [
+						"default_ready"
+					],
+					"transitions": [
+						{
+							"hold": "query.has_target"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"hold": {
+					"animations": [
+						"hold"
+					],
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.pillager.gunner.root": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"gun_default"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"has_target": "query.has_target"
+						},
+						{
+							"reloading": "query.property('fv:reloading')==true"
+						}
+					]
+				},
+				"has_target": {
+					"animations": [
+						"controller_has_target"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						},
+						{
+							"reloading": "query.property('fv:reloading')==true"
+						}
+					]
+				},
+				"reloading": {
+					"animations": [
+						"reloading"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"default": "query.property('fv:reloading')==false&&!query.has_target"
+						},
+						{
+							"has_target": "query.property('fv:reloading')==false&&query.has_target"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.pillager.bualua": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"canshoot": "query.property('fv:shooted')==false"
+						}
+					],
+					"blend_transition": 0.4
+				},
+				"canshoot": {
+					"animations": [
+						"has_target"
+					],
+					"transitions": [
+						{
+							"default": "query.property('fv:shooted')==true"
+						}
+					],
+					"blend_transition": 0.1
+				}
+			}
+		},
+		"controller.animation.pillager.gun_and_melee": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"gun_mode": "query.variant==2"
+						},
+						{
+							"melee_mode": "query.variant==1"
+						}
+					],
+					"blend_transition": 0.4
+				},
+				"gun_mode": {
+					"animations": [
+						"gun_mode",
+						"gun_animation"
+					],
+					"transitions": [
+						{
+							"reloading": "query.property('fv:reloading')==true"
+						},
+						{
+							"melee_mode": "query.variant==1"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"melee_mode": {
+					"animations": [
+						{
+							"melee_attack": "variable.attack_time>0&&query.variant==1"
+						}
+					],
+					"transitions": [
+						{
+							"reloading": "query.property('fv:reloading')==true"
+						},
+						{
+							"gun_mode": "query.variant==2"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"reloading": {
+					"animations": [
+						"flintlock_reloading"
+					],
+					"transitions": [
+						{
+							"default": "query.property('fv:reloading')==false"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.pillager.gun_mode": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"has_target": "query.has_target&&query.property('fv:reloading')==false"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"has_target": {
+					"animations": [
+						"bow_and_arrow"
+					],
+					"transitions": [
+						{
+							"default": "!query.has_target||query.property('fv:reloading')==true"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.pillager.gun_animation": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"flintlock_has_target"
+					],
+					"transitions": [
+						{
+							"shooted": "query.variant==2&&variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"shooted": {
+					"animations": [
+						"flintlock_shooted"
+					],
+					"transitions": [
+						{
+							"default": "query.variant!=2||variable.attack_time<=0"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.mob.multi_gun_scale": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"flintlock_scale": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_pistol')"
+						},
+						{
+							"reaper_scale": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:golden_reaper')"
+						},
+						{
+							"rifle_scale": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:deadlight_rifle')"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mob.musket_and_cap": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"musket_default_hold"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"ready_for_shoot": "query.has_target"
+						},
+						{
+							"reloading": "query.property('fv:reloading')==true"
+						}
+					]
+				},
+				"ready_for_shoot": {
+					"animations": [
+						"musket_ready_for_shoot"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						},
+						{
+							"has_target": "query.all_animations_finished"
+						},
+						{
+							"reloading": "query.property('fv:reloading')==true"
+						}
+					]
+				},
+				"has_target": {
+					"animations": [
+						"musket_default_hold_hastarget",
+						"bow_and_arrow"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						},
+						{
+							"reloading": "query.property('fv:reloading')==true"
+						}
+					]
+				},
+				"reloading": {
+					"animations": [
+						"reload_flintlock_musket"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"default": "query.property('fv:reloading')==false"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mob.flintlock_pistol": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"has_target": "query.has_target"
+						},
+						{
+							"reloading": "query.property('fv:reloading')==true"
+						}
+					]
+				},
+				"has_target": {
+					"animations": [
+						"gun_one_hand"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						},
+						{
+							"reloading": "query.property('fv:reloading')==true"
+						}
+					]
+				},
+				"reloading": {
+					"animations": [
+						"flintlock_reloading"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"default": "query.property('fv:reloading')==false"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mob.golden_reaper": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"has_target": "query.has_target"
+						},
+						{
+							"reloading": "query.property('fv:reloading')==true"
+						}
+					]
+				},
+				"has_target": {
+					"animations": [
+						"gun_one_hand",
+						{
+							"reaper_has_target": "variable.attack_time<=0"
+						},
+						{
+							"reaper_shooting": "variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						},
+						{
+							"reloading": "query.property('fv:reloading')==true"
+						}
+					]
+				},
+				"reloading": {
+					"animations": [
+						"reaper_reloading"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"default": "query.property('fv:reloading')==false"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.mob.deadlight_rifle": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"rifle_default"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"has_target": "query.has_target"
+						},
+						{
+							"reloading": "query.property('fv:reloading')==true"
+						}
+					]
+				},
+				"has_target": {
+					"animations": [
+						"bow_and_arrow",
+						{
+							"lendan": "variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						},
+						{
+							"reloading": "query.property('fv:reloading')==true"
+						}
+					]
+				},
+				"reloading": {
+					"animations": [
+						"rifle_reloading"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"default": "query.property('fv:reloading')==false"
+						}
+					]
+				}
+			}
+		}
+	}
+}

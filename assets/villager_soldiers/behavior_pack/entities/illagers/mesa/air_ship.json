@@ -1,0 +1,344 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fv:air_ship",
+			"spawn_category": "monster",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"animations": {
+				"death": "controller.animation.horse.death"
+			},
+			"scripts": {
+				"animate": [
+					"death"
+				]
+			}
+		},
+		"component_groups": {
+			"fv:spawn_soldier": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"num_to_spawn": 8,
+							"single_use": true,
+							"spawn_entity": "fv:parachute",
+							"spawn_event": "fv:from_airship"
+						},
+						{
+							"min_wait_time": 80,
+							"max_wait_time": 100,
+							"num_to_spawn": 6,
+							"spawn_entity": "fv:parachute",
+							"spawn_event": "fv:from_airship"
+						}
+					]
+				}
+			},
+			"fv:spawn_soldier2": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"min_wait_time": 80,
+							"max_wait_time": 100,
+							"num_to_spawn": 6,
+							"spawn_entity": "fv:parachute",
+							"spawn_event": "fv:from_airship"
+						}
+					]
+				}
+			},
+			"fv:starting": {
+				"minecraft:timer": {
+					"time": 10,
+					"time_down_event": {
+						"event": "fv:flying",
+						"target": "self"
+					}
+				},
+				"minecraft:is_shaking": {}
+			},
+			"fv:flying": {
+				"minecraft:behavior.float_wander": {
+					"priority": 2,
+					"must_reach": true,
+					"random_reselect": true,
+					"float_duration": [
+						2,
+						7
+					],
+					"float_wander_has_move_control": false,
+					"additional_collision_buffer": true,
+					"use_home_position_restriction": true,
+					"xz_dist": 10,
+					"y_dist": 7
+				},
+				"minecraft:can_fly": {},
+				"minecraft:shooter": {
+					"def": "fv:illager_rocket"
+				},
+				"minecraft:behavior.ranged_attack": {
+					"priority": 1,
+					"attack_radius": 128,
+					"charge_shoot_trigger": 2,
+					"charge_charged_trigger": 1,
+					"burst_shots": 6,
+					"burst_interval": 0.2,
+					"ranged_fov": 45,
+					"y_max_head_rotation": 45
+				},
+				"minecraft:is_sheared": {}
+			},
+			"drop": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"num_to_spawn": 1,
+							"single_use": true,
+							"spawn_entity": "fv:parachute",
+							"spawn_event": "fv:drop_general"
+						}
+					]
+				},
+				"minecraft:transformation": {
+					"into": "fv:dead_air_ship",
+					"delay": 0.1
+				}
+			}
+		},
+		"components": {
+			"minecraft:home": {
+				"restriction_radius": 100,
+				"restriction_type": "all_movement"
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:experience_reward": {
+				"on_death": "500"
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0
+			},
+			"minecraft:fire_immune": {},
+			"minecraft:nameable": {},
+			"minecraft:health": {
+				"value": 1000,
+				"max": 1000
+			},
+			"minecraft:collision_box": {
+				"width": 10.3,
+				"height": 17
+			},
+			"minecraft:movement": {
+				"value": 0.03
+			},
+			"minecraft:navigation.float": {
+				"can_path_over_water": true
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/ghast.json"
+			},
+			"minecraft:type_family": {
+				"family": [
+					"illager",
+					"airattacker",
+					"airship",
+					"mob"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": "no"
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "illager"
+							}
+						},
+						"deals_damage": "no"
+					}
+				]
+			},
+			"minecraft:jump.static": {},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:follow_range": {
+				"value": 200,
+				"max": 200
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1,
+				"entity_types": {
+					"filters": {
+						"test": "is_family",
+						"subject": "other",
+						"operator": "!=",
+						"value": "illager"
+					},
+					"max_dist": 64
+				}
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 2,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "irongolem"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "villager"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								}
+							]
+						},
+						"max_dist": 128
+					}
+				],
+				"must_see": true
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:knockback_resistance": {
+				"value": 10,
+				"max": 10
+			},
+			"minecraft:rideable": {
+				"family_types": [
+					"dispenserturret"
+				],
+				"pull_in_entities": true,
+				"seat_count": 4,
+				"seats": [
+					{
+						"position": [
+							3,
+							1.5,
+							1.4
+						],
+						"lock_rider_rotation": 360
+					},
+					{
+						"position": [
+							3,
+							1.5,
+							-4.8
+						],
+						"lock_rider_rotation": 360
+					},
+					{
+						"position": [
+							-3.1,
+							1.5,
+							-4.8
+						],
+						"lock_rider_rotation": 360
+					},
+					{
+						"position": [
+							-3.1,
+							1.5,
+							1.4
+						],
+						"lock_rider_rotation": 360
+					}
+				]
+			},
+			"minecraft:on_target_acquired": {
+				"event": "fv:has_target",
+				"target": "self"
+			},
+			"minecraft:on_target_escape": {
+				"event": "fv:no_target",
+				"target": "self"
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"queue_command": {
+					"command": [
+						"summon fv:dispenser_auto_turret ~ ~ ~ ~",
+						"summon fv:dispenser_auto_turret ~ ~ ~ ~",
+						"summon fv:dispenser_auto_turret ~ ~ ~ ~",
+						"summon fv:dispenser_auto_turret ~ ~ ~ ~"
+					],
+					"target": "self"
+				},
+				"add": {
+					"component_groups": [
+						"fv:starting"
+					]
+				}
+			},
+			"fv:has_target": {
+				"randomize": [
+					{
+						"weight": 50,
+						"add": {
+							"component_groups": [
+								"fv:spawn_soldier"
+							]
+						}
+					},
+					{
+						"weight": 50,
+						"add": {
+							"component_groups": [
+								"fv:spawn_soldier2"
+							]
+						}
+					}
+				]
+			},
+			"fv:no_target": {
+				"remove": {
+					"component_groups": [
+						"fv:spawn_soldier"
+					]
+				}
+			},
+			"fv:flying": {
+				"add": {
+					"component_groups": [
+						"fv:flying"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"fv:starting"
+					]
+				}
+			},
+			"drop": {
+				"add": {
+					"component_groups": [
+						"drop"
+					]
+				}
+			}
+		}
+	}
+}

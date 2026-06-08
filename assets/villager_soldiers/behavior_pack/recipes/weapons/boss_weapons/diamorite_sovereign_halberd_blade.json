@@ -1,0 +1,33 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:diamorite_sovereign_halberd_blade"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"d": {
+				"item": "fv:diamorite_ingot"
+			},
+			"e": {
+				"item": "minecraft:emerald"
+			}
+		},
+		"pattern": [
+			"dd",
+			"ded",
+			"d  "
+		],
+		"result": {
+			"item": "fv:diamorite_sovereign_halberd_blade",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "fv:diamorite_ingot"
+			}
+		]
+	}
+}

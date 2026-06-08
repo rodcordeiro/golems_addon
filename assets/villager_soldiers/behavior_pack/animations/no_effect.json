@@ -1,0 +1,55 @@
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.no.slow": {
+			"timeline": {
+				"0.0": [
+					"/effect @s slowness 0 0"
+				],
+				"0.05": [
+					"/effect @s slowness 0 0"
+				]
+			},
+			"animation_length": 0.05,
+			"loop": true
+		},
+		"animation.no.weakness": {
+			"timeline": {
+				"0.0": [
+					"/effect @s weakness 0 0"
+				],
+				"0.05": [
+					"/effect @s weakness 0 0"
+				]
+			},
+			"animation_length": 0.05,
+			"loop": true
+		},
+		"animation.no.poison": {
+			"timeline": {
+				"0.0": [
+					"/effect @s poison 0 0"
+				],
+				"0.05": [
+					"/effect @s poison 0 0"
+				]
+			},
+			"animation_length": 0.05,
+			"loop": true
+		},
+		"animation.no.wind_charged": {
+			"timeline": {
+				"0.0": [
+					"/effect @s wind_charged 0 0",
+					"/effect @s slowness 0 0"
+				],
+				"0.05": [
+					"/effect @s wind_charged 0 0",
+					"/effect @s slowness 0 0"
+				]
+			},
+			"animation_length": 0.05,
+			"loop": true
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.tp_flag.default": {
+			"loop": true,
+			"bones": {
+				"banner": {
+					"rotation": [
+						"math.cos(query.life_time*50)-1",
+						0,
+						0
+					]
+				}
+			}
+		}
+	}
+}

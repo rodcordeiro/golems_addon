@@ -1,0 +1,33 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:diamorite_ingot"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"i": {
+				"item": "fv:diamet_ingot"
+			},
+			"d": {
+				"item": "minecraft:netherite_scrap"
+			}
+		},
+		"pattern": [
+			"iii",
+			"idi",
+			"iii"
+		],
+		"result": {
+			"item": "fv:diamorite_ingot",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "fv:diamet_ingot"
+			}
+		]
+	}
+}

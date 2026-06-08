@@ -1,0 +1,27 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.melon_golem.attack": {
+			"loop": true,
+			"bones": {
+				"cuon": {
+					"rotation": [
+						-15,
+						0,
+						0
+					]
+				},
+				"cuon2": {
+					"rotation": [
+						-117.5,
+						0,
+						0
+					]
+				},
+				"melon": {
+					"scale": 0
+				}
+			}
+		}
+	}
+}

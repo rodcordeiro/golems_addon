@@ -1,0 +1,13 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_furnace": {
+		"description": {
+			"identifier": "fv:steel_ingot"
+		},
+		"tags": [
+			"blast_furnace"
+		],
+		"input": "minecraft:iron_ingot",
+		"output": "fv:steel_ingot"
+	}
+}

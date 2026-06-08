@@ -1,0 +1,2003 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.nguoimau.using_spear": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [
+						0,
+						"v.is_first_person?0:42.5",
+						0
+					]
+				},
+				"rightArm": {
+					"rotation": [
+						"v.is_first_person?0:21.3029038964-this",
+						"v.is_first_person?0:-48.3337486465-this",
+						"v.is_first_person?0:9.0305330467"
+					]
+				},
+				"rightItem": {
+					"rotation": [
+						"v.is_first_person?0:-25.6493",
+						0,
+						0
+					],
+					"position": [
+						0,
+						"v.is_first_person?0:3.4628925448",
+						"v.is_first_person?0:-7.2116832448"
+					]
+				},
+				"leftArm": {
+					"rotation": [
+						"v.is_first_person?0:-49.4694883165-this",
+						"v.is_first_person?0:11.3125485577-this",
+						"v.is_first_person?0:5.3525429187"
+					],
+					"position": [
+						"v.is_first_person?0:-0.6493188417",
+						"v.is_first_person?0:-1.2378015645",
+						"v.is_first_person?0:-2.6544740211"
+					]
+				}
+			}
+		},
+		"animation.nguoimau.spear_attacked": {
+			"animation_length": 0.5,
+			"bones": {
+				"body": {
+					"rotation": {
+						"0.0": [
+							0,
+							"v.is_first_person?0:42.5",
+							0
+						],
+						"0.125": [
+							0,
+							"v.is_first_person?0:-40",
+							0
+						],
+						"0.25": [
+							0,
+							"v.is_first_person?0:42.5",
+							0
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							"v.is_first_person?0:21.3029038964-this",
+							"v.is_first_person?0:-48.3337486465-this",
+							"v.is_first_person?0:9.0305330467"
+						],
+						"0.125": [
+							"v.is_first_person?0:-44.2662494011-this",
+							"v.is_first_person?0:40.4512418233-this",
+							"v.is_first_person?0:9.8596543783"
+						],
+						"0.25": [
+							"v.is_first_person?0:21.3029038964-this",
+							"v.is_first_person?0:-48.3337486465-this",
+							"v.is_first_person?0:9.0305330467"
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"rightItem": {
+					"rotation": {
+						"0.0": [
+							"v.is_first_person?0:-25.6493",
+							0,
+							0
+						],
+						"0.125": [
+							"v.is_first_person?0:47.5-this",
+							0,
+							0
+						],
+						"0.25": [
+							"v.is_first_person?0:-25.6493",
+							0,
+							0
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							0,
+							"v.is_first_person?0:1.2985847043",
+							"v.is_first_person?0:-7.6802820823"
+						],
+						"0.125": [
+							0,
+							"v.is_first_person?0:-4.5707792149",
+							"v.is_first_person?0:-5.0044628486"
+						],
+						"0.25": [
+							0,
+							"v.is_first_person?0:1.2985847043",
+							"v.is_first_person?0:-7.6802820823"
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": [
+							"v.is_first_person?0:-49.4694883165-this",
+							"v.is_first_person?0:11.3125485577-this",
+							"v.is_first_person?0:5.3525429187"
+						],
+						"0.125": [
+							"v.is_first_person?0:22.0113112255-this",
+							"v.is_first_person?0:-11.759344134-this",
+							"v.is_first_person?0:-20.4687024113"
+						],
+						"0.25": [
+							"v.is_first_person?0:-49.4694883165-this",
+							"v.is_first_person?0:11.3125485577-this",
+							"v.is_first_person?0:5.3525429187"
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							"v.is_first_person?0:-0.6493188417",
+							"v.is_first_person?0:-1.2378015645",
+							"v.is_first_person?0:-2.6544740211"
+						],
+						"0.125": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							"v.is_first_person?0:-0.6493188417",
+							"v.is_first_person?0:-1.2378015645",
+							"v.is_first_person?0:-2.6544740211"
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.nguoimau.reload_flintlock_musket": {
+			"animation_length": 4.75,
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": {
+						"0.0": [
+							0,
+							"v.is_first_person?0:50",
+							0
+						],
+						"1.25": [
+							0,
+							"v.is_first_person?0:50",
+							0
+						],
+						"1.5": [
+							0,
+							"v.is_first_person?0:57.5",
+							0
+						],
+						"4.25": [
+							0,
+							"v.is_first_person?0:57.5",
+							0
+						],
+						"4.375": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							"v.is_first_person?0:22.5-this",
+							"v.is_first_person?0:-45-this",
+							"v.is_first_person?0:12.5"
+						],
+						"0.5": [
+							"v.is_first_person?0:-42.4775-this",
+							"v.is_first_person?0:-71.2713-this",
+							"v.is_first_person?0:33.1022953473"
+						],
+						"1.0": [
+							"v.is_first_person?0:-9.9775-this",
+							"v.is_first_person?0:-71.2713-this",
+							"v.is_first_person?0:33.1"
+						],
+						"1.125": [
+							"v.is_first_person?0:-7.4775-this",
+							"v.is_first_person?0:-71.2713-this",
+							"v.is_first_person?0:33.1"
+						],
+						"1.25": [
+							"v.is_first_person?0:-14.9775-this",
+							"v.is_first_person?0:-71.2713-this",
+							"v.is_first_person?0:33.1"
+						],
+						"1.5": [
+							"v.is_first_person?0:-19.4419-this",
+							"v.is_first_person?0:-60.2417-this",
+							"v.is_first_person?0:37.4953270291"
+						],
+						"4.25": [
+							"v.is_first_person?0:-19.4419-this",
+							"v.is_first_person?0:-60.2417-this",
+							"v.is_first_person?0:37.5"
+						],
+						"4.5": [
+							"v.is_first_person?0:-89.044-this",
+							"v.is_first_person?0:-34.3053-this",
+							"v.is_first_person?0:70.4894366391"
+						]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.25": [
+							0,
+							0,
+							0
+						],
+						"0.5": [
+							"v.is_first_person?0:-23.0865-this",
+							"v.is_first_person?0:-27.068-this",
+							"v.is_first_person?0:-46.8709844289"
+						],
+						"0.625": [
+							"v.is_first_person?0:-28.2086-this",
+							"v.is_first_person?0:-21.6346-this",
+							"v.is_first_person?0:-34.5016958551"
+						],
+						"1.0": [
+							"v.is_first_person?0:-25.3991-this",
+							"v.is_first_person?0:12.6796-this",
+							"v.is_first_person?0:18.7449550485"
+						],
+						"1.125": [
+							"v.is_first_person?0:-24.8677-this",
+							"v.is_first_person?0:13.7416-this",
+							"v.is_first_person?0:21.0648008326"
+						],
+						"1.25": [
+							"v.is_first_person?0:-26.3223-this",
+							"v.is_first_person?0:10.4975-this",
+							"v.is_first_person?0:14.1425157811"
+						],
+						"1.5": [
+							"v.is_first_person?0:-42.3996-this",
+							"v.is_first_person?0:0.4554-this",
+							"v.is_first_person?0:2.9314348647"
+						],
+						"1.625": [
+							"v.is_first_person?0:-38.833-this",
+							"v.is_first_person?0:18.5658-this",
+							"v.is_first_person?0:24.0119479573"
+						],
+						"2.0": [
+							"v.is_first_person?0:-72.7779-this",
+							"v.is_first_person?0:-33.7091-this",
+							"v.is_first_person?0:-28.3468087795"
+						],
+						"2.25": [
+							"v.is_first_person?0:-69.4102-this",
+							"v.is_first_person?0:-45.5448-this",
+							"v.is_first_person?0:-33.6019021995"
+						],
+						"2.5": [
+							"v.is_first_person?0:-77.6067-this",
+							"v.is_first_person?0:-45.2787-this",
+							"v.is_first_person?0:-22.3387893865"
+						],
+						"2.9167": [
+							"v.is_first_person?0:-80.7092-this",
+							"v.is_first_person?0:-20.7027-this",
+							"v.is_first_person?0:-16.7757419004"
+						],
+						"3.25": [
+							"v.is_first_person?0:-77.6067-this",
+							"v.is_first_person?0:-45.2787-this",
+							"v.is_first_person?0:-22.3387893865"
+						],
+						"3.6667": [
+							"v.is_first_person?0:-80.7092-this",
+							"v.is_first_person?0:-20.7027-this",
+							"v.is_first_person?0:-16.7757419004"
+						],
+						"4.0": [
+							"v.is_first_person?0:-71.0009-this",
+							"v.is_first_person?0:-40.8395-this",
+							"v.is_first_person?0:-31.2780482684"
+						],
+						"4.25": [
+							"v.is_first_person?0:-38.833-this",
+							"v.is_first_person?0:18.5658-this",
+							"v.is_first_person?0:24.0119479573"
+						],
+						"4.5": [
+							"v.is_first_person?0:-57.9979-this",
+							"v.is_first_person?0:19.3548-this",
+							"v.is_first_person?0:11.7008749769"
+						],
+						"4.75": [
+							"v.is_first_person?0:-59.6189-this",
+							"v.is_first_person?0:-8.6491-this",
+							"v.is_first_person?0:-5.0392856492"
+						]
+					},
+					"position": {
+						"0.25": [
+							0,
+							0,
+							0
+						],
+						"0.5": [
+							"v.is_first_person?0:0.424171087",
+							"v.is_first_person?0:1.7984240519",
+							"v.is_first_person?0:1.259265587"
+						],
+						"0.625": [
+							"v.is_first_person?0:1.1294976924",
+							"v.is_first_person?0:-1.1315663542",
+							"v.is_first_person?0:-0.7874547982"
+						],
+						"1.0": [
+							"v.is_first_person?0:-0.7177294486",
+							"v.is_first_person?0:-0.5029618056",
+							"v.is_first_person?0:-0.3510022918"
+						],
+						"1.2917": [
+							"v.is_first_person?0:-0.7177294486",
+							"v.is_first_person?0:-0.5029618056",
+							"v.is_first_person?0:-0.3510022918"
+						],
+						"1.5": [
+							"v.is_first_person?0:1.1338343116",
+							"v.is_first_person?0:1.3563900658",
+							"v.is_first_person?0:1.4155351224"
+						],
+						"1.625": [
+							"v.is_first_person?0:0.6020341106",
+							"v.is_first_person?0:0.0559636386",
+							"v.is_first_person?0:1.5640180117"
+						],
+						"2.0": [
+							"v.is_first_person?0:1.0821020356",
+							"v.is_first_person?0:-0.352739034",
+							"v.is_first_person?0:-0.5841138303"
+						],
+						"2.25": [
+							"v.is_first_person?0:1.1308882635",
+							"v.is_first_person?0:-0.7000026961",
+							"v.is_first_person?0:-1.9492729813"
+						],
+						"2.75": [
+							"v.is_first_person?0:-1.76389133",
+							"v.is_first_person?0:-0.9610218228",
+							"v.is_first_person?0:0.7990472128"
+						],
+						"2.9167": [
+							"v.is_first_person?0:-1.76389133",
+							"v.is_first_person?0:-0.9610218228",
+							"v.is_first_person?0:0.7990472128"
+						],
+						"3.25": [
+							"v.is_first_person?0:1.1308882635",
+							"v.is_first_person?0:-0.7000026961",
+							"v.is_first_person?0:-1.9492729813"
+						],
+						"3.6667": [
+							"v.is_first_person?0:-1.76389133",
+							"v.is_first_person?0:-0.9610218228",
+							"v.is_first_person?0:0.7990472128"
+						],
+						"4.0": [
+							"v.is_first_person?0:1.1308882635",
+							"v.is_first_person?0:-0.7000026961",
+							"v.is_first_person?0:-1.9492729813"
+						],
+						"4.25": [
+							"v.is_first_person?0:0.6020341106",
+							"v.is_first_person?0:0.0559636386",
+							"v.is_first_person?0:1.5640180117"
+						],
+						"4.5": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.nguoimau.reload_percussion_cap_musket": {
+			"animation_length": 4.75,
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": {
+						"0.0": [
+							0,
+							"v.is_first_person?0:50",
+							0
+						],
+						"1.25": [
+							0,
+							"v.is_first_person?0:50",
+							0
+						],
+						"1.5": [
+							0,
+							"v.is_first_person?0:57.5",
+							0
+						],
+						"4.25": [
+							0,
+							"v.is_first_person?0:57.5",
+							0
+						],
+						"4.375": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.25": [
+							"v.is_first_person?0:22.5-this",
+							"v.is_first_person?0:-45-this",
+							"v.is_first_person?0:12.5"
+						],
+						"0.5": [
+							"v.is_first_person?0:-42.4775-this",
+							"v.is_first_person?0:-71.2713-this",
+							"v.is_first_person?0:33.1022953473"
+						],
+						"1.0": [
+							"v.is_first_person?0:-9.9775-this",
+							"v.is_first_person?0:-71.2713-this",
+							"v.is_first_person?0:33.1"
+						],
+						"1.125": [
+							"v.is_first_person?0:-7.4775-this",
+							"v.is_first_person?0:-71.2713-this",
+							"v.is_first_person?0:33.1"
+						],
+						"1.25": [
+							"v.is_first_person?0:-14.9775-this",
+							"v.is_first_person?0:-71.2713-this",
+							"v.is_first_person?0:33.1"
+						],
+						"1.5": [
+							"v.is_first_person?0:-19.4419-this",
+							"v.is_first_person?0:-60.2417-this",
+							"v.is_first_person?0:37.4953270291"
+						],
+						"4.25": [
+							"v.is_first_person?0:-19.4419-this",
+							"v.is_first_person?0:-60.2417-this",
+							"v.is_first_person?0:37.5"
+						],
+						"4.5": [
+							"v.is_first_person?0:-89.044-this",
+							"v.is_first_person?0:-34.3053-this",
+							"v.is_first_person?0:70.4894366391"
+						]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.25": [
+							0,
+							0,
+							0
+						],
+						"0.5": [
+							"v.is_first_person?0:-23.0865-this",
+							"v.is_first_person?0:-27.068-this",
+							"v.is_first_person?0:-46.8709844289"
+						],
+						"0.625": [
+							"v.is_first_person?0:-28.2086-this",
+							"v.is_first_person?0:-21.6346-this",
+							"v.is_first_person?0:-34.5016958551"
+						],
+						"1.0": [
+							"v.is_first_person?0:-25.3991-this",
+							"v.is_first_person?0:12.6796-this",
+							"v.is_first_person?0:18.7449550485"
+						],
+						"1.125": [
+							"v.is_first_person?0:-24.8677-this",
+							"v.is_first_person?0:13.7416-this",
+							"v.is_first_person?0:21.0648008326"
+						],
+						"1.25": [
+							"v.is_first_person?0:-26.3223-this",
+							"v.is_first_person?0:10.4975-this",
+							"v.is_first_person?0:14.1425157811"
+						],
+						"1.5": [
+							"v.is_first_person?0:-42.3996-this",
+							"v.is_first_person?0:0.4554-this",
+							"v.is_first_person?0:2.9314348647"
+						],
+						"1.625": [
+							"v.is_first_person?0:-38.833-this",
+							"v.is_first_person?0:18.5658-this",
+							"v.is_first_person?0:24.0119479573"
+						],
+						"2.0": [
+							"v.is_first_person?0:-72.7779-this",
+							"v.is_first_person?0:-33.7091-this",
+							"v.is_first_person?0:-28.3468087795"
+						],
+						"2.25": [
+							"v.is_first_person?0:-69.4102-this",
+							"v.is_first_person?0:-45.5448-this",
+							"v.is_first_person?0:-33.6019021995"
+						],
+						"2.5": [
+							"v.is_first_person?0:-77.6067-this",
+							"v.is_first_person?0:-45.2787-this",
+							"v.is_first_person?0:-22.3387893865"
+						],
+						"2.9167": [
+							"v.is_first_person?0:-80.7092-this",
+							"v.is_first_person?0:-20.7027-this",
+							"v.is_first_person?0:-16.7757419004"
+						],
+						"3.25": [
+							"v.is_first_person?0:-77.6067-this",
+							"v.is_first_person?0:-45.2787-this",
+							"v.is_first_person?0:-22.3387893865"
+						],
+						"3.6667": [
+							"v.is_first_person?0:-80.7092-this",
+							"v.is_first_person?0:-20.7027-this",
+							"v.is_first_person?0:-16.7757419004"
+						],
+						"4.0": [
+							"v.is_first_person?0:-71.0009-this",
+							"v.is_first_person?0:-40.8395-this",
+							"v.is_first_person?0:-31.2780482684"
+						],
+						"4.25": [
+							"v.is_first_person?0:-38.833-this",
+							"v.is_first_person?0:18.5658-this",
+							"v.is_first_person?0:24.0119479573"
+						],
+						"4.5": [
+							"v.is_first_person?0:-57.9979-this",
+							"v.is_first_person?0:19.3548-this",
+							"v.is_first_person?0:11.7008749769"
+						],
+						"4.75": [
+							"v.is_first_person?0:-59.6189-this",
+							"v.is_first_person?0:-8.6491-this",
+							"v.is_first_person?0:-5.0392856492"
+						]
+					},
+					"position": {
+						"0.25": [
+							0,
+							0,
+							0
+						],
+						"0.5": [
+							"v.is_first_person?0:0.424171087",
+							"v.is_first_person?0:1.7984240519",
+							"v.is_first_person?0:1.259265587"
+						],
+						"0.625": [
+							"v.is_first_person?0:1.1294976924",
+							"v.is_first_person?0:-1.1315663542",
+							"v.is_first_person?0:-0.7874547982"
+						],
+						"1.0": [
+							"v.is_first_person?0:-0.7177294486",
+							"v.is_first_person?0:-0.5029618056",
+							"v.is_first_person?0:-0.3510022918"
+						],
+						"1.2917": [
+							"v.is_first_person?0:-0.7177294486",
+							"v.is_first_person?0:-0.5029618056",
+							"v.is_first_person?0:-0.3510022918"
+						],
+						"1.5": [
+							"v.is_first_person?0:1.1338343116",
+							"v.is_first_person?0:1.3563900658",
+							"v.is_first_person?0:1.4155351224"
+						],
+						"1.625": [
+							"v.is_first_person?0:0.6020341106",
+							"v.is_first_person?0:0.0559636386",
+							"v.is_first_person?0:1.5640180117"
+						],
+						"2.0": [
+							"v.is_first_person?0:1.0821020356",
+							"v.is_first_person?0:-0.352739034",
+							"v.is_first_person?0:-0.5841138303"
+						],
+						"2.25": [
+							"v.is_first_person?0:1.1308882635",
+							"v.is_first_person?0:-0.7000026961",
+							"v.is_first_person?0:-1.9492729813"
+						],
+						"2.75": [
+							"v.is_first_person?0:-1.76389133",
+							"v.is_first_person?0:-0.9610218228",
+							"v.is_first_person?0:0.7990472128"
+						],
+						"2.9167": [
+							"v.is_first_person?0:-1.76389133",
+							"v.is_first_person?0:-0.9610218228",
+							"v.is_first_person?0:0.7990472128"
+						],
+						"3.25": [
+							"v.is_first_person?0:1.1308882635",
+							"v.is_first_person?0:-0.7000026961",
+							"v.is_first_person?0:-1.9492729813"
+						],
+						"3.6667": [
+							"v.is_first_person?0:-1.76389133",
+							"v.is_first_person?0:-0.9610218228",
+							"v.is_first_person?0:0.7990472128"
+						],
+						"4.0": [
+							"v.is_first_person?0:1.1308882635",
+							"v.is_first_person?0:-0.7000026961",
+							"v.is_first_person?0:-1.9492729813"
+						],
+						"4.25": [
+							"v.is_first_person?0:0.6020341106",
+							"v.is_first_person?0:0.0559636386",
+							"v.is_first_person?0:1.5640180117"
+						],
+						"4.5": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.nguoimau.reload_flintlock_pistol": {
+			"animation_length": 2,
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [
+						"v.is_first_person?0:-46.3533772998-this",
+						"v.is_first_person?0:-46.7166387142",
+						"v.is_first_person?0:54.1775305975"
+					]
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": [
+							"v.is_first_person?0:-51.1286912785-this",
+							"v.is_first_person?0:2.3644372572",
+							"v.is_first_person?0:-5.8634654758"
+						],
+						"0.25": [
+							"v.is_first_person?0:-37.2773272072-this",
+							"v.is_first_person?0:4.0215500522",
+							"v.is_first_person?0:6.3358608564"
+						],
+						"0.5": [
+							"v.is_first_person?0:-48.9875549033-this",
+							"v.is_first_person?0:-16.8038544753",
+							"v.is_first_person?0:-22.1381431536"
+						],
+						"0.75": [
+							"v.is_first_person?0:-53.9875549033-this",
+							"v.is_first_person?0:-16.8038544753",
+							"v.is_first_person?0:-22.1381431536"
+						],
+						"1.0": [
+							"v.is_first_person?0:-55.7106241642-this",
+							"v.is_first_person?0:-2.4567063535",
+							"v.is_first_person?0:-11.9450602077"
+						],
+						"1.25": [
+							"v.is_first_person?0:-53.9875549033-this",
+							"v.is_first_person?0:-16.8038544753",
+							"v.is_first_person?0:-22.1381431536"
+						],
+						"1.5": [
+							"v.is_first_person?0:-55.7106241642-this",
+							"v.is_first_person?0:-2.4567063535",
+							"v.is_first_person?0:-11.9450602077"
+						],
+						"1.7083": [
+							"v.is_first_person?0:-53.5125158332-this",
+							"v.is_first_person?0:-18.8200960602",
+							"v.is_first_person?0:-23.6907683371"
+						],
+						"1.875": [
+							"v.is_first_person?0:-49.9174091558-this",
+							"v.is_first_person?0:-13.1374664014",
+							"v.is_first_person?0:-18.5966634524"
+						],
+						"2.0": [
+							"v.is_first_person?0:-51.1286912785-this",
+							"v.is_first_person?0:2.3644372572",
+							"v.is_first_person?0:-5.8634654758"
+						]
+					}
+				}
+			}
+		},
+		"animation.nguoimau.golden_reaper_reloading": {
+			"loop": true,
+			"animation_length": 4,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							"v.is_first_person?0:-84.430949775-this",
+							"v.is_first_person?0:-58.1849003377",
+							"v.is_first_person?0:42.5334675491"
+						],
+						"0.25": [
+							"v.is_first_person?0:-74.430949775-this",
+							"v.is_first_person?0:-58.1849003377",
+							"v.is_first_person?0:42.5334675491"
+						],
+						"0.4583": [
+							"v.is_first_person?0:-87.3340617805-this",
+							"v.is_first_person?0:14.5599149331",
+							"v.is_first_person?0:165.4040376289"
+						],
+						"0.5417": [
+							"v.is_first_person?0:-104.9146841816-this",
+							"v.is_first_person?0:29.1088779873",
+							"v.is_first_person?0:189.9781516449"
+						],
+						"0.625": [
+							"v.is_first_person?0:-109.9146841816-this",
+							"v.is_first_person?0:29.1088779873",
+							"v.is_first_person?0:189.9781516449"
+						],
+						"0.9167": [
+							"v.is_first_person?0:-56.930949775-this",
+							"v.is_first_person?0:-58.1849003377",
+							"v.is_first_person?0:42.5334675491"
+						],
+						"1.0": [
+							"v.is_first_person?0:-61.930949775-this",
+							"v.is_first_person?0:-58.1849003377",
+							"v.is_first_person?0:42.5334675491"
+						],
+						"3.4583": [
+							"v.is_first_person?0:-61.93-this",
+							"v.is_first_person?0:-58.18",
+							"v.is_first_person?0:42.53"
+						],
+						"3.625": [
+							"v.is_first_person?0:-24.6030415117-this",
+							"v.is_first_person?0:-0.4633635409",
+							"v.is_first_person?0:1.8821436365"
+						],
+						"3.7083": [
+							"v.is_first_person?0:-4.6030415117-this",
+							"v.is_first_person?0:-0.4633635409",
+							"v.is_first_person?0:1.8821436365"
+						],
+						"3.7917": [
+							"v.is_first_person?0:-47.1030415117-this",
+							"v.is_first_person?0:-0.4633635409",
+							"v.is_first_person?0:1.8821436365"
+						],
+						"3.875": [
+							"v.is_first_person?0:-54.6030415117-this",
+							"v.is_first_person?0:-0.4633635409",
+							"v.is_first_person?0:1.8821436365"
+						],
+						"4.0": [
+							0,
+							0,
+							0
+						]
+					},
+					"position": [
+						0,
+						0,
+						0
+					]
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": [
+							"v.is_first_person?0:-42.5-this",
+							0,
+							0
+						],
+						"0.25": [
+							"v.is_first_person?0:-7.5-this",
+							0,
+							0
+						],
+						"0.4583": [
+							0,
+							0,
+							0
+						],
+						"0.9167": [
+							0,
+							0,
+							0
+						],
+						"1.1667": [
+							"v.is_first_person?0:-45-this",
+							0,
+							0
+						],
+						"1.4167": [
+							"v.is_first_person?0:-44.3128187158-this",
+							"v.is_first_person?0:8.8034834933",
+							"v.is_first_person?0:8.9092819993"
+						],
+						"1.5417": [
+							"v.is_first_person?0:-45-this",
+							0,
+							0
+						],
+						"1.7083": [
+							"v.is_first_person?0:-44.3128187158-this",
+							"v.is_first_person?0:8.8034834933",
+							"v.is_first_person?0:8.9092819993"
+						],
+						"1.8333": [
+							"v.is_first_person?0:-45-this",
+							0,
+							0
+						],
+						"2.0": [
+							"v.is_first_person?0:-44.3128187158-this",
+							"v.is_first_person?0:8.8034834933",
+							"v.is_first_person?0:8.9092819993"
+						],
+						"2.125": [
+							"v.is_first_person?0:-45-this",
+							0,
+							0
+						],
+						"2.2917": [
+							"v.is_first_person?0:-44.3128187158-this",
+							"v.is_first_person?0:8.8034834933",
+							"v.is_first_person?0:8.9092819993"
+						],
+						"2.4583": [
+							"v.is_first_person?0:-45-this",
+							0,
+							0
+						],
+						"2.5833": [
+							"v.is_first_person?0:-44.3128187158-this",
+							"v.is_first_person?0:8.8034834933",
+							"v.is_first_person?0:8.9092819993"
+						],
+						"2.75": [
+							"v.is_first_person?0:-45-this",
+							0,
+							0
+						],
+						"2.875": [
+							"v.is_first_person?0:-44.3128187158-this",
+							"v.is_first_person?0:8.8034834933",
+							"v.is_first_person?0:8.9092819993"
+						],
+						"3.0417": [
+							"v.is_first_person?0:-45-this",
+							0,
+							0
+						],
+						"3.1667": [
+							"v.is_first_person?0:-44.3128187158-this",
+							"v.is_first_person?0:8.8034834933",
+							"v.is_first_person?0:8.9092819993"
+						],
+						"3.3333": [
+							"v.is_first_person?0:-45-this",
+							0,
+							0
+						],
+						"3.4583": [
+							"v.is_first_person?0:-44.3128187158-this",
+							"v.is_first_person?0:8.8034834933",
+							"v.is_first_person?0:8.9092819993"
+						],
+						"3.625": [
+							"v.is_first_person?0:-45-this",
+							0,
+							0
+						],
+						"3.75": [
+							0,
+							0,
+							0
+						]
+					},
+					"position": {
+						"1.1667": [
+							0,
+							0,
+							0
+						],
+						"1.4167": [
+							"v.is_first_person?0:-0.4328792278",
+							"v.is_first_person?0:-1.3806910542",
+							"v.is_first_person?0:-1.3806910542"
+						],
+						"1.5417": [
+							0,
+							0,
+							0
+						],
+						"1.7083": [
+							"v.is_first_person?0:-0.4328792278",
+							"v.is_first_person?0:-1.3806910542",
+							"v.is_first_person?0:-1.3806910542"
+						],
+						"1.8333": [
+							0,
+							0,
+							0
+						],
+						"2.0": [
+							"v.is_first_person?0:-0.4328792278",
+							"v.is_first_person?0:-1.3806910542",
+							"v.is_first_person?0:-1.3806910542"
+						],
+						"2.125": [
+							0,
+							0,
+							0
+						],
+						"2.2917": [
+							"v.is_first_person?0:-0.4328792278",
+							"v.is_first_person?0:-1.3806910542",
+							"v.is_first_person?0:-1.3806910542"
+						],
+						"2.4583": [
+							0,
+							0,
+							0
+						],
+						"2.5833": [
+							"v.is_first_person?0:-0.4328792278",
+							"v.is_first_person?0:-1.3806910542",
+							"v.is_first_person?0:-1.3806910542"
+						],
+						"2.75": [
+							0,
+							0,
+							0
+						],
+						"2.875": [
+							"v.is_first_person?0:-0.4328792278",
+							"v.is_first_person?0:-1.3806910542",
+							"v.is_first_person?0:-1.3806910542"
+						],
+						"3.0417": [
+							0,
+							0,
+							0
+						],
+						"3.1667": [
+							"v.is_first_person?0:-0.4328792278",
+							"v.is_first_person?0:-1.3806910542",
+							"v.is_first_person?0:-1.3806910542"
+						],
+						"3.3333": [
+							0,
+							0,
+							0
+						],
+						"3.4583": [
+							"v.is_first_person?0:-0.4328792278",
+							"v.is_first_person?0:-1.3806910542",
+							"v.is_first_person?0:-1.3806910542"
+						],
+						"3.625": [
+							0,
+							0,
+							0
+						],
+						"3.75": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.nguoimau.deadlight_reloading": {
+			"loop": true,
+			"animation_length": 6.5,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							"v.is_first_person?0:-31.97761-this",
+							"v.is_first_person?0:-5.24826",
+							"v.is_first_person?0:-11.36081"
+						],
+						"5.9167": [
+							"v.is_first_person?0:-31.98-this",
+							"v.is_first_person?0:-5.25",
+							"v.is_first_person?0:-11.36"
+						],
+						"6.0417": [
+							"v.is_first_person?0:-42.21184-this",
+							"v.is_first_person?0:-1.89695",
+							"v.is_first_person?0:-7.64318"
+						],
+						"6.2083": [
+							"v.is_first_person?0:-44.71184-this",
+							"v.is_first_person?0:-1.89695",
+							"v.is_first_person?0:-7.64318"
+						],
+						"6.3333": [
+							"v.is_first_person?0:-42.21184-this",
+							"v.is_first_person?0:-1.89695",
+							"v.is_first_person?0:-7.64318"
+						],
+						"6.5": [
+							"v.is_first_person?0:-31.97761-this",
+							"v.is_first_person?0:-5.24826",
+							"v.is_first_person?0:-11.36081"
+						]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": [
+							"v.is_first_person?0:-34.97437-this",
+							"v.is_first_person?0:1.43364",
+							"v.is_first_person?0:2.04831"
+						],
+						"0.25": [
+							"v.is_first_person?0:-30.56393-this",
+							"v.is_first_person?0:17.94973",
+							"v.is_first_person?0:27.55814"
+						],
+						"0.5": [
+							"v.is_first_person?0:-29.0527-this",
+							"v.is_first_person?0:20.43663",
+							"v.is_first_person?0:32.15172"
+						],
+						"0.6667": [
+							"v.is_first_person?0:-30.56393-this",
+							"v.is_first_person?0:17.94973",
+							"v.is_first_person?0:27.55814"
+						],
+						"0.9167": [
+							"v.is_first_person?0:-29.0527-this",
+							"v.is_first_person?0:20.43663",
+							"v.is_first_person?0:32.15172"
+						],
+						"1.1667": [
+							"v.is_first_person?0:-30.56393-this",
+							"v.is_first_person?0:17.94973",
+							"v.is_first_person?0:27.55814"
+						],
+						"1.4167": [
+							"v.is_first_person?0:-29.0527-this",
+							"v.is_first_person?0:20.43663",
+							"v.is_first_person?0:32.15172"
+						],
+						"1.6667": [
+							"v.is_first_person?0:-30.56393-this",
+							"v.is_first_person?0:17.94973",
+							"v.is_first_person?0:27.55814"
+						],
+						"1.9167": [
+							"v.is_first_person?0:-29.0527-this",
+							"v.is_first_person?0:20.43663",
+							"v.is_first_person?0:32.15172"
+						],
+						"2.1667": [
+							"v.is_first_person?0:-30.56393-this",
+							"v.is_first_person?0:17.94973",
+							"v.is_first_person?0:27.55814"
+						],
+						"2.4167": [
+							"v.is_first_person?0:-29.0527-this",
+							"v.is_first_person?0:20.43663",
+							"v.is_first_person?0:32.15172"
+						],
+						"2.6667": [
+							"v.is_first_person?0:-30.56393-this",
+							"v.is_first_person?0:17.94973",
+							"v.is_first_person?0:27.55814"
+						],
+						"2.9167": [
+							"v.is_first_person?0:-29.0527-this",
+							"v.is_first_person?0:20.43663",
+							"v.is_first_person?0:32.15172"
+						],
+						"3.1667": [
+							"v.is_first_person?0:-30.56393-this",
+							"v.is_first_person?0:17.94973",
+							"v.is_first_person?0:27.55814"
+						],
+						"3.4167": [
+							"v.is_first_person?0:-29.0527-this",
+							"v.is_first_person?0:20.43663",
+							"v.is_first_person?0:32.15172"
+						],
+						"3.6667": [
+							"v.is_first_person?0:-30.56393-this",
+							"v.is_first_person?0:17.94973",
+							"v.is_first_person?0:27.55814"
+						],
+						"3.9167": [
+							"v.is_first_person?0:-29.0527-this",
+							"v.is_first_person?0:20.43663",
+							"v.is_first_person?0:32.15172"
+						],
+						"4.1667": [
+							"v.is_first_person?0:-30.56393-this",
+							"v.is_first_person?0:17.94973",
+							"v.is_first_person?0:27.55814"
+						],
+						"4.4167": [
+							"v.is_first_person?0:-29.0527-this",
+							"v.is_first_person?0:20.43663",
+							"v.is_first_person?0:32.15172"
+						],
+						"4.6667": [
+							"v.is_first_person?0:-30.56393-this",
+							"v.is_first_person?0:17.94973",
+							"v.is_first_person?0:27.55814"
+						],
+						"4.9167": [
+							"v.is_first_person?0:-29.0527-this",
+							"v.is_first_person?0:20.43663",
+							"v.is_first_person?0:32.15172"
+						],
+						"5.1667": [
+							"v.is_first_person?0:-30.56393-this",
+							"v.is_first_person?0:17.94973",
+							"v.is_first_person?0:27.55814"
+						],
+						"5.4167": [
+							"v.is_first_person?0:-29.0527-this",
+							"v.is_first_person?0:20.43663",
+							"v.is_first_person?0:32.15172"
+						],
+						"5.6667": [
+							"v.is_first_person?0:-30.56393-this",
+							"v.is_first_person?0:17.94973",
+							"v.is_first_person?0:27.55814"
+						],
+						"5.9167": [
+							"v.is_first_person?0:-29.0527-this",
+							"v.is_first_person?0:20.43663",
+							"v.is_first_person?0:32.15172"
+						],
+						"6.0417": [
+							"v.is_first_person?0:-19.38151-this",
+							"v.is_first_person?0:28.02432",
+							"v.is_first_person?0:49.47632"
+						],
+						"6.2083": [
+							"v.is_first_person?0:-25.91229-this",
+							"v.is_first_person?0:22.21089",
+							"v.is_first_person?0:34.18541"
+						],
+						"6.3333": [
+							"v.is_first_person?0:-31.90544-this",
+							"v.is_first_person?0:11.21084",
+							"v.is_first_person?0:13.64268"
+						],
+						"6.5": [
+							"-34.97437-this",
+							1.43364,
+							2.04831
+						]
+					},
+					"position": {
+						"0.25": [
+							0,
+							0,
+							0
+						],
+						"0.5": [
+							"v.is_first_person?0:-1.21752",
+							"v.is_first_person?0:-1.29975",
+							"v.is_first_person?0:-0.9101"
+						],
+						"0.6667": [
+							0,
+							0,
+							0
+						],
+						"0.9167": [
+							"v.is_first_person?0:-1.21752",
+							"v.is_first_person?0:-1.29975",
+							"v.is_first_person?0:-0.9101"
+						],
+						"1.1667": [
+							0,
+							0,
+							0
+						],
+						"1.4167": [
+							"v.is_first_person?0:-1.21752",
+							"v.is_first_person?0:-1.29975",
+							"v.is_first_person?0:-0.9101"
+						],
+						"1.6667": [
+							0,
+							0,
+							0
+						],
+						"1.9167": [
+							"v.is_first_person?0:-1.21752",
+							"v.is_first_person?0:-1.29975",
+							"v.is_first_person?0:-0.9101"
+						],
+						"2.1667": [
+							0,
+							0,
+							0
+						],
+						"2.4167": [
+							"v.is_first_person?0:-1.21752",
+							"v.is_first_person?0:-1.29975",
+							"v.is_first_person?0:-0.9101"
+						],
+						"2.6667": [
+							0,
+							0,
+							0
+						],
+						"2.9167": [
+							"v.is_first_person?0:-1.21752",
+							"v.is_first_person?0:-1.29975",
+							"v.is_first_person?0:-0.9101"
+						],
+						"3.1667": [
+							0,
+							0,
+							0
+						],
+						"3.4167": [
+							"v.is_first_person?0:-1.21752",
+							"v.is_first_person?0:-1.29975",
+							"v.is_first_person?0:-0.9101"
+						],
+						"3.6667": [
+							0,
+							0,
+							0
+						],
+						"3.9167": [
+							"v.is_first_person?0:-1.21752",
+							"v.is_first_person?0:-1.29975",
+							"v.is_first_person?0:-0.9101"
+						],
+						"4.1667": [
+							0,
+							0,
+							0
+						],
+						"4.4167": [
+							"v.is_first_person?0:-1.21752",
+							"v.is_first_person?0:-1.29975",
+							"v.is_first_person?0:-0.9101"
+						],
+						"4.6667": [
+							0,
+							0,
+							0
+						],
+						"4.9167": [
+							"v.is_first_person?0:-1.21752",
+							"v.is_first_person?0:-1.29975",
+							"v.is_first_person?0:-0.9101"
+						],
+						"5.1667": [
+							0,
+							0,
+							0
+						],
+						"5.4167": [
+							"v.is_first_person?0:-1.21752",
+							"v.is_first_person?0:-1.29975",
+							"v.is_first_person?0:-0.9101"
+						],
+						"5.6667": [
+							0,
+							0,
+							0
+						],
+						"5.9167": [
+							"v.is_first_person?0:-1.21752",
+							"v.is_first_person?0:-1.29975",
+							"v.is_first_person?0:-0.9101"
+						],
+						"6.0417": [
+							"v.is_first_person?0:0.31209",
+							"v.is_first_person?0:-0.24692",
+							"v.is_first_person?0:-0.17262"
+						],
+						"6.2083": [
+							"v.is_first_person?0:-0.97407",
+							"v.is_first_person?0:-1.55248",
+							"v.is_first_person?0:-0.97914"
+						],
+						"6.5": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.nguoimau.using_lance": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [
+						0,
+						"v.is_first_person?0:20",
+						0
+					]
+				},
+				"rightArm": {
+					"rotation": [
+						"v.is_first_person?0:27.4739835891-this",
+						"v.is_first_person?0:-15.5972634895",
+						"v.is_first_person?0:30.6812789649"
+					]
+				},
+				"rightItem": {
+					"rotation": [
+						"v.is_first_person?0:-42.5",
+						0,
+						0
+					],
+					"position": [
+						0,
+						"v.is_first_person?0:-0.7660444431",
+						"v.is_first_person?0:-0.6427876097"
+					]
+				}
+			}
+		},
+		"animation.nguoimau.lance_attacked": {
+			"animation_length": 0.5,
+			"bones": {
+				"body": {
+					"rotation": {
+						"0.0": [
+							0,
+							"v.is_first_person?0:20",
+							0
+						],
+						"0.125": [
+							0,
+							"v.is_first_person?0:-27.5",
+							0
+						],
+						"0.25": [
+							0,
+							"v.is_first_person?0:20",
+							0
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							"v.is_first_person?0:27.4739835891-this",
+							"v.is_first_person?0:-15.6",
+							"v.is_first_person?0:30.68"
+						],
+						"0.125": [
+							"v.is_first_person?0:-21.2469-this",
+							"v.is_first_person?0:22.4820654234",
+							"v.is_first_person?0:31.6770058895"
+						],
+						"0.25": [
+							"v.is_first_person?0:27.4739835891-this",
+							"v.is_first_person?0:-15.6",
+							"v.is_first_person?0:30.68"
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"rightItem": {
+					"rotation": {
+						"0.0": [
+							"v.is_first_person?0:-42.5",
+							0,
+							0
+						],
+						"0.125": [
+							"v.is_first_person?0:37.5",
+							0,
+							0
+						],
+						"0.25": [
+							"v.is_first_person?0:-42.5",
+							0,
+							0
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							0,
+							"v.is_first_person?0:-0.7660444431",
+							"v.is_first_person?0:-0.6427876097"
+						],
+						"0.125": [
+							0,
+							"v.is_first_person?0:-0.7660444431",
+							"v.is_first_person?0:-0.6427876097"
+						],
+						"0.25": [
+							0,
+							"v.is_first_person?0:-0.7660444431",
+							"v.is_first_person?0:-0.6427876097"
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.nguoimau.chuanbichem": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [
+						0,
+						"v.is_first_person?0:-27.5",
+						0
+					]
+				},
+				"rightArm": {
+					"rotation": [
+						"v.is_first_person?0:-94.6898938572-this",
+						"v.is_first_person?0:-23.1609866862",
+						"v.is_first_person?0:66.5416553669"
+					]
+				},
+				"rightItem": {
+					"rotation": [
+						"v.is_first_person?0:15.5040898337",
+						"v.is_first_person?0:-14.4775121859",
+						"v.is_first_person?0:-3.9671308009"
+					]
+				}
+			}
+		},
+		"animation.nguoimau.donchem": {
+			"animation_length": 0.375,
+			"bones": {
+				"body": {
+					"rotation": {
+						"0.0": [
+							0,
+							"v.is_first_person?0:-27.5",
+							0
+						],
+						"0.1667": [
+							0,
+							"v.is_first_person?0:25",
+							0
+						],
+						"0.25": [
+							0,
+							"v.is_first_person?0:32.5",
+							0
+						],
+						"0.375": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							"v.is_first_person?0:-94.6898938572-this",
+							"v.is_first_person?0:-23.1609866862",
+							"v.is_first_person?0:66.5416553669"
+						],
+						"0.0833": [
+							"v.is_first_person?0:28.1124-this",
+							"v.is_first_person?0:-10.6988479247",
+							"v.is_first_person?0:65.5080575819"
+						],
+						"0.1667": [
+							"v.is_first_person?0:55.6124-this",
+							"v.is_first_person?0:-10.7",
+							"v.is_first_person?0:65.51"
+						],
+						"0.25": [
+							"v.is_first_person?0:32.2559-this",
+							"v.is_first_person?0:-0.1908937223",
+							"v.is_first_person?0:48.3911308624"
+						],
+						"0.375": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"rightItem": {
+					"rotation": {
+						"0.0": [
+							"v.is_first_person?0:15.5040898337",
+							"v.is_first_person?0:-14.4775121859",
+							"v.is_first_person?0:-3.9671308009"
+						],
+						"0.1667": [
+							"v.is_first_person?0:38.0040898337",
+							"v.is_first_person?0:-14.4775121859",
+							"v.is_first_person?0:-3.9671308009"
+						],
+						"0.375": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.nguoimau.halberd_two_hand_using": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [
+						0,
+						"v.is_first_person?0:50",
+						0
+					]
+				},
+				"rightArm": {
+					"rotation": [
+						"v.is_first_person?0:-127.8426427365-this",
+						"v.is_first_person?0:15.7627002571-this",
+						"v.is_first_person?0:-37.2523545804"
+					]
+				},
+				"rightItem": {
+					"rotation": [
+						"v.is_first_person?0:12.5880725783",
+						"v.is_first_person?0:14.9853884562",
+						"v.is_first_person?0:0.6696299537"
+					]
+				},
+				"leftArm": {
+					"rotation": [
+						"v.is_first_person?0:-61.5617220529-this",
+						"v.is_first_person?0:16.0158566745-this",
+						"v.is_first_person?0:27.6199595544"
+					],
+					"position": [
+						"v.is_first_person?0:-1.6904730468",
+						"v.is_first_person?0:-1.0901280308",
+						"v.is_first_person?0:-3.4574443964"
+					]
+				}
+			}
+		},
+		"animation.nguoimau.halberd_two_hand_attacked": {
+			"animation_length": 0.5,
+			"bones": {
+				"waist": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.0833": [
+							"v.is_first_person?0:10",
+							0,
+							0
+						],
+						"0.2083": [
+							"v.is_first_person?0:10.0374230459",
+							"v.is_first_person?0:-4.9238497548",
+							"v.is_first_person?0:-0.870384675"
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"body": {
+					"rotation": {
+						"0.0": [
+							0,
+							"v.is_first_person?0:50",
+							0
+						],
+						"0.0833": [
+							0,
+							"v.is_first_person?0:-35",
+							0
+						],
+						"0.2083": [
+							0,
+							"v.is_first_person?0:-40",
+							0
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							"v.is_first_person?0:-127.8426427365-this",
+							"v.is_first_person?0:15.7627002571-this",
+							"v.is_first_person?0:-37.2523545804"
+						],
+						"0.0833": [
+							"v.is_first_person?0:-60.3426427365-this",
+							"v.is_first_person?0:15.7627002571-this",
+							"v.is_first_person?0:-37.2523545804"
+						],
+						"0.2083": [
+							"v.is_first_person?0:-55.3426427365-this",
+							"v.is_first_person?0:15.7627002571-this",
+							"v.is_first_person?0:-37.2523545804"
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.0833": [
+							"v.is_first_person?0:0.9678789126",
+							"v.is_first_person?0:-2.2206080486",
+							"v.is_first_person?0:-2.0327592835"
+						],
+						"0.2083": [
+							"v.is_first_person?0:0.97",
+							"v.is_first_person?0:-2.22",
+							"v.is_first_person?0:-2.03"
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"rightItem": {
+					"rotation": {
+						"0.0": [
+							"v.is_first_person?0:12.5880725783",
+							"v.is_first_person?0:14.9853884562",
+							"v.is_first_person?0:0.6696299537"
+						],
+						"0.0833": [
+							"v.is_first_person?0:14.5683752138",
+							"v.is_first_person?0:26.1279682866",
+							"v.is_first_person?0:8.8967401456"
+						],
+						"0.2083": [
+							"v.is_first_person?0:19.5683752138",
+							"v.is_first_person?0:26.1279682866",
+							"v.is_first_person?0:8.8967401456"
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.0833": [
+							"v.is_first_person?0:0.0449434555",
+							"v.is_first_person?0:-0.9765540995",
+							"v.is_first_person?0:0.2105283274"
+						],
+						"0.2083": [
+							"v.is_first_person?0:0.04",
+							"v.is_first_person?0:-0.98",
+							"v.is_first_person?0:0.21"
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": [
+							"v.is_first_person?0:-61.5617220529-this",
+							"v.is_first_person?0:16.0158566745-this",
+							"v.is_first_person?0:27.6199595544"
+						],
+						"0.0833": [
+							"v.is_first_person?0:-11.1134915654-this",
+							"v.is_first_person?0:11.7090385931-this",
+							"v.is_first_person?0:-10.8034217876"
+						],
+						"0.2083": [
+							"v.is_first_person?0:-3.6134915654-this",
+							"v.is_first_person?0:11.7090385931-this",
+							"v.is_first_person?0:-10.8034217876"
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							"v.is_first_person?0:-1.6904730468",
+							"v.is_first_person?0:-1.0901280308",
+							"v.is_first_person?0:-3.4574443964"
+						],
+						"0.0833": [
+							"v.is_first_person?0:-0.6740352465",
+							"v.is_first_person?0:-1.0016310168",
+							"v.is_first_person?0:-0.4666729978"
+						],
+						"0.2083": [
+							"v.is_first_person?0:-0.67",
+							"v.is_first_person?0:-1",
+							"v.is_first_person?0:-0.47"
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.nguoimau.halberd_one_hand_using": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [
+						0,
+						"v.is_first_person?0:17.5",
+						0
+					]
+				},
+				"rightArm": {
+					"rotation": [
+						"v.is_first_person?0:-144.0382192938-this",
+						"v.is_first_person?0:9.8463925441-this",
+						"v.is_first_person?0:-24.5499496115"
+					]
+				},
+				"rightItem": {
+					"rotation": [
+						"v.is_first_person?0:-12.5",
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.nguoimau.halberd_one_hand_attacked": {
+			"animation_length": 0.5,
+			"bones": {
+				"waist": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.0833": [
+							"v.is_first_person?0:5",
+							0,
+							0
+						],
+						"0.2083": [
+							"v.is_first_person?0:7.5",
+							0,
+							0
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"body": {
+					"rotation": {
+						"0.0": [
+							0,
+							"v.is_first_person?0:17.5",
+							0
+						],
+						"0.0833": [
+							0,
+							"v.is_first_person?0:-26",
+							0
+						],
+						"0.2083": [
+							0,
+							"v.is_first_person?0:-30",
+							0
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [
+							"v.is_first_person?0:-144.0382192938-this",
+							"v.is_first_person?0:9.8463925441-this",
+							"v.is_first_person?0:-24.5499496115"
+						],
+						"0.0833": [
+							"v.is_first_person?0:-22.5223085017-this",
+							"v.is_first_person?0:12.2814826129-this",
+							"v.is_first_person?0:-2.3959285353"
+						],
+						"0.2083": [
+							"v.is_first_person?0:-17.5223085017-this",
+							"v.is_first_person?0:12.2814826129-this",
+							"v.is_first_person?0:-2.3959285353"
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				"rightItem": {
+					"rotation": {
+						"0.0": [
+							"v.is_first_person?0:-12.5",
+							0,
+							0
+						],
+						"0.0833": [
+							"v.is_first_person?0:45",
+							0,
+							0
+						],
+						"0.2083": [
+							"v.is_first_person?0:37.6075978483",
+							"v.is_first_person?0:3.8282102958",
+							"v.is_first_person?0:3.2187312052"
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.0833": [
+							0,
+							"v.is_first_person?0:-5.1371701908",
+							"v.is_first_person?0:-4.435054166"
+						],
+						"0.2083": [
+							0,
+							"v.is_first_person?0:-5.14",
+							"v.is_first_person?0:-4.44"
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		}
+	}
+}

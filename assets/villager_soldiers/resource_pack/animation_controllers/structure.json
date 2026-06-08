@@ -1,0 +1,95 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.catapult.structure": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"default"
+					],
+					"transitions": [
+						{
+							"step1": "v.step==1"
+						},
+						{
+							"step2": "v.step==2"
+						},
+						{
+							"step3": "v.step==3"
+						},
+						{
+							"step4": "v.step==4"
+						},
+						{
+							"step5": "v.step==5"
+						}
+					]
+				},
+				"step1": {
+					"animations": [
+						"step1"
+					],
+					"transitions": [
+						{
+							"step2": "v.step==2"
+						},
+						{
+							"step3": "v.step==3"
+						},
+						{
+							"step4": "v.step==4"
+						},
+						{
+							"step5": "v.step==5"
+						}
+					]
+				},
+				"step2": {
+					"animations": [
+						"step2"
+					],
+					"transitions": [
+						{
+							"step3": "v.step==3"
+						},
+						{
+							"step4": "v.step==4"
+						},
+						{
+							"step5": "v.step==5"
+						}
+					]
+				},
+				"step3": {
+					"animations": [
+						"step3"
+					],
+					"transitions": [
+						{
+							"step4": "v.step==4"
+						},
+						{
+							"step5": "v.step==5"
+						}
+					]
+				},
+				"step4": {
+					"animations": [
+						"step4"
+					],
+					"transitions": [
+						{
+							"step5": "v.step==5"
+						}
+					]
+				},
+				"step5": {
+					"animations": [
+						"step5"
+					]
+				}
+			}
+		}
+	}
+}

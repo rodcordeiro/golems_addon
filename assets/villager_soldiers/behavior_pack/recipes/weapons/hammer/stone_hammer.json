@@ -1,0 +1,32 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:stone_hammer"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"i": {
+				"item": "minecraft:cobblestone"
+			},
+			"s": {
+				"item": "minecraft:stick"
+			}
+		},
+		"pattern": [
+			" ii",
+			" ii",
+			"s  "
+		],
+		"result": {
+			"item": "fv:stone_hammer"
+		},
+		"unlock": [
+			{
+				"item": "minecraft:cobblestone"
+			}
+		]
+	}
+}

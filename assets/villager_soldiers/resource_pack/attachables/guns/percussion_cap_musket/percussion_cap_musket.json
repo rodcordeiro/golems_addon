@@ -1,0 +1,44 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:attachable": {
+		"description": {
+			"identifier": "percussion_cap_musket:bow",
+			"materials": {
+				"default": "entity_alphatest",
+				"enchanted": "entity_alphatest_glint"
+			},
+			"textures": {
+				"default": "textures/items/weapons/guns/3d_percussion_cap_musket",
+				"enchanted": "textures/misc/enchanted_item_glint"
+			},
+			"geometry": {
+				"default": "geometry.fv_percussion_cap_musket"
+			},
+			"animations": {
+				"first_persion": "animation.fv_musket.first_persopn",
+				"third_persion": "animation.fv_musket.third_person",
+				"using": "animation.fv_percussion_cap_musket.using",
+				"general": "controller.animation.guns.flintlock_musket.general",
+				"aim": "animation.fv_musket.first_person_aim",
+				"using_aim_fpt": "controller.animation.guns.deadlight_rifle.using_aim_fpt"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"using_aim_fpt": "c.is_first_person"
+					},
+					{
+						"third_persion": "!c.is_first_person"
+					},
+					"general"
+				]
+			},
+			"render_controllers": [
+				"controller.render.item_default"
+			],
+			"sound_effects": {
+				"lock": "musket.locked"
+			}
+		}
+	}
+}

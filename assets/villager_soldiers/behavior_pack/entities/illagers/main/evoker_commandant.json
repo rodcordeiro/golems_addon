@@ -1,0 +1,633 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fv:evoker_commandant",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "evocation_illager",
+			"animations": {
+				"chest": "controller.animation.mainboos.chest"
+			},
+			"scripts": {
+				"animate": [
+					"chest"
+				]
+			}
+		},
+		"component_groups": {
+			"spawn": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"min_wait_time": 0,
+							"max_wait_time": 1,
+							"num_to_spawn": 1,
+							"single_use": true,
+							"spawn_entity": "fv:illager_generalissimo",
+							"spawn_event": "minecraft:entity_spawned"
+						}
+					]
+				}
+			},
+			"angry": {
+				"minecraft:angry": {
+					"duration": 30,
+					"broadcast_anger": true,
+					"broadcast_anger_on_attack": true,
+					"broadcast_anger_on_being_attacked": true,
+					"broadcast_range": 32,
+					"broadcast_targets": [
+						"illager"
+					],
+					"calm_event": {
+						"event": "become_calm_event",
+						"target": "self"
+					},
+					"filters": {
+						"any_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "illager"
+							}
+						]
+					},
+					"angry_sound": "angry",
+					"sound_interval": {
+						"range_min": 2,
+						"range_max": 5
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:experience_reward": {
+				"on_death": "3000"
+			},
+			"minecraft:type_family": {
+				"family": [
+					"mainboss",
+					"commandant",
+					"monster",
+					"illager",
+					"mob"
+				]
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0
+			},
+			"minecraft:nameable": {},
+			"minecraft:equipment": {
+				"table": "loot_tables/entities/illagers/mainboss/evoker_commandant.json"
+			},
+			"minecraft:health": {
+				"value": 800,
+				"max": 800
+			},
+			"minecraft:scale": {
+				"value": 1.5
+			},
+			"minecraft:boss": {
+				"name": "title.commander.name"
+			},
+			"minecraft:can_join_raid": {},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.9
+			},
+			"minecraft:movement": {
+				"value": 0.35
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true,
+				"can_pass_doors": true,
+				"can_open_doors": true,
+				"avoid_water": true
+			},
+			"minecraft:annotation.open_door": {},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.summon_entity": {
+				"priority": 2,
+				"summon_choices": [
+					{
+						"min_activation_range": 0,
+						"max_activation_range": 4,
+						"cooldown_time": 30,
+						"weight": 1,
+						"cast_duration": 2,
+						"particle_color": "#C8C8C8",
+						"start_sound_event": "cast.spell",
+						"sequence": [
+							{
+								"shape": "circle",
+								"target": "self",
+								"base_delay": 0.2,
+								"delay_per_summon": 0,
+								"num_entities_spawned": 1,
+								"entity_type": "fv:illager_taiga_general",
+								"size": 1.5,
+								"entity_lifespan": 300,
+								"sound_event": "prepare.attack"
+							},
+							{
+								"shape": "circle",
+								"target": "self",
+								"base_delay": 0.4,
+								"delay_per_summon": 0,
+								"num_entities_spawned": 4,
+								"entity_type": "fv:illager_taiga",
+								"size": 3,
+								"entity_lifespan": 300,
+								"sound_event": "prepare.attack"
+							},
+							{
+								"shape": "circle",
+								"target": "self",
+								"base_delay": 0.6,
+								"delay_per_summon": 0,
+								"num_entities_spawned": 4,
+								"entity_type": "fv:hoglin_illager",
+								"size": 2,
+								"entity_lifespan": 300,
+								"sound_event": "prepare.attack"
+							}
+						]
+					},
+					{
+						"min_activation_range": 0,
+						"max_activation_range": 4,
+						"cooldown_time": 30,
+						"weight": 1,
+						"cast_duration": 2,
+						"particle_color": "#9BFF70",
+						"start_sound_event": "cast.spell",
+						"sequence": [
+							{
+								"shape": "circle",
+								"target": "self",
+								"base_delay": 0.2,
+								"delay_per_summon": 0,
+								"num_entities_spawned": 1,
+								"entity_type": "fv:illager_plains_general",
+								"size": 1.5,
+								"entity_lifespan": 300,
+								"sound_event": "prepare.attack"
+							},
+							{
+								"shape": "circle",
+								"target": "self",
+								"base_delay": 0.4,
+								"delay_per_summon": 0,
+								"num_entities_spawned": 3,
+								"entity_type": "fv:illager_plains_cavalry",
+								"size": 3,
+								"entity_lifespan": 300,
+								"sound_event": "prepare.attack"
+							},
+							{
+								"shape": "circle",
+								"target": "self",
+								"base_delay": 0.6,
+								"delay_per_summon": 0,
+								"num_entities_spawned": 3,
+								"entity_type": "fv:illager_plains_spearman",
+								"size": 3,
+								"entity_lifespan": 300,
+								"sound_event": "prepare.attack"
+							}
+						]
+					},
+					{
+						"min_activation_range": 5,
+						"weight": 1,
+						"cooldown_time": 30,
+						"cast_duration": 2,
+						"particle_color": "#A0F3FF",
+						"start_sound_event": "cast.spell",
+						"sequence": [
+							{
+								"shape": "circle",
+								"target": "self",
+								"base_delay": 0.2,
+								"delay_per_summon": 0,
+								"num_entities_spawned": 1,
+								"entity_type": "fv:illager_snow_general",
+								"size": 2,
+								"entity_lifespan": 300
+							},
+							{
+								"shape": "circle",
+								"target": "self",
+								"base_delay": 0.4,
+								"delay_per_summon": 0.05,
+								"num_entities_spawned": 6,
+								"entity_type": "fv:illager_snow_archer",
+								"size": 4,
+								"entity_lifespan": 300
+							}
+						]
+					},
+					{
+						"weight": 1,
+						"min_activation_range": 0,
+						"max_activation_range": 4,
+						"cooldown_time": 25,
+						"cast_duration": 2,
+						"particle_color": "#FFF6A8",
+						"sequence": [
+							{
+								"shape": "circle",
+								"target": "self",
+								"base_delay": 0.2,
+								"num_entities_spawned": 1,
+								"entity_type": "fv:illager_desert_general",
+								"summon_cap": 8,
+								"summon_cap_radius": 16,
+								"size": 1,
+								"sound_event": "prepare.summon",
+								"entity_lifespan": 300
+							},
+							{
+								"shape": "circle",
+								"target": "self",
+								"base_delay": 0.4,
+								"num_entities_spawned": 2,
+								"entity_type": "fv:illager_desert_camel",
+								"summon_cap": 8,
+								"summon_cap_radius": 16,
+								"size": 2,
+								"sound_event": "prepare.summon",
+								"entity_lifespan": 300
+							},
+							{
+								"shape": "circle",
+								"target": "self",
+								"base_delay": 0.6,
+								"num_entities_spawned": 6,
+								"entity_type": "fv:illager_desert_swordman",
+								"summon_cap": 8,
+								"summon_cap_radius": 16,
+								"size": 3,
+								"sound_event": "prepare.summon",
+								"entity_lifespan": 300
+							}
+						]
+					},
+					{
+						"weight": 1,
+						"min_activation_range": 5,
+						"cooldown_time": 40,
+						"cast_duration": 3,
+						"particle_color": "#FF4949",
+						"sequence": [
+							{
+								"shape": "circle",
+								"target": "self",
+								"base_delay": 0.2,
+								"num_entities_spawned": 1,
+								"entity_type": "fv:evil_cowboy",
+								"summon_cap": 8,
+								"summon_cap_radius": 16,
+								"size": 3,
+								"sound_event": "prepare.summon",
+								"entity_lifespan": 300
+							},
+							{
+								"shape": "circle",
+								"target": "self",
+								"base_delay": 0.4,
+								"num_entities_spawned": 2,
+								"entity_type": "fv:illager_savanna_cavalry",
+								"summon_cap": 8,
+								"summon_cap_radius": 16,
+								"size": 4,
+								"sound_event": "prepare.summon",
+								"entity_lifespan": 300
+							},
+							{
+								"shape": "circle",
+								"target": "self",
+								"base_delay": 0.6,
+								"num_entities_spawned": 12,
+								"entity_type": "fv:illager_savanna_cowboy",
+								"summon_cap": 8,
+								"summon_cap_radius": 16,
+								"size": 5,
+								"sound_event": "prepare.summon",
+								"entity_lifespan": 300
+							}
+						]
+					},
+					{
+						"weight": 1,
+						"min_activation_range": 5,
+						"cooldown_time": 20,
+						"cast_duration": 2,
+						"particle_color": "#F5B81C",
+						"sequence": [
+							{
+								"shape": "circle",
+								"target": "self",
+								"base_delay": 0.5,
+								"num_entities_spawned": 1,
+								"entity_type": "fv:dwarf_pillager_general",
+								"summon_cap": 8,
+								"summon_cap_radius": 16,
+								"size": 3,
+								"sound_event": "prepare.summon",
+								"entity_lifespan": 300
+							},
+							{
+								"shape": "circle",
+								"target": "self",
+								"base_delay": 0.1,
+								"num_entities_spawned": 6,
+								"entity_type": "fv:dwarf_pillager",
+								"summon_cap": 8,
+								"summon_cap_radius": 16,
+								"size": 4,
+								"sound_event": "prepare.summon",
+								"entity_lifespan": 300
+							}
+						]
+					},
+					{
+						"weight": 1,
+						"min_activation_range": 5,
+						"cooldown_time": 7,
+						"cast_duration": 2,
+						"particle_color": "#007F7F",
+						"sequence": [
+							{
+								"shape": "circle",
+								"target": "self",
+								"base_delay": 0.2,
+								"num_entities_spawned": 6,
+								"entity_type": "fv:pillager_pikeman",
+								"summon_cap": 8,
+								"summon_cap_radius": 16,
+								"size": 2,
+								"sound_event": "prepare.summon",
+								"entity_lifespan": 300
+							},
+							{
+								"shape": "circle",
+								"target": "self",
+								"base_delay": 0.4,
+								"num_entities_spawned": 4,
+								"entity_type": "fv:pillager_gunner",
+								"summon_cap": 8,
+								"summon_cap_radius": 16,
+								"size": 3,
+								"sound_event": "prepare.summon",
+								"entity_lifespan": 300
+							},
+							{
+								"shape": "circle",
+								"target": "self",
+								"base_delay": 0.6,
+								"num_entities_spawned": 4,
+								"entity_type": "fv:pillager_tanker",
+								"summon_cap": 8,
+								"summon_cap_radius": 16,
+								"size": 4,
+								"sound_event": "prepare.summon",
+								"entity_lifespan": 300
+							},
+							{
+								"shape": "circle",
+								"target": "self",
+								"base_delay": 0.8,
+								"num_entities_spawned": 2,
+								"entity_type": "fv:elephant_illager",
+								"summon_cap": 8,
+								"summon_cap_radius": 16,
+								"size": 4,
+								"sound_event": "prepare.summon",
+								"entity_lifespan": 300
+							}
+						]
+					}
+				]
+			},
+			"minecraft:behavior.avoid_mob_type": {
+				"priority": 5,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "irongolem"
+								}
+							]
+						},
+						"max_dist": 8,
+						"walk_speed_multiplier": 0.6,
+						"sprint_speed_multiplier": 1
+					}
+				]
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 8,
+				"speed_multiplier": 0.6
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 2,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "snowgolem"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "irongolem"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "wandering_trader"
+								}
+							]
+						},
+						"max_dist": 128
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "villager"
+								},
+								{
+									"test": "has_component",
+									"subject": "other",
+									"operator": "!=",
+									"value": "minecraft:is_baby"
+								}
+							]
+						},
+						"max_dist": 128
+					}
+				],
+				"must_see": true
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 9,
+				"look_distance": 3,
+				"probability": 1
+			},
+			"minecraft:behavior.look_at_entity": {
+				"priority": 10,
+				"look_distance": 8,
+				"filters": {
+					"test": "is_family",
+					"subject": "other",
+					"value": "mob"
+				}
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:persistent": {},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:follow_range": {
+				"value": 128
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"on_damage": {
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "illager"
+							}
+						},
+						"deals_damage": "no"
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"test": "has_equipment_tag",
+								"subject": "other",
+								"operator": "==",
+								"value": "fv:cannon"
+							}
+						},
+						"damage_multiplier": 6
+					}
+				]
+			},
+			"minecraft:on_target_acquired": {
+				"event": "become_angry_event",
+				"target": "self"
+			},
+			"minecraft:behavior.move_to_village": {
+				"priority": 5,
+				"speed_multiplier": 1.1,
+				"goal_radius": 2
+			},
+			"minecraft:knockback_resistance": {
+				"value": 10,
+				"max": 10
+			}
+		},
+		"events": {
+			"become_calm_event": {
+				"remove": {
+					"component_groups": [
+						"angry"
+					]
+				}
+			},
+			"become_angry_event": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"angry"
+							]
+						}
+					},
+					{
+						"randomize": [
+							{
+								"weight": 99
+							},
+							{
+								"weight": 1,
+								"add": {
+									"component_groups": [
+										"spawn"
+									]
+								}
+							}
+						]
+					}
+				]
+			},
+			"spawn": {
+				"randomize": [
+					{
+						"weight": 99
+					},
+					{
+						"weight": 1,
+						"add": {
+							"component_groups": [
+								"spawn"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

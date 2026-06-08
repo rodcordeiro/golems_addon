@@ -1,0 +1,16 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fv:jungle_clan_medal",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fv_jungle_clan_medal",
+			"minecraft:max_stack_size": 1,
+			"minecraft:glint": true
+		}
+	}
+}

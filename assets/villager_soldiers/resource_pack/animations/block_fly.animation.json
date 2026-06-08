@@ -1,0 +1,29 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.block_fly.flying": {
+			"loop": true,
+			"bones": {
+				"rotation": {
+					"rotation": [
+						"query.life_time*(10*query.life_time)",
+						"query.life_time*(20*query.life_time)",
+						"query.life_time*(200*query.life_time)"
+					]
+				}
+			}
+		},
+		"animation.block_fly.in_round": {
+			"loop": true,
+			"bones": {
+				"rotation": {
+					"rotation": [
+						0,
+						"0+math.clamp(query.body_y_rotation*5,0,100)",
+						0
+					]
+				}
+			}
+		}
+	}
+}

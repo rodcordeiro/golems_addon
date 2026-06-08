@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:potato_fly",
+			"materials": {
+				"default": "arrow"
+			},
+			"textures": {
+				"default": "textures/entity/potato_fly"
+			},
+			"geometry": {
+				"default": "geometry.potato_fly"
+			},
+			"animations": {
+				"move": "animation.potato_fly.flying"
+			},
+			"scripts": {
+				"animate": [
+					"move"
+				]
+			},
+			"render_controllers": [
+				"controller.render.fv_arrow"
+			]
+		}
+	}
+}

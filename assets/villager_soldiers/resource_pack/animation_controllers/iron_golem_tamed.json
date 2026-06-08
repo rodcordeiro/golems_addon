@@ -1,0 +1,33 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.iron_golem_spear.attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"move",
+						"walking"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"attack": "query.is_delayed_attacking"
+						}
+					]
+				},
+				"attack": {
+					"animations": [
+						"attack"
+					],
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "!query.is_delayed_attacking"
+						}
+					]
+				}
+			}
+		}
+	}
+}

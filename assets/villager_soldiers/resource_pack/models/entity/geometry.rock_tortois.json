@@ -1,0 +1,291 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.rock_tortoise",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "tortois",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"locators": {
+						"lead": [
+							0,
+							6,
+							-8
+						]
+					}
+				},
+				{
+					"name": "body",
+					"parent": "tortois",
+					"pivot": [
+						0,
+						2,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-8,
+								2,
+								-8
+							],
+							"size": [
+								16,
+								6,
+								16
+							],
+							"uv": [
+								0,
+								47
+							]
+						}
+					]
+				},
+				{
+					"name": "shell",
+					"parent": "body",
+					"pivot": [
+						0,
+						24,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-9,
+								6,
+								-9
+							],
+							"size": [
+								18,
+								3,
+								18
+							],
+							"uv": [
+								0,
+								0
+							]
+						},
+						{
+							"origin": [
+								-8.5,
+								9,
+								-8.5
+							],
+							"size": [
+								17,
+								7,
+								17
+							],
+							"uv": [
+								0,
+								22
+							]
+						}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "tortois",
+					"pivot": [
+						0,
+						5,
+						-8
+					],
+					"cubes": [
+						{
+							"origin": [
+								-3,
+								5,
+								-16
+							],
+							"size": [
+								6,
+								3,
+								5
+							],
+							"uv": [
+								65,
+								58
+							]
+						},
+						{
+							"origin": [
+								-3,
+								3,
+								-11
+							],
+							"size": [
+								6,
+								5,
+								5
+							],
+							"uv": [
+								65,
+								47
+							]
+						}
+					]
+				},
+				{
+					"name": "jaw",
+					"parent": "head",
+					"pivot": [
+						0,
+						4,
+						-11
+					],
+					"cubes": [
+						{
+							"origin": [
+								-3.25,
+								3,
+								-16.25
+							],
+							"size": [
+								6.5,
+								2,
+								5.5
+							],
+							"uv": [
+								65,
+								67
+							]
+						}
+					],
+					"locators": {
+						"debris": [
+							0,
+							5,
+							-15
+						]
+					}
+				},
+				{
+					"name": "leg_front_left",
+					"parent": "tortois",
+					"pivot": [
+						8,
+						5,
+						-8
+					],
+					"cubes": [
+						{
+							"origin": [
+								6,
+								0,
+								-10
+							],
+							"size": [
+								4,
+								6,
+								4
+							],
+							"uv": [
+								69,
+								22
+							]
+						}
+					]
+				},
+				{
+					"name": "leg_front_right",
+					"parent": "tortois",
+					"pivot": [
+						-8,
+						5,
+						-8
+					],
+					"cubes": [
+						{
+							"origin": [
+								-10,
+								0,
+								-10
+							],
+							"size": [
+								4,
+								6,
+								4
+							],
+							"uv": [
+								69,
+								33
+							]
+						}
+					]
+				},
+				{
+					"name": "leg_back_left",
+					"parent": "tortois",
+					"pivot": [
+						8,
+						5,
+						8
+					],
+					"cubes": [
+						{
+							"origin": [
+								6,
+								0,
+								6
+							],
+							"size": [
+								4,
+								6,
+								4
+							],
+							"uv": [
+								0,
+								70
+							]
+						}
+					]
+				},
+				{
+					"name": "leg_back_right",
+					"parent": "tortois",
+					"pivot": [
+						-8,
+						5,
+						8
+					],
+					"cubes": [
+						{
+							"origin": [
+								-10,
+								0,
+								6
+							],
+							"size": [
+								4,
+								6,
+								4
+							],
+							"uv": [
+								17,
+								70
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

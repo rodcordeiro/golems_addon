@@ -1,0 +1,32 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:icefall",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/new_illagers/evokers/icefall"
+			},
+			"geometry": {
+				"default": "geometry.icefall"
+			},
+			"animations": {
+				"start": "animation.icefall.falldown",
+				"default": "animation.icefall.default"
+			},
+			"scripts": {
+				"animate": [
+					"default",
+					{
+						"start": "query.is_shaking"
+					}
+				]
+			},
+			"render_controllers": [
+				"controller.render.bat"
+			]
+		}
+	}
+}

@@ -1,0 +1,48 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.vanilla_item.block": {
+			"loop": true,
+			"bones": {
+				"rightItem": {
+					"rotation": [
+						0,
+						"!query.is_first_person?0:-22.5-this",
+						"!query.is_first_person?0:-95-this"
+					]
+				},
+				"rightArm": {
+					"rotation": [
+						"query.is_first_person?0:-97.5-this",
+						"query.is_first_person?0:-45.1427035699-this",
+						"query.is_first_person?0:57.1755989507-this"
+					]
+				},
+				"pole": {
+					"rotation": [
+						"v.is_first_person?180:0",
+						"v.is_first_person?60:0",
+						"v.is_first_person?-36:0"
+					],
+					"position": [
+						"v.is_first_person?-2:0",
+						"v.is_first_person?-7:0",
+						"v.is_first_person?-10:0"
+					]
+				}
+			}
+		},
+		"animation.vanilla_item.charging": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [
+						"22.5*query.item_remaining_use_duration-this",
+						"-this",
+						0
+					]
+				}
+			}
+		}
+	}
+}

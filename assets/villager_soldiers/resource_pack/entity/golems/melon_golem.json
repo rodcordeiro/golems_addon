@@ -1,0 +1,44 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:melon_golem",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/melon_golem",
+				"tame": "textures/entity/melon_golem_tamed",
+				"target": "textures/entity/target"
+			},
+			"geometry": {
+				"default": "geometry.melon_golem",
+				"target": "geometry.target"
+			},
+			"animations": {
+				"default": "animation.target.default",
+				"show": "animation.target.pop",
+				"attack": "animation.melon_golem.attack",
+				"shooting": "controller.animation.melon.golem.attack"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"default": "!query.is_sheared"
+					},
+					{
+						"show": "query.is_sheared"
+					},
+					"shooting"
+				]
+			},
+			"render_controllers": [
+				"controller.render.golem.bamboo",
+				"controller.render.golem.target"
+			],
+			"spawn_egg": {
+				"texture": "melon_golem"
+			}
+		}
+	}
+}

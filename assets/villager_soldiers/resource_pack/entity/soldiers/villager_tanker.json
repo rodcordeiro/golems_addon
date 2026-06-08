@@ -1,0 +1,139 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:villager_tanker",
+			"materials": {
+				"default": "pillager",
+				"tamed_color": "entity_alphatest_change_color"
+			},
+			"textures": {
+				"desert": "textures/entity/villager_guard_sword/desert",
+				"jungle": "textures/entity/villager_guard_sword/jungle",
+				"plains": "textures/entity/villager_guard_sword/plains",
+				"savanna": "textures/entity/villager_guard_sword/savanna",
+				"snow": "textures/entity/villager_guard_sword/snow",
+				"swamp": "textures/entity/villager_guard_sword/swamp",
+				"taiga": "textures/entity/villager_guard_sword/taiga",
+				"target": "textures/entity/target",
+				"wrist_belt": "textures/entity/villager2/wrist_belt",
+				"tamed_color": "textures/entity/villager2/tamed_color",
+				"stay_statue": "textures/entity/stay_statue",
+				"capelv0": "textures/entity/villager_guard_sword/raider_lv0",
+				"capelv1": "textures/entity/villager_guard_sword/raider_lv1",
+				"capelv2": "textures/entity/villager_guard_sword/raider_lv2",
+				"capelv3": "textures/entity/villager_guard_sword/raider_lv3",
+				"capelv4": "textures/entity/villager_guard_sword/raider_lv4"
+			},
+			"geometry": {
+				"default": "geometry.villager_handle",
+				"target": "geometry.target",
+				"wrist_belt": "geometry.wrist_belt",
+				"tamed_color": "geometry.tamed_color",
+				"stay_statue": "geometry.stay_statue",
+				"cape": "geometry.cape_illager"
+			},
+			"spawn_egg": {
+				"texture": "fv_villager_soldier_spawn_egg"
+			},
+			"scripts": {
+				"scale": "0.9375",
+				"pre_animation": [
+					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+					"variable.attack = Math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0) * 57.3;",
+					"variable.attack2 = Math.sin(variable.attack_time * 180.0) * 57.3;",
+					"variable.z_bob = Math.cos(query.life_time * 103.13244) * 2.865 + 2.865;",
+					"variable.x_bob = Math.sin(query.life_time * 76.776372) * 2.865;",
+					"variable.kill_player_mode = query.property('fv:kill_player_mode');",
+					"variable.stay_mode = query.property('fv:stay_mode');",
+					"v.level = query.property('fv:level');"
+				],
+				"variables": {
+					"variable.item_use_normalized": "public",
+					"variable.tp_melee_spear_use_attachable_rotation_z": "public"
+				},
+				"initialize": [
+					"v.tp_melee_spear_base_arm_rotation_x = -30.0;"
+				],
+				"animate": [
+					"pillager_root_controller",
+					"armor",
+					{
+						"noout": "query.has_armor_slot(2)"
+					},
+					{
+						"melee_attack": "query.variant==1&&variable.attack_time>0"
+					},
+					{
+						"axe_attack": "query.variant==2&&query.has_target&&variable.attack_time>=0"
+					},
+					{
+						"melee_spear_controller": "query.variant==3"
+					},
+					{
+						"halberd_attack": "query.variant==4"
+					},
+					"shielding",
+					"controller_caperun",
+					"cape"
+				]
+			},
+			"animations": {
+				"humanoid_base_pose": "animation.humanoid.base_pose",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"move": "animation.humanoid.move",
+				"riding.arms": "animation.humanoid.riding.arms",
+				"riding.legs": "animation.humanoid.riding.legs",
+				"holding": "animation.humanoid.holding",
+				"attack.rotations": "animation.humanoid.attack.rotations",
+				"bob": "animation.humanoid.bob",
+				"celebrating": "animation.humanoid.celebrating",
+				"controller_humanoid_base_pose": "controller.animation.humanoid.base_pose",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				"controller_move": "controller.animation.humanoid.move",
+				"controller_riding": "controller.animation.humanoid.riding",
+				"controller_attack": "controller.animation.humanoid.attack",
+				"controller_bob": "controller.animation.humanoid.bob",
+				"pillager_root_controller": "controller.animation.fv_pillager.root",
+				"armor": "animation.villager_noarmor.armor",
+				"noout": "animation.villager_noarmor.noout",
+				"melee_attack": "animation.piglin.hand.attack",
+				"axe_attack": "animation.piglin.sword.attack",
+				"shield": "animation.villager_noarmor.shield",
+				"sit": "animation.villager_noarmor.staying",
+				"shielding": "controller.animation.soldier.using_shield",
+				"has_target_one_hand": "animation.repillager.halberd.one_hand_has_target",
+				"attack_one_hand": "animation.repillager.halberd.one_hand_attacked",
+				"has_target_two_hand": "animation.repillager.halberd.two_hand_has_target",
+				"attack_two_hand": "animation.repillager.halberd.two_hand_attacked",
+				"halberd_attack": "controller.animation.villager.halberd_attack",
+				"cape": "animation.cape_illager.moving",
+				"caperun": "animation.cape_illager.run",
+				"controller_caperun": "controller.animation.cape.running",
+				"melee_spear_use": "animation.humanoid.melee_spear_use",
+				"melee_spear_hold": "animation.humanoid.melee_spear_hold",
+				"melee_spear_controller": "controller.animation.villager.melee_spear",
+				"support_vanilla": "animation.repillager.spear.support_vanilla"
+			},
+			"render_controllers": [
+				"controller.render.vanilla.biome",
+				{
+					"controller.render.golem.target": "query.property('fv:kill_player_mode')==true"
+				},
+				{
+					"controller.render.wrist_belt": "query.is_sitting"
+				},
+				{
+					"controller.render.tamed_color": "query.is_tamed"
+				},
+				{
+					"controller.render.stay_statue": "query.property('fv:stay_mode')==true"
+				},
+				"controller.render.cape.level"
+			],
+			"enable_attachables": true
+		}
+	}
+}

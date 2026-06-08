@@ -1,0 +1,122 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.fv_pillager": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			]
+		},
+		"controller.render.fv_pillager.banner": {
+			"geometry": "geometry.banner",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.banner"
+			]
+		},
+		"controller.render.fv_illager": {
+			"geometry": "geometry.illager",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.illager"
+			]
+		},
+		"controller.render.fv_default_no_hurt": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			],
+			"is_hurt_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			},
+			"on_fire_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			}
+		},
+		"controller.render.fv_pillager_armor": {
+			"geometry": "geometry.armor",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.armor"
+			]
+		},
+		"controller.render.fv_pillager_gun": {
+			"geometry": "geometry.gun",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.gun"
+			]
+		},
+		"controller.render.pillager.remake": {
+			"geometry": "geometry.armor",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.skins[query.skin_id]"
+			],
+			"arrays": {
+				"textures": {
+					"Array.skins": [
+						"Texture.normal",
+						"Texture.captain"
+					]
+				}
+			}
+		},
+		"controller.render.pillager.elite": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.skins[query.variant]"
+			],
+			"arrays": {
+				"textures": {
+					"Array.skins": [
+						"Texture.default",
+						"Texture.iron",
+						"Texture.diamond"
+					]
+				}
+			}
+		}
+	}
+}

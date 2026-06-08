@@ -1,0 +1,30 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:diamet_leggings"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"i": {
+				"item": "fv:diamet_ingot"
+			}
+		},
+		"pattern": [
+			"iii",
+			"i i",
+			"i i"
+		],
+		"result": {
+			"item": "fv:diamet_leggings",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "fv:diamet_ingot"
+			}
+		]
+	}
+}

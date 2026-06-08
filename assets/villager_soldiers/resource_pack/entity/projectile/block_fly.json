@@ -1,0 +1,40 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:block_fly",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/stone_of_catapult/cobblestone",
+				"watermelon": "textures/entity/stone_of_catapult/watermelon",
+				"pumpkin": "textures/entity/stone_of_catapult/pumkin",
+				"tnt": "textures/entity/stone_of_catapult/tnt",
+				"obsidian": "textures/entity/stone_of_catapult/obsidian",
+				"magma": "textures/entity/stone_of_catapult/magma",
+				"brick": "textures/entity/stone_of_catapult/brick"
+			},
+			"geometry": {
+				"default": "geometry.block_fly"
+			},
+			"animations": {
+				"flying": "animation.block_fly.flying",
+				"in_round": "animation.block_fly.in_round"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"flying": "!query.is_on_ground"
+					},
+					{
+						"in_round": "query.is_on_ground"
+					}
+				]
+			},
+			"render_controllers": [
+				"controller.render.block_fly"
+			]
+		}
+	}
+}

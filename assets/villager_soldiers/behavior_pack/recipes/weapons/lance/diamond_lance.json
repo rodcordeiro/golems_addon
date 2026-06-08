@@ -1,0 +1,36 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:diamond_lance"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"i": {
+				"item": "minecraft:diamond"
+			},
+			"s": {
+				"item": "fv:long_stick"
+			}
+		},
+		"pattern": [
+			" ii",
+			"isi",
+			"s  "
+		],
+		"result": {
+			"item": "fv:diamond_lance",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "fv:long_stick"
+			},
+			{
+				"item": "minecraft:diamond"
+			}
+		]
+	}
+}

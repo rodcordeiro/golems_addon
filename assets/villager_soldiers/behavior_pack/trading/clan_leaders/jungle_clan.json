@@ -1,0 +1,183 @@
+{
+	"tiers": [
+		{
+			"trades": [
+				{
+					"wants": [
+						{
+							"item": "trial_key",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:golden_lucky_chest",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"wants": [
+						{
+							"item": "ominous_trial_key",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:diamond_lucky_chest",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"wants": [
+						{
+							"item": "fv:diamorite_ingot",
+							"quantity": 12
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:jungle_clan_medal",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1,
+					"reward_exp": true
+				},
+				{
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 2
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:command_flag",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:melee_banner_tp",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:ranged_banner_tp",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 1
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:clumper_banner_tp",
+							"quantity": 1
+						}
+					],
+					"max_uses": -1
+				},
+				{
+					"max_uses": 10,
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 10
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:bamboo_turret"
+						}
+					]
+				},
+				{
+					"max_uses": 8,
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 12
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:melon_golem"
+						}
+					]
+				},
+				{
+					"max_uses": -1,
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": 8
+						}
+					],
+					"gives": [
+						{
+							"item": "fv:discharge_letter"
+						}
+					]
+				},
+				{
+					"wants": [
+						{
+							"item": "minecraft:emerald",
+							"quantity": {
+								"min": 22,
+								"max": 32
+							}
+						}
+					],
+					"gives": [
+						{
+							"item": "minecraft:bow",
+							"quantity": 1,
+							"functions": [
+								{
+									"function": "enchant_with_levels",
+									"levels": {
+										"min": 20,
+										"max": 30
+									}
+								}
+							]
+						}
+					],
+					"max_uses": 5
+				}
+			]
+		}
+	]
+}

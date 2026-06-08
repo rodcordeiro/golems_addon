@@ -1,0 +1,36 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:air_balloon",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/new_illagers/mesa/air_balloon",
+				"illager": "textures/entity/fv_vanilla/pillager"
+			},
+			"geometry": {
+				"default": "geometry.air_balloon",
+				"illager": "geometry.repillager"
+			},
+			"animations": {
+				"look_at_target": "animation.air_balloon.look_at_target",
+				"default": "animation.air_balloon.default"
+			},
+			"scripts": {
+				"animate": [
+					"default",
+					"look_at_target"
+				]
+			},
+			"render_controllers": [
+				"controller.render.fv_default_no_hurt",
+				"controller.render.fv_illager"
+			],
+			"spawn_egg": {
+				"texture": "fv_air_balloon"
+			}
+		}
+	}
+}

@@ -1,0 +1,808 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.arrowbag": {
+			"geometry": "geometry.arrowbag",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.arrowbag"
+			],
+			"is_hurt_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			},
+			"on_fire_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			}
+		},
+		"controller.render.vanilla.biome": {
+			"arrays": {
+				"textures": {
+					"Array.biomes": [
+						"Texture.plains",
+						"Texture.desert",
+						"Texture.jungle",
+						"Texture.savanna",
+						"Texture.snow",
+						"Texture.swamp",
+						"Texture.taiga"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.biomes[query.mark_variant]"
+			]
+		},
+		"controller.render.villager.tier": {
+			"arrays": {
+				"textures": {
+					"Array.tier": [
+						"Texture.tanker",
+						"Texture.melee",
+						"Texture.ranged"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.tier[query.mark_variant]"
+			]
+		},
+		"controller.render.armor.biome": {
+			"arrays": {
+				"textures": {
+					"Array.armor": [
+						"Texture.armor_plains",
+						"Texture.armor_desert",
+						"Texture.armor_jungle",
+						"Texture.armor_savanna",
+						"Texture.armor_snow",
+						"Texture.armor_swamp",
+						"Texture.armor_taiga"
+					]
+				}
+			},
+			"geometry": "geometry.armor",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.armor[query.mark_variant]"
+			]
+		},
+		"controller.render.cape.biome": {
+			"arrays": {
+				"textures": {
+					"Array.biomes": [
+						"Texture.cape_plains",
+						"Texture.cape_desert",
+						"Texture.cape_jungle",
+						"Texture.cape_savanna",
+						"Texture.cape_snow",
+						"Texture.cape_swamp",
+						"Texture.cape_taiga"
+					]
+				}
+			},
+			"geometry": "geometry.cape",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.biomes[query.mark_variant]"
+			]
+		},
+		"controller.render.villager_clan_leader": {
+			"arrays": {
+				"textures": {
+					"Array.biomes": [
+						"Texture.plains",
+						"Texture.desert",
+						"Texture.jungle",
+						"Texture.savanna",
+						"Texture.snow",
+						"Texture.swamp",
+						"Texture.taiga"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"part_visibility": [
+				{
+					"*": true
+				},
+				{
+					"arms": "!(query.is_casting || query.has_target)"
+				},
+				{
+					"leftarm": "query.is_casting || query.has_target"
+				},
+				{
+					"rightarm": "query.is_casting || query.has_target"
+				}
+			],
+			"textures": [
+				"array.biomes[query.mark_variant]"
+			]
+		},
+		"controller.render.villager_healer": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"part_visibility": [
+				{
+					"*": true
+				},
+				{
+					"arms": "!(query.is_casting || query.has_target)"
+				},
+				{
+					"leftarm": "query.is_casting || query.has_target"
+				},
+				{
+					"rightarm": "query.is_casting || query.has_target"
+				}
+			],
+			"textures": [
+				"texture.default"
+			]
+		},
+		"controller.render.horse.biome": {
+			"arrays": {
+				"textures": {
+					"Array.horsebiome": [
+						"Texture.horse_black",
+						"Texture.horse_brown",
+						"Texture.horse_chestnut",
+						"Texture.horse_creamy",
+						"Texture.horse_white",
+						"Texture.horse_gray",
+						"Texture.horse_darkbrown"
+					]
+				}
+			},
+			"geometry": "geometry.horse",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.horsebiome[query.variant]"
+			]
+		},
+		"controller.render.horse.skin": {
+			"arrays": {
+				"textures": {
+					"Array.horseskin": [
+						"Texture.horse_black",
+						"Texture.horse_brown",
+						"Texture.horse_chestnut",
+						"Texture.horse_creamy",
+						"Texture.horse_white",
+						"Texture.horse_gray",
+						"Texture.horse_darkbrown"
+					]
+				}
+			},
+			"geometry": "geometry.horse",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.horseskin[v.horse_skin]"
+			]
+		},
+		"controller.render.banner.biome": {
+			"arrays": {
+				"textures": {
+					"Array.banners": [
+						"Texture.royal_plains",
+						"Texture.royal_desert",
+						"Texture.royal_jungle",
+						"Texture.royal_savanna",
+						"Texture.royal_snow",
+						"Texture.royal_swamp",
+						"Texture.royal_taiga"
+					]
+				}
+			},
+			"geometry": "geometry.captain_banner",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.banners[query.mark_variant]"
+			],
+			"is_hurt_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			},
+			"on_fire_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			}
+		},
+		"controller.render.horse.armor.soldier": {
+			"arrays": {
+				"textures": {
+					"Array.banners": [
+						"Texture.none",
+						"Texture.gold",
+						"Texture.copper",
+						"Texture.iron",
+						"Texture.diamond",
+						"Texture.netherite"
+					]
+				}
+			},
+			"geometry": "geometry.horse_armor",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.banners[query.skin_id]"
+			],
+			"is_hurt_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			},
+			"on_fire_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			}
+		},
+		"controller.render.camel.soldier": {
+			"geometry": "geometry.camel",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.camel"
+			]
+		},
+		"controller.render.wrist_belt": {
+			"geometry": "geometry.wrist_belt",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.wrist_belt"
+			],
+			"is_hurt_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			},
+			"on_fire_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			}
+		},
+		"controller.render.tamed_color": {
+			"geometry": "geometry.tamed_color",
+			"materials": [
+				{
+					"*": "material.tamed_color"
+				}
+			],
+			"textures": [
+				"texture.tamed_color"
+			],
+			"is_hurt_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			},
+			"on_fire_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			}
+		},
+		"controller.render.wrist_belt_evoker": {
+			"geometry": "geometry.wrist_belt",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.wrist_belt"
+			],
+			"is_hurt_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			},
+			"on_fire_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			},
+			"part_visibility": [
+				{
+					"*": true
+				},
+				{
+					"wrist_belt2": "!(query.is_casting || query.has_target)"
+				},
+				{
+					"wrist_belt": "query.is_casting || query.has_target"
+				}
+			]
+		},
+		"controller.render.tamed_color_evoker": {
+			"geometry": "geometry.tamed_color",
+			"materials": [
+				{
+					"*": "material.tamed_color"
+				}
+			],
+			"textures": [
+				"texture.tamed_color"
+			],
+			"is_hurt_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			},
+			"on_fire_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			},
+			"part_visibility": [
+				{
+					"*": true
+				},
+				{
+					"tamed_color_arms": "!(query.is_casting || query.has_target)"
+				},
+				{
+					"tamed_color": "query.is_casting || query.has_target"
+				}
+			]
+		},
+		"controller.render.mob_default": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			]
+		},
+		"controller.render.structure": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			],
+			"is_hurt_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			},
+			"on_fire_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			}
+		},
+		"controller.render.stay_statue": {
+			"geometry": "geometry.stay_statue",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.stay_statue"
+			],
+			"is_hurt_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			},
+			"on_fire_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			}
+		},
+		"controller.render.stone_of_catapult": {
+			"arrays": {
+				"textures": {
+					"Array.blocks": [
+						"Texture.stone",
+						"Texture.watermelon",
+						"Texture.pumpkin",
+						"Texture.tnt",
+						"Texture.obsidian",
+						"Texture.magma",
+						"Texture.brick"
+					]
+				}
+			},
+			"geometry": "geometry.stone_of_catapult",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.blocks[query.variant]"
+			],
+			"is_hurt_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			},
+			"on_fire_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			}
+		},
+		"controller.render.block_fly": {
+			"arrays": {
+				"textures": {
+					"Array.blockfly": [
+						"Texture.default",
+						"Texture.watermelon",
+						"Texture.pumpkin",
+						"Texture.tnt",
+						"Texture.obsidian",
+						"Texture.magma",
+						"Texture.brick"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.blockfly[query.mark_variant]"
+			],
+			"is_hurt_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			},
+			"on_fire_color": {
+				"a": 0,
+				"b": 0,
+				"g": 0,
+				"r": 0
+			}
+		},
+		"controller.render.thrown_javelin": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			],
+			"is_hurt_color": {},
+			"on_fire_color": {},
+			"filter_lighting": true
+		},
+		"controller.render.entity_javelin": {
+			"arrays": {
+				"textures": {
+					"Array.javelin": [
+						"Texture.default",
+						"Texture.stone",
+						"Texture.copper",
+						"Texture.iron",
+						"Texture.steel",
+						"Texture.illasteel",
+						"Texture.diamond",
+						"Texture.netherite",
+						"Texture.illudiamondite",
+						"Texture.diamet"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.javelin[query.variant]"
+			],
+			"is_hurt_color": {},
+			"on_fire_color": {},
+			"filter_lighting": true
+		},
+		"controller.render.fv_default_cape": {
+			"geometry": "geometry.cape",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.cape"
+			],
+			"is_hurt_color": {},
+			"on_fire_color": {}
+		},
+		"controller.render.fv_bow": {
+			"arrays": {
+				"textures": {
+					"array.bow_texture_frames": [
+						"texture.default",
+						"texture.bow_pulling_0",
+						"texture.bow_pulling_1",
+						"texture.bow_pulling_2",
+						"texture.bow_pulling_3",
+						"texture.bow_pulling_4",
+						"texture.bow_pulling_5"
+					]
+				},
+				"geometries": {
+					"array.bow_geo_frames": [
+						"geometry.default",
+						"geometry.bow_pulling_0",
+						"geometry.bow_pulling_1",
+						"geometry.bow_pulling_2",
+						"geometry.bow_pulling_3",
+						"geometry.bow_pulling_4",
+						"geometry.bow_pulling_5"
+					]
+				}
+			},
+			"geometry": "array.bow_geo_frames[variable.charge_amount]",
+			"materials": [
+				{
+					"*": "v.is_enchanted?material.enchanted:material.default"
+				}
+			],
+			"textures": [
+				"array.bow_texture_frames[variable.charge_amount]",
+				"texture.enchanted"
+			]
+		},
+		"controller.render.fv_deadlight_rifle_entity": {
+			"geometry": "geometry.deadlight_rifle",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.deadlight_rifle"
+			],
+			"is_hurt_color": {},
+			"on_fire_color": {}
+		},
+		"controller.render.fv_golden_reaper_entity": {
+			"geometry": "geometry.golden_reaper",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.golden_reaper"
+			],
+			"is_hurt_color": {},
+			"on_fire_color": {}
+		},
+		"controller.render.fv.crosshair": {
+			"geometry": "geometry.crosshair",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.crosshair"
+			]
+		},
+		"controller.render.cape.level": {
+			"arrays": {
+				"textures": {
+					"Array.capelevel": [
+						"Texture.capelv0",
+						"Texture.capelv1",
+						"Texture.capelv2",
+						"Texture.capelv3",
+						"Texture.capelv4"
+					]
+				}
+			},
+			"geometry": "geometry.cape",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.capelevel[v.level]"
+			]
+		},
+		"controller.render.fv_steed": {
+			"part_visibility": [
+				{
+					"Saddle": "query.is_saddled"
+				},
+				{
+					"Bit*": "query.is_saddled"
+				},
+				{
+					"Bridle": "query.is_saddled"
+				},
+				{
+					"Reins*": "query.is_saddled && query.has_rider"
+				},
+				{
+					"Bag*": false
+				},
+				{
+					"MuleEar*": false
+				}
+			],
+			"arrays": {
+				"textures": {
+					"Array.base": [
+						"Texture.base_white",
+						"Texture.base_creamy",
+						"Texture.base_chestnut",
+						"Texture.base_brown",
+						"Texture.base_black",
+						"Texture.base_gray",
+						"Texture.base_darkbrown"
+					],
+					"Array.markings": [
+						"Texture.markings_none",
+						"Texture.markings_white",
+						"Texture.markings_whitefield",
+						"Texture.markings_whitedots",
+						"Texture.markings_blackdots"
+					],
+					"Array.armor": [
+						"Texture.armor_none",
+						"Texture.armor_leather",
+						"Texture.armor_iron",
+						"Texture.armor_gold",
+						"Texture.armor_diamond"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.base[query.variant]",
+				"array.markings[query.mark_variant]",
+				"array.armor[variable.armor_texture_slot]"
+			],
+			"color": {
+				"r": "variable.armor_texture_slot?query.armor_color_slot(4,0):this",
+				"g": "variable.armor_texture_slot?query.armor_color_slot(4,1):this",
+				"b": "variable.armor_texture_slot?query.armor_color_slot(4,2):this",
+				"a": "variable.armor_texture_slot?query.armor_color_slot(4,3):this"
+			}
+		},
+		"controller.render.fv_war_camel": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			],
+			"part_visibility": [
+				{
+					"saddle": "query.is_saddled"
+				},
+				{
+					"bridle": "query.is_saddled"
+				},
+				{
+					"reins*": "query.is_saddled && query.has_rider"
+				}
+			]
+		},
+		"controller.render.fv_arrow": {
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.default"
+			],
+			"filter_lighting": true
+		}
+	}
+}

@@ -1,0 +1,42 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:diamorite_sovereign_halberd"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"h": {
+				"item": "fv:diamorite_sovereign_halberd_spear_point"
+			},
+			"b": {
+				"item": "fv:diamorite_sovereign_halberd_blade"
+			},
+			"s": {
+				"item": "fv:diamorite_sovereign_halberd_shaft"
+			}
+		},
+		"pattern": [
+			"  h",
+			" b",
+			"s  "
+		],
+		"result": {
+			"item": "fv:diamorite_sovereign_halberd",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "fv:diamorite_sovereign_halberd_spear_point"
+			},
+			{
+				"item": "fv:diamorite_sovereign_halberd_blade"
+			},
+			{
+				"item": "fv:diamorite_sovereign_halberd_shaft"
+			}
+		]
+	}
+}

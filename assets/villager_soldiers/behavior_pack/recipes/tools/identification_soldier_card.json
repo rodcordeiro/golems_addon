@@ -1,0 +1,33 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:identification_soldier_card"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"c": {
+				"item": "minecraft:name_tag"
+			},
+			"i": {
+				"item": "minecraft:iron_nugget"
+			}
+		},
+		"pattern": [
+			" i ",
+			"ici",
+			" i "
+		],
+		"result": {
+			"item": "fv:identification_soldier_card",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "minecraft:iron_ingot"
+			}
+		]
+	}
+}

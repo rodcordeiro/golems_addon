@@ -1,0 +1,34 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:entity_bullet",
+			"materials": {
+				"default": "snowball"
+			},
+			"textures": {
+				"default": "textures/items/projectile/bullet"
+			},
+			"geometry": {
+				"default": "geometry.item_sprite"
+			},
+			"render_controllers": [
+				"controller.render.item_sprite"
+			],
+			"animations": {
+				"flying": "animation.actor.billboard",
+				"bullet": "animation.item_sprite.gun_power_smoke"
+			},
+			"scripts": {
+				"scale": 0.2,
+				"animate": [
+					"flying",
+					"bullet"
+				]
+			},
+			"particle_effects": {
+				"gunpower_gunshoot": "fv:bullet_smoke"
+			}
+		}
+	}
+}

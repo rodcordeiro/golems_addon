@@ -1,0 +1,23 @@
+{
+	"format_version": "1.20.0",
+	"minecraft:recipe_smithing_transform": {
+		"description": {
+			"identifier": "fv:netherite_pike"
+		},
+		"tags": [
+			"smithing_table"
+		],
+		"template": {
+			"item": "minecraft:netherite_upgrade_smithing_template"
+		},
+		"base": {
+			"item": "fv:diamond_pike"
+		},
+		"addition": {
+			"item": "minecraft:netherite_ingot"
+		},
+		"result": {
+			"item": "fv:netherite_pike"
+		}
+	}
+}

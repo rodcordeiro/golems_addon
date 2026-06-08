@@ -1,0 +1,43 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:bamboo_turret",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/bamboo_turret_golem",
+				"tame": "textures/entity/bamboo_turret_golem_tamed",
+				"target": "textures/entity/target"
+			},
+			"geometry": {
+				"default": "geometry.bamboo_turret_golem",
+				"target": "geometry.target"
+			},
+			"animations": {
+				"look_at_target": "animation.bamboo_turret_golem.look_at_target",
+				"default": "animation.target.default",
+				"show": "animation.target.pop"
+			},
+			"scripts": {
+				"animate": [
+					"look_at_target",
+					{
+						"default": "!query.is_sheared"
+					},
+					{
+						"show": "query.is_sheared"
+					}
+				]
+			},
+			"render_controllers": [
+				"controller.render.golem.bamboo",
+				"controller.render.golem.target"
+			],
+			"spawn_egg": {
+				"texture": "bamboo_turret"
+			}
+		}
+	}
+}

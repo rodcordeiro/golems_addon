@@ -1,0 +1,31 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:dead_air_balloon",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/new_illagers/mesa/air_balloon"
+			},
+			"geometry": {
+				"default": "geometry.air_balloon"
+			},
+			"animations": {
+				"default": "animation.air_balloon.default"
+			},
+			"scripts": {
+				"animate": [
+					"default"
+				]
+			},
+			"render_controllers": [
+				"controller.render.fv_default_no_hurt"
+			],
+			"spawn_egg": {
+				"texture": "fv_air_balloon"
+			}
+		}
+	}
+}

@@ -1,0 +1,63 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fv:stone_javelin",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.sword"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true,
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:durability": {
+				"max_durability": 83
+			},
+			"minecraft:icon": "fv_stone_javelin",
+			"minecraft:damage": 2,
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"minecraft:cobblestone"
+						],
+						"repair_amount": "query.max_durability*0.25"
+					},
+					{
+						"items": [
+							"fv:stone_javelin"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+					}
+				]
+			},
+			"minecraft:digger": {
+				"use_efficiency": true,
+				"destroy_speeds": [
+					{
+						"block": "minecraft:web",
+						"speed": 15
+					},
+					{
+						"block": "minecraft:bamboo",
+						"speed": 60
+					}
+				]
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_trident",
+					"fv:is_javelin",
+					"minecraft:stone_tier"
+				]
+			},
+			"minecraft:use_animation": "spear",
+			"minecraft:use_modifiers": {
+				"use_duration": 3666,
+				"movement_modifier": 1
+			}
+		}
+	}
+}

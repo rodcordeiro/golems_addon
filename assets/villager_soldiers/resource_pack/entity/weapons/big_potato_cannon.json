@@ -1,0 +1,39 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:big_potato_cannon",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/big_potato_cannon"
+			},
+			"geometry": {
+				"default": "geometry.big_potato_cannon"
+			},
+			"animations": {
+				"shooting": "animation.potato_cannon.shooting",
+				"shoot": "controller.animation.potato.cannon.shoot",
+				"default": "animation.big_potato_cannon.default"
+			},
+			"scripts": {
+				"animate": [
+					"shoot",
+					"default"
+				]
+			},
+			"render_controllers": [
+				"controller.render.mob_default"
+			],
+			"spawn_egg": {
+				"texture": "potato_cannon"
+			},
+			"particle_effects": {
+				"cannon_fire": "fv:cannon_fire",
+				"gunpower_shoot": "fv:gunpower_shoot",
+				"gunpower_smoke_up": "fv:gunpower_smoke_up"
+			}
+		}
+	}
+}

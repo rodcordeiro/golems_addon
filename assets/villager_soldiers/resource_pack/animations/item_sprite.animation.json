@@ -1,0 +1,21 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.item_sprite.gun_power_smoke": {
+			"loop": true,
+			"particle_effects": {
+				"0.0": {
+					"effect": "gunpower_gunshoot"
+				}
+			}
+		},
+		"animation.item_sprite.throw_shell": {
+			"loop": true,
+			"particle_effects": {
+				"0.0": {
+					"effect": "shell"
+				}
+			}
+		}
+	}
+}

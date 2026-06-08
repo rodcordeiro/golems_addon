@@ -1,0 +1,33 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:diamond_battle_axe"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"i": {
+				"item": "minecraft:diamond"
+			},
+			"s": {
+				"item": "minecraft:stick"
+			}
+		},
+		"pattern": [
+			"iii",
+			"isi",
+			" s "
+		],
+		"result": {
+			"item": "fv:diamond_battle_axe",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "minecraft:diamond"
+			}
+		]
+	}
+}

@@ -1,0 +1,381 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.spear_item.broad_sword_fp": {
+			"loop": true,
+			"bones": {
+				"rightItem": {
+					"position": [
+						3,
+						23,
+						5
+					]
+				},
+				"spear": {
+					"rotation": [
+						-156.9604,
+						45.24023,
+						-212.63209
+					],
+					"position": [
+						2.36449,
+						-3.86924,
+						-1.16062
+					]
+				}
+			}
+		},
+		"animation.spear_item.first_persion_chuanbichem": {
+			"loop": true,
+			"bones": {
+				"spear": {
+					"rotation": [
+						14.14888,
+						-24.08711,
+						-44.13707
+					],
+					"position": [
+						6.385,
+						27.45268,
+						-11.72109
+					]
+				}
+			}
+		},
+		"animation.spear_item.first_persion_chem": {
+			"loop": true,
+			"bones": {
+				"spear": {
+					"rotation": [
+						149.14888,
+						-24.08711,
+						-44.13707
+					],
+					"position": [
+						-6.22506,
+						21.13188,
+						13.19947
+					]
+				}
+			}
+		},
+		"animation.spear_item.third_persion": {
+			"loop": true,
+			"bones": {
+				"rightItem": {
+					"position": [
+						0,
+						22,
+						-4
+					]
+				},
+				"spear": {
+					"scale": [
+						0.7,
+						1,
+						1
+					]
+				}
+			}
+		},
+		"animation.spear_item.64_scale_default": {
+			"loop": true,
+			"bones": {
+				"spear": {
+					"scale": [
+						0.5,
+						1,
+						1
+					]
+				}
+			}
+		},
+		"animation.spear_item.chem_particle": {
+			"loop": true,
+			"particle_effects": {
+				"0.0": {
+					"effect": "knock_roar",
+					"locator": "particle"
+				}
+			}
+		},
+		"animation.spear_item.broad_sword_tp": {
+			"loop": true,
+			"bones": {
+				"rightItem": {
+					"position": [
+						0,
+						22,
+						-4
+					]
+				},
+				"spear": {
+					"position": [
+						0,
+						0,
+						-4
+					],
+					"scale": [
+						0.5,
+						0.6,
+						0.6
+					]
+				}
+			}
+		},
+		"animation.spear_item.lance_first_persion": {
+			"loop": true,
+			"bones": {
+				"spear": {
+					"rotation": [
+						56.687,
+						66.7103,
+						-58.84055
+					],
+					"position": [
+						0.9082,
+						19.27183,
+						4.5657
+					]
+				}
+			}
+		},
+		"animation.spear_item.first_persion_using": {
+			"loop": true,
+			"bones": {
+				"spear": {
+					"rotation": [
+						56.687,
+						66.7103,
+						-58.84055
+					],
+					"position": [
+						-5.4492,
+						31.369,
+						7.60577
+					]
+				}
+			}
+		},
+		"animation.spear_item.first_persion_halberd_using": {
+			"loop": true,
+			"bones": {
+				"spear": {
+					"rotation": [
+						-116.97791,
+						79.57426,
+						-131.97913
+					],
+					"position": [
+						-11.31088,
+						17.80397,
+						5.98383
+					]
+				}
+			}
+		},
+		"animation.spear_item.first_persion_attacked": {
+			"loop": true,
+			"bones": {
+				"spear": {
+					"rotation": [
+						69.187,
+						66.7103,
+						-58.84055
+					],
+					"position": [
+						12.27079,
+						11.82539,
+						1.09143
+					]
+				}
+			}
+		},
+		"animation.spear_item.lance_third_persion": {
+			"loop": true,
+			"bones": {
+				"rightItem": {
+					"position": [
+						0,
+						22,
+						-12
+					]
+				},
+				"spear": {
+					"scale": [
+						0.7,
+						1,
+						1
+					]
+				}
+			}
+		},
+		"animation.spear_item.first_persion": {
+			"loop": true,
+			"bones": {
+				"spear": {
+					"rotation": [
+						56.687,
+						66.7103,
+						-58.84055
+					],
+					"position": [
+						0,
+						21,
+						5
+					]
+				}
+			}
+		},
+		"animation.spear_item.first_persion_piercing_attack": {
+			"animation_length": 1,
+			"bones": {
+				"spear": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.0833": [
+							17.5,
+							0,
+							0
+						],
+						"0.2083": [
+							22.5,
+							0,
+							0
+						],
+						"0.9167": [
+							0,
+							0,
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.0833": [
+							13.47975,
+							-8.28798,
+							-0.05061
+						],
+						"0.2083": [
+							15.55814,
+							-9.09879,
+							0.11494
+						],
+						"0.9167": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.spear_item.normal_sword_tp": {
+			"loop": true,
+			"bones": {
+				"rightItem": {
+					"position": [
+						0,
+						22,
+						-4
+					]
+				},
+				"spear": {
+					"position": [
+						0,
+						0,
+						-5
+					],
+					"scale": [
+						0.5,
+						0.6,
+						0.6
+					]
+				}
+			}
+		},
+		"animation.spear_item.normal_sword_fp": {
+			"loop": true,
+			"bones": {
+				"rightItem": {
+					"position": [
+						3,
+						23,
+						5
+					]
+				},
+				"spear": {
+					"rotation": [
+						-77.1351,
+						69.80846,
+						-132.71814
+					],
+					"position": [
+						-1,
+						-10,
+						3
+					]
+				}
+			}
+		},
+		"animation.spear_item.third_persion_percing_attack": {
+			"animation_length": 1,
+			"bones": {
+				"spear": {
+					"rotation": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.0833": [
+							10,
+							0,
+							0
+						],
+						"0.2083": [
+							17.5,
+							0,
+							0
+						],
+						"0.9167": [
+							0,
+							0,
+							0
+						]
+					},
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.0833": [
+							0,
+							-0.86824,
+							-4.92404
+						],
+						"0.2083": [
+							0,
+							-2.34466,
+							-7.57372
+						],
+						"0.9167": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		}
+	}
+}

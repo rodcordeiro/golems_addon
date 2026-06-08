@@ -1,0 +1,104 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.falldown": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"fall": "!query.is_shaking"
+						}
+					]
+				},
+				"fall": {
+					"on_entry": [
+						"/playsound random.glass @a ~ ~ ~ 10"
+					]
+				}
+			}
+		},
+		"controller.animation.boom.block": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"boom": "query.variant==0&&query.is_on_ground"
+						},
+						{
+							"break": "query.variant==1&&query.is_on_ground"
+						},
+						{
+							"obsidian": "query.variant==2&&query.is_on_ground"
+						},
+						{
+							"magma": "query.variant==3&&query.is_on_ground"
+						}
+					]
+				},
+				"boom": {
+					"on_entry": [
+						"/summon fv:block_boom ~ ~ ~"
+					]
+				},
+				"break": {
+					"on_entry": [
+						"/summon fv:block_boom ~ ~ ~ 0 0 tnt"
+					]
+				},
+				"obsidian": {
+					"on_entry": [
+						"/summon fv:block_boom ~ ~ ~ 0 0 obsidian"
+					]
+				},
+				"magma": {
+					"on_entry": [
+						"/summon fv:block_boom ~ ~ ~ 0 0 magma"
+					]
+				}
+			}
+		},
+		"controller.animation.cannon_ball.explode": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"small": "query.variant==0&&query.is_on_ground"
+						},
+						{
+							"medium": "query.variant==1&&query.is_on_ground"
+						},
+						{
+							"large": "query.variant==2&&query.is_on_ground"
+						},
+						{
+							"large_fire": "query.variant==3&&query.is_on_ground"
+						}
+					]
+				},
+				"small": {
+					"on_entry": [
+						"/summon fv:block_boom ~ ~ ~ 0 0 small_cannon_ball"
+					]
+				},
+				"medium": {
+					"on_entry": [
+						"/summon fv:block_boom ~ ~ ~ 0 0 medium_cannon_ball"
+					]
+				},
+				"large": {
+					"on_entry": [
+						"/summon fv:block_boom ~ ~ ~ 0 0 large_cannon_ball"
+					]
+				},
+				"large_fire": {
+					"on_entry": [
+						"/summon fv:block_boom ~ ~ ~ 0 0 large_fire_cannon_ball"
+					]
+				}
+			}
+		}
+	}
+}

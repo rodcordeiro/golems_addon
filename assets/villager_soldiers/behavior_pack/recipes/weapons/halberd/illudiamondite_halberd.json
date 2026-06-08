@@ -1,0 +1,36 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:illudiamondite_halberd"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"i": {
+				"item": "fv:illudiamondite_ingot"
+			},
+			"s": {
+				"item": "fv:long_stick"
+			}
+		},
+		"pattern": [
+			" ii",
+			" i ",
+			"s  "
+		],
+		"result": {
+			"item": "fv:illudiamondite_halberd",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "fv:long_stick"
+			},
+			{
+				"item": "fv:illudiamondite_ingot"
+			}
+		]
+	}
+}

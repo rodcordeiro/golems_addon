@@ -1,0 +1,55 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "empty",
+                    "weight": 90
+                },
+                {
+                    "type": "item",
+                    "weight": 10,
+                    "name": "fv:giant_gemheart_broadsword",
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": {
+                                "min": 30,
+                                "max": 50
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "weight": 5,
+                    "name": "fv:giant_gemheart_broadsword_lv2",
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": {
+                                "min": 30,
+                                "max": 50
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "name": "fv:giant_gemheart_broadsword_lv3",
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": {
+                                "min": 30,
+                                "max": 50
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,636 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.illager_horse_armor",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 5.5,
+				"visible_bounds_offset": [
+					0,
+					2.25,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "horse_soldier",
+					"pivot": [
+						0,
+						12,
+						0
+					]
+				},
+				{
+					"name": "waist",
+					"parent": "horse_soldier",
+					"pivot": [
+						0,
+						0,
+						0
+					]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [
+						0,
+						24,
+						0
+					]
+				},
+				{
+					"name": "out",
+					"parent": "body",
+					"pivot": [
+						0,
+						24,
+						0
+					]
+				},
+				{
+					"name": "head",
+					"parent": "body",
+					"pivot": [
+						0,
+						24,
+						0
+					],
+					"locators": {
+						"lead2": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				{
+					"name": "nose",
+					"parent": "head",
+					"pivot": [
+						0,
+						26,
+						0
+					]
+				},
+				{
+					"name": "leftLeg",
+					"parent": "body",
+					"pivot": [
+						2,
+						12,
+						0
+					]
+				},
+				{
+					"name": "rightLeg",
+					"parent": "body",
+					"pivot": [
+						-2,
+						12,
+						0
+					],
+					"mirror": true
+				},
+				{
+					"name": "rightarm",
+					"parent": "body",
+					"pivot": [
+						-5,
+						22,
+						0
+					]
+				},
+				{
+					"name": "rightItem",
+					"parent": "rightarm",
+					"pivot": [
+						-6,
+						15,
+						1
+					]
+				},
+				{
+					"name": "leftarm",
+					"parent": "body",
+					"pivot": [
+						5,
+						22,
+						0
+					],
+					"mirror": true
+				},
+				{
+					"name": "leftItem",
+					"parent": "leftarm",
+					"pivot": [
+						6,
+						15,
+						1
+					]
+				},
+				{
+					"name": "horse",
+					"parent": "horse_soldier",
+					"pivot": [
+						0,
+						13,
+						9
+					]
+				},
+				{
+					"name": "horse_armor",
+					"parent": "horse",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-5,
+								11,
+								-11
+							],
+							"size": [
+								10,
+								10,
+								22
+							],
+							"uv": [
+								0,
+								32
+							]
+						}
+					]
+				},
+				{
+					"name": "Tail",
+					"parent": "horse",
+					"pivot": [
+						0,
+						20,
+						11
+					],
+					"rotation": [
+						25,
+						0,
+						0
+					]
+				},
+				{
+					"name": "LegBL",
+					"parent": "horse",
+					"pivot": [
+						3,
+						11,
+						9
+					]
+				},
+				{
+					"name": "LegBL_armor",
+					"parent": "LegBL",
+					"pivot": [
+						3,
+						5.5,
+						9
+					],
+					"cubes": [
+						{
+							"origin": [
+								1,
+								0,
+								7
+							],
+							"size": [
+								4,
+								11,
+								4
+							],
+							"uv": [
+								48,
+								21
+							],
+							"mirror": true
+						}
+					]
+				},
+				{
+					"name": "LegBR",
+					"parent": "horse",
+					"pivot": [
+						-3,
+						11,
+						9
+					]
+				},
+				{
+					"name": "LegBR_armor",
+					"parent": "LegBR",
+					"pivot": [
+						-3,
+						5.5,
+						9
+					],
+					"cubes": [
+						{
+							"origin": [
+								-5,
+								0,
+								7
+							],
+							"size": [
+								4,
+								11,
+								4
+							],
+							"uv": [
+								48,
+								21
+							]
+						}
+					]
+				},
+				{
+					"name": "LegFL",
+					"parent": "horse",
+					"pivot": [
+						3,
+						11,
+						-9
+					]
+				},
+				{
+					"name": "LegFL_armor",
+					"parent": "LegFL",
+					"pivot": [
+						3,
+						5.5,
+						-9
+					],
+					"cubes": [
+						{
+							"origin": [
+								1,
+								0,
+								-11
+							],
+							"size": [
+								4,
+								11,
+								4
+							],
+							"uv": [
+								48,
+								21
+							],
+							"mirror": true
+						}
+					]
+				},
+				{
+					"name": "LegFR",
+					"parent": "horse",
+					"pivot": [
+						-3,
+						11,
+						-9
+					]
+				},
+				{
+					"name": "LegFR_armor",
+					"parent": "LegFR",
+					"pivot": [
+						-3,
+						5.5,
+						-9
+					],
+					"cubes": [
+						{
+							"origin": [
+								-5,
+								0,
+								-11
+							],
+							"size": [
+								4,
+								11,
+								4
+							],
+							"uv": [
+								48,
+								21
+							]
+						}
+					]
+				},
+				{
+					"name": "Neck",
+					"parent": "horse",
+					"pivot": [
+						0,
+						17,
+						-8
+					],
+					"rotation": [
+						30,
+						0,
+						0
+					],
+					"locators": {
+						"lead": [
+							0,
+							17,
+							-8
+						]
+					}
+				},
+				{
+					"name": "Neck_armor",
+					"parent": "Neck",
+					"pivot": [
+						0,
+						22,
+						-7.5
+					],
+					"cubes": [
+						{
+							"origin": [
+								-2,
+								16,
+								-11
+							],
+							"size": [
+								4,
+								12,
+								7
+							],
+							"uv": [
+								0,
+								35
+							]
+						}
+					]
+				},
+				{
+					"name": "horse_head",
+					"parent": "Neck",
+					"pivot": [
+						0,
+						28,
+						-11
+					]
+				},
+				{
+					"name": "horse_head_armor",
+					"parent": "horse_head",
+					"pivot": [
+						0,
+						30.5,
+						-7.5
+					],
+					"cubes": [
+						{
+							"origin": [
+								-3,
+								28,
+								-11
+							],
+							"size": [
+								6,
+								5,
+								7
+							],
+							"uv": [
+								0,
+								13
+							]
+						}
+					]
+				},
+				{
+					"name": "Muzzle",
+					"parent": "horse_head",
+					"pivot": [
+						0,
+						28,
+						-11
+					]
+				},
+				{
+					"name": "Muzzle2__armor",
+					"parent": "Muzzle",
+					"pivot": [
+						0,
+						30.5,
+						-13.5
+					],
+					"cubes": [
+						{
+							"origin": [
+								-2,
+								28,
+								-16
+							],
+							"size": [
+								4,
+								5,
+								5
+							],
+							"uv": [
+								0,
+								25
+							]
+						}
+					]
+				},
+				{
+					"name": "EarL",
+					"parent": "horse_head",
+					"pivot": [
+						0,
+						17,
+						-8
+					],
+					"rotation": [
+						0,
+						0,
+						5
+					]
+				},
+				{
+					"name": "EarL_armor",
+					"parent": "EarL",
+					"pivot": [
+						0.5,
+						33.5,
+						-4.51
+					],
+					"cubes": [
+						{
+							"origin": [
+								-0.5,
+								32,
+								-5.01
+							],
+							"size": [
+								2,
+								3,
+								1
+							],
+							"uv": [
+								19,
+								16
+							],
+							"mirror": true
+						}
+					]
+				},
+				{
+					"name": "EarR",
+					"parent": "horse_head",
+					"pivot": [
+						0,
+						17,
+						-8
+					],
+					"rotation": [
+						0,
+						0,
+						-5
+					]
+				},
+				{
+					"name": "EarR_armor",
+					"parent": "EarR",
+					"pivot": [
+						-0.5,
+						33.5,
+						-4.51
+					],
+					"cubes": [
+						{
+							"origin": [
+								-1.5,
+								32,
+								-5.01
+							],
+							"size": [
+								2,
+								3,
+								1
+							],
+							"uv": [
+								19,
+								16
+							]
+						}
+					]
+				},
+				{
+					"name": "ReinsL",
+					"parent": "horse_head",
+					"pivot": [
+						2,
+						30.5,
+						-13.5
+					],
+					"rotation": [
+						-35,
+						0,
+						0
+					]
+				},
+				{
+					"name": "ReinsR",
+					"parent": "horse_head",
+					"pivot": [
+						-3,
+						30.5,
+						-13.5
+					],
+					"rotation": [
+						-35,
+						0,
+						0
+					]
+				},
+				{
+					"name": "Bridle",
+					"parent": "horse_head",
+					"pivot": [
+						0,
+						17,
+						-8
+					]
+				},
+				{
+					"name": "BitL",
+					"parent": "Bridle",
+					"pivot": [
+						0,
+						17,
+						-8
+					]
+				},
+				{
+					"name": "BitR",
+					"parent": "Bridle",
+					"pivot": [
+						0,
+						17,
+						-8
+					]
+				},
+				{
+					"name": "Mane",
+					"parent": "Neck",
+					"pivot": [
+						0,
+						17,
+						-8
+					]
+				},
+				{
+					"name": "Mane_armor",
+					"parent": "Mane",
+					"pivot": [
+						0,
+						25,
+						-2.95
+					],
+					"cubes": [
+						{
+							"origin": [
+								-1,
+								17,
+								-3.95
+							],
+							"size": [
+								2,
+								16,
+								2
+							],
+							"uv": [
+								56,
+								36
+							]
+						}
+					]
+				},
+				{
+					"name": "Saddle",
+					"parent": "horse",
+					"pivot": [
+						0,
+						22,
+						2
+					]
+				}
+			]
+		}
+	]
+}

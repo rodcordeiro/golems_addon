@@ -1,0 +1,254 @@
+{
+	"format_version": "1.21.130",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fv:hoglin_illager",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"zoglin_adult": {
+				"minecraft:type_family": {
+					"family": [
+						"illager",
+						"hoglin",
+						"illager_taiga",
+						"mob"
+					]
+				},
+				"minecraft:collision_box": {
+					"width": 1.4,
+					"height": 1.4
+				},
+				"minecraft:custom_hit_test": {
+					"hitboxes": [
+						{
+							"width": 2,
+							"height": 1.75,
+							"pivot": [
+								0,
+								1,
+								0
+							]
+						}
+					]
+				},
+				"minecraft:behavior.hurt_by_target": {
+					"priority": 1,
+					"entity_types": {
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"operator": "!=",
+							"value": "illager"
+						},
+						"max_dist": 64
+					}
+				},
+				"minecraft:attack": {
+					"damage": [
+						6,
+						12
+					]
+				},
+				"minecraft:rideable": {
+					"controlling_seat": 1,
+					"family_types": [
+						"illagercanride"
+					],
+					"pull_in_entities": true,
+					"seat_count": 1,
+					"seats": {
+						"position": [
+							0,
+							1.4,
+							-0.2
+						],
+						"lock_rider_rotation": 180
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:nameable": {},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/hoglin.json"
+			},
+			"minecraft:experience_reward": {
+				"on_bred": "math.random(1,7)",
+				"on_death": "query.last_hit_by_player?5:0"
+			},
+			"minecraft:health": {
+				"value": 60,
+				"max": 60
+			},
+			"minecraft:can_join_raid": {},
+			"minecraft:knockback_resistance": {
+				"value": 0.6
+			},
+			"minecraft:behavior.melee_attack": {
+				"priority": 4,
+				"reach_multiplier": 2.15,
+				"speed_multiplier": 1.5
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 2,
+				"must_see": true,
+				"within_radius": 100,
+				"must_see_forget_duration": 40,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "snowgolem"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "irongolem"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "wandering_trader"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "piglin"
+								}
+							]
+						},
+						"max_dist": 100
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "villager"
+								},
+								{
+									"test": "has_component",
+									"subject": "other",
+									"operator": "!=",
+									"value": "minecraft:is_baby"
+								}
+							]
+						},
+						"max_dist": 100
+					}
+				]
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0,
+				"breathes_water": true
+			},
+			"minecraft:movement": {
+				"value": 0.3
+			},
+			"minecraft:navigation.walk": {
+				"is_amphibious": true,
+				"can_path_over_water": false,
+				"avoid_water": true,
+				"avoid_damage_blocks": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:behavior.move_towards_target": {
+				"priority": 5,
+				"speed_multiplier": 1.6,
+				"within_radius": 6
+			},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:balloonable": {},
+			"minecraft:behavior.random_stroll": {
+				"priority": 7,
+				"speed_multiplier": 1
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 9
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 8,
+				"look_distance": 6,
+				"probability": 0.02
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"on_damage": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "illager"
+									}
+								]
+							}
+						},
+						"deals_damage": "no"
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"test": "has_equipment_tag",
+								"subject": "other",
+								"operator": "==",
+								"value": "fv:anti_cavalry"
+							}
+						},
+						"damage_multiplier": 2
+					}
+				]
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:behavior.move_to_village": {
+				"cooldown_time": 2,
+				"goal_radius": 1,
+				"priority": 6,
+				"speed_multiplier": 1.5
+			},
+			"minecraft:follow_range": {
+				"value": 64
+			}
+		},
+		"events": {
+			"minecraft:entity_transformed": {
+				"add": {
+					"component_groups": [
+						"zoglin_adult"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"zoglin_adult"
+					]
+				}
+			}
+		}
+	}
+}

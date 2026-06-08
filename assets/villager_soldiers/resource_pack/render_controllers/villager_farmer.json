@@ -1,0 +1,74 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.villager_farmer_base": {
+			"arrays": {
+				"textures": {
+					"Array.skins": [
+						"Texture.base",
+						"Texture.base2",
+						"Texture.base3",
+						"Texture.base4",
+						"Texture.base5",
+						"Texture.base6"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"array.skins[query.skin_id]"
+			]
+		},
+		"controller.render.villager_farmer_masked": {
+			"arrays": {
+				"textures": {
+					"Array.biomes": [
+						"Texture.plains",
+						"Texture.desert",
+						"Texture.jungle",
+						"Texture.savanna",
+						"Texture.snow",
+						"Texture.swamp",
+						"Texture.taiga"
+					],
+					"Array.professions": [
+						"Texture.unskilled",
+						"Texture.farmer"
+					]
+				}
+			},
+			"geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "(query.is_baby||variable.profession_index==0)?material.default:material.masked"
+				}
+			],
+			"textures": [
+				"array.biomes[query.mark_variant]",
+				"array.professions[variable.profession_index]"
+			]
+		},
+		"controller.render.villager_farmer_level": {
+			"rebuild_animation_matrices": true,
+			"geometry": "geometry.default",
+			"part_visibility": [
+				{
+					"*": "!query.is_baby && variable.profession_index != 0 && variable.profession_index != 14"
+				}
+			],
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": [
+				"texture.hired"
+			]
+		}
+	}
+}

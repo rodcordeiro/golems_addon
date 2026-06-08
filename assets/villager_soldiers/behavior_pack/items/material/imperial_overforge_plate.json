@@ -1,0 +1,22 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fv:imperial_overforge_plate",
+			"menu_category": {
+				"category": "items",
+				"group": "itemGroup.name.smithing_templates"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fv_imperial_overforge_plate",
+			"minecraft:max_stack_size": 64,
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:transform_templates"
+				]
+			},
+			"minecraft:glint": true
+		}
+	}
+}

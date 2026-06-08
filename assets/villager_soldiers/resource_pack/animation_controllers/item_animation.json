@@ -1,0 +1,515 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.spear.fpt.using": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"first_persion"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"using": "query.is_using_item"
+						}
+					]
+				},
+				"using": {
+					"animations": [
+						"first_persion_using"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"attacked": "!query.is_using_item"
+						}
+					]
+				},
+				"attacked": {
+					"animations": [
+						"first_persion_attacked"
+					],
+					"blend_transition": 0.5,
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.spear.particle.using": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"using": "query.is_using_item"
+						}
+					]
+				},
+				"using": {
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"attacked": "!query.is_using_item"
+						}
+					]
+				},
+				"attacked": {
+					"animations": [
+						"spear_particle"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.guns.flintlock_musket.general": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"using": "query.is_using_item"
+						}
+					]
+				},
+				"using": {
+					"animations": [
+						"using"
+					],
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.guns.flintlock_musket_empty.reloading_fpt": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"first_persion"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"reloading": "query.cooldown_time_remaining>1.5"
+						}
+					]
+				},
+				"reloading": {
+					"animations": [
+						"reloading_first_persion"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.guns.flintlock_musket_empty.reloading_tpt": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"reloading": "query.cooldown_time_remaining>1.5"
+						}
+					]
+				},
+				"reloading": {
+					"animations": [
+						"reloading_third_persion"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.guns.deadlight_rifle.reloading_fpt": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"reloading": "query.cooldown_time_remaining>1.5"
+						}
+					]
+				},
+				"reloading": {
+					"animations": [
+						"reloading_first_persion"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.guns.deadlight_rifle.using_aim_fpt": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"first_persion"
+					],
+					"transitions": [
+						{
+							"aim": "query.is_sneaking&&query.is_using_item"
+						}
+					]
+				},
+				"aim": {
+					"animations": [
+						"aim"
+					],
+					"blend_transition": 0.4,
+					"transitions": [
+						{
+							"default": "!query.is_sneaking||!query.is_using_item"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.guns.golden_reaper_empty.reloading_tpt": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"third_persion"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"reloading": "query.cooldown_time_remaining>1.5"
+						}
+					]
+				},
+				"reloading": {
+					"animations": [
+						"reloading_third_persion"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.guns.golden_reaper.general": {
+			"initial_state": "starting",
+			"states": {
+				"starting": {
+					"animations": [
+						"off_gun"
+					],
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				},
+				"default": {
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"using": "query.is_using_item"
+						}
+					]
+				},
+				"using": {
+					"animations": [
+						"using"
+					],
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.guns.golden_reaper.using_oquay": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"step1": "query.is_using_item"
+						}
+					]
+				},
+				"step1": {
+					"animations": [
+						"using_oquay_step1"
+					],
+					"transitions": [
+						{
+							"endstep1": "!query.is_using_item"
+						}
+					]
+				},
+				"endstep1": {
+					"animations": [
+						"end_step1"
+					],
+					"transitions": [
+						{
+							"step2": "query.is_using_item"
+						}
+					]
+				},
+				"step2": {
+					"animations": [
+						"using_oquay_step2"
+					],
+					"transitions": [
+						{
+							"endstep2": "!query.is_using_item"
+						}
+					]
+				},
+				"endstep2": {
+					"animations": [
+						"end_step2"
+					],
+					"transitions": [
+						{
+							"step3": "query.is_using_item"
+						}
+					]
+				},
+				"step3": {
+					"animations": [
+						"using_oquay_step3"
+					],
+					"transitions": [
+						{
+							"endstep3": "!query.is_using_item"
+						}
+					]
+				},
+				"endstep3": {
+					"animations": [
+						"end_step3"
+					],
+					"transitions": [
+						{
+							"step4": "query.is_using_item"
+						}
+					]
+				},
+				"step4": {
+					"animations": [
+						"using_oquay_step4"
+					],
+					"transitions": [
+						{
+							"endstep4": "!query.is_using_item"
+						}
+					]
+				},
+				"endstep4": {
+					"animations": [
+						"end_step4"
+					],
+					"transitions": [
+						{
+							"step5": "query.is_using_item"
+						}
+					]
+				},
+				"step5": {
+					"animations": [
+						"using_oquay_step5"
+					],
+					"transitions": [
+						{
+							"endstep5": "!query.is_using_item"
+						}
+					]
+				},
+				"endstep5": {
+					"animations": [
+						"end_step5"
+					],
+					"transitions": [
+						{
+							"step6": "query.is_using_item"
+						}
+					]
+				},
+				"step6": {
+					"animations": [
+						"using_oquay_step6"
+					],
+					"transitions": [
+						{
+							"endstep6": "!query.is_using_item"
+						}
+					]
+				},
+				"endstep6": {
+					"animations": [
+						"end_step6"
+					],
+					"transitions": [
+						{
+							"step7": "query.is_using_item"
+						}
+					]
+				},
+				"step7": {
+					"animations": [
+						"using_oquay_step7"
+					],
+					"transitions": [
+						{
+							"endstep7": "!query.is_using_item"
+						}
+					]
+				},
+				"endstep7": {
+					"animations": [
+						"end_step7"
+					],
+					"transitions": [
+						{
+							"step8": "query.is_using_item"
+						}
+					]
+				},
+				"step8": {
+					"animations": [
+						"using_oquay_step8"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.guns.handle_cannon.general": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"fpp": "c.is_first_person"
+						},
+						{
+							"tpp": "!c.is_first_person"
+						}
+					],
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"using": "query.main_hand_item_use_duration>0&&!query.item_is_charged"
+						}
+					]
+				},
+				"using": {
+					"animations": [
+						"reloading",
+						{
+							"wield_first_person_pull": "c.is_first_person"
+						},
+						{
+							"fpp_pull": "c.is_first_person"
+						},
+						{
+							"tpp_pull": "!c.is_first_person"
+						}
+					],
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"default": "query.main_hand_item_use_duration==0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.guns.handle_cannon_v2.reloading": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"using": "query.main_hand_item_use_duration>0"
+						}
+					]
+				},
+				"using": {
+					"animations": [
+						"reloading",
+						{
+							"wield_first_person_pull": "c.is_first_person"
+						}
+					],
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"default": "query.main_hand_item_use_duration==0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.guns.handle_cannon_v2.no_charged": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"can_charge": "!query.item_is_charged"
+						}
+					]
+				},
+				"can_charge": {
+					"animations": [
+						"v2_no_charged"
+					],
+					"blend_transition": 0.3,
+					"transitions": [
+						{
+							"default": "query.item_is_charged"
+						}
+					]
+				}
+			}
+		}
+	}
+}

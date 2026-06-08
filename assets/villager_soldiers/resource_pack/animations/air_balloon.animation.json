@@ -1,0 +1,50 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.air_balloon.look_at_target": {
+			"loop": true,
+			"bones": {
+				"gun": {
+					"rotation": [
+						"query.target_x_rotation",
+						0,
+						0
+					]
+				},
+				"head": {
+					"rotation": [
+						"query.target_x_rotation",
+						"query.target_y_rotation",
+						0
+					]
+				}
+			}
+		},
+		"animation.air_balloon.default": {
+			"loop": true,
+			"bones": {
+				"waist": {
+					"position": [
+						0,
+						2,
+						0
+					]
+				},
+				"rightarm": {
+					"rotation": [
+						-44.89078,
+						3.53329,
+						3.54002
+					]
+				},
+				"leftarm": {
+					"rotation": [
+						-44.89078,
+						-3.53329,
+						-3.54002
+					]
+				}
+			}
+		}
+	}
+}

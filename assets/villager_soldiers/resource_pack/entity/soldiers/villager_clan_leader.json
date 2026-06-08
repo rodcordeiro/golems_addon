@@ -1,0 +1,82 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:villager_clan_leader",
+			"materials": {
+				"default": "pillager"
+			},
+			"textures": {
+				"desert": "textures/entity/villager_leaders/desert",
+				"jungle": "textures/entity/villager_leaders/jungle",
+				"plains": "textures/entity/villager_leaders/plains",
+				"savanna": "textures/entity/villager_leaders/savanna",
+				"snow": "textures/entity/villager_leaders/snow",
+				"swamp": "textures/entity/villager_leaders/swamp",
+				"taiga": "textures/entity/villager_leaders/taiga",
+				"cape_desert": "textures/entity/villager_leaders/cape/desert",
+				"cape_jungle": "textures/entity/villager_leaders/cape/jungle",
+				"cape_plains": "textures/entity/villager_leaders/cape/plains",
+				"cape_savanna": "textures/entity/villager_leaders/cape/savanna",
+				"cape_snow": "textures/entity/villager_leaders/cape/snow",
+				"cape_swamp": "textures/entity/villager_leaders/cape/swamp",
+				"cape_taiga": "textures/entity/villager_leaders/cape/taiga"
+			},
+			"geometry": {
+				"default": "geometry.evoker_hat",
+				"cape": "geometry.cape_illager"
+			},
+			"scripts": {
+				"scale": "0.9375",
+				"animate": [
+					"controller_general",
+					"controller_move",
+					"cape",
+					"controllercaperun",
+					{
+						"riding_seat": "query.is_riding"
+					},
+					{
+						"controller_villager_attack": "!query.is_casting"
+					}
+				],
+				"pre_animation": [
+					"variable.riding_y_offset_with_respect_to_player = 1.25;",
+					"variable.riding_y_offset_on_vehicle_where_other_entites_can_stand = query.is_riding_any_entity_of_type('minecraft:minecart', 'minecraft:boat', 'minecraft:chest_boat') ? -3.0 : 0.0;",
+					"variable.riding_y_offset = variable.riding_y_offset_with_respect_to_player + variable.riding_y_offset_on_vehicle_where_other_entites_can_stand;"
+				]
+			},
+			"animations": {
+				"general": "animation.fv_evoker.general",
+				"casting": "animation.fv_evoker.casting",
+				"look_at_target": "animation.common.look_at_target",
+				"move": "animation.fv_evoker.move",
+				"celebrating": "animation.humanoid.celebrating",
+				"controller_general": "controller.animation.villager_clan_leader.general",
+				"controller_move": "controller.animation.fv_villager.move",
+				"riding.legs": "animation.humanoid.riding.legs",
+				"controller_riding": "controller.animation.humanoid.riding_legs_only",
+				"riding.body": "animation.humanoid.riding.body",
+				"melee_attack": "animation.repillager.chem",
+				"cape": "animation.cape_illager.moving",
+				"caperun": "animation.cape_illager.run",
+				"controllercaperun": "controller.animation.cape.running",
+				"riding_seat": "animation.repillager.gun.riding_seat",
+				"bow_holding": "animation.humanoid.bow_and_arrow",
+				"controller_villager_attack": "controller.animation.illager.delay.bow_attack"
+			},
+			"particle_effects": {
+				"spell": "minecraft:evoker_spell"
+			},
+			"render_controllers": [
+				"controller.render.villager_clan_leader",
+				"controller.render.cape.biome"
+			],
+			"spawn_egg": {
+				"texture": "fv_spawn_egg_villager_clan_leader"
+			},
+			"hide_armor": true,
+			"enable_attachables": true
+		}
+	}
+}

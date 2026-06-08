@@ -1,0 +1,503 @@
+{
+	"format_version": "1.18.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fv:illager_generalissimo",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"chest": "controller.animation.mainboos.chest"
+			},
+			"scripts": {
+				"animate": [
+					"chest"
+				]
+			}
+		},
+		"component_groups": {
+			"minecraft:celebrate": {
+				"minecraft:behavior.celebrate": {
+					"priority": 5,
+					"celebration_sound": "celebrate",
+					"sound_interval": {
+						"range_min": 2,
+						"range_max": 7
+					},
+					"jump_interval": {
+						"range_min": 1,
+						"range_max": 3.5
+					},
+					"duration": 30,
+					"on_celebration_end_event": {
+						"event": "minecraft:stop_celebrating",
+						"target": "self"
+					}
+				}
+			},
+			"minecraft:melee_attack": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"on_target": {
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "resistance",
+							"amplifier": 1,
+							"duration": 20
+						}
+					]
+				}
+			},
+			"on_calm": {
+				"minecraft:spell_effects": {
+					"remove_effects": "resistance"
+				}
+			},
+			"angry": {
+				"minecraft:angry": {
+					"duration": 30,
+					"broadcast_anger": true,
+					"broadcast_anger_on_attack": true,
+					"broadcast_anger_on_being_attacked": true,
+					"broadcast_range": 32,
+					"broadcast_targets": [
+						"illager"
+					],
+					"calm_event": {
+						"event": "on_calm",
+						"target": "self"
+					},
+					"filters": {
+						"any_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "illager"
+							}
+						]
+					},
+					"angry_sound": "angry",
+					"sound_interval": {
+						"range_min": 2,
+						"range_max": 5
+					}
+				}
+			},
+			"summon": {
+				"minecraft:behavior.summon_entity": {
+					"priority": 2,
+					"summon_choices": [
+						{
+							"weight": 1,
+							"do_casting": true,
+							"cooldown_time": 45,
+							"cast_duration": 2,
+							"start_sound_event": "cast.spell",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.2,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 6,
+									"entity_type": "fv:pillager_pikeman",
+									"size": 6,
+									"entity_lifespan": 300
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.3,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 6,
+									"entity_type": "fv:pillager_melee",
+									"size": 5,
+									"entity_lifespan": 300
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.4,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 6,
+									"entity_type": "fv:pillager_gunner",
+									"size": 4,
+									"entity_lifespan": 300
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.5,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 4,
+									"entity_type": "fv:vindicator_halberdman",
+									"size": 3,
+									"entity_lifespan": 300
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.1,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 2,
+									"entity_type": "fv:elephant_illager",
+									"size": 2,
+									"entity_lifespan": 300
+								}
+							]
+						},
+						{
+							"weight": 2,
+							"do_casting": true,
+							"cooldown_time": 50,
+							"cast_duration": 2,
+							"start_sound_event": "cast.spell",
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.2,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 4,
+									"entity_type": "fv:vindicator_cavalry",
+									"size": 3,
+									"entity_lifespan": 300
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.2,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 6,
+									"entity_type": "fv:pillager_cavalry",
+									"size": 6,
+									"entity_lifespan": 300
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.3,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 5,
+									"entity_type": "fv:pillager_tanker",
+									"size": 5,
+									"entity_lifespan": 300
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.4,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 6,
+									"entity_type": "fv:pillager_melee",
+									"size": 4,
+									"entity_lifespan": 300
+								},
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.4,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 4,
+									"entity_type": "fv:vindicator_swordman",
+									"size": 3,
+									"entity_lifespan": 300
+								}
+							]
+						}
+					]
+				},
+				"minecraft:variant": {
+					"value": 2
+				}
+			}
+		},
+		"components": {
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:experience_reward": {
+				"on_death": "5000"
+			},
+			"minecraft:equip_item": {},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.9
+			},
+			"minecraft:type_family": {
+				"family": [
+					"mainboss",
+					"illager",
+					"monster",
+					"generalissimo",
+					"mob"
+				]
+			},
+			"minecraft:variant": {
+				"value": 0
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0
+			},
+			"minecraft:scale": {
+				"value": 1.4
+			},
+			"minecraft:health": {
+				"value": 800,
+				"max": 800
+			},
+			"minecraft:boss": {
+				"name": "title.daituong.name"
+			},
+			"minecraft:can_join_raid": {},
+			"minecraft:knockback_resistance": {
+				"value": 0.8,
+				"max": 0.8
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/illagers/mainboss/illager_generalissimo_drop.json"
+			},
+			"minecraft:shareables": {
+				"items": [
+					{
+						"item": "minecraft:banner:15",
+						"want_amount": 1,
+						"surplus_amount": 1,
+						"priority": 0
+					}
+				]
+			},
+			"minecraft:movement": {
+				"value": 0.25
+			},
+			"minecraft:navigation.walk": {
+				"can_path_over_water": true,
+				"can_open_doors": true,
+				"can_pass_doors": true
+			},
+			"minecraft:annotation.open_door": {},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:nameable": {},
+			"minecraft:equipment": {
+				"table": "loot_tables/entities/illagers/mainboss/illager_generalissimo_gear.json"
+			},
+			"minecraft:behavior.melee_attack": {
+				"priority": 4,
+				"track_target": false,
+				"reach_multiplier": 3
+			},
+			"minecraft:attack": {
+				"damage": 20,
+				"effect_name": "slowness",
+				"effect_duration": 5
+			},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1,
+				"entity_types": {
+					"filters": {
+						"test": "is_family",
+						"subject": "other",
+						"operator": "!=",
+						"value": "illager"
+					},
+					"max_dist": 64
+				}
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 2,
+				"must_see": true,
+				"reselect_targets": true,
+				"within_radius": 40,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "irongolem"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "wandering_trader"
+								}
+							]
+						},
+						"max_dist": 64
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "villager"
+								},
+								{
+									"test": "has_component",
+									"subject": "other",
+									"operator": "!=",
+									"value": "minecraft:is_baby"
+								}
+							]
+						},
+						"max_dist": 64,
+						"must_see": false
+					}
+				]
+			},
+			"minecraft:behavior.equip_item": {
+				"priority": 3
+			},
+			"minecraft:behavior.pickup_items": {
+				"priority": 7,
+				"max_dist": 3,
+				"goal_radius": 2,
+				"speed_multiplier": 1
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 8,
+				"speed_multiplier": 1
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 9,
+				"look_distance": 8
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 10
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:follow_range": {
+				"value": 64
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"on_damage": {
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "illager"
+							}
+						},
+						"deals_damage": false
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"test": "has_equipment_tag",
+								"subject": "other",
+								"operator": "==",
+								"value": "fv:cannon"
+							}
+						},
+						"damage_multiplier": 6
+					}
+				]
+			},
+			"minecraft:on_target_acquired": {
+				"event": "on_target",
+				"target": "self"
+			},
+			"minecraft:behavior.move_to_village": {
+				"priority": 5,
+				"speed_multiplier": 1.1,
+				"goal_radius": 2
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"summon"
+					]
+				}
+			},
+			"minecraft:stop_celebrating": {
+				"remove": {
+					"component_groups": [
+						"minecraft:celebrate"
+					]
+				}
+			},
+			"on_target": {
+				"add": {
+					"component_groups": [
+						"on_target",
+						"angry"
+					]
+				}
+			},
+			"on_calm": {
+				"add": {
+					"component_groups": [
+						"on_calm"
+					]
+				}
+			},
+			"minecraft:entity_transformed": {
+				"add": {
+					"component_groups": [
+						"minecraft:melee_attack"
+					]
+				}
+			},
+			"melee_mode": {
+				"add": {
+					"component_groups": [
+						"minecraft:melee_attack"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"summon"
+					]
+				}
+			},
+			"summon_mode": {
+				"add": {
+					"component_groups": [
+						"summon"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"minecraft:melee_attack"
+					]
+				}
+			}
+		}
+	}
+}

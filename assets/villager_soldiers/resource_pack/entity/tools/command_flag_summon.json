@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:command_flag_summon",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/command_banner_tp"
+			},
+			"geometry": {
+				"default": "geometry.tp_banner"
+			},
+			"animations": {
+				"default": "animation.tp_flag.default"
+			},
+			"scripts": {
+				"animate": [
+					"default"
+				]
+			},
+			"render_controllers": [
+				"controller.render.mob_default"
+			]
+		}
+	}
+}

@@ -1,0 +1,67 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "fv:percussion_cap_musket_empty"
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "fv:illasteel_helmet",
+					"functions": [
+						{
+							"function": "enchant_with_levels",
+							"levels": {
+								"min": 10,
+								"max": 30
+							}
+						},
+						{
+							"function": "specific_enchants",
+							"enchants": [
+								{
+									"id": "vanishing",
+									"level": 1
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "fv:illasteel_chestplate",
+					"functions": [
+						{
+							"function": "enchant_with_levels",
+							"levels": {
+								"min": 10,
+								"max": 30
+							}
+						},
+						{
+							"function": "specific_enchants",
+							"enchants": [
+								{
+									"id": "vanishing",
+									"level": 1
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

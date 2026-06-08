@@ -1,0 +1,257 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.melon_golem",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [
+					0,
+					1.25,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"rotation": [
+						0,
+						180,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-8,
+								2,
+								-8
+							],
+							"size": [
+								16,
+								16,
+								16
+							],
+							"uv": [
+								0,
+								33
+							]
+						},
+						{
+							"origin": [
+								-8,
+								2,
+								-8
+							],
+							"size": [
+								16,
+								16,
+								16
+							],
+							"inflate": 0.25,
+							"uv": [
+								0,
+								96
+							]
+						},
+						{
+							"origin": [
+								-9,
+								0,
+								-9
+							],
+							"size": [
+								18,
+								2,
+								18
+							],
+							"inflate": 0.75,
+							"uv": [
+								47,
+								48
+							]
+						}
+					]
+				},
+				{
+					"name": "cuon",
+					"parent": "body",
+					"pivot": [
+						0,
+						18,
+						1
+					],
+					"rotation": [
+						10,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-1,
+								18,
+								-1
+							],
+							"size": [
+								2,
+								9,
+								2
+							],
+							"uv": [
+								0,
+								33
+							]
+						}
+					]
+				},
+				{
+					"name": "cuon2",
+					"parent": "cuon",
+					"pivot": [
+						0,
+						27,
+						1
+					],
+					"rotation": [
+						97.5,
+						0,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-1,
+								27,
+								-1
+							],
+							"size": [
+								2,
+								12,
+								2
+							],
+							"uv": [
+								0,
+								0
+							]
+						},
+						{
+							"origin": [
+								-8,
+								39,
+								-6
+							],
+							"size": [
+								16,
+								2,
+								7
+							],
+							"uv": [
+								65,
+								21
+							]
+						},
+						{
+							"origin": [
+								-9,
+								40,
+								-8
+							],
+							"size": [
+								18,
+								18,
+								2
+							],
+							"uv": [
+								65,
+								0
+							]
+						},
+						{
+							"origin": [
+								-10,
+								41,
+								-6
+							],
+							"size": [
+								2,
+								16,
+								7
+							],
+							"uv": [
+								19,
+								66
+							]
+						},
+						{
+							"origin": [
+								-8,
+								57,
+								-6
+							],
+							"size": [
+								16,
+								2,
+								7
+							],
+							"uv": [
+								49,
+								33
+							]
+						},
+						{
+							"origin": [
+								8,
+								41,
+								-6
+							],
+							"size": [
+								2,
+								16,
+								7
+							],
+							"uv": [
+								0,
+								66
+							]
+						}
+					]
+				},
+				{
+					"name": "melon",
+					"parent": "cuon2",
+					"pivot": [
+						0,
+						49,
+						2
+					],
+					"cubes": [
+						{
+							"origin": [
+								-8,
+								41,
+								-6
+							],
+							"size": [
+								16,
+								16,
+								16
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

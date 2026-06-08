@@ -1,0 +1,30 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:steel_leggings"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"c": {
+				"item": "fv:steel_ingot"
+			}
+		},
+		"pattern": [
+			"ccc",
+			"c c",
+			"c c"
+		],
+		"result": {
+			"item": "fv:steel_leggings",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "fv:steel_ingot"
+			}
+		]
+	}
+}

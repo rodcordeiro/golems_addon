@@ -1,0 +1,140 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:copper_watcher",
+			"materials": {
+				"default": "pillager"
+			},
+			"textures": {
+				"default": "textures/entity/copper_golem/watcher",
+				"tame": "textures/entity/copper_golem/watcher_tamed",
+				"target": "textures/entity/target",
+				"flintlock_musket": "textures/items/weapons/guns/3d_fv_musket",
+				"flintlock_cap_musket": "textures/items/weapons/guns/3d_percussion_cap_musket",
+				"flintlock_pistol": "textures/items/weapons/guns/3d_fv_flintlock_pistol",
+				"golden_reaper": "textures/items/weapons/guns/3d_fv_golden_reaper",
+				"deadlight_rifle": "textures/items/weapons/guns/3d_fv_deadlight_rifle"
+			},
+			"geometry": {
+				"default": "geometry.copper_watcher",
+				"target": "geometry.target",
+				"flintlock_musket": "geometry.fv_musket_entity",
+				"flintlock_cap_musket": "geometry.fv_percission_cap_musket_illager",
+				"flintlock_pistol": "geometry.fv_flintlock_pistol_entity",
+				"golden_reaper": "geometry.fv_golden_reaper_entity",
+				"deadlight_rifle": "geometry.deadlight_rifle_entity"
+			},
+			"spawn_egg": {
+				"texture": "copper_watcher"
+			},
+			"scripts": {
+				"scale": "0.9375",
+				"pre_animation": [
+					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+				],
+				"animate": [
+					"pillager_root_controller",
+					{
+						"controller_bow_attack": "query.variant==1"
+					},
+					{
+						"controller_crossbow_attack": "query.variant==2"
+					},
+					{
+						"melee_attack": "variable.attack_time>0&&query.variant!=3"
+					},
+					{
+						"hide": "!query.is_sheared"
+					},
+					{
+						"show": "query.is_sheared"
+					},
+					{
+						"has_3d_gun": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:guns')"
+					},
+					"controller_gunscale",
+					{
+						"musket_and_cap": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_musket')||query.equipped_item_any_tag('slot.weapon.mainhand','fv:percussion_cap_musket')"
+					},
+					{
+						"flintlock_pistol": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_pistol')"
+					},
+					{
+						"deadlight_rifle": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:deadlight_rifle')"
+					},
+					{
+						"golden_reaper": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:golden_reaper')"
+					}
+				]
+			},
+			"animations": {
+				"humanoid_base_pose": "animation.humanoid.base_pose",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"holding": "animation.humanoid.holding",
+				"attack.rotations": "animation.humanoid.attack.rotations",
+				"bob": "animation.humanoid.bob",
+				"crossbow_hold": "animation.villager_noarmor.crossbow.hold",
+				"crossbow_charge": "animation.villager_noarmor.crossbow.charge",
+				"celebrating": "animation.humanoid.celebrating",
+				"controller_humanoid_base_pose": "controller.animation.humanoid.base_pose",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				"controller_riding": "controller.animation.humanoid.riding",
+				"controller_attack": "controller.animation.humanoid.attack",
+				"controller_bob": "controller.animation.humanoid.bob",
+				"controller_bow_attack": "controller.animation.villager.bow.attack",
+				"controller_crossbow_attack": "controller.animation.fv_pillager.attack",
+				"pillager_root_controller": "controller.animation.fv_pillager.root",
+				"bow_and_arrow": "animation.humanoid.bow_and_arrow",
+				"hide": "animation.target.default",
+				"show": "animation.target.pop",
+				"melee_attack": "animation.piglin.hand.attack",
+				"gun_one_hand": "animation.pillager.onehand.hold",
+				"rifle_scale": "animation.repillager.gun.rifle_scale",
+				"rifle_default": "animation.repillager.gun.rifle_default",
+				"rifle_reloading": "animation.repillager.gun.rifle_reloading",
+				"lendan": "animation.repillager.gun.lendan",
+				"reaper_scale": "animation.repillager.gun.reaper_scale",
+				"reaper_has_target": "animation.repillager.gun.reaper_has_target",
+				"reaper_reloading": "animation.repillager.gun.reaper_reloading",
+				"reaper_shooting": "animation.repillager.gun.reaper_shooting",
+				"reload_flintlock_musket": "animation.repillager.gun.musket_reloading",
+				"musket_default_hold": "animation.repillager.gun.default",
+				"musket_ready_for_shoot": "animation.repillager.gun.ready_for_shoot",
+				"musket_default_hold_hastarget": "animation.repillager.gun.default_ready",
+				"musket_has_target": "animation.repillager.gun.has_target",
+				"flintlock_scale": "animation.repillager.gun.flintlock_scale",
+				"flintlock_has_target": "animation.repillager.gun.flintlock_has_target",
+				"flintlock_reloading": "animation.repillager.gun.flintlock_reloading",
+				"has_3d_gun": "animation.repillager.gun.has_3d_gun",
+				"controller_gunscale": "controller.animation.mob.multi_gun_scale",
+				"musket_and_cap": "controller.animation.mob.musket_and_cap",
+				"flintlock_pistol": "controller.animation.mob.flintlock_pistol",
+				"golden_reaper": "controller.animation.mob.golden_reaper",
+				"deadlight_rifle": "controller.animation.mob.deadlight_rifle"
+			},
+			"render_controllers": [
+				"controller.render.golem.copper_watcher",
+				"controller.render.golem.target",
+				{
+					"controller.render.flintlock_musket": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_musket')"
+				},
+				{
+					"controller.render.flintlock_cap_musket": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:percussion_cap_musket')"
+				},
+				{
+					"controller.render.flintlock_pistol": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:flintlock_pistol')"
+				},
+				{
+					"controller.render.golden_reaper": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:golden_reaper')"
+				},
+				{
+					"controller.render.deadlight_rifle": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:deadlight_rifle')"
+				}
+			],
+			"enable_attachables": true
+		}
+	}
+}

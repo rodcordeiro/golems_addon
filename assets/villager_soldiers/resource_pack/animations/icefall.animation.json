@@ -1,0 +1,47 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.icefall.falldown": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 1.66667,
+			"bones": {
+				"body": {
+					"position": {
+						"0.0": [
+							0,
+							50,
+							0
+						],
+						"1.5": [
+							0,
+							50,
+							0
+						],
+						"1.625": [
+							0,
+							"30-this",
+							0
+						],
+						"1.6667": [
+							0,
+							"-this",
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.icefall.default": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"position": [
+						0,
+						"math.cos(query.life_time*200)",
+						0
+					]
+				}
+			}
+		}
+	}
+}

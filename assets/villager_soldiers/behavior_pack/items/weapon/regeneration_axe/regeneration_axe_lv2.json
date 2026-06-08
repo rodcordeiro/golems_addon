@@ -1,0 +1,62 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fv:regeneration_axe_lv2",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.sword"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true,
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:durability": {
+				"max_durability": 5000
+			},
+			"minecraft:icon": "fv_regeneration_axe_lv2",
+			"minecraft:damage": 14,
+			"minecraft:enchantable": {
+				"value": 14,
+				"slot": "sword"
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"fv:regeneration_axe"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+					}
+				]
+			},
+			"minecraft:digger": {
+				"use_efficiency": true,
+				"destroy_speeds": [
+					{
+						"block": {
+							"tags": "query.any_tag('wood', 'pumpkin', 'plant', 'minecraft:is_axe_item_destructible')"
+						},
+						"speed": 6
+					},
+					{
+						"block": "minecraft:chest",
+						"speed": 6
+					},
+					{
+						"block": "minecraft:melon_block",
+						"speed": 6
+					}
+				]
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_axe",
+					"fv:regeneration_axe_lv2",
+					"minecraft:transformable_items"
+				]
+			}
+		}
+	}
+}

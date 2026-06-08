@@ -1,0 +1,33 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:illasteel_giant_sword"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"i": {
+				"item": "fv:illasteel_ingot"
+			},
+			"s": {
+				"item": "minecraft:stick"
+			}
+		},
+		"pattern": [
+			"#ii",
+			"iii",
+			"si#"
+		],
+		"result": {
+			"item": "fv:illasteel_giant_sword",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "fv:illasteel_ingot"
+			}
+		]
+	}
+}

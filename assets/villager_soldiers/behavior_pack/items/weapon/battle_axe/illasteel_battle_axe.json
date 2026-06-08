@@ -1,0 +1,72 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fv:illasteel_battle_axe",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.axe"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true,
+			"minecraft:durability": {
+				"max_durability": 1050
+			},
+			"minecraft:icon": "fv_illasteel_battle_axe",
+			"minecraft:damage": 9,
+			"minecraft:enchantable": {
+				"value": 14,
+				"slot": "sword"
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"fv:illasteel_ingot"
+						],
+						"repair_amount": "query.max_durability*0.25"
+					},
+					{
+						"items": [
+							"fv:illasteel_battle_axe"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+					}
+				]
+			},
+			"minecraft:digger": {
+				"use_efficiency": true,
+				"destroy_speeds": [
+					{
+						"block": {
+							"tags": "query.any_tag('wood', 'pumpkin', 'plant', 'minecraft:is_axe_item_destructible')"
+						},
+						"speed": 7
+					},
+					{
+						"block": "minecraft:chest",
+						"speed": 7
+					},
+					{
+						"block": "minecraft:melon_block",
+						"speed": 7
+					}
+				]
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_axe",
+					"fv:illasteel_tier",
+					"fv:anti_tanker",
+					"fv:is_battle_axe "
+				]
+			},
+			"minecraft:custom_components": [
+				"fv:battle_axe_hit",
+				"fv:durability_loss_on_mine_block"
+			]
+		}
+	}
+}

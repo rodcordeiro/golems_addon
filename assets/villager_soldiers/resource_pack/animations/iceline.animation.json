@@ -1,0 +1,30 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.iceline.start": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.125,
+			"bones": {
+				"body": {
+					"position": {
+						"0.0": [
+							0,
+							-17,
+							0
+						],
+						"0.0833": [
+							0,
+							-9,
+							0
+						],
+						"0.125": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		}
+	}
+}

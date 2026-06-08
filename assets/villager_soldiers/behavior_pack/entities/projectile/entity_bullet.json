@@ -1,0 +1,297 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fv:entity_bullet",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "snowball"
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {
+					"remove_child_entities": false
+				}
+			},
+			"timer": {
+				"minecraft:timer": {
+					"time": [
+						1,
+						1
+					],
+					"time_down_event": {
+						"event": "despawn",
+						"target": "self"
+					}
+				}
+			},
+			"flintlock": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"damage": [
+								18,
+								19
+							],
+							"knockback": true,
+							"semi_random_diff_damage": false,
+							"destroy_on_hit": true
+						},
+						"stick_in_ground": {
+							"shake_time": 0.35
+						},
+						"arrow_effect": {},
+						"definition_event": {
+							"affect_projectile": true,
+							"event_trigger": {
+								"event": "timer",
+								"target": "self"
+							}
+						}
+					},
+					"power": 25,
+					"gravity": 0.09,
+					"uncertainty_base": 8,
+					"uncertainty_multiplier": 4,
+					"anchor": 1,
+					"should_bounce": true,
+					"offset": [
+						0,
+						-0.2,
+						0
+					],
+					"liquid_inertia": 0.8
+				}
+			},
+			"flintlock_in_rain": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"damage": [
+								4,
+								5
+							],
+							"knockback": false,
+							"semi_random_diff_damage": false,
+							"destroy_on_hit": true
+						},
+						"stick_in_ground": {
+							"shake_time": 0.35
+						},
+						"arrow_effect": {},
+						"definition_event": {
+							"affect_projectile": true,
+							"event_trigger": {
+								"event": "timer",
+								"target": "self"
+							}
+						}
+					},
+					"power": 10,
+					"gravity": 0.5,
+					"uncertainty_base": 32,
+					"uncertainty_multiplier": 16,
+					"anchor": 1,
+					"should_bounce": true,
+					"offset": [
+						0,
+						-0.2,
+						0
+					],
+					"liquid_inertia": 0.2
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.25,
+				"height": 0.25
+			},
+			"minecraft:scale": {
+				"value": 0.5
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+						"damage": [
+							15,
+							16
+						],
+						"knockback": true,
+						"semi_random_diff_damage": false,
+						"destroy_on_hit": true
+					},
+					"stick_in_ground": {
+						"shake_time": 0.35
+					},
+					"arrow_effect": {},
+					"definition_event": {
+						"affect_projectile": true,
+						"event_trigger": {
+							"event": "timer",
+							"target": "self"
+						}
+					}
+				},
+				"power": 7,
+				"gravity": 0.1,
+				"uncertainty_base": 10,
+				"uncertainty_multiplier": 4,
+				"anchor": 1,
+				"should_bounce": true,
+				"offset": [
+					0,
+					-0.2,
+					0
+				],
+				"liquid_inertia": 0.8
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_equipment_tag",
+							"subject": "other",
+							"value": "fv:percussion_cap_musket"
+						},
+						"add": {
+							"component_groups": [
+								"flintlock"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "has_equipment_tag",
+							"subject": "other",
+							"value": "fv:flintlock_pistol"
+						},
+						"trigger": "fv:flintlock"
+					},
+					{
+						"filters": {
+							"test": "has_equipment_tag",
+							"subject": "other",
+							"value": "fv:flintlock_musket"
+						},
+						"trigger": "fv:flintlock"
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "custom_weapon"
+								},
+								{
+									"test": "has_equipment_tag",
+									"subject": "other",
+									"value": "fv:flintlock_pistol"
+								}
+							]
+						},
+						"queue_command": {
+							"command": "playsound flintlock.shoot @a ~ ~ ~ 6"
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "custom_weapon"
+								},
+								{
+									"test": "has_equipment_tag",
+									"subject": "other",
+									"value": "fv:percussion_cap_musket"
+								}
+							]
+						},
+						"queue_command": {
+							"command": "playsound musket.shoot @a ~ ~ ~ 6"
+						}
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "custom_weapon"
+								},
+								{
+									"test": "has_equipment_tag",
+									"subject": "other",
+									"value": "fv:flintlock_musket"
+								}
+							]
+						},
+						"queue_command": {
+							"command": "playsound musket.shoot @a ~ ~ ~ 6"
+						}
+					}
+				]
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"timer": {
+				"add": {
+					"component_groups": [
+						"timer"
+					]
+				}
+			},
+			"fv:flintlock": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "in_water_or_rain",
+							"subject": "self",
+							"value": true
+						},
+						"add": {
+							"component_groups": [
+								"flintlock_in_rain"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "in_water_or_rain",
+							"subject": "self",
+							"value": false
+						},
+						"add": {
+							"component_groups": [
+								"flintlock"
+							]
+						}
+					}
+				]
+			},
+			"fv:percussion_cap": {
+				"add": {
+					"component_groups": [
+						"flintlock"
+					]
+				}
+			}
+		}
+	}
+}

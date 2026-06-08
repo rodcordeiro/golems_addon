@@ -1,0 +1,61 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fv:steel_shovel",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.shovel"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true,
+			"minecraft:durability": {
+				"max_durability": 1080
+			},
+			"minecraft:icon": "fv_steel_shovel",
+			"minecraft:damage": 2,
+			"minecraft:enchantable": {
+				"value": 14,
+				"slot": "shovel"
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"fv:steel_ingot"
+						],
+						"repair_amount": "query.max_durability*0.25"
+					},
+					{
+						"items": [
+							"fv:steel_shovel"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+					}
+				]
+			},
+			"minecraft:digger": {
+				"use_efficiency": true,
+				"destroy_speeds": [
+					{
+						"block": {
+							"tags": "query.any_tag('dirt', 'sand', 'gravel', 'grass', 'snow', 'minecraft:is_shovel_item_destructible')"
+						},
+						"speed": 7
+					}
+				]
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_shovel",
+					"fv:steel_tier"
+				]
+			},
+			"minecraft:custom_components": [
+				"fv:on_mine_block"
+			]
+		}
+	}
+}

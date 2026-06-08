@@ -1,0 +1,527 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fv:entity_javelin",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"runtime_identifier": "arrow"
+		},
+		"component_groups": {
+			"fv:wooden": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"damage": 3,
+							"knockback": true,
+							"semi_random_diff_damage": false,
+							"destroy_on_hit": false
+						},
+						"stick_in_ground": {
+							"shake_time": 0
+						}
+					},
+					"liquid_inertia": 0.99,
+					"hit_sound": "item.trident.hit",
+					"hit_ground_sound": "item.trident.hit_ground",
+					"power": 2.5,
+					"gravity": 0.1,
+					"uncertainty_base": 1,
+					"uncertainty_multiplier": 0,
+					"stop_on_hurt": true,
+					"anchor": 1,
+					"should_bounce": true,
+					"multiple_targets": false,
+					"offset": [
+						0,
+						-0.1,
+						0
+					]
+				}
+			},
+			"fv:stone": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"damage": 4,
+							"knockback": true,
+							"semi_random_diff_damage": false,
+							"destroy_on_hit": false
+						},
+						"stick_in_ground": {
+							"shake_time": 0
+						}
+					},
+					"liquid_inertia": 0.99,
+					"hit_sound": "item.trident.hit",
+					"hit_ground_sound": "item.trident.hit_ground",
+					"power": 3,
+					"gravity": 0.1,
+					"uncertainty_base": 1,
+					"uncertainty_multiplier": 0,
+					"stop_on_hurt": true,
+					"anchor": 1,
+					"should_bounce": true,
+					"multiple_targets": false,
+					"offset": [
+						0,
+						-0.1,
+						0
+					]
+				},
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"fv:copper": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"damage": 5,
+							"knockback": true,
+							"semi_random_diff_damage": false,
+							"destroy_on_hit": false
+						},
+						"stick_in_ground": {
+							"shake_time": 0
+						}
+					},
+					"liquid_inertia": 0.99,
+					"hit_sound": "item.trident.hit",
+					"hit_ground_sound": "item.trident.hit_ground",
+					"power": 3.5,
+					"gravity": 0.1,
+					"uncertainty_base": 1,
+					"uncertainty_multiplier": 0,
+					"stop_on_hurt": true,
+					"anchor": 1,
+					"should_bounce": true,
+					"multiple_targets": false,
+					"offset": [
+						0,
+						-0.1,
+						0
+					]
+				},
+				"minecraft:variant": {
+					"value": 2
+				}
+			},
+			"fv:iron": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"damage": 6,
+							"knockback": true,
+							"semi_random_diff_damage": false,
+							"destroy_on_hit": false
+						},
+						"stick_in_ground": {
+							"shake_time": 0
+						}
+					},
+					"liquid_inertia": 0.99,
+					"hit_sound": "item.trident.hit",
+					"hit_ground_sound": "item.trident.hit_ground",
+					"power": 4,
+					"gravity": 0.1,
+					"uncertainty_base": 1,
+					"uncertainty_multiplier": 0,
+					"stop_on_hurt": true,
+					"anchor": 1,
+					"should_bounce": true,
+					"multiple_targets": false,
+					"offset": [
+						0,
+						-0.1,
+						0
+					]
+				},
+				"minecraft:variant": {
+					"value": 3
+				}
+			},
+			"fv:steel": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"damage": 7,
+							"knockback": true,
+							"semi_random_diff_damage": false,
+							"destroy_on_hit": false
+						},
+						"stick_in_ground": {
+							"shake_time": 0
+						}
+					},
+					"liquid_inertia": 0.99,
+					"hit_sound": "item.trident.hit",
+					"hit_ground_sound": "item.trident.hit_ground",
+					"power": 4.5,
+					"gravity": 0.1,
+					"uncertainty_base": 1,
+					"uncertainty_multiplier": 0,
+					"stop_on_hurt": true,
+					"anchor": 1,
+					"should_bounce": true,
+					"multiple_targets": false,
+					"offset": [
+						0,
+						-0.1,
+						0
+					]
+				},
+				"minecraft:variant": {
+					"value": 4
+				}
+			},
+			"fv:illasteel": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"damage": 7,
+							"knockback": true,
+							"semi_random_diff_damage": false,
+							"destroy_on_hit": false
+						},
+						"stick_in_ground": {
+							"shake_time": 0
+						}
+					},
+					"liquid_inertia": 0.99,
+					"hit_sound": "item.trident.hit",
+					"hit_ground_sound": "item.trident.hit_ground",
+					"power": 4.5,
+					"gravity": 0.1,
+					"uncertainty_base": 1,
+					"uncertainty_multiplier": 0,
+					"stop_on_hurt": true,
+					"anchor": 1,
+					"should_bounce": true,
+					"multiple_targets": false,
+					"offset": [
+						0,
+						-0.1,
+						0
+					]
+				},
+				"minecraft:variant": {
+					"value": 5
+				}
+			},
+			"fv:diamond": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"damage": 8,
+							"knockback": true,
+							"semi_random_diff_damage": false,
+							"destroy_on_hit": false
+						},
+						"stick_in_ground": {
+							"shake_time": 0
+						}
+					},
+					"liquid_inertia": 0.99,
+					"hit_sound": "item.trident.hit",
+					"hit_ground_sound": "item.trident.hit_ground",
+					"power": 5,
+					"gravity": 0.1,
+					"uncertainty_base": 1,
+					"uncertainty_multiplier": 0,
+					"stop_on_hurt": true,
+					"anchor": 1,
+					"should_bounce": true,
+					"multiple_targets": false,
+					"offset": [
+						0,
+						-0.1,
+						0
+					]
+				},
+				"minecraft:variant": {
+					"value": 6
+				}
+			},
+			"fv:netherite": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"damage": 9,
+							"knockback": true,
+							"semi_random_diff_damage": false,
+							"destroy_on_hit": false
+						},
+						"stick_in_ground": {
+							"shake_time": 0
+						}
+					},
+					"liquid_inertia": 0.99,
+					"hit_sound": "item.trident.hit",
+					"hit_ground_sound": "item.trident.hit_ground",
+					"power": 5.5,
+					"gravity": 0.1,
+					"uncertainty_base": 1,
+					"uncertainty_multiplier": 0,
+					"stop_on_hurt": true,
+					"anchor": 1,
+					"should_bounce": true,
+					"multiple_targets": false,
+					"offset": [
+						0,
+						-0.1,
+						0
+					]
+				},
+				"minecraft:variant": {
+					"value": 7
+				}
+			},
+			"fv:illudiamondite": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"damage": 9,
+							"knockback": true,
+							"semi_random_diff_damage": false,
+							"destroy_on_hit": false
+						},
+						"stick_in_ground": {
+							"shake_time": 0
+						}
+					},
+					"liquid_inertia": 0.99,
+					"hit_sound": "item.trident.hit",
+					"hit_ground_sound": "item.trident.hit_ground",
+					"power": 5.5,
+					"gravity": 0.1,
+					"uncertainty_base": 1,
+					"uncertainty_multiplier": 0,
+					"stop_on_hurt": true,
+					"anchor": 1,
+					"should_bounce": true,
+					"multiple_targets": false,
+					"offset": [
+						0,
+						-0.1,
+						0
+					]
+				},
+				"minecraft:variant": {
+					"value": 8
+				}
+			},
+			"fv:diamet": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"damage": 9,
+							"knockback": true,
+							"semi_random_diff_damage": false,
+							"destroy_on_hit": false
+						},
+						"stick_in_ground": {
+							"shake_time": 0
+						}
+					},
+					"liquid_inertia": 0.99,
+					"hit_sound": "item.trident.hit",
+					"hit_ground_sound": "item.trident.hit_ground",
+					"power": 5.5,
+					"gravity": 0.1,
+					"uncertainty_base": 1,
+					"uncertainty_multiplier": 0,
+					"stop_on_hurt": true,
+					"anchor": 1,
+					"should_bounce": true,
+					"multiple_targets": false,
+					"offset": [
+						0,
+						-0.1,
+						0
+					]
+				},
+				"minecraft:variant": {
+					"value": 9
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.25,
+				"height": 0.35
+			},
+			"minecraft:variant": {
+				"value": 0
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+						"damage": 3,
+						"knockback": true,
+						"semi_random_diff_damage": false,
+						"destroy_on_hit": false
+					},
+					"stick_in_ground": {
+						"shake_time": 0
+					}
+				},
+				"liquid_inertia": 0.99,
+				"hit_sound": "item.trident.hit",
+				"hit_ground_sound": "item.trident.hit_ground",
+				"power": 2.5,
+				"gravity": 0.1,
+				"uncertainty_base": 1,
+				"uncertainty_multiplier": 0,
+				"stop_on_hurt": true,
+				"anchor": 1,
+				"should_bounce": true,
+				"multiple_targets": false,
+				"offset": [
+					0,
+					-0.1,
+					0
+				]
+			},
+			"minecraft:physics": {},
+			"minecraft:dimension_bound": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 80,
+					"max_dropped_ticks": 7,
+					"use_motion_prediction_hints": true
+				}
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_equipment",
+							"subject": "other",
+							"value": "fv:wooden_javelin"
+						},
+						"add": {
+							"component_groups": [
+								"fv:wooden"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"subject": "other",
+							"value": "fv:stone_javelin"
+						},
+						"add": {
+							"component_groups": [
+								"fv:stone"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"subject": "other",
+							"value": "fv:copper_javelin"
+						},
+						"add": {
+							"component_groups": [
+								"fv:copper"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"subject": "other",
+							"value": "fv:iron_javelin"
+						},
+						"add": {
+							"component_groups": [
+								"fv:iron"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"subject": "other",
+							"value": "fv:steel_javelin"
+						},
+						"add": {
+							"component_groups": [
+								"fv:steel"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"subject": "other",
+							"value": "fv:illasteel_javelin"
+						},
+						"add": {
+							"component_groups": [
+								"fv:illasteel"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"subject": "other",
+							"value": "fv:diamond_javelin"
+						},
+						"add": {
+							"component_groups": [
+								"fv:diamond"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"subject": "other",
+							"value": "fv:netherite_javelin"
+						},
+						"add": {
+							"component_groups": [
+								"fv:netherite"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"subject": "other",
+							"value": "fv:illudiamondite_javelin"
+						},
+						"add": {
+							"component_groups": [
+								"fv:illudiamondite"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "has_equipment",
+							"subject": "other",
+							"value": "fv:diamet_javelin"
+						},
+						"add": {
+							"component_groups": [
+								"fv:diamet"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

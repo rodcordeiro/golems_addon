@@ -1,0 +1,40 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:ore_clump",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/rock_tortoise/stone_coal",
+				"stone_iron": "textures/entity/rock_tortoise/stone_iron",
+				"stone_big_iron": "textures/entity/rock_tortoise/ore_clump",
+				"stone_copper_iron": "textures/entity/rock_tortoise/stone_copper_iron",
+				"stone_bigiron_copper": "textures/entity/rock_tortoise/stone_bigiron_copper",
+				"stone_copper": "textures/entity/rock_tortoise/stone_copper",
+				"stone_bigcopper": "textures/entity/rock_tortoise/stone_bigcopper",
+				"stone_bigcopper_iron": "textures/entity/rock_tortoise/stone_bigcopper_iron",
+				"deepstone_iron": "textures/entity/rock_tortoise/deep_iron",
+				"deepstone_diamond_iron": "textures/entity/rock_tortoise/deep_iron_diamond",
+				"deepstone_diamond_iron_copper": "textures/entity/rock_tortoise/deep_iron_diamond_copper"
+			},
+			"geometry": {
+				"default": "geometry.ore_clump"
+			},
+			"animations": {
+				"cancel_death": "animation.ore_clump.cancel_death"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"cancel_death": "!query.is_alive"
+					}
+				]
+			},
+			"render_controllers": [
+				"controller.render.ore_clump"
+			]
+		}
+	}
+}

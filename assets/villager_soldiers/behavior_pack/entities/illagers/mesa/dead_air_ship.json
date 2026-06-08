@@ -1,0 +1,89 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fv:dead_air_ship",
+			"spawn_category": "monster",
+			"is_spawnable": false,
+			"is_summonable": true
+		},
+		"component_groups": {
+			"explode": {
+				"minecraft:explode": {
+					"power": 20,
+					"fuse_lit": true,
+					"fuse_length": {
+						"range_min": 0,
+						"range_max": 0
+					},
+					"breaks_blocks": true,
+					"causes_fire": true
+				}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"phuongtiensapno",
+					"illager"
+				]
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+						"damage": [
+							100,
+							120
+						],
+						"knockback": true,
+						"semi_random_diff_damage": false
+					},
+					"stick_in_ground": {
+						"shake_time": 0.35
+					},
+					"arrow_effect": {},
+					"definition_event": {
+						"affect_projectile": true,
+						"event_trigger": {
+							"event": "explode",
+							"target": "self"
+						}
+					}
+				},
+				"power": 0,
+				"gravity": 0.03,
+				"uncertainty_base": 16,
+				"uncertainty_multiplier": 4,
+				"anchor": 1,
+				"should_bounce": true,
+				"offset": [
+					0,
+					0,
+					0
+				],
+				"liquid_inertia": 0.8,
+				"multiple_targets": true
+			},
+			"minecraft:fire_immune": {},
+			"minecraft:nameable": {},
+			"minecraft:collision_box": {
+				"width": 10.3,
+				"height": 17
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			}
+		},
+		"events": {
+			"explode": {
+				"add": {
+					"component_groups": [
+						"explode"
+					]
+				}
+			}
+		}
+	}
+}

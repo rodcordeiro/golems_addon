@@ -1,0 +1,23 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:parachute",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/parachute/illager"
+			},
+			"geometry": {
+				"default": "geometry.fv_parachute"
+			},
+			"render_controllers": [
+				"controller.render.fv_default_no_hurt"
+			],
+			"spawn_egg": {
+				"texture": "fv_parachute"
+			}
+		}
+	}
+}

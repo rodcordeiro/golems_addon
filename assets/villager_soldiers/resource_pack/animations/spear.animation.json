@@ -1,0 +1,149 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.javelin.spear.rotate": {
+			"loop": true,
+			"bones": {
+				"pole": {
+					"rotation": [
+						"-q.body_x_rotation+90",
+						"-q.body_y_rotation",
+						0
+					],
+					"position": [
+						0,
+						-24,
+						0
+					]
+				}
+			}
+		},
+		"animation.javelin.spear.wield_first_person": {
+			"loop": true,
+			"bones": {
+				"pole": {
+					"position": [
+						-7,
+						-3,
+						-2
+					],
+					"rotation": [
+						152,
+						-9,
+						25
+					]
+				}
+			}
+		},
+		"animation.javelin.spear.wield_first_person_raise": {
+			"loop": true,
+			"bones": {
+				"pole": {
+					"position": [
+						"6+(variable.charge_amount<=0.25?math.lerp(0,-6.5,variable.charge_amount*4):-6.5)+(variable.charge_amount>0.25?math.lerp(0,-4,(variable.charge_amount-0.25)*1.33):0)",
+						"-3+(variable.charge_amount<=0.25?math.lerp(0,-3,variable.charge_amount*4):-3)+(variable.charge_amount>0.25?math.lerp(0,3,(variable.charge_amount-0.25)*1.33):0)",
+						"8+(variable.charge_amount<=0.25?math.lerp(0,-16.5,variable.charge_amount*4):-16.5)+(variable.charge_amount>0.25?math.lerp(0,0,(variable.charge_amount-0.25)*1.33):0)"
+					],
+					"rotation": [
+						30,
+						-20,
+						-65
+					]
+				}
+			}
+		},
+		"animation.javelin.spear.wield_first_person_raise_shake": {
+			"loop": true,
+			"bones": {
+				"pole": {
+					"position": [
+						0,
+						"variable.charge_amount>=1?math.sin(1300*q.life_time)*0.1-math.sin(q.life_time*45)*0.5:0",
+						0
+					],
+					"rotation": [
+						0,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.javelin.spear.wield_first_person_riptide": {
+			"loop": true,
+			"override_previous_animation": true,
+			"bones": {
+				"pole": {
+					"position": [
+						-2,
+						-7,
+						-10
+					],
+					"rotation": [
+						180,
+						60,
+						-36
+					]
+				}
+			}
+		},
+		"animation.javelin.spear.wield_third_person": {
+			"loop": true,
+			"bones": {
+				"pole": {
+					"rotation": [
+						83,
+						1.5,
+						-229
+					],
+					"position": [
+						1.5,
+						-2.5,
+						-10.5
+					]
+				}
+			}
+		},
+		"animation.javelin.spear.wield_third_person_raise": {
+			"loop": true,
+			"bones": {
+				"pole": {
+					"rotation": [
+						-7,
+						180,
+						-40
+					],
+					"position": [
+						-0.7,
+						0,
+						17.5
+					]
+				}
+			}
+		},
+		"animation.javelin.spear.default": {
+			"loop": true,
+			"bones": {
+				"pole": {
+					"scale": [
+						1,
+						1,
+						0.6
+					]
+				}
+			}
+		},
+		"animation.javelin.spear.throw_default": {
+			"loop": true,
+			"bones": {
+				"pole": {
+					"scale": [
+						0.6,
+						1,
+						1
+					]
+				}
+			}
+		}
+	}
+}

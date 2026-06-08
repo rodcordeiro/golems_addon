@@ -1,0 +1,75 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:villager_clumper",
+			"materials": {
+				"default": "pillager",
+				"tamed_color": "entity_alphatest_change_color"
+			},
+			"textures": {
+				"desert": "textures/entity/villager_clumper/desert",
+				"jungle": "textures/entity/villager_clumper/jungle",
+				"plains": "textures/entity/villager_clumper/plains",
+				"savanna": "textures/entity/villager_clumper/savanna",
+				"snow": "textures/entity/villager_clumper/snow",
+				"swamp": "textures/entity/villager_clumper/swamp",
+				"taiga": "textures/entity/villager_clumper/taiga"
+			},
+			"geometry": {
+				"default": "geometry.villager_handle"
+			},
+			"spawn_egg": {
+				"texture": "fv_villager_clumper_spawn_egg"
+			},
+			"scripts": {
+				"scale": "0.9375",
+				"pre_animation": [
+					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+					"variable.attack = Math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0) * 57.3;",
+					"variable.attack2 = Math.sin(variable.attack_time * 180.0) * 57.3;",
+					"variable.z_bob = Math.cos(query.life_time * 103.13244) * 2.865 + 2.865;",
+					"variable.x_bob = Math.sin(query.life_time * 76.776372) * 2.865;"
+				],
+				"animate": [
+					"pillager_root_controller",
+					"armor",
+					{
+						"melee_attack": "variable.attack_time>0"
+					}
+				]
+			},
+			"animations": {
+				"humanoid_base_pose": "animation.humanoid.base_pose",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"move": "animation.humanoid.move",
+				"riding.arms": "animation.humanoid.riding.arms",
+				"riding.legs": "animation.humanoid.riding.legs",
+				"holding": "animation.humanoid.holding",
+				"attack.rotations": "animation.humanoid.attack.rotations",
+				"bob": "animation.humanoid.bob",
+				"celebrating": "animation.humanoid.celebrating",
+				"controller_humanoid_base_pose": "controller.animation.humanoid.base_pose",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				"controller_move": "controller.animation.humanoid.move",
+				"controller_riding": "controller.animation.humanoid.riding",
+				"controller_attack": "controller.animation.humanoid.attack",
+				"controller_bob": "controller.animation.humanoid.bob",
+				"pillager_root_controller": "controller.animation.villager_handle.root",
+				"armor": "animation.villager_noarmor.armor",
+				"noout": "animation.villager_noarmor.noout",
+				"melee_attack": "animation.piglin.hand.attack",
+				"sit": "animation.villager_noarmor.staying",
+				"sleeping": "animation.villager_noarmor.sleeping",
+				"sleeping_head": "animation.villager_noarmor.sleeping_head",
+				"controller_sleeping": "controller.animation.villager_handle.sleeping"
+			},
+			"render_controllers": [
+				"controller.render.vanilla.biome"
+			],
+			"enable_attachables": true
+		}
+	}
+}

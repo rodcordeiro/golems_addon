@@ -1,0 +1,80 @@
+{
+	"format_version": "1.21.130",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fv:diamet_halberd",
+			"menu_category": {
+				"category": "equipment",
+				"group": "minecraft:itemGroup.name.sword"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true,
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:durability": {
+				"max_durability": 2031
+			},
+			"minecraft:icon": "fv_diamet_halberd",
+			"minecraft:piercing_weapon": {
+				"reach": {
+					"min": 1.5,
+					"max": 3
+				},
+				"hitbox_margin": 0.25
+			},
+			"minecraft:damage": 10,
+			"minecraft:enchantable": {
+				"value": 14,
+				"slot": "sword"
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"fv:diamet_ingot"
+						],
+						"repair_amount": "query.max_durability*0.25"
+					},
+					{
+						"items": [
+							"fv:diamet_halberd"
+						],
+						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+					}
+				]
+			},
+			"minecraft:digger": {
+				"use_efficiency": true,
+				"destroy_speeds": [
+					{
+						"block": "minecraft:web",
+						"speed": 15
+					},
+					{
+						"block": "minecraft:bamboo",
+						"speed": 60
+					}
+				]
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_trident",
+					"fv:is_halberd",
+					"fv:diamet_tier"
+				]
+			},
+			"minecraft:use_animation": "none",
+			"minecraft:use_modifiers": {
+				"use_duration": 3666,
+				"movement_modifier": 1
+			},
+			"minecraft:cooldown": {
+				"category": "halberd",
+				"duration": 1
+			},
+			"fv:spear_hit": {},
+			"fv:spear_third_persion_animation": {}
+		}
+	}
+}

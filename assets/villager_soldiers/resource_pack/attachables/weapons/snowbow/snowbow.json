@@ -1,0 +1,49 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "snow:bow",
+      "materials": {
+        "default": "entity_alphatest",
+        "enchanted": "entity_alphatest_glint"
+      },
+      "textures": {
+        "default": "textures/items/weapons/snowbow/standard",
+        "bow_pulling_0": "textures/items/weapons/snowbow/pulling_1",
+        "bow_pulling_1": "textures/items/weapons/snowbow/pulling_2",
+        "bow_pulling_2": "textures/items/weapons/snowbow/pulling_3",
+        "bow_pulling_3": "textures/items/weapons/snowbow/pulling_4",
+        "bow_pulling_4": "textures/items/weapons/snowbow/pulling_5",
+        "bow_pulling_5": "textures/items/weapons/snowbow/pulling_6",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.bow_standby",
+        "bow_pulling_0": "geometry.fv_bow_pulling_0",
+        "bow_pulling_1": "geometry.fv_bow_pulling_1",
+        "bow_pulling_2": "geometry.fv_bow_pulling_2",
+        "bow_pulling_3": "geometry.fv_bow_pulling_3",
+        "bow_pulling_4": "geometry.fv_bow_pulling_4",
+        "bow_pulling_5": "geometry.fv_bow_pulling_5"
+      },
+      "animations": {
+        "wield": "animation.bow.wield",
+        "wield_first_person_pull": "animation.bow.wield_first_person_pull"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.charge_amount = q.main_hand_item_use_duration > 0.0f ? (math.clamp((q.main_hand_item_max_duration - q.main_hand_item_use_duration) / 5, 1, 6)) : 0;"
+        ],
+        "animate": [
+          "wield",
+          {
+            "wield_first_person_pull": "query.main_hand_item_use_duration > 0.0f && c.is_first_person"
+          }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.fv_bow"
+      ]
+    }
+  }
+}

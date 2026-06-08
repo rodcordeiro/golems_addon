@@ -1,0 +1,37 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:illager_rocket",
+			"materials": {
+				"default": "arrow"
+			},
+			"textures": {
+				"default": "textures/entity/fireworks"
+			},
+			"geometry": {
+				"default": "geometry.fv_fireworks_rocket_located"
+			},
+			"animations": {
+				"move": "animation.arrow.move",
+				"flying_smoke": "animation.fv_fireworks_rocket_located.flying_smoke"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.shake = query.shake_time - query.frame_alpha;",
+					"variable.shake_power = variable.shake > 0.0 ? -Math.sin(variable.shake * 200.0) * variable.shake : 0.0;"
+				],
+				"animate": [
+					"move",
+					"flying_smoke"
+				]
+			},
+			"render_controllers": [
+				"controller.render.fv_arrow"
+			],
+			"particle_effects": {
+				"flying_smoke": "fv:rocket_smoke"
+			}
+		}
+	}
+}

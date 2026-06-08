@@ -1,0 +1,18 @@
+{
+	"format_version": "1.21.130",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fv:ancient_tome_of_wisdom",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fv_ancient_tome_of_wisdom",
+			"minecraft:rarity": "rare",
+			"minecraft:max_stack_size": 8,
+			"minecraft:glint": true,
+			"fv:ancient_tome_use": {}
+		}
+	}
+}

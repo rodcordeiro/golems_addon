@@ -1,0 +1,213 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.iron_spear",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [
+					0,
+					1.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "waist",
+					"pivot": [
+						0,
+						12,
+						0
+					]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [
+						0,
+						0,
+						0
+					]
+				},
+				{
+					"name": "head",
+					"parent": "body",
+					"pivot": [
+						0,
+						24,
+						0
+					],
+					"locators": {
+						"lead": [
+							0,
+							0,
+							0
+						]
+					}
+				},
+				{
+					"name": "nose",
+					"parent": "head",
+					"pivot": [
+						0,
+						26,
+						0
+					]
+				},
+				{
+					"name": "leftLeg",
+					"parent": "body",
+					"pivot": [
+						2,
+						12,
+						0
+					]
+				},
+				{
+					"name": "rightLeg",
+					"parent": "body",
+					"pivot": [
+						-2,
+						12,
+						0
+					],
+					"mirror": true
+				},
+				{
+					"name": "rightarm",
+					"parent": "body",
+					"pivot": [
+						-5,
+						22,
+						0
+					]
+				},
+				{
+					"name": "rightItem",
+					"parent": "rightarm",
+					"pivot": [
+						-6,
+						15,
+						1
+					]
+				},
+				{
+					"name": "iron_spear",
+					"parent": "rightItem",
+					"pivot": [
+						-6.5,
+						13.5,
+						0.4
+					],
+					"cubes": [
+						{
+							"origin": [
+								-7,
+								13,
+								-16
+							],
+							"size": [
+								1,
+								1,
+								31
+							],
+							"uv": [
+								0,
+								0
+							]
+						},
+						{
+							"origin": [
+								-7,
+								13,
+								15
+							],
+							"size": [
+								1,
+								1,
+								1
+							],
+							"inflate": 0.25,
+							"uv": [
+								0,
+								6
+							]
+						},
+						{
+							"origin": [
+								-7,
+								13,
+								-15.5
+							],
+							"size": [
+								1,
+								1,
+								1
+							],
+							"inflate": 0.25,
+							"uv": [
+								4,
+								4
+							]
+						},
+						{
+							"origin": [
+								-7,
+								12,
+								-17
+							],
+							"size": [
+								1,
+								3,
+								1
+							],
+							"inflate": 0.25,
+							"uv": [
+								0,
+								0
+							]
+						},
+						{
+							"origin": [
+								-6.5,
+								11.5,
+								-26
+							],
+							"size": [
+								0,
+								4,
+								9
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "leftarm",
+					"parent": "body",
+					"pivot": [
+						5,
+						22,
+						0
+					],
+					"mirror": true
+				},
+				{
+					"name": "leftItem",
+					"parent": "leftarm",
+					"pivot": [
+						6,
+						15,
+						1
+					]
+				}
+			]
+		}
+	]
+}

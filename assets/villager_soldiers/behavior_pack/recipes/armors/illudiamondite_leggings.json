@@ -1,0 +1,30 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fv:illudiamondite_leggings"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"i": {
+				"item": "fv:illudiamondite_ingot"
+			}
+		},
+		"pattern": [
+			"iii",
+			"i i",
+			"i i"
+		],
+		"result": {
+			"item": "fv:illudiamondite_leggings",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "fv:illudiamondite_ingot"
+			}
+		]
+	}
+}

@@ -1,0 +1,430 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.enchant_gacha",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [
+					0,
+					0.75,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "table",
+					"pivot": [
+						-8,
+						0,
+						8
+					],
+					"cubes": [
+						{
+							"origin": [
+								7,
+								0,
+								-9
+							],
+							"size": [
+								2,
+								9,
+								2
+							],
+							"uv": [
+								0,
+								41
+							]
+						},
+						{
+							"origin": [
+								-8,
+								0,
+								-8
+							],
+							"size": [
+								16,
+								7,
+								16
+							],
+							"uv": [
+								0,
+								0
+							]
+						},
+						{
+							"origin": [
+								-9,
+								0,
+								-9
+							],
+							"size": [
+								2,
+								9,
+								2
+							],
+							"uv": [
+								29,
+								41
+							]
+						},
+						{
+							"origin": [
+								-7,
+								7,
+								-7
+							],
+							"size": [
+								14,
+								2,
+								14
+							],
+							"uv": [
+								0,
+								24
+							]
+						},
+						{
+							"origin": [
+								7,
+								0,
+								7
+							],
+							"size": [
+								2,
+								9,
+								2
+							],
+							"uv": [
+								0,
+								24
+							]
+						},
+						{
+							"origin": [
+								-9,
+								0,
+								7
+							],
+							"size": [
+								2,
+								9,
+								2
+							],
+							"uv": [
+								0,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "sach",
+					"parent": "table",
+					"pivot": [
+						0,
+						10,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-1,
+								10,
+								-6
+							],
+							"size": [
+								2,
+								1,
+								12
+							],
+							"uv": [
+								39,
+								68
+							]
+						}
+					]
+				},
+				{
+					"name": "trangphai3",
+					"parent": "sach",
+					"pivot": [
+						0,
+						12.2,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								0,
+								12.2,
+								-6
+							],
+							"size": [
+								7,
+								0,
+								12
+							],
+							"pivot": [
+								0,
+								12.2,
+								0
+							],
+							"rotation": [
+								0,
+								0,
+								-60
+							],
+							"uv": [
+								43,
+								24
+							]
+						}
+					]
+				},
+				{
+					"name": "trangphai2",
+					"parent": "sach",
+					"pivot": [
+						0,
+						12.1,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								0,
+								12.1,
+								-6
+							],
+							"size": [
+								7,
+								0,
+								12
+							],
+							"pivot": [
+								0,
+								12.1,
+								0
+							],
+							"rotation": [
+								0,
+								0,
+								-30
+							],
+							"uv": [
+								39,
+								55
+							]
+						}
+					]
+				},
+				{
+					"name": "trangphai",
+					"parent": "sach",
+					"pivot": [
+						0,
+						12,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								0,
+								12,
+								-6
+							],
+							"size": [
+								7,
+								0,
+								12
+							],
+							"pivot": [
+								0,
+								12,
+								0
+							],
+							"rotation": [
+								0,
+								0,
+								-15
+							],
+							"uv": [
+								66,
+								56
+							]
+						}
+					]
+				},
+				{
+					"name": "biaphai",
+					"parent": "sach",
+					"pivot": [
+						0,
+						11,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								0,
+								11,
+								-6
+							],
+							"size": [
+								8,
+								1,
+								12
+							],
+							"uv": [
+								0,
+								41
+							]
+						}
+					]
+				},
+				{
+					"name": "trangtrai3",
+					"parent": "sach",
+					"pivot": [
+						0,
+						12.2,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-7,
+								12.2,
+								-6
+							],
+							"size": [
+								7,
+								0,
+								12
+							],
+							"pivot": [
+								0,
+								12.2,
+								0
+							],
+							"rotation": [
+								0,
+								0,
+								60
+							],
+							"uv": [
+								49,
+								0
+							]
+						}
+					]
+				},
+				{
+					"name": "trangtrai2",
+					"parent": "sach",
+					"pivot": [
+						0,
+						12.1,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-7,
+								12.1,
+								-6
+							],
+							"size": [
+								7,
+								0,
+								12
+							],
+							"pivot": [
+								0,
+								12.1,
+								0
+							],
+							"rotation": [
+								0,
+								0,
+								30
+							],
+							"uv": [
+								0,
+								55
+							]
+						}
+					]
+				},
+				{
+					"name": "trangtrai",
+					"parent": "sach",
+					"pivot": [
+						0,
+						12,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-7,
+								12,
+								-6
+							],
+							"size": [
+								7,
+								0,
+								12
+							],
+							"pivot": [
+								0,
+								12,
+								0
+							],
+							"rotation": [
+								0,
+								0,
+								15
+							],
+							"uv": [
+								0,
+								68
+							]
+						}
+					]
+				},
+				{
+					"name": "biatrai",
+					"parent": "sach",
+					"pivot": [
+						0,
+						11,
+						0
+					],
+					"cubes": [
+						{
+							"origin": [
+								-8,
+								11,
+								-6
+							],
+							"size": [
+								8,
+								1,
+								12
+							],
+							"uv": [
+								41,
+								41
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

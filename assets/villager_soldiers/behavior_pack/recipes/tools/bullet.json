@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "fv:bullet"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "minecraft:iron_nugget",
+				"count": 1
+			},
+			{
+				"item": "minecraft:gunpowder",
+				"count": 1
+			},
+			{
+				"item": "minecraft:paper",
+				"count": 1
+			}
+		],
+		"result": {
+			"item": "fv:bullet",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,54 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:iron_golem_guard",
+			"materials": {
+				"default": "iron_golem"
+			},
+			"textures": {
+				"default": "textures/entity/small_irongolem",
+				"iron_spear": "textures/entity/iron_spear",
+				"target": "textures/entity/target",
+				"stay_statue": "textures/entity/stay_statue"
+			},
+			"geometry": {
+				"default": "geometry.repillager",
+				"iron_spear": "geometry.iron_spear",
+				"target": "geometry.target",
+				"stay_statue": "geometry.stay_statue"
+			},
+			"animations": {
+				"move": "animation.iron_spear.move",
+				"stand": "animation.iron_spear.stand",
+				"attack": "animation.iron_spear.attack",
+				"look_at_target": "animation.humanoid.look_at_target.default",
+				"attacking": "controller.animation.iron_golem_spear.attack",
+				"walking": "animation.iron_spear.walking"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+					"variable.kill_player_mode = query.property('fv:kill_player_mode');"
+				],
+				"animate": [
+					"attacking",
+					"look_at_target"
+				]
+			},
+			"render_controllers": [
+				"controller.render.iron_golem_tamed",
+				"controller.render.iron_spear",
+				{
+					"controller.render.stay_statue": "query.is_sitting"
+				},
+				{
+					"controller.render.golem.target": "query.property('fv:kill_player_mode')==true"
+				}
+			],
+			"spawn_egg": {
+				"texture": "small_irongolem"
+			}
+		}
+	}
+}

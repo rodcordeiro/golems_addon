@@ -1,0 +1,185 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.steed.baby_transform": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"position": [
+						0,
+						"11*((0.0625-query.model_scale)*16)",
+						0
+					]
+				},
+				"head": {
+					"scale": "1.0 + 0.5 * (1.0 - (query.model_scale * 16.0))"
+				},
+				"legbl": {
+					"scale": [
+						1,
+						"1+((0.0625-query.model_scale)*16)",
+						1
+					]
+				},
+				"legbr": {
+					"scale": [
+						1,
+						"1+((0.0625-query.model_scale)*16)",
+						1
+					]
+				},
+				"legfl": {
+					"scale": [
+						1,
+						"1+((0.0625-query.model_scale)*16)",
+						1
+					]
+				},
+				"legfr": {
+					"scale": [
+						1,
+						"1+((0.0625-query.model_scale)*16)",
+						1
+					]
+				}
+			}
+		},
+		"animation.steed.eat": {
+			"loop": true,
+			"bones": {
+				"neck": {
+					"rotation": [
+						"variable.eat_anim*(110+math.sin((query.life_time*20)*57.3)*2.86)",
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.steed.look_at_player": {
+			"loop": true,
+			"bones": {
+				"neck": {
+					"rotation": [
+						"variable.head_x_rot",
+						"(variable.stand_anim+variable.inverse_max_stand_eat)*query.head_y_rotation(0)-q.body_y_rotation",
+						0
+					]
+				}
+			}
+		},
+		"animation.steed.rear": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [
+						"-45*variable.stand_anim",
+						0,
+						0
+					]
+				},
+				"legbl": {
+					"rotation": [
+						"45*variable.stand_anim",
+						0,
+						0
+					]
+				},
+				"legbr": {
+					"rotation": [
+						"45*variable.stand_anim",
+						0,
+						0
+					]
+				},
+				"legfl": {
+					"rotation": [
+						"(-60+math.cos((query.life_time*20)*34.38)*57.3)*variable.stand_anim",
+						0,
+						0
+					]
+				},
+				"legfr": {
+					"rotation": [
+						"(-60-math.cos((query.life_time*20)*34.38)*57.3)*variable.stand_anim",
+						0,
+						0
+					]
+				},
+				"neck": {
+					"rotation": [
+						"(15+variable.head_x_rot)*variable.stand_anim",
+						0,
+						0
+					]
+				},
+				"tail": {
+					"rotation": [
+						"55*variable.stand_anim",
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.steed.tail": {
+			"loop": true,
+			"bones": {
+				"tail": {
+					"rotation": [
+						0,
+						"math.cos(query.life_time*802)*57.3",
+						0
+					]
+				}
+			}
+		},
+		"animation.steed.walk": {
+			"loop": true,
+			"bones": {
+				"bagl": {
+					"rotation": [
+						"variable.leg_x_rot_anim/5",
+						0,
+						0
+					]
+				},
+				"bagr": {
+					"rotation": [
+						"-variable.leg_x_rot_anim/5",
+						0,
+						0
+					]
+				},
+				"legbl": {
+					"rotation": [
+						"(-variable.leg_stand_factor*28.6*query.modified_move_speed)*(1-variable.stand_anim)",
+						0,
+						0
+					]
+				},
+				"legbr": {
+					"rotation": [
+						"(variable.leg_stand_factor*28.6*query.modified_move_speed)*(1-variable.stand_anim)",
+						0,
+						0
+					]
+				},
+				"legfl": {
+					"rotation": [
+						"variable.leg_x_rot_anim*(1-variable.stand_anim)",
+						0,
+						0
+					]
+				},
+				"legfr": {
+					"rotation": [
+						"-variable.leg_x_rot_anim*(1-variable.stand_anim)",
+						0,
+						0
+					]
+				}
+			}
+		}
+	}
+}

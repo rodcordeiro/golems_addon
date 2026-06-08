@@ -1,0 +1,189 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fv:iceline",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "evocation_fang",
+			"animations": {
+				"falldown": "controller.animation.falldown"
+			},
+			"scripts": {
+				"animate": [
+					"falldown"
+				]
+			}
+		},
+		"component_groups": {
+			"start": {
+				"minecraft:is_shaking": {},
+				"minecraft:timer": {
+					"time": [
+						0.125,
+						0.125
+					],
+					"time_down_event": {
+						"event": "end",
+						"target": "self"
+					}
+				}
+			},
+			"end": {
+				"minecraft:area_attack": {
+					"cause": "magic",
+					"damage_per_tick": 12,
+					"damage_range": 1,
+					"entity_filter": {
+						"any_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "irongolem"
+							},
+							{
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "monster"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "illager"
+									}
+								]
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "villager"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "wandering_trader"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "snowgolem"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "animal"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							}
+						]
+					}
+				},
+				"minecraft:mob_effect": {
+					"effect_range": 1,
+					"mob_effect": "slowness",
+					"effect_time": 10,
+					"entity_filter": {
+						"any_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "irongolem"
+							},
+							{
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "monster"
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"operator": "!=",
+										"value": "illager"
+									}
+								]
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "villager"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "wandering_trader"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "snowgolem"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "animal"
+							},
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							}
+						]
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0,
+				"height": 1
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": false
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": "no"
+				}
+			},
+			"minecraft:scale": {
+				"value": 2
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"start"
+					]
+				}
+			},
+			"end": {
+				"remove": {
+					"component_groups": [
+						"start"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"end"
+					]
+				}
+			}
+		}
+	}
+}

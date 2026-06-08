@@ -1,0 +1,30 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "fv:long_stick"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"ingredients": [
+			{
+				"item": "minecraft:stick",
+				"count": 2
+			},
+			{
+				"item": "minecraft:leather",
+				"count": 1
+			}
+		],
+		"result": {
+			"item": "fv:long_stick",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "minecraft:stick"
+			}
+		]
+	}
+}

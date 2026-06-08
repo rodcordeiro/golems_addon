@@ -1,0 +1,52 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:catapult",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/catapult",
+				"stone": "textures/entity/stone_of_catapult/cobblestone",
+				"watermelon": "textures/entity/stone_of_catapult/watermelon",
+				"pumpkin": "textures/entity/stone_of_catapult/pumkin",
+				"tnt": "textures/entity/stone_of_catapult/tnt",
+				"obsidian": "textures/entity/stone_of_catapult/obsidian",
+				"magma": "textures/entity/stone_of_catapult/magma",
+				"brick": "textures/entity/stone_of_catapult/brick"
+			},
+			"geometry": {
+				"default": "geometry.catapult",
+				"stone_of_catapult": "geometry.stone_of_catapult"
+			},
+			"animations": {
+				"default": "animation.catapult.default",
+				"scale": "animation.catapult.scale",
+				"loaded": "animation.catapult.loaded",
+				"starting": "animation.catapult.starting",
+				"shoot": "animation.catapult.shoot",
+				"status": "controller.animation.catapult.status",
+				"stone": "controller.animation.catapult.stone"
+			},
+			"scripts": {
+				"pre_animation": [
+					"v.catapult_status = query.property('fv:catapult_status');",
+					"v.reload_catapult = query.property('fv:reload_catapult');"
+				],
+				"animate": [
+					"status",
+					"scale",
+					"stone"
+				]
+			},
+			"render_controllers": [
+				"controller.render.mob_default",
+				"controller.render.stone_of_catapult"
+			],
+			"spawn_egg": {
+				"texture": "fv_catapult"
+			}
+		}
+	}
+}

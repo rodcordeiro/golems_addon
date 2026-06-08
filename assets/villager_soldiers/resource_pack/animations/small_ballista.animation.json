@@ -1,0 +1,92 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.small_ballista.charged": {
+			"loop": true,
+			"bones": {
+				"hold": {
+					"position": [
+						6,
+						0,
+						0
+					]
+				},
+				"keove": {
+					"scale": [
+						0.7,
+						1,
+						1
+					]
+				},
+				"xoay": {
+					"rotation": [
+						0,
+						0,
+						137.5
+					]
+				},
+				"cung": {
+					"rotation": [
+						0,
+						5,
+						0
+					]
+				},
+				"cung2": {
+					"rotation": [
+						0,
+						5,
+						0
+					]
+				},
+				"day": {
+					"rotation": [
+						0,
+						-42.5,
+						0
+					]
+				},
+				"cung3": {
+					"rotation": [
+						0,
+						-5,
+						0
+					]
+				},
+				"cung4": {
+					"rotation": [
+						0,
+						-5,
+						0
+					]
+				},
+				"day2": {
+					"rotation": [
+						0,
+						42.5,
+						0
+					]
+				},
+				"arrow": {
+					"position": [
+						6,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.small_ballista.no_target": {
+			"loop": true,
+			"bones": {
+				"crossbow": {
+					"rotation": [
+						0,
+						0,
+						17.5
+					]
+				}
+			}
+		}
+	}
+}

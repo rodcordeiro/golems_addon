@@ -1,0 +1,285 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "fv:snow_arrow",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"runtime_identifier": "arrow",
+			"animations": {
+				"is_on_ground": "controller.animation.is_on_ground"
+			},
+			"scripts": {
+				"animate": [
+					"is_on_ground"
+				]
+			}
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {
+					"remove_child_entities": false
+				}
+			},
+			"timer": {
+				"minecraft:timer": {
+					"time": [
+						1,
+						1
+					],
+					"time_down_event": {
+						"event": "despawn",
+						"target": "self"
+					}
+				}
+			},
+			"fv:player_arrow": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"damage": 4,
+							"knockback": true,
+							"semi_random_diff_damage": true,
+							"max_critical_damage": 18,
+							"min_critical_damage": 10,
+							"power_multiplier": 1
+						},
+						"stick_in_ground": {
+							"shake_time": 0.35
+						},
+						"arrow_effect": {
+							"apply_effect_to_blocking_targets": false
+						},
+						"mob_effect": {
+							"effect": "slowness",
+							"durationeasy": 200,
+							"durationnormal": 200,
+							"durationhard": 200,
+							"amplifier": 0
+						}
+					},
+					"hit_sound": "bow.hit",
+					"power": 8,
+					"gravity": 0.05,
+					"uncertainty_base": 1,
+					"uncertainty_multiplier": 0,
+					"anchor": 1,
+					"should_bounce": true,
+					"offset": [
+						0,
+						-0.1,
+						0
+					],
+					"crit_particle_on_hurt": true,
+					"multiple_targets": true
+				},
+				"minecraft:entity_sensor": {
+					"find_players_only": true,
+					"relative_range": true,
+					"subsensors": [
+						{
+							"y_offset": 0,
+							"event_filters": {
+								"test": "on_ground",
+								"subject": "self",
+								"value": true
+							},
+							"minimum_count": 1,
+							"maximum_count": -1,
+							"event": "fv:exploding_player"
+						}
+					]
+				}
+			},
+			"minecraft:exploding": {
+				"minecraft:explode": {
+					"fuse_length": 1.5,
+					"fuse_lit": true,
+					"power": 1,
+					"causes_fire": false,
+					"breaks_blocks": false
+				}
+			},
+			"minecraft:exploding_player": {
+				"minecraft:explode": {
+					"fuse_length": 0,
+					"fuse_lit": true,
+					"power": 1,
+					"causes_fire": false,
+					"breaks_blocks": false
+				}
+			},
+			"fv:new_arrow": {
+				"minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"damage": 20,
+							"knockback": true,
+							"semi_random_diff_damage": true,
+							"max_critical_damage": 28,
+							"min_critical_damage": 20,
+							"power_multiplier": 2
+						},
+						"stick_in_ground": {
+							"shake_time": 0.35
+						},
+						"arrow_effect": {
+							"apply_effect_to_blocking_targets": false
+						},
+						"mob_effect": {
+							"effect": "slowness",
+							"durationeasy": 200,
+							"durationnormal": 200,
+							"durationhard": 200,
+							"amplifier": 0
+						}
+					},
+					"hit_sound": "bow.hit",
+					"power": 8,
+					"gravity": 0.05,
+					"uncertainty_base": 1,
+					"uncertainty_multiplier": 0,
+					"anchor": 1,
+					"should_bounce": true,
+					"offset": [
+						0,
+						-0.3,
+						0
+					],
+					"crit_particle_on_hurt": true,
+					"multiple_targets": true
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.25,
+				"height": 0.25
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+						"damage": [
+							12,
+							18
+						],
+						"knockback": true,
+						"semi_random_diff_damage": false
+					},
+					"stick_in_ground": {
+						"shake_time": 0.35
+					},
+					"arrow_effect": {},
+					"mob_effect": {
+						"effect": "slowness",
+						"durationeasy": 200,
+						"durationnormal": 200,
+						"durationhard": 200,
+						"amplifier": 0
+					}
+				},
+				"hit_sound": "bow.hit",
+				"power": 6,
+				"gravity": 0.05,
+				"uncertainty_base": 4,
+				"uncertainty_multiplier": 2,
+				"anchor": 1,
+				"should_bounce": true,
+				"offset": [
+					0,
+					-0.3,
+					0
+				],
+				"multiple_targets": true
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 80,
+					"max_dropped_ticks": 7,
+					"use_motion_prediction_hints": true
+				}
+			},
+			"minecraft:variant": {
+				"value": 0
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "player"
+						},
+						"add": {
+							"component_groups": [
+								"fv:player_arrow"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "shootnewarrow"
+						},
+						"add": {
+							"component_groups": [
+								"fv:new_arrow"
+							]
+						}
+					}
+				]
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"timer": {
+				"add": {
+					"component_groups": [
+						"timer"
+					]
+				}
+			},
+			"fv:on_ground": {
+				"add": {
+					"component_groups": [
+						"minecraft:exploding"
+					]
+				}
+			},
+			"fv:exploding_player": {
+				"add": {
+					"component_groups": [
+						"minecraft:exploding_player"
+					]
+				}
+			}
+		}
+	}
+}

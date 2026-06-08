@@ -1,0 +1,43 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:attachable": {
+		"description": {
+			"identifier": "fv:percussion_cap_musket_empty",
+			"materials": {
+				"default": "entity_alphatest",
+				"enchanted": "entity_alphatest_glint"
+			},
+			"textures": {
+				"default": "textures/items/weapons/guns/3d_percussion_cap_musket",
+				"enchanted": "textures/misc/enchanted_item_glint"
+			},
+			"geometry": {
+				"default": "geometry.fv_percussion_cap_musket"
+			},
+			"animations": {
+				"first_persion": "animation.fv_musket.first_persopn_empty",
+				"third_persion": "animation.fv_musket.third_person_empty",
+				"reloading_first_persion": "animation.fv_musket.reloading_first_person",
+				"reloading_third_persion": "animation.fv_musket.reloading_third_person",
+				"general_fpt": "controller.animation.guns.flintlock_musket_empty.reloading_fpt",
+				"general_tpt": "controller.animation.guns.flintlock_musket_empty.reloading_tpt"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"general_fpt": "c.is_first_person"
+					},
+					{
+						"general_tpt": "!c.is_first_person"
+					},
+					{
+						"third_persion": "!c.is_first_person"
+					}
+				]
+			},
+			"render_controllers": [
+				"controller.render.item_default"
+			]
+		}
+	}
+}

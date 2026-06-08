@@ -1,0 +1,31 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:dispenser_auto_turret",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/new_illagers/mesa/dispenser_auto_turret"
+			},
+			"geometry": {
+				"default": "geometry.dispenser_auto_turret"
+			},
+			"animations": {
+				"look_at_target": "animation.dispenser_auto_turret.look_at_target"
+			},
+			"scripts": {
+				"animate": [
+					"look_at_target"
+				]
+			},
+			"render_controllers": [
+				"controller.render.fv_default_no_hurt"
+			],
+			"spawn_egg": {
+				"texture": "fv_dispenser_auto_turret"
+			}
+		}
+	}
+}

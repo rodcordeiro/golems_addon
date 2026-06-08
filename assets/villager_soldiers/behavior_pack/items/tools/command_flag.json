@@ -1,0 +1,25 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "fv:command_flag",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fv_command_flag",
+			"minecraft:max_stack_size": 16,
+			"minecraft:stacked_by_data": true,
+			"minecraft:entity_placer": {
+				"dispense_on": [
+					"water",
+					"lava",
+					"flowing_water",
+					"flowing_lava"
+				],
+				"entity": "fv:command_flag_summon"
+			}
+		}
+	}
+}

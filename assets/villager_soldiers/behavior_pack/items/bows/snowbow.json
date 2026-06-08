@@ -1,0 +1,52 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "snow:bow",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": "fv_snow_bow",
+			"minecraft:max_stack_size": 1,
+			"minecraft:durability": {
+				"max_durability": 3048,
+				"damage_chance": {
+					"min": 20,
+					"max": 30
+				}
+			},
+			"minecraft:enchantable": {
+				"slot": "bow",
+				"value": 14
+			},
+			"minecraft:shooter": {
+				"ammunition": [
+					{
+						"item": "fv:snow_arrow",
+						"search_inventory": true,
+						"use_in_creative": true,
+						"use_offhand": true
+					}
+				],
+				"launch_power_scale": 1,
+				"max_launch_power": 6,
+				"charge_on_draw": false,
+				"max_draw_duration": 1.2,
+				"scale_power_by_draw_duration": true
+			},
+			"minecraft:use_animation": "bow",
+			"minecraft:use_modifiers": {
+				"use_duration": 36000,
+				"movement_modifier": 0.5
+			},
+			"minecraft:damage": {
+				"value": 8
+			},
+			"minecraft:custom_components": [
+				"fv:snow_bow_melee"
+			]
+		}
+	}
+}

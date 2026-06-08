@@ -1,0 +1,39 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:entity_javelin",
+			"geometry": {
+				"default": "geometry.throw_javelin"
+			},
+			"textures": {
+				"default": "textures/items/weapons/javelin/wood",
+				"stone": "textures/items/weapons/javelin/stone",
+				"copper": "textures/items/weapons/javelin/copper",
+				"iron": "textures/items/weapons/javelin/iron",
+				"steel": "textures/items/weapons/javelin/steel",
+				"illasteel": "textures/items/weapons/javelin/illasteel",
+				"diamond": "textures/items/weapons/javelin/diamond",
+				"netherite": "textures/items/weapons/javelin/netherite",
+				"illudiamondite": "textures/items/weapons/javelin/illudiamondite",
+				"diamet": "textures/items/weapons/javelin/diamet"
+			},
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"render_controllers": [
+				"controller.render.entity_javelin"
+			],
+			"animations": {
+				"rotate": "animation.javelin.spear.rotate",
+				"default": "animation.javelin.spear.throw_default"
+			},
+			"scripts": {
+				"animate": [
+					"rotate",
+					"default"
+				]
+			}
+		}
+	}
+}

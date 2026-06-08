@@ -1,0 +1,106 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "fv:villager_ranged",
+			"materials": {
+				"default": "pillager",
+				"tamed_color": "entity_alphatest_change_color"
+			},
+			"textures": {
+				"desert": "textures/entity/crossbow_soldier_villager/desert",
+				"jungle": "textures/entity/crossbow_soldier_villager/jungle",
+				"plains": "textures/entity/crossbow_soldier_villager/plains",
+				"savanna": "textures/entity/crossbow_soldier_villager/savanna",
+				"snow": "textures/entity/crossbow_soldier_villager/snow",
+				"swamp": "textures/entity/crossbow_soldier_villager/swamp",
+				"taiga": "textures/entity/crossbow_soldier_villager/taiga",
+				"target": "textures/entity/target",
+				"wrist_belt": "textures/entity/villager2/wrist_belt",
+				"tamed_color": "textures/entity/villager2/tamed_color",
+				"stay_statue": "textures/entity/stay_statue"
+			},
+			"geometry": {
+				"default": "geometry.villager_handle",
+				"target": "geometry.target",
+				"wrist_belt": "geometry.wrist_belt",
+				"tamed_color": "geometry.tamed_color",
+				"stay_statue": "geometry.stay_statue"
+			},
+			"spawn_egg": {
+				"texture": "fv_villager_soldier_ranged_spawn_egg"
+			},
+			"scripts": {
+				"scale": "0.9375",
+				"pre_animation": [
+					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+					"variable.kill_player_mode = query.property('fv:kill_player_mode');",
+					"variable.stay_mode = query.property('fv:stay_mode');"
+				],
+				"animate": [
+					"pillager_root_controller",
+					"armor",
+					{
+						"noout": "query.has_armor_slot(2)"
+					},
+					{
+						"controller_bow_attack": "query.variant==1"
+					},
+					{
+						"controller_crossbow_attack": "query.variant==2"
+					},
+					{
+						"javelin_attack": "query.variant==3"
+					}
+				]
+			},
+			"animations": {
+				"humanoid_base_pose": "animation.humanoid.base_pose",
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"move": "animation.humanoid.move",
+				"riding.arms": "animation.humanoid.riding.arms",
+				"riding.legs": "animation.humanoid.riding.legs",
+				"holding": "animation.humanoid.holding",
+				"attack.rotations": "animation.humanoid.attack.rotations",
+				"bob": "animation.humanoid.bob",
+				"crossbow_hold": "animation.villager_noarmor.crossbow.hold",
+				"crossbow_charge": "animation.villager_noarmor.crossbow.charge",
+				"celebrating": "animation.humanoid.celebrating",
+				"controller_humanoid_base_pose": "controller.animation.humanoid.base_pose",
+				"controller_look_at_target": "controller.animation.humanoid.look_at_target",
+				"controller_move": "controller.animation.humanoid.move",
+				"controller_riding": "controller.animation.humanoid.riding",
+				"controller_attack": "controller.animation.humanoid.attack",
+				"controller_bob": "controller.animation.humanoid.bob",
+				"controller_bow_attack": "controller.animation.villager.bow.attack",
+				"controller_crossbow_attack": "controller.animation.fv_pillager.attack",
+				"pillager_root_controller": "controller.animation.fv_pillager.root",
+				"bow_and_arrow": "animation.humanoid.bow_and_arrow",
+				"armor": "animation.villager_noarmor.armor",
+				"noout": "animation.villager_noarmor.noout",
+				"sit": "animation.villager_noarmor.staying2",
+				"javelin_attack_time": "animation.villager_handle.javelin_attack_time",
+				"brandish_spear": "animation.villager_handle.javelin_attack.rotations",
+				"javelin_attack": "controller.animation.javelin.attack.rotations"
+			},
+			"render_controllers": [
+				"controller.render.vanilla.biome",
+				{
+					"controller.render.golem.target": "query.property('fv:kill_player_mode')==true"
+				},
+				{
+					"controller.render.wrist_belt": "query.is_sitting"
+				},
+				{
+					"controller.render.tamed_color": "query.is_tamed"
+				},
+				{
+					"controller.render.stay_statue": "query.property('fv:stay_mode')==true"
+				}
+			],
+			"enable_attachables": true
+		}
+	}
+}

@@ -1,0 +1,107 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.fv_evoker.casting": {
+			"loop": true,
+			"bones": {
+				"arms": {
+					"scale": 0
+				},
+				"leftarm": {
+					"rotation": [
+						"math.cos(query.life_time*763.4)*14.3239-this",
+						"-this",
+						"-135-this"
+					],
+					"scale": 1
+				},
+				"rightarm": {
+					"rotation": [
+						"math.cos(query.life_time*763.4)*14.3239-this",
+						"-this",
+						"135-this"
+					],
+					"scale": 1
+				}
+			}
+		},
+		"animation.fv_evoker.general": {
+			"loop": true,
+			"bones": {
+				"arms": {
+					"position": [
+						0,
+						"-3-this",
+						"-1-this"
+					],
+					"rotation": [
+						"-42.97-this",
+						"-this",
+						"-this"
+					],
+					"scale": 1
+				},
+				"leftarm": {
+					"scale": 0
+				},
+				"rightarm": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.fv_evoker.move": {
+			"anim_time_update": "query.modified_distance_moved",
+			"loop": true,
+			"bones": {
+				"leftLeg": {
+					"rotation": [
+						"(math.cos(query.anim_time*38.17)*40)-this",
+						"-this",
+						0
+					]
+				},
+				"rightLeg": {
+					"rotation": [
+						"(math.cos(query.anim_time*38.17+180)*40)-this",
+						"-this",
+						0
+					]
+				}
+			}
+		},
+		"animation.fv_evoker.move_with_hand": {
+			"loop": true,
+			"anim_time_update": "query.modified_distance_moved",
+			"bones": {
+				"leftLeg": {
+					"rotation": [
+						"(math.cos(query.anim_time*38.17)*40)-this",
+						"-this",
+						0
+					]
+				},
+				"rightLeg": {
+					"rotation": [
+						"(math.cos(query.anim_time*38.17+180)*40)-this",
+						"-this",
+						0
+					]
+				},
+				"rightArm": {
+					"rotation": [
+						"(math.cos(query.anim_time*38.17)*40)-this",
+						"-this",
+						0
+					]
+				},
+				"leftArm": {
+					"rotation": [
+						"(math.cos(query.anim_time*38.17+180)*40)-this",
+						"-this",
+						0
+					]
+				}
+			}
+		}
+	}
+}
