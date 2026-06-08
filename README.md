@@ -6,7 +6,7 @@ Addon de Minecraft Bedrock que adiciona um golem de pedra com comportamento host
 
 Este repositorio contem um Behavior Pack e um Resource Pack para Minecraft Bedrock `1.20.10+`.
 
-O conteudo principal esta implementado nos arquivos do addon, mas o fluxo de criacao manual do golem ainda precisa de validacao final dentro do Minecraft Bedrock/MCPE. A validacao local de arquivos ja cobre JSON, contrato de item/bloco/receita e estrutura de comandos.
+O conteudo principal esta implementado nos arquivos do addon, mas o fluxo de criacao manual do golem e os ajustes de IA/combate ainda precisam de validacao final dentro do Minecraft Bedrock/MCPE. A validacao local de arquivos ja cobre JSON, contrato de item/bloco/receita, estrutura de comandos e configuracao BP/RP.
 
 ## Conteudo
 
@@ -127,7 +127,8 @@ O golem tem:
 - movimento `0.25`;
 - caixa de colisao `1.6 x 4.0`;
 - resistencia total a knockback;
-- ataque a distancia com `addon:stone_projectile`;
+- ataque corpo-a-corpo defensivo como caminho principal;
+- projetil `addon:stone_projectile` preservado para validacao/refino de ataque a distancia;
 - raio de ataque de `25` blocos;
 - restricao de casa em raio de `60` blocos;
 - loot com redstone dust, glowstone dust ou diamond.
@@ -137,6 +138,7 @@ Quando nasce naturalmente, o golem entra no grupo `wild` e mira jogadores. Quand
 ## Pontos de atencao
 
 - O fluxo de criacao manual foi corrigido por contrato de arquivos, mas ainda precisa de teste visual/funcional dentro do Minecraft Bedrock/MCPE em `./test_world`.
+- A IA/movimento/combate do Stone Golem foi ajustada em `1.0.17`, mas ainda precisa ser aprovada em jogo usando `docs/golem-012-004-testes.md`.
 - A textura atual `resource_pack/textures/entity/stone_golem.png` foi recriada como atlas `128x128`, alinhada ao `texture_width` e `texture_height` declarados no modelo.
 - As texturas do item `golem_core` e da particula `stone` foram reduzidas para formatos leves e transparentes, mais adequados para MCPE.
 - Ha workflows de validacao e empacotamento em `.github/workflows`, mas nao ha

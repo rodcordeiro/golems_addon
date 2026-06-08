@@ -18,11 +18,13 @@
                 "throw": "animation.stone_golem.throw",
                 "hide_rock": "animation.stone_golem.hide_rock",
                 "hide_ground_block": "animation.stone_golem.hide_ground_block",
-                "pull_block": "animation.stone_golem.pull_block"
+                "pull_block": "animation.stone_golem.pull_block",
+                "look_at_target": "animation.humanoid.look_at_target.default"
             },
             "scripts": {
                 "animate": [
-                    "controller.animation.stone_golem"
+                    "controller.animation.stone_golem",
+                    "look_at_target"
                 ]
             },
             "render_controllers": [

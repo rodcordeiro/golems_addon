@@ -12,11 +12,14 @@
                 "minecraft:type_family": {
                     "family": [
                         "stone_golem",
+                        "mob",
                         "monster"
                     ]
                 },
                 "minecraft:behavior.nearest_attackable_target": {
                     "priority": 1,
+                    "must_reach": true,
+                    "must_see": true,
                     "entity_types": [
                         {
                             "filters": {
@@ -33,11 +36,14 @@
                 "minecraft:type_family": {
                     "family": [
                         "stone_golem",
+                        "mob",
                         "player_golem"
                     ]
                 },
                 "minecraft:behavior.nearest_attackable_target": {
                     "priority": 1,
+                    "must_reach": true,
+                    "must_see": true,
                     "entity_types": [
                         {
                             "filters": {
@@ -81,23 +87,61 @@
                 "can_path_over_water": true,
                 "avoid_water": false
             },
+            "minecraft:movement.basic": {},
+            "minecraft:jump.static": {},
             "minecraft:collision_box": {
                 "width": 1.6,
                 "height": 4.0
             },
+            "minecraft:attack": {
+                "damage": 12
+            },
+            "minecraft:behavior.delayed_attack": {
+                "priority": 1,
+                "attack_duration": 0.75,
+                "hit_delay_pct": 0.54,
+                "cooldown_time": 1.2,
+                "reach_multiplier": 2.2
+            },
+            "minecraft:behavior.move_towards_target": {
+                "priority": 2,
+                "speed_multiplier": 1.0,
+                "within_radius": 32
+            },
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 2,
+                "entity_types": {
+                    "filters": {
+                        "all_of": [
+                            {
+                                "test": "is_family",
+                                "subject": "other",
+                                "operator": "!=",
+                                "value": "stone_golem"
+                            },
+                            {
+                                "test": "is_family",
+                                "subject": "other",
+                                "operator": "!=",
+                                "value": "player_golem"
+                            }
+                        ]
+                    }
+                }
+            },
             "minecraft:behavior.random_stroll": {
-                "priority": 6,
+                "priority": 7,
                 "speed_multiplier": 0.8
             },
             "minecraft:behavior.move_towards_restriction": {
-                "priority": 3,
+                "priority": 5,
                 "speed_multiplier": 1.0
             },
             "minecraft:behavior.restrict_open_door": {
-                "priority": 2
+                "priority": 4
             },
             "minecraft:behavior.ranged_attack": {
-                "priority": 3,
+                "priority": 6,
                 "attack_interval": 40,
                 "attack_radius": 25
             },
@@ -105,7 +149,7 @@
                 "def": "addon:stone_projectile"
             },
             "minecraft:behavior.look_at_player": {
-                "priority": 5,
+                "priority": 6,
                 "look_distance": 30
             },
             "minecraft:projectile": {
@@ -124,7 +168,15 @@
             "minecraft:home": {
                 "restriction_radius": 60
             },
+            "minecraft:follow_range": {
+                "value": 64
+            },
+            "minecraft:persistent": {},
             "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
             "minecraft:knockback_resistance": {
                 "value": 1.0
             },
