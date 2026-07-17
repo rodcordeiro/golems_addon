@@ -63,20 +63,20 @@ Objetivo: adicionar `crystal_golem` de ametista e `redstone_golem`. O `redstone_
 
 Tickets relacionados: a detalhar.
 
-| Ordem | Ticket | Epico | Prioridade | Problemas cobertos | Dependencias |
-|---:|---|---|---|---|---|
-| 1 | GOLEM-001 | Core e criacao manual | P0 Bloqueante | `golem_core` nao pode ser colocado no mundo | Nenhuma |
-| 2 | GOLEM-002 | Core e criacao manual | P0 Bloqueante | Receita nao exibe/retorna o `golem_core` correto | GOLEM-001 |
-| 3 | GOLEM-003 | Core e criacao manual | P0 Bloqueante | Receita/estrutura para criar o Stone Golem esta indefinida ou incompleta | GOLEM-001, GOLEM-002 |
-| 4 | GOLEM-004 | Comportamento da entidade | P0 Bloqueante | Golem invocado nasce imovel, some e nao ataca mobs | Nenhuma |
-| 5 | GOLEM-005 | Spawn natural | P1 Alto | Stone Golem nao spawna naturalmente | GOLEM-004 |
-| 6 | GOLEM-006 | Nomes e UX | P1 Alto | Core aparece com chave tecnica em vez de `Golem Core` | GOLEM-001, GOLEM-002 |
-| 7 | GOLEM-007 | Ovo de spawn | P1 Alto | Ovo do Stone Golem precisa de nome/textura corretos | GOLEM-006 |
-| 8 | GOLEM-008 | Visual da entidade | P1 Alto | Revisar modelos/entities contra texturas e referencias visuais | GOLEM-004 |
-| 9 | GOLEM-009 | Visual da entidade | P2 Medio | Aparencia do Stone Golem esta torta/deformada | GOLEM-008 |
-| 10 | GOLEM-010 | Validacao | P0 Gate de release | Validar o addon end-to-end em `./test_world` | Todos os tickets funcionais e visuais |
-| 11 | GOLEM-011 | Validacao | P0 Gate de release | Validar receita/estrutura survival para criar o Stone Golem | GOLEM-001, GOLEM-002, GOLEM-003 |
-| 12 | GOLEM-012 | Contrato de referencia | P1 Alto | Fechar checklist comparativo contra `iron_golem_guard` e decidir o que sera portado/adaptado | GOLEM-004, GOLEM-005, GOLEM-008 |
+| Ordem | Ticket    | Epico                     | Prioridade         | Problemas cobertos                                                                           | Dependencias                          |
+| ----: | --------- | ------------------------- | ------------------ | -------------------------------------------------------------------------------------------- | ------------------------------------- |
+|     1 | GOLEM-001 | Core e criacao manual     | P0 Bloqueante      | `golem_core` nao pode ser colocado no mundo                                                  | Nenhuma                               |
+|     2 | GOLEM-002 | Core e criacao manual     | P0 Bloqueante      | Receita nao exibe/retorna o `golem_core` correto                                             | GOLEM-001                             |
+|     3 | GOLEM-003 | Core e criacao manual     | P0 Bloqueante      | Receita/estrutura para criar o Stone Golem esta indefinida ou incompleta                     | GOLEM-001, GOLEM-002                  |
+|     4 | GOLEM-004 | Comportamento da entidade | P0 Bloqueante      | Golem invocado nasce imovel, some e nao ataca mobs                                           | Nenhuma                               |
+|     5 | GOLEM-005 | Spawn natural             | P1 Alto            | Stone Golem nao spawna naturalmente                                                          | GOLEM-004                             |
+|     6 | GOLEM-006 | Nomes e UX                | P1 Alto            | Core aparece com chave tecnica em vez de `Golem Core`                                        | GOLEM-001, GOLEM-002                  |
+|     7 | GOLEM-007 | Ovo de spawn              | P1 Alto            | Ovo do Stone Golem precisa de nome/textura corretos                                          | GOLEM-006                             |
+|     8 | GOLEM-008 | Visual da entidade        | P1 Alto            | Revisar modelos/entities contra texturas e referencias visuais                               | GOLEM-004                             |
+|     9 | GOLEM-009 | Visual da entidade        | P2 Medio           | Aparencia do Stone Golem esta torta/deformada                                                | GOLEM-008                             |
+|    10 | GOLEM-010 | Validacao                 | P0 Gate de release | Validar o addon end-to-end em `./test_world`                                                 | Todos os tickets funcionais e visuais |
+|    11 | GOLEM-011 | Validacao                 | P0 Gate de release | Validar receita/estrutura survival para criar o Stone Golem                                  | GOLEM-001, GOLEM-002, GOLEM-003       |
+|    12 | GOLEM-012 | Contrato de referencia    | P1 Alto            | Fechar checklist comparativo contra `iron_golem_guard` e decidir o que sera portado/adaptado | GOLEM-004, GOLEM-005, GOLEM-008       |
 
 ## Tickets
 

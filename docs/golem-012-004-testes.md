@@ -36,15 +36,16 @@ Acoes:
 2. Confirme que existem componentes de locomocao basica:
    - `minecraft:movement.basic`
    - `minecraft:jump.static`
+Resposta: Ambos estão vazios. Está certo?
 3. Confirme que existem componentes de combate e alvo:
-   - `minecraft:attack`
-   - `minecraft:behavior.delayed_attack`
-   - `minecraft:behavior.move_towards_target`
-   - `minecraft:behavior.hurt_by_target`
-   - `minecraft:follow_range`
+   - `minecraft:attack` ok
+   - `minecraft:behavior.delayed_attack` ok
+   - `minecraft:behavior.move_towards_target` ok
+   - `minecraft:behavior.hurt_by_target` ok
+   - `minecraft:follow_range` ok
 4. Confirme que existem componentes de persistencia/fisica:
-   - `minecraft:persistent`
-   - `minecraft:pushable`
+   - `minecraft:persistent` contem, mas está vazio.
+   - `minecraft:pushable` ok
 
 Resultado esperado:
 
@@ -61,8 +62,8 @@ Falha se:
 Acoes:
 
 1. Abra `resource_pack/entity/stone_golem.entity.json`.
-2. Confirme que `animations` contem `look_at_target`.
-3. Confirme que `scripts.animate` executa `look_at_target`.
+2. Confirme que `animations` contem `look_at_target`. no arquivo informado sim, mas não achei em stone_golem.animation.json
+3. Confirme que `scripts.animate` executa `look_at_target`. ok
 
 Resultado esperado:
 
