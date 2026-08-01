@@ -1,16 +1,13 @@
 {
-    "format_version": "1.20.10",
-    "minecraft:item": {
-        "description": {
-            "identifier": "addon:golem_core"
-        },
-        "components": {
-            "minecraft:icon": {
-                "texture": "golem_core"
-            },
-            "minecraft:display_name": {
-                "value": "Golem Core"
-            }
-        }
+  "format_version": "1.20.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "addon:golem_core"
+    },
+    "components": {
+      "minecraft:icon": {
+        "texture": "golem_core"
+      }
     }
+  }
 }

@@ -47,7 +47,7 @@ Detalhes de uso, receitas e riscos: veja o README do addon.
 
 - `validate_json.yml` — valida JSONs nos addons.
 - `validate-structure.yml` — manifests de `gollem_addon` e `villagers_addon`.
-- `build-mcaddon.yml` — gera `stone_golems.<version>.mcaddon` em tags `v*` a partir de `gollem_addon/`.
+- `build-mcaddon.yml` — em push na `main` e tags `v*`: gera artifacts `stone_golems` + `villagers_addon`; GitHub Release so em tags.
 
 ## Desenvolvimento
 

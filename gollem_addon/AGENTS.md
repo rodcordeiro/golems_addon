@@ -24,6 +24,8 @@ Conteudo principal: `addon:stone_golem`, projetil, anchor, item/bloco de nucleo,
 
 O fluxo de criacao manual do Stone Golem nao deve ser descrito como validado em jogo ate evidencias no Bedrock/`test_world`.
 
+Em `1.0.18`: removidos `minecraft:projectile`/`minecraft:shoot` invalidos do mob; `player_created` mira monstros (sem `is_owner`); langs de entity/spawn egg/item corrigidas; spawn rules com difficulty/herd/density; client entity do projetil adicionado.
+
 Ao atuar nessa area, alinhar primeiro o contrato receita ↔ item ↔ bloco ↔ estrutura ↔ spawn/evento da entidade.
 
 Detalhes de backlog e testes: `docs/backlog.md`, `docs/golem-012-004-testes.md`.

@@ -2,6 +2,7 @@ name: Build mcaddon
 
 on:
   push:
+    branches: [ main ]
     tags:
       - "v*"
 
@@ -15,27 +16,48 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - name: Prepare build folder
-        run: |
-          mkdir build
-          cp -r gollem_addon/behavior_pack build/
-          cp -r gollem_addon/resource_pack build/
-
       - name: Set version
-        run: echo "VERSION=${GITHUB_REF_NAME#v}" >> $GITHUB_ENV
-
-      - name: Create mcaddon
         run: |
-          cd build
-          zip -r stone_golems.$VERSION.mcaddon behavior_pack resource_pack
+          if [[ "${GITHUB_REF}" == refs/tags/v* ]]; then
+            echo "VERSION=${GITHUB_REF_NAME#v}" >> "$GITHUB_ENV"
+          else
+            echo "VERSION=${GITHUB_SHA::7}" >> "$GITHUB_ENV"
+          fi
 
-      - name: Upload artifact
+      - name: Prepare gollem build folder
+        run: |
+          mkdir -p build/gollem
+          cp -r gollem_addon/behavior_pack build/gollem/
+          cp -r gollem_addon/resource_pack build/gollem/
+
+      - name: Prepare villagers_addon build folder
+        run: |
+          mkdir -p build/villagers
+          cp -r villagers_addon/behavior_pack build/villagers/
+          cp -r villagers_addon/resource_pack build/villagers/
+
+      - name: Create mcaddon packages
+        run: |
+          (cd build/gollem && zip -r "../../stone_golems.${VERSION}.mcaddon" behavior_pack resource_pack)
+          (cd build/villagers && zip -r "../../villagers_addon.${VERSION}.mcaddon" behavior_pack resource_pack)
+          ls -la *.mcaddon
+
+      - name: Upload gollem artifact
         uses: actions/upload-artifact@v7
         with:
           name: stone-golems-mcaddon
-          path: build/stone_golems.${{ env.VERSION }}.mcaddon
+          path: stone_golems.${{ env.VERSION }}.mcaddon
+
+      - name: Upload villagers_addon artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: villagers-addon-mcaddon
+          path: villagers_addon.${{ env.VERSION }}.mcaddon
 
       - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v3
         with:
-          files: build/stone_golems.${{ env.VERSION }}.mcaddon
+          files: |
+            stone_golems.${{ env.VERSION }}.mcaddon
+            villagers_addon.${{ env.VERSION }}.mcaddon

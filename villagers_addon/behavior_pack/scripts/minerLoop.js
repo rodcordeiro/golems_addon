@@ -1,4 +1,4 @@
-import { system, ItemStack, world } from "@minecraft/server";
+import { system, world } from "@minecraft/server";
 import {
   MINER_ID,
   DP,
@@ -12,8 +12,10 @@ import {
   isSoftStop,
   oreDropId,
   blockPos,
+  cargoHasSpace,
+  tryAddOre,
 } from "./common.js";
-import { hasPickaxe, damageTool } from "./minerInteract.js";
+import { hasPickaxe, damageTool, ensureToolInSlot0 } from "./minerInteract.js";
 
 /**
  * @param {import('@minecraft/server').Entity} miner
@@ -69,49 +71,6 @@ function dir(miner) {
 }
 
 /**
- * @param {import('@minecraft/server').Entity} miner
- */
-function inventoryHasSpace(miner) {
-  const c = miner.getComponent("minecraft:inventory")?.container;
-  if (!c) return false;
-  // slot 0 reserved for tool
-  for (let i = 1; i < c.size; i++) {
-    if (!c.getItem(i)) return true;
-  }
-  return false;
-}
-
-/**
- * @param {import('@minecraft/server').Entity} miner
- * @param {string} itemId
- * @param {number} amount
- */
-function tryAddOre(miner, itemId, amount = 1) {
-  const c = miner.getComponent("minecraft:inventory")?.container;
-  if (!c) return false;
-  const stack = new ItemStack(itemId, amount);
-  // Prefer stacking into existing ore stacks in slots 1+
-  for (let i = 1; i < c.size; i++) {
-    const cur = c.getItem(i);
-    if (cur && cur.typeId === itemId && cur.amount < cur.maxAmount) {
-      const space = cur.maxAmount - cur.amount;
-      const add = Math.min(space, amount);
-      cur.amount += add;
-      c.setItem(i, cur);
-      amount -= add;
-      if (amount <= 0) return true;
-    }
-  }
-  for (let i = 1; i < c.size; i++) {
-    if (!c.getItem(i)) {
-      c.setItem(i, new ItemStack(itemId, amount));
-      return true;
-    }
-  }
-  return false;
-}
-
-/**
  * @param {import('@minecraft/server').Dimension} dim
  * @param {{x:number,y:number,z:number}} p
  */
@@ -137,7 +96,6 @@ function processBlock(miner, block) {
   if (isHardStop(id) || isSoftStop(id)) return "stop";
 
   if (isOre(id)) {
-    if (!inventoryHasSpace(miner)) return "full";
     const drop = oreDropId(id);
     if (!tryAddOre(miner, drop, 1)) return "full";
     block.setType("minecraft:air");
@@ -236,7 +194,8 @@ function tickMiner(miner) {
   }
 
   if (state === "waiting") {
-    if (hasPickaxe(miner) && inventoryHasSpace(miner) && !stayOn(miner)) {
+    ensureToolInSlot0(miner);
+    if (hasPickaxe(miner) && cargoHasSpace(miner) && !stayOn(miner)) {
       setState(miner, "mining");
       state = "mining";
     } else {
@@ -245,11 +204,12 @@ function tickMiner(miner) {
   }
 
   if (state !== "mining") return;
+  ensureToolInSlot0(miner);
   if (!hasPickaxe(miner)) {
     setState(miner, "waiting");
     return;
   }
-  if (!inventoryHasSpace(miner)) {
+  if (!cargoHasSpace(miner)) {
     setState(miner, "returning");
     teleportToHire(miner);
     setState(miner, "waiting");

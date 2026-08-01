@@ -3,13 +3,13 @@
 Addon proprio de Minecraft Bedrock que adiciona um golem de pedra com comportamento hostil/defensivo, modelo, textura, animacoes, particulas, item/bloco de nucleo, receita, loot table e spawn em biomas de montanha.
 
 **Namespace:** `addon:`  
-**Versao dos packs:** `1.0.17`  
+**Versao dos packs:** `1.0.18`  
 **min_engine_version:** `1.20.10`  
 **Monorepo:** pasta `gollem_addon/` (ver [`../README.md`](../README.md))
 
 ## Estado
 
-Conteudo principal implementado nos packs. O fluxo de criacao manual e os ajustes de IA/combate ainda precisam de validacao final dentro do Minecraft Bedrock/MCPE (`../test_world/`).
+Conteudo principal implementado nos packs. Validacao final in-game em `../test_world/` ainda recomendada apos ajustes de contrato em `1.0.18`.
 
 Docs internos:
 
@@ -105,11 +105,12 @@ A estrutura completa consome os blocos e invoca `addon:stone_golem` com spawn ev
 - Movimento `0.25`, colisao `1.6 x 4.0`
 - Ataque melee defensivo como caminho principal; projetil preservado para refino
 - Spawn natural: grupo `wild` (mira jogadores)
-- Criado pelo jogador: grupo `player_created` (mira monstros / nao-dono)
+- Criado pelo jogador: grupo `player_created` (mira monstros; sem tame/dono ainda)
 
 ## Pontos de atencao
 
-- Criacao manual e IA/combate (`1.0.17`) precisam de aprovacao in-game — ver `docs/golem-012-004-testes.md`.
+- Criacao manual e IA/combate (`1.0.18`) precisam de aprovacao in-game — ver `docs/golem-012-004-testes.md`.
+- `addon:golem_anchor` permanece no pack mas nao e spawnado no fluxo atual (evento de morte invalido foi removido).
 - Empacotamento CI: tags `v*` geram `stone_golems.<version>.mcaddon` a partir desta pasta.
 
 ## Validacao local

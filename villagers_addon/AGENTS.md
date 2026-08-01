@@ -13,8 +13,8 @@ Addon proprio que complementa `villager_soldiers` (namespace `fv:`). Nao substit
 
 ## Estado
 
-- Namespace `va:`, versao packs `1.0.0`, `min_engine_version` `[1, 21, 130]`
-- MVP em codigo (hire, strip, inventario, stay); **nao validado in-game**
+- Namespace `va:`, versao packs `1.0.1`, `min_engine_version` `[1, 21, 130]`
+- MVP em codigo (hire, strip, inventario, stay); MINER-011 fixado em codigo; **revalidar retomada in-game**
 - Soft-dependencia de uso: Villager Soldiers (`fv:villager_free_handle`)
 
 ## Ao editar

@@ -1,0 +1,20 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "addon:stone_projectile",
+      "materials": {
+        "default": "snowball"
+      },
+      "textures": {
+        "default": "textures/particle/stone"
+      },
+      "geometry": {
+        "default": "geometry.snowball"
+      },
+      "render_controllers": [
+        "controller.render.snowball"
+      ]
+    }
+  }
+}

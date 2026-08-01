@@ -1,35 +1,43 @@
 {
-    "format_version": "1.20.0",
-    "minecraft:client_entity": {
-        "description": {
-            "identifier": "addon:stone_golem",
-            "materials": {
-                "default": "entity"
-            },
-            "textures": {
-                "default": "textures/entity/stone_golem"
-            },
-            "geometry": {
-                "default": "geometry.stone_golem"
-            },
-            "animations": {
-                "walk": "animation.stone_golem.walk",
-                "spawn": "animation.stone_golem.spawn",
-                "throw": "animation.stone_golem.throw",
-                "hide_rock": "animation.stone_golem.hide_rock",
-                "hide_ground_block": "animation.stone_golem.hide_ground_block",
-                "pull_block": "animation.stone_golem.pull_block",
-                "look_at_target": "animation.humanoid.look_at_target.default"
-            },
-            "scripts": {
-                "animate": [
-                    "controller.animation.stone_golem",
-                    "look_at_target"
-                ]
-            },
-            "render_controllers": [
-                "controller.render.stone_golem"
-            ]
-        }
+  "format_version": "1.20.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "addon:stone_golem",
+      "materials": {
+        "default": "entity"
+      },
+      "textures": {
+        "default": "textures/entity/stone_golem"
+      },
+      "geometry": {
+        "default": "geometry.stone_golem"
+      },
+      "spawn_egg": {
+        "base_color": "#6B6B6B",
+        "overlay_color": "#A8C8D8"
+      },
+      "animations": {
+        "walk": "animation.stone_golem.walk",
+        "spawn": "animation.stone_golem.spawn",
+        "throw": "animation.stone_golem.throw",
+        "hide_rock": "animation.stone_golem.hide_rock",
+        "hide_ground_block": "animation.stone_golem.hide_ground_block",
+        "pull_block": "animation.stone_golem.pull_block",
+        "look_at_target": "animation.humanoid.look_at_target.default",
+        "controller": "controller.animation.stone_golem"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed) * 57.3;"
+        ],
+        "animate": [
+          "controller",
+          "look_at_target"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.stone_golem"
+      ]
     }
+  }
 }

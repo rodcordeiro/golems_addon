@@ -1,27 +1,41 @@
 {
-    "format_version": "1.20.0",
-    "minecraft:entity": {
-        "description": {
-            "identifier": "addon:stone_projectile",
-            "is_spawnable": false,
-            "is_summonable": true
+  "format_version": "1.20.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "addon:stone_projectile",
+      "is_spawnable": false,
+      "is_summonable": true
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.3,
+        "height": 0.3
+      },
+      "minecraft:projectile": {
+        "on_hit": {
+          "impact_damage": {
+            "damage": 12,
+            "knockback": true
+          },
+          "particle_on_hit": {
+            "particle_type": "smoke",
+            "num_particles": 8,
+            "on_entity_hit": true,
+            "on_other_hit": true
+          },
+          "remove_on_hit": {}
         },
-        "components": {
-            "minecraft:projectile": {
-                "on_hit": {
-                    "impact_damage": {
-                        "damage": 12,
-                        "knockback": true
-                    },
-                    "remove_on_hit": {}
-                },
-                "power": 1.6,
-                "gravity": 0.05
-            },
-            "minecraft:collision_box": {
-                "width": 0.3,
-                "height": 0.3
-            }
-        }
+        "power": 1.6,
+        "gravity": 0.05,
+        "inertia": 1.0,
+        "anchor": 1,
+        "offset": [0, 1.5, 0]
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
     }
+  }
 }

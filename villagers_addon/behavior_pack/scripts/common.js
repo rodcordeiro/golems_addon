@@ -1,11 +1,16 @@
 /** Shared constants and helpers for Tunnel Miner. */
 
+import { ItemStack } from "@minecraft/server";
+
 export const MINER_ID = "va:villager_miner";
 export const CONTRACT_ID = "va:mining_contract";
 export const FREE_HANDLE_ID = "fv:villager_free_handle";
 export const OWNER_TAG_PREFIX = "va_owner_";
 export const MAX_DISTANCE = 64;
 export const TICK_INTERVAL = 10;
+
+/** Inventory slot reserved for the mining pickaxe (cargo uses the rest). */
+export const TOOL_SLOT = 0;
 
 export const DP = {
   dirX: "va_dir_x",
@@ -172,6 +177,85 @@ export function setState(entity, state) {
  */
 export function isPickaxe(typeId) {
   return typeof typeId === "string" && typeId.includes("pickaxe");
+}
+
+/**
+ * @param {import('@minecraft/server').Entity} miner
+ * @returns {import('@minecraft/server').Container | undefined}
+ */
+export function getMinerContainer(miner) {
+  return miner.getComponent("minecraft:inventory")?.container;
+}
+
+/**
+ * Empty / air / zero-amount stacks (Bedrock may return air instead of undefined).
+ * @param {import('@minecraft/server').ItemStack | undefined} item
+ */
+export function isEmptySlot(item) {
+  if (!item) return true;
+  if (!item.typeId || item.typeId === "minecraft:air") return true;
+  if (typeof item.amount === "number" && item.amount <= 0) return true;
+  return false;
+}
+
+/**
+ * True if the stack is the mining tool (never counts as cargo).
+ * @param {import('@minecraft/server').ItemStack | undefined} item
+ */
+export function isToolItem(item) {
+  return !!(item && !isEmptySlot(item) && isPickaxe(item.typeId));
+}
+
+/**
+ * Cargo has room for ore (empty / partial / misplaced pickaxe in slots 1+).
+ * Slot 0 is reserved for the pickaxe and never counts as cargo capacity.
+ * @param {import('@minecraft/server').Entity} miner
+ */
+export function cargoHasSpace(miner) {
+  const c = getMinerContainer(miner);
+  if (!c) return false;
+  const size = c.size ?? 0;
+  for (let i = 0; i < size; i++) {
+    if (i === TOOL_SLOT) continue;
+    const item = c.getItem(i);
+    if (isEmptySlot(item) || isToolItem(item)) return true;
+    if (item.amount < item.maxAmount) return true;
+  }
+  return false;
+}
+
+/**
+ * @param {import('@minecraft/server').Entity} miner
+ * @param {string} itemId
+ * @param {number} [amount]
+ */
+export function tryAddOre(miner, itemId, amount = 1) {
+  const c = getMinerContainer(miner);
+  if (!c) return false;
+  const size = c.size ?? 0;
+  for (let i = 0; i < size; i++) {
+    if (i === TOOL_SLOT) continue;
+    const cur = c.getItem(i);
+    if (isEmptySlot(cur) || isToolItem(cur)) continue;
+    if (cur.typeId === itemId && cur.amount < cur.maxAmount) {
+      const space = cur.maxAmount - cur.amount;
+      const add = Math.min(space, amount);
+      cur.amount += add;
+      c.setItem(i, cur);
+      amount -= add;
+      if (amount <= 0) return true;
+    }
+  }
+  for (let i = 0; i < size; i++) {
+    if (i === TOOL_SLOT) continue;
+    const cur = c.getItem(i);
+    if (isToolItem(cur)) continue;
+    if (isEmptySlot(cur)) {
+      c.setItem(i, new ItemStack(itemId, amount));
+      return true;
+    }
+  }
+  return false;
 }
 
 /**

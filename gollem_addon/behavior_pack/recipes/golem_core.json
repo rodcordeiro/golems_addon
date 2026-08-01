@@ -1,31 +1,39 @@
 {
-    "format_version": "1.20.0",
-    "minecraft:recipe_shaped": {
-        "description": {
-            "identifier": "addon:golem_core_recipe"
-        },
-        "tags": [
-            "crafting_table"
-        ],
-        "pattern": [
-            " G ",
-            "RSR",
-            " G "
-        ],
-        "key": {
-            "G": {
-                "item": "minecraft:gold_block"
-            },
-            "R": {
-                "item": "minecraft:redstone_block"
-            },
-            "S": {
-                "item": "minecraft:stone"
-            }
-        },
-        "result": {
-            "item": "addon:golem_core",
-            "count": 1
-        }
-    }
+  "format_version": "1.20.0",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "addon:golem_core_recipe"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      " G ",
+      "RSR",
+      " G "
+    ],
+    "key": {
+      "G": {
+        "item": "minecraft:gold_block"
+      },
+      "R": {
+        "item": "minecraft:redstone_block"
+      },
+      "S": {
+        "item": "minecraft:stone"
+      }
+    },
+    "result": {
+      "item": "addon:golem_core",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:stone"
+      },
+      {
+        "item": "minecraft:gold_block"
+      }
+    ]
+  }
 }

@@ -1,2 +1,7 @@
+item.addon:golem_core=Golem Core
 item.addon:golem_core.name=Golem Core
+tile.addon:golem_core_block=Golem Core Block
 tile.addon:golem_core_block.name=Golem Core Block
+entity.addon:stone_golem.name=Stone Golem
+item.spawn_egg.entity.addon:stone_golem.name=Stone Golem Spawn Egg
+entity.addon:stone_projectile.name=Stone Projectile

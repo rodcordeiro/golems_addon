@@ -4,27 +4,27 @@
     "name": "Villagers Addon Behavior Pack",
     "description": "Tunnel Miner workers complementing Villager Soldiers (va:).",
     "uuid": "a4e9e8e4-4e8b-4175-b71a-5515eb66f043",
-    "version": [1, 0, 0],
+    "version": [1, 0, 1],
     "min_engine_version": [1, 21, 130]
   },
   "modules": [
     {
       "type": "data",
       "uuid": "698e6e47-0db9-4ef2-b9d4-7825893e768b",
-      "version": [1, 0, 0]
+      "version": [1, 0, 1]
     },
     {
       "type": "script",
       "language": "javascript",
       "uuid": "700e33a4-ee80-440e-8e15-bd3da36c5cb9",
       "entry": "scripts/main.js",
-      "version": [1, 0, 0]
+      "version": [1, 0, 1]
     }
   ],
   "dependencies": [
     {
       "uuid": "3193f76f-3999-48fe-a8b7-09b87db42fd0",
-      "version": [1, 0, 0]
+      "version": [1, 0, 1]
     },
     {
       "module_name": "@minecraft/server",

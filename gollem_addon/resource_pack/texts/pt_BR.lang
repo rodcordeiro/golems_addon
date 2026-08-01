@@ -1,2 +1,7 @@
-item.addon:golem_core.name=Golem Core
-tile.addon:golem_core_block.name=Bloco de Golem Core
+item.addon:golem_core=Nucleo de Golem
+item.addon:golem_core.name=Nucleo de Golem
+tile.addon:golem_core_block=Bloco de Nucleo de Golem
+tile.addon:golem_core_block.name=Bloco de Nucleo de Golem
+entity.addon:stone_golem.name=Golem de Pedra
+item.spawn_egg.entity.addon:stone_golem.name=Ovo de Golem de Pedra
+entity.addon:stone_projectile.name=Projetil de Pedra

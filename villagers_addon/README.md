@@ -3,14 +3,14 @@
 Addon proprio que complementa o [Villager Soldiers](../villager_soldiers/README.md) com um villager trabalhador que faz strip mine e coleta ores.
 
 **Namespace:** `va:`  
-**Versao dos packs:** `1.0.0`  
+**Versao dos packs:** `1.0.1`  
 **min_engine_version:** `1.21.130`  
 **Script API:** `@minecraft/server` `2.4.0`  
 **Monorepo:** pasta `villagers_addon/` (ver [`../README.md`](../README.md))
 
 ## Estado
 
-MVP implementado em codigo (contratar, cavar, inventario, stay). **Ainda nao validado in-game** (checklist MINER-010 no backlog).
+MVP em codigo (contratar, cavar, inventario, stay). MINER-010 quase ok in-game; retomada apos esvaziar ores corrigida em **MINER-011** (revalidar in-game).
 
 Docs:
 
