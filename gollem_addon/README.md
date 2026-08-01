@@ -110,7 +110,8 @@ A estrutura completa consome os blocos e invoca `addon:stone_golem` com spawn ev
 ## Pontos de atencao
 
 - Criacao manual e IA/combate (`1.0.18`) precisam de aprovacao in-game — ver `docs/golem-012-004-testes.md`.
-- `addon:golem_anchor` permanece no pack mas nao e spawnado no fluxo atual (evento de morte invalido foi removido).
+- `addon:golem_anchor` permanece no pack mas nao e spawnado no fluxo atual (candidato a remocao apos GOLEM-010; ver backlog GOLEM-013).
+- Particula `addon:stone_impact` existe; impacto do projetil ainda usa `smoke` ate wiring dedicado.
 - Empacotamento CI: tags `v*` geram `stone_golems.<version>.mcaddon` a partir desta pasta.
 
 ## Validacao local
