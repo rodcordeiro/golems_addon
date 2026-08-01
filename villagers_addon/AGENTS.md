@@ -1,19 +1,25 @@
 # AGENTS.md — villagers_addon
 
-Addon proprio em construcao para complementar `villager_soldiers` (namespace `fv:`). Nao substitui o pack de terceiros.
+Addon proprio que complementa `villager_soldiers` (namespace `fv:`). Nao substitui o pack de terceiros.
 
 ## Ponteiros
 
 - Monorepo: `../AGENTS.md`
-- Regras de alteracao: `../docs/references/coding-guidelines.md` (secao 2.3)
-- Ideia atual: `docs/IDEIA_MINERADOR.md`
-- Referencia tecnica: `../villager_soldiers/AGENTS.md`
+- Regras: `../docs/references/coding-guidelines.md` (secao 2.3)
+- Backlog: `docs/backlog.md`
+- Ideia: `docs/IDEIA_MINERADOR.md`
+- Referencia: `../villager_soldiers/AGENTS.md`
 
 ## Estado
 
-Em ideacao / ainda sem Behavior Pack e Resource Pack implementados. Ao scaffoldar:
+- Namespace `va:`, versao packs `1.0.0`, `min_engine_version` `[1, 21, 130]`
+- MVP em codigo (hire, strip, inventario, stay); **nao validado in-game**
+- Soft-dependencia de uso: Villager Soldiers (`fv:villager_free_handle`)
 
-1. Escolher e registrar namespace proprio (sugerido: `va:`).
-2. Nao reutilizar UUIDs de `gollem_addon` nem de `villager_soldiers`.
-3. Extrair padroes do Villager Soldiers; nao copiar o pack inteiro.
-4. Auditar colisao de IDs com `fv:` e `addon:` antes de merge/uso conjunto.
+## Ao editar
+
+1. Manter IDs `va:` sem colidir com `fv:` / `addon:`.
+2. Nao editar arquivos dentro de `villager_soldiers/`.
+3. BP + RP: incrementar versao igualmente apos mudanca funcional.
+4. Scripts: mutacoes em `system.run`; checar `entity.isValid`.
+5. Declarar riscos se faltar teste Bedrock.

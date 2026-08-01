@@ -12,14 +12,15 @@ Monorepo de addons Minecraft Bedrock. Cada pasta de addon e um pack independente
 |-------|-------|-----------|--------|
 | `gollem_addon/` | Addon proprio de Stone Golems | `addon:` | Ativo; packs em `behavior_pack/` e `resource_pack/` |
 | `villager_soldiers/` | Addon de terceiros (AnhemSteve) — soldados/villagers | `fv:` (+ secundarios) | Referencia; nao reescrever como produto proprio |
-| `villagers_addon/` | Addon proprio que complementa Villager Soldiers | a definir (`va:` sugerido) | Em ideacao; ver `docs/IDEIA_MINERADOR.md` |
+| `villagers_addon/` | Addon proprio que complementa Villager Soldiers | `va:` | MVP em codigo; validacao in-game pendente (`docs/backlog.md`) |
 
 Documentacao especifica por projeto:
 
 - `gollem_addon/AGENTS.md` — contexto, riscos e validacao do Stone Golem
 - `villager_soldiers/AGENTS.md` — referencia tecnica do pack de soldados
 - `villagers_addon/AGENTS.md` — ponteiros do complemento
-- `villagers_addon/docs/IDEIA_MINERADOR.md` — ideia do minerador strip
+- `villagers_addon/docs/backlog.md` — decisoes e tickets do Minerador de Tunel
+- `villagers_addon/docs/IDEIA_MINERADOR.md` — ideia / contexto
 
 ## Outras pastas
 

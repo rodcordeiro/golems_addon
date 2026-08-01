@@ -1,0 +1,4 @@
+entity.va:villager_miner.name=Tunnel Miner
+item.spawn_egg.entity.va:villager_miner.name=Tunnel Miner Spawn Egg
+item.va:mining_contract=Mining Contract
+action.hint.exit.va:villager_miner=Exit

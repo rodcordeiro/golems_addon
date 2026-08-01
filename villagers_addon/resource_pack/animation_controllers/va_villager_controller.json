@@ -1,0 +1,378 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.villager.bow.attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"bow": "query.has_target"
+						}
+					]
+				},
+				"bow": {
+					"animations": [
+						"bow_and_arrow"
+					],
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.javelin.attack.rotations": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"one_hand_attack": "query.has_target&&variable.attack_time>0"
+						},
+						{
+							"brandish_spear": "query.has_target&&variable.attack_time==0"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"one_hand_attack": {
+					"animations": [
+						"javelin_attack_time"
+					],
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						},
+						{
+							"brandish_spear": "query.has_target&&variable.attack_time==0"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"brandish_spear": {
+					"animations": [
+						"brandish_spear"
+					],
+					"blend_transition": 0.1,
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						},
+						{
+							"one_hand_attack": "query.has_target&&variable.attack_time>0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.villager.horse.attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"horse_default"
+					],
+					"transitions": [
+						{
+							"horse_hold_attack": "query.has_target&&variable.attack_time==0"
+						},
+						{
+							"horse_attack": "query.has_target&&variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"horse_hold_attack": {
+					"animations": [
+						"horse_hold_attack"
+					],
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						},
+						{
+							"horse_attack": "query.has_target&&variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"horse_attack": {
+					"animations": [
+						"horse_attack"
+					],
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						},
+						{
+							"horse_hold_attack": "query.has_target&&variable.attack_time==0"
+						}
+					],
+					"blend_transition": 0.1
+				}
+			}
+		},
+		"controller.animation.camel.soldier.move": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"idle"
+					],
+					"transitions": [
+						{
+							"moving": "variable.moving"
+						}
+					],
+					"blend_transition": 0.5
+				},
+				"moving": {
+					"animations": [
+						"move"
+					],
+					"transitions": [
+						{
+							"default": "!variable.moving"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+		"controller.animation.villager_handle.root": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"blend_via_shortest_path": true,
+					"animations": [
+						"controller_humanoid_base_pose",
+						"controller_riding",
+						"controller_attack",
+						"controller_bob",
+						"controller_pillager_attack",
+						"controller_sleeping",
+						{
+							"celebrating": "query.is_celebrating"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.villager_handle.sleeping": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"blend_via_shortest_path": true,
+					"animations": [
+						"controller_look_at_target",
+						"controller_move"
+					],
+					"transitions": [
+						{
+							"sleeping": "query.is_sleeping"
+						}
+					]
+				},
+				"sleeping": {
+					"animations": [
+						"sleeping",
+						"sleeping_head"
+					],
+					"blend_transition": 0.2,
+					"blend_via_shortest_path": true,
+					"transitions": [
+						{
+							"default": "!query.is_sleeping"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.soldier.using_shield": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"shielding": "query.has_rider"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"shielding": {
+					"animations": [
+						"shield"
+					],
+					"transitions": [
+						{
+							"default": "!query.has_rider"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.villager.halberd_attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"hold": "query.equipped_item_any_tag('slot.weapon.mainhand','fv:is_pike')"
+						}
+					],
+					"transitions": [
+						{
+							"has_target": "query.has_target&&variable.attack_time==0"
+						},
+						{
+							"attack": "query.has_target&&variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0.3
+				},
+				"has_target": {
+					"animations": [
+						{
+							"has_target_one_hand": "query.is_item_equipped('off_hand','minecraft:shield')"
+						},
+						{
+							"has_target_two_hand": "!query.is_item_equipped('off_hand','minecraft:shield')"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						},
+						{
+							"attack": "query.has_target&&variable.attack_time>0"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"attack": {
+					"animations": [
+						{
+							"attack_one_hand": "query.is_item_equipped('off_hand','minecraft:shield')"
+						},
+						{
+							"attack_two_hand": "!query.is_item_equipped('off_hand','minecraft:shield')"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.has_target"
+						},
+						{
+							"has_target": "query.has_target&&variable.attack_time==0"
+						}
+					],
+					"blend_transition": 0.3
+				}
+			}
+		},
+		"controller.animation.villager.melee_spear": {
+			"initial_state": "hold",
+			"states": {
+				"hold": {
+					"transitions": [
+						{
+							"use": "query.has_target"
+						}
+					]
+				},
+				"use": {
+					"animations": [
+						"melee_spear_hold",
+						"support_vanilla"
+					],
+					"transitions": [
+						{
+							"hold": "!query.has_target"
+						}
+					],
+					"blend_transition": 1
+				}
+			}
+		},
+		"controller.animation.villager_clan_leader.general": {
+			"initial_state": "default",
+			"states": {
+				"casting": {
+					"animations": [
+						"look_at_target",
+						"casting",
+						"controller_riding"
+					],
+					"particle_effects": [
+						{
+							"effect": "spell",
+							"locator": "left_hand"
+						},
+						{
+							"effect": "spell",
+							"locator": "right_hand"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_casting"
+						}
+					]
+				},
+				"celebrating": {
+					"animations": [
+						"celebrating",
+						"controller_riding"
+					],
+					"blend_transition": 0.2,
+					"blend_via_shortest_path": true,
+					"transitions": [
+						{
+							"default": "!query.is_celebrating"
+						}
+					]
+				},
+				"default": {
+					"animations": [
+						"look_at_target",
+						"general",
+						"controller_riding"
+					],
+					"blend_transition": 0.2,
+					"blend_via_shortest_path": true,
+					"transitions": [
+						{
+							"casting": "query.is_casting"
+						},
+						{
+							"celebrating": "query.is_celebrating"
+						},
+						{
+							"attacking": "query.has_target&&!query.is_casting"
+						}
+					]
+				},
+				"attacking": {
+					"animations": [
+						"look_at_target",
+						"controller_villager_attack",
+						"controller_riding"
+					],
+					"transitions": [
+						{
+							"default": "!query.has_target&&!query.is_casting"
+						},
+						{
+							"casting": "query.has_target&&query.is_casting"
+						}
+					]
+				}
+			}
+		}
+	}
+}

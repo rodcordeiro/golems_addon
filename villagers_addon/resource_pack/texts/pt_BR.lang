@@ -1,0 +1,4 @@
+entity.va:villager_miner.name=Minerador de Tunel
+item.spawn_egg.entity.va:villager_miner.name=Ovo de Minerador de Tunel
+item.va:mining_contract=Contrato de Mineracao
+action.hint.exit.va:villager_miner=Sair

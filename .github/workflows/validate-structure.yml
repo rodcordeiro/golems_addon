@@ -26,3 +26,24 @@ jobs:
         run: |
           jq -e '.header.uuid != null' gollem_addon/behavior_pack/manifest.json
           jq -e '.header.uuid != null' gollem_addon/resource_pack/manifest.json
+
+  validate-villagers-addon:
+    name: Validate Villagers Addon Structure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check required folders
+        run: |
+          test -d villagers_addon/behavior_pack || (echo "Missing behavior_pack" && exit 1)
+          test -d villagers_addon/resource_pack || (echo "Missing resource_pack" && exit 1)
+
+      - name: Check manifests
+        run: |
+          test -f villagers_addon/behavior_pack/manifest.json || exit 1
+          test -f villagers_addon/resource_pack/manifest.json || exit 1
+
+      - name: Validate manifest identifiers
+        run: |
+          jq -e '.header.uuid != null' villagers_addon/behavior_pack/manifest.json
+          jq -e '.header.uuid != null' villagers_addon/resource_pack/manifest.json

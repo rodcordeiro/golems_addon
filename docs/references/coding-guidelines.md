@@ -90,7 +90,7 @@ Namespace: definir e registrar antes do primeiro manifest (candidatos: `va:` ind
 | `test_world/` | Copiar packs do addon sob teste; ajustar world_*_packs.json | Commits grandes de mundo sem pedido; misturar packs de addons nao envolvidos na task |
 | `.github/workflows/` | Ajustar validacao/empacote com impacto documentado | Mudar sem registrar razao operacional e efeito em release |
 
-Nota: workflows validam/empacotam `gollem_addon/` por padrao. So adicionar job de estrutura para `villagers_addon` depois que BP/RP e manifests existirem.
+Nota: workflows validam estrutura de `gollem_addon/` e `villagers_addon/` (manifests). Empacotamento `.mcaddon` em tags `v*` permanece focado em `gollem_addon/`. So adicionar build separado para villagers sob pedido explicito.
 
 ---
 

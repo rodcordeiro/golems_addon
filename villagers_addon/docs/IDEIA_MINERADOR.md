@@ -4,9 +4,11 @@ Documento de produto/tecnico para um addon (ou modulo) de villagers trabalhadore
 
 **Pasta:** `villagers_addon/`  
 **Referencia de padroes:** `villager_soldiers/` (Villager Soldiers 3.1.4) — ver `AGENTS.md` la.  
-**Namespace sugerido:** `va:` (pack independente) — evitar colidir com `addon:` (`gollem_addon`) e `fv:` (Villager Soldiers). Confirmar antes do primeiro manifest.  
-**Status:** ideia / nao implementado.  
+**Namespace:** `va:` (fechado).  
+**Status:** decisoes de MVP fechadas em `docs/backlog.md`; implementacao nao iniciada.  
 **Regras de task:** `../docs/references/coding-guidelines.md` (raiz do monorepo) e `../AGENTS.md`.
+
+> Este arquivo permanece como contexto/ideia. O contrato operacional (tickets, aceite, v2) vive em **`docs/backlog.md`**.
 
 ---
 
