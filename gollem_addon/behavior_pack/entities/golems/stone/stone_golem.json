@@ -63,6 +63,33 @@
             }
           ]
         }
+      },
+      "can_tame": {
+        "minecraft:tameable": {
+          "probability": 1.0,
+          "tame_items": "iron_ingot",
+          "tame_event": {
+            "event": "addon:tamed",
+            "target": "self"
+          }
+        }
+      },
+      "tamed": {
+        "minecraft:is_tamed": {},
+        "minecraft:behavior.follow_owner": {
+          "priority": 3,
+          "speed_multiplier": 0.9,
+          "start_distance": 10,
+          "stop_distance": 4,
+          "max_distance": 48,
+          "can_teleport": true
+        },
+        "minecraft:behavior.owner_hurt_by_target": {
+          "priority": 1
+        },
+        "minecraft:behavior.owner_hurt_target": {
+          "priority": 1
+        }
       }
     },
     "components": {
@@ -117,6 +144,12 @@
                 "subject": "other",
                 "operator": "!=",
                 "value": "player_golem"
+              },
+              {
+                "test": "is_owner",
+                "subject": "other",
+                "operator": "!=",
+                "value": true
               }
             ]
           }
@@ -175,7 +208,15 @@
           "component_groups": ["wild"]
         },
         "add": {
-          "component_groups": ["player_created"]
+          "component_groups": ["player_created", "can_tame"]
+        }
+      },
+      "addon:tamed": {
+        "remove": {
+          "component_groups": ["can_tame"]
+        },
+        "add": {
+          "component_groups": ["tamed"]
         }
       }
     }

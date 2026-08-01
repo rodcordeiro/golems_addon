@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "addon:stone_impact_fx",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/particle/stone"
+      },
+      "geometry": {
+        "default": "geometry.snowball"
+      },
+      "animations": {
+        "fx": "controller.animation.stone_impact_fx"
+      },
+      "scripts": {
+        "animate": ["fx"]
+      },
+      "particle_effects": {
+        "impact": "addon:stone_impact"
+      },
+      "render_controllers": ["controller.render.snowball"]
+    }
+  }
+}

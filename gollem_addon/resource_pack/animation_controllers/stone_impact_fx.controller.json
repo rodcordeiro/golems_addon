@@ -1,0 +1,23 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.stone_impact_fx": {
+      "initial_state": "burst",
+      "states": {
+        "burst": {
+          "particle_effects": [
+            {
+              "effect": "impact"
+            }
+          ],
+          "transitions": [
+            {
+              "done": "query.anim_time > 0.05"
+            }
+          ]
+        },
+        "done": {}
+      }
+    }
+  }
+}

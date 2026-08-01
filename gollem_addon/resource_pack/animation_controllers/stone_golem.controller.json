@@ -2,8 +2,16 @@
   "format_version": "1.8.0",
   "animation_controllers": {
     "controller.animation.stone_golem": {
-      "initial_state": "idle",
+      "initial_state": "spawn",
       "states": {
+        "spawn": {
+          "animations": ["spawn"],
+          "transitions": [
+            {
+              "idle": "query.all_animations_finished || query.life_time > 1.25"
+            }
+          ]
+        },
         "idle": {
           "animations": [
             "hide_ground_block",

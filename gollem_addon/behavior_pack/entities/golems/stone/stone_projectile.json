@@ -19,9 +19,13 @@
           },
           "particle_on_hit": {
             "particle_type": "smoke",
-            "num_particles": 8,
+            "num_particles": 4,
             "on_entity_hit": true,
             "on_other_hit": true
+          },
+          "spawn_chance": {
+            "first_spawn_percent_chance": 100.0,
+            "spawn_definition": "addon:stone_impact_fx"
           },
           "remove_on_hit": {}
         },

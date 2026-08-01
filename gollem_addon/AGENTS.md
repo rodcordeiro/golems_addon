@@ -10,7 +10,7 @@ Addon proprio de Stone Golems neste monorepo. Visao de usuario: `README.md`. Reg
 - Mundo de teste do monorepo: `../test_world/`
 - Referencias de arte/debug: `../assets/`
 
-Conteudo principal: `addon:stone_golem`, projetil, anchor, item/bloco de nucleo, receita, loot, spawn em biomas de montanha, client assets.
+Conteudo principal: `addon:stone_golem`, projetil, FX de impacto, item/bloco de nucleo, receita, loot, spawn em biomas de montanha, client assets.
 
 ## Ao editar este addon
 
@@ -24,7 +24,8 @@ Conteudo principal: `addon:stone_golem`, projetil, anchor, item/bloco de nucleo,
 
 O fluxo de criacao manual do Stone Golem nao deve ser descrito como validado em jogo ate evidencias no Bedrock/`test_world`.
 
-Em `1.0.18`: removidos `minecraft:projectile`/`minecraft:shoot` invalidos do mob; `player_created` mira monstros (sem `is_owner`); langs de entity/spawn egg/item corrigidas; spawn rules com difficulty/herd/density; client entity do projetil adicionado.
+Em `1.0.18`: removidos `minecraft:projectile`/`minecraft:shoot` invalidos do mob; `player_created` mira monstros; langs; spawn rules; client do projetil.
+Em `1.0.19`: removido `golem_anchor`; tame com `iron_ingot`; anim spawn no controller; impacto via `stone_impact_fx` + particula `addon:stone_impact`.
 
 Ao atuar nessa area, alinhar primeiro o contrato receita ↔ item ↔ bloco ↔ estrutura ↔ spawn/evento da entidade.
 
