@@ -67,14 +67,14 @@
         "speed_multiplier": 0.4
       },
       "minecraft:damage_sensor": {
-        "triggers": {
-          "cause": "all",
-          "deals_damage": true
-        }
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": true
+          }
+        ]
       }
     },
-    "events": {
-      "minecraft:entity_spawned": {}
-    }
+    "events": {}
   }
 }

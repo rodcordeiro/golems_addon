@@ -27,7 +27,7 @@ Regras de escopo: `../../docs/references/coding-guidelines.md` e `../AGENTS.md`.
 | Item | Decisao |
 |------|---------|
 | Item | `va:mining_contract` |
-| Receita | shapeless: `minecraft:paper` + `minecraft:wooden_pickaxe` → 1 contrato (picareta consumida) |
+| Receita | shaped: `P`/`A` (wooden_pickaxe sobre paper) → 1 contrato (picareta consumida) |
 | Alvo do hire | **somente** `fv:villager_free_handle` (adulto; nao baby) |
 | Nao usar | `minecraft:villager_v2` direto; nao injetar UI do `fv:paper_writable` |
 | No hire | remove free_handle; spawna `va:villager_miner`; tag de **dono**; direcao = yaw do jogador → cardinal N/S/E/W |

@@ -10,6 +10,7 @@
     "components": {
       "minecraft:icon": "va_mining_contract",
       "minecraft:max_stack_size": 16,
+      "minecraft:stacked_by_data": true,
       "minecraft:rarity": "uncommon",
       "minecraft:glint": true
     }

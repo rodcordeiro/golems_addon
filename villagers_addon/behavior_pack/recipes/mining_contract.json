@@ -1,17 +1,35 @@
 {
-  "format_version": "1.12",
-  "minecraft:recipe_shapeless": {
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
     "description": {
       "identifier": "va:mining_contract"
     },
-    "tags": ["crafting_table"],
-    "ingredients": [
-      { "item": "minecraft:paper", "count": 1 },
-      { "item": "minecraft:wooden_pickaxe", "count": 1 }
+    "tags": [
+      "crafting_table"
     ],
+    "pattern": [
+      "P",
+      "A"
+    ],
+    "key": {
+      "P": {
+        "item": "minecraft:wooden_pickaxe"
+      },
+      "A": {
+        "item": "minecraft:paper"
+      }
+    },
     "result": {
       "item": "va:mining_contract",
       "count": 1
-    }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:paper"
+      },
+      {
+        "item": "minecraft:wooden_pickaxe"
+      }
+    ]
   }
 }

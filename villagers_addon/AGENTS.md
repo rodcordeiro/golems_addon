@@ -4,7 +4,8 @@ Addon proprio que complementa `villager_soldiers` (namespace `fv:`). Nao substit
 
 ## Ponteiros
 
-- Monorepo: `../AGENTS.md`
+- Monorepo: `../AGENTS.md` / `../README.md`
+- README deste addon: `README.md`
 - Regras: `../docs/references/coding-guidelines.md` (secao 2.3)
 - Backlog: `docs/backlog.md`
 - Ideia: `docs/IDEIA_MINERADOR.md`

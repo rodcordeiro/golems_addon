@@ -1,6 +1,6 @@
 # AGENTS.md — gollem_addon
 
-Addon proprio de Stone Golems neste monorepo. Regras gerais e escopo de task: `../AGENTS.md` e `../docs/references/coding-guidelines.md`.
+Addon proprio de Stone Golems neste monorepo. Visao de usuario: `README.md`. Regras gerais: `../AGENTS.md` e `../docs/references/coding-guidelines.md`.
 
 ## Contexto
 

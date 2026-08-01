@@ -1,56 +1,32 @@
-# Golems Addon
+# Bedrock Addons Monorepo
 
-Addon de Minecraft Bedrock que adiciona um golem de pedra com comportamento hostil/defensivo, modelo, textura, animacoes, particulas, item/bloco de nucleo, receita, loot table e regra de spawn em biomas de montanha.
+Repositorio com varios addons de Minecraft Bedrock. Cada pasta de produto tem Behavior Pack e Resource Pack proprios (quando aplicavel). Nao misture namespaces, UUIDs ou assets entre addons.
 
-## Estado do projeto
+## Addons
 
-Este repositorio contem um Behavior Pack e um Resource Pack para Minecraft Bedrock `1.20.10+`.
+| Pasta | Produto | Namespace | Engine (manifest) | Status |
+|-------|---------|-----------|-------------------|--------|
+| [`gollem_addon/`](gollem_addon/README.md) | Stone Golems | `addon:` | `1.20.10+` (v1.0.17) | Ativo; validacao in-game parcial |
+| [`villagers_addon/`](villagers_addon/README.md) | Minerador de Tunel | `va:` | `1.21.130+` + Script API (v1.0.0) | MVP em codigo; in-game pendente |
+| [`villager_soldiers/`](villager_soldiers/README.md) | Villager Soldiers (terceiros) | `fv:` | `1.21.130+` | Referencia; nao e produto proprio |
 
-O conteudo principal esta implementado nos arquivos do addon, mas o fluxo de criacao manual do golem e os ajustes de IA/combate ainda precisam de validacao final dentro do Minecraft Bedrock/MCPE. A validacao local de arquivos ja cobre JSON, contrato de item/bloco/receita, estrutura de comandos e configuracao BP/RP.
+Documentacao detalhada de cada addon fica no `README.md` da pasta correspondente.
 
-## Conteudo
-
-- Entidade `addon:stone_golem`.
-- Projetil `addon:stone_projectile`.
-- Entidade auxiliar `addon:golem_anchor`.
-- Item `addon:golem_core`.
-- Bloco `addon:golem_core_block`.
-- Receita `addon:golem_core_recipe`.
-- Loot table para o golem de pedra.
-- Spawn natural em superficie de biomas com tag `mountain`.
-- Modelo, textura, render controller, animation controller, animacoes e particulas.
-- Texturas otimizadas para MCPE: entidade `128x128`, item `32x32` e particula `16x16`.
-
-## Estrutura
+## Estrutura do repositorio
 
 ```text
-behavior_pack/
-  blocks/                 Definicao do bloco de nucleo
-  entities/               Entidades do addon
-  items/                  Definicao do item de nucleo
-  loot_tables/            Drops do golem
-  recipes/                Receita do nucleo
-  spawn_rules/            Regras de spawn natural
-  manifest.json           Manifest do Behavior Pack
-
-resource_pack/
-  animation_controllers/  Controlador de animacao client-side
-  animations/             Animacoes do golem
-  entity/                 Client entity
-  models/                 Geometria do golem
-  particles/              Particulas de impacto/solo
-  render_controllers/     Render controller
-  textures/               Texturas de entidade, item e particula
-  texts/                  Traducoes
-  manifest.json           Manifest do Resource Pack
+gollem_addon/          Stone Golems (addon:)
+villagers_addon/       Tunnel Miner (va:)
+villager_soldiers/     Pack de referencia (fv:)
+assets/                Arte/debug fora dos packs do jogo
+test_world/            Mundo local de teste
+docs/references/       Guidelines e inventarios compartilhados
+.github/workflows/     CI (JSON, estrutura, build .mcaddon do golem)
 ```
 
-## Instalacao local
+## Instalacao (visao geral)
 
-1. Copie `behavior_pack/` para o diretorio de behavior packs do Minecraft Bedrock.
-2. Copie `resource_pack/` para o diretorio de resource packs do Minecraft Bedrock.
-3. Ative os dois packs no mundo.
-4. Crie ou abra um mundo com suporte a addons.
+Cada addon se instala copiando o par `behavior_pack/` + `resource_pack/` dele para as pastas do Minecraft Bedrock e ativando os dois no mundo.
 
 Diretorios comuns no Windows:
 
@@ -59,129 +35,39 @@ Diretorios comuns no Windows:
 %LOCALAPPDATA%\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\resource_packs
 ```
 
-## Uso
+Detalhes de uso, receitas e riscos: veja o README do addon.
 
-Para testar a entidade diretamente:
+### Dependencias entre packs
 
-```mcfunction
-/summon addon:stone_golem
-```
+- `gollem_addon` — independente.
+- `villagers_addon` — soft-dependencia de **uso** no Villager Soldiers (`fv:villager_free_handle` para contratar). Carrega sozinho, mas o hire do minerador exige o Soldiers ativo.
+- `villager_soldiers` — pack de terceiros completo; usar como referencia ou instalar se for jogar com o complemento.
 
-Para obter o item de nucleo:
+## CI e release
 
-```mcfunction
-/give @s addon:golem_core
-```
-
-Para checar se a entidade esta carregada apos o summon:
-
-```mcfunction
-/execute as @e[type=addon:stone_golem] at @s run say STONE_GOLEM_FOUND
-```
-
-Para testar o comportamento de guardiao criado pelo jogador:
-
-```mcfunction
-/event entity @e[type=addon:stone_golem,c=1] player_created
-```
-
-A receita configurada usa a crafting table:
-
-```text
- G
-RSR
- G
-```
-
-Onde:
-
-- `G` = bloco de ouro
-- `R` = bloco de redstone
-- `S` = pedra
-
-Resultado: `addon:golem_core`, o item usado para colocar `addon:golem_core_block` no mundo.
-
-## Criacao manual do Stone Golem
-
-Monte a estrutura abaixo e interaja com o `Golem Core` colocado na base:
-
-```text
-  P
- SSS
-  C
-```
-
-Onde:
-
-- `P` = carved pumpkin
-- `S` = stone
-- `C` = Golem Core (`addon:golem_core_block`)
-
-Quando a estrutura esta completa, o bloco de core executa `golems/spawn_stone_golem`, consome o core, as tres pedras e a carved pumpkin, e invoca `addon:stone_golem` com o spawn event `player_created`.
-
-## Comportamento do Stone Golem
-
-O golem tem:
-
-- vida inicial `40` e maxima `60`;
-- movimento `0.25`;
-- caixa de colisao `1.6 x 4.0`;
-- resistencia total a knockback;
-- ataque corpo-a-corpo defensivo como caminho principal;
-- projetil `addon:stone_projectile` preservado para validacao/refino de ataque a distancia;
-- raio de ataque de `25` blocos;
-- restricao de casa em raio de `60` blocos;
-- loot com redstone dust, glowstone dust ou diamond.
-
-Quando nasce naturalmente, o golem entra no grupo `wild` e mira jogadores. Quando nasce pela estrutura manual, o spawn event `player_created` remove o grupo `wild` e aplica o grupo `player_created`, desenhado para mirar monstros e jogadores que nao sejam o dono.
-
-## Pontos de atencao
-
-- O fluxo de criacao manual foi corrigido por contrato de arquivos, mas ainda precisa de teste visual/funcional dentro do Minecraft Bedrock/MCPE em `./test_world`.
-- A IA/movimento/combate do Stone Golem foi ajustada em `1.0.17`, mas ainda precisa ser aprovada em jogo usando `docs/golem-012-004-testes.md`.
-- A textura atual `resource_pack/textures/entity/stone_golem.png` foi recriada como atlas `128x128`, alinhada ao `texture_width` e `texture_height` declarados no modelo.
-- As texturas do item `golem_core` e da particula `stone` foram reduzidas para formatos leves e transparentes, mais adequados para MCPE.
-- Ha workflows de validacao e empacotamento em `.github/workflows`, mas nao ha
-  script local dedicado neste repositorio.
+- `validate_json.yml` — valida JSONs nos addons.
+- `validate-structure.yml` — manifests de `gollem_addon` e `villagers_addon`.
+- `build-mcaddon.yml` — gera `stone_golems.<version>.mcaddon` em tags `v*` a partir de `gollem_addon/`.
 
 ## Desenvolvimento
 
-Antes de alterar comportamento, valide os JSONs alterados e teste em um mundo Bedrock com os dois packs ativos.
+Antes de editar, leia:
 
-Comando util no PowerShell:
+- [`AGENTS.md`](AGENTS.md) — mapa do monorepo
+- [`docs/references/coding-guidelines.md`](docs/references/coding-guidelines.md) — o que pode mudar por tipo de task
+
+Validacao sintatica de JSON (PowerShell), no escopo do addon:
 
 ```powershell
-Get-ChildItem -Recurse -Filter *.json | ForEach-Object {
-  Get-Content -Raw $_.FullName | ConvertFrom-Json | Out-Null
-}
+Get-ChildItem <addon> -Recurse -Filter *.json |
+  Where-Object { $_.FullName -notmatch 'node_modules' } |
+  ForEach-Object {
+    Get-Content -Raw $_.FullName | ConvertFrom-Json | Out-Null
+  }
 ```
 
-Para empacotar manualmente, compacte `behavior_pack/` e `resource_pack/` separadamente ou copie as pastas diretamente para o diretorio `com.mojang`.
+JSON valido nao implica comportamento validado no Bedrock.
 
-## Validacao de spawn natural
+## Licenca / terceiros
 
-Para induzir um teste em mundo descartavel:
-
-```mcfunction
-/gamerule doMobSpawning true
-/difficulty normal
-/time set midnight
-/weather clear
-/locate biome minecraft:stony_peaks
-/tp @s <x> <y> <z>
-/kill @e[type=addon:stone_golem]
-```
-
-Depois aguarde em superficie de montanha escura, sem ficar colado no ponto esperado de spawn, e cheque:
-
-```mcfunction
-/execute as @e[type=addon:stone_golem] at @s run say STONE_GOLEM_FOUND
-```
-
-## Roadmap sugerido
-
-1. Corrigir e validar o fluxo de criacao manual do golem.
-2. Alinhar receita, item e bloco para um unico contrato de obtencao/colocacao.
-3. Adicionar nomes traduzidos para bloco e entidade.
-4. Criar um script de empacotamento `.mcaddon`.
-5. Validar spawn natural e balanceamento de dano/drop em jogo.
+`villager_soldiers/` e addon de terceiros (AnhemSteve). Licenca/uso comercial nao estao documentados aqui — tratar como referencia ate revisar direitos de uso.

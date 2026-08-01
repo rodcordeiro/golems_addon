@@ -4,6 +4,7 @@ import {
   EquipmentSlot,
 } from "@minecraft/server";
 import {
+  MINER_ID,
   CONTRACT_ID,
   FREE_HANDLE_ID,
   DP,
@@ -14,16 +15,15 @@ import {
 } from "./common.js";
 
 /**
- * Preserve biome skin index from free_handle when possible.
  * @param {import('@minecraft/server').Entity} source
  * @param {import('@minecraft/server').Entity} miner
+ * @param {number} mark
  */
-function copyMarkVariant(source, miner) {
+function applyMarkVariant(miner, mark) {
   try {
-    const src = source.getComponent("minecraft:mark_variant");
     const dst = miner.getComponent("minecraft:mark_variant");
-    if (src && dst && typeof src.value === "number") {
-      dst.value = src.value;
+    if (dst && typeof mark === "number") {
+      dst.value = mark;
     }
   } catch (_) {
     /* keep default plains */
@@ -74,11 +74,7 @@ world.afterEvents.playerInteractWithEntity.subscribe((event) => {
 
       miner.addTag(ownerTag(player.id));
       miner.nameTag = "Minerador de Tunel";
-
-      try {
-        const mv = miner.getComponent("minecraft:mark_variant");
-        if (mv) mv.value = mark;
-      } catch (_) {}
+      applyMarkVariant(miner, mark);
 
       miner.setProperty("va:stay_mode", false);
       miner.setDynamicProperty(DP.dirX, dir.x);
@@ -97,7 +93,9 @@ world.afterEvents.playerInteractWithEntity.subscribe((event) => {
         miner.setRotation({ x: 0, y: yaw });
       } catch (_) {}
 
-      player.sendMessage("Contrato aceito: Minerador de Tunel contratado. Entregue uma picareta para iniciar.");
+      player.sendMessage(
+        "Contrato aceito: Minerador de Tunel contratado. Entregue uma picareta para iniciar."
+      );
     } catch (e) {
       console.warn(`[va] hire failed: ${e}`);
     }
