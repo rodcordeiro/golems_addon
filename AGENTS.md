@@ -1,84 +1,46 @@
 # AGENTS.md
 
-Instrucoes locais para agentes trabalhando neste repositorio. Estas regras complementam as instrucoes globais.
+Instrucoes locais para agentes neste repositorio. Complementam as instrucoes globais.
 
-## Contexto do projeto
+## O que e este repositorio
 
-Este projeto e um addon de Minecraft Bedrock formado por:
+Monorepo de addons Minecraft Bedrock. Cada pasta de addon e um pack independente (Behavior Pack + Resource Pack quando existir). Nao misture namespaces, UUIDs ou assets entre addons sem pedido explicito.
 
-- `behavior_pack/`: comportamento, entidades, itens, blocos, receitas, loot tables e spawn rules.
-- `resource_pack/`: client entity, geometria, texturas, animacoes, render controllers, particulas e textos.
-- `.github/workflows/`: validacao de JSON, checagem estrutural Bedrock e empacotamento `.mcaddon` em tags `v*`.
-- `assets/`: recursos de apoio/referencia fora dos packs carregados diretamente pelo Bedrock.
+## Projetos
 
-Alvo atual observado nos manifests: Minecraft Bedrock `1.20.10+`, versao do pack `1.0.11`.
+| Pasta | Papel | Namespace | Status |
+|-------|-------|-----------|--------|
+| `gollem_addon/` | Addon proprio de Stone Golems | `addon:` | Ativo; packs em `behavior_pack/` e `resource_pack/` |
+| `villager_soldiers/` | Addon de terceiros (AnhemSteve) — soldados/villagers | `fv:` (+ secundarios) | Referencia; nao reescrever como produto proprio |
+| `villagers_addon/` | Addon proprio que complementa Villager Soldiers | a definir (`va:` sugerido) | Em ideacao; ver `docs/IDEIA_MINERADOR.md` |
 
-## Prioridades de trabalho
+Documentacao especifica por projeto:
 
-1. Preservar compatibilidade entre Behavior Pack e Resource Pack.
-2. Manter identificadores Bedrock coerentes entre arquivos (`identifier`, texturas, geometria, animacoes, eventos e receitas).
-3. Fazer mudancas pequenas e verificaveis.
-4. Documentar riscos quando um comportamento nao foi validado dentro do jogo.
-5. Nao tratar validacao sintatica de JSON como validacao funcional em Bedrock.
+- `gollem_addon/AGENTS.md` — contexto, riscos e validacao do Stone Golem
+- `villager_soldiers/AGENTS.md` — referencia tecnica do pack de soldados
+- `villagers_addon/AGENTS.md` — ponteiros do complemento
+- `villagers_addon/docs/IDEIA_MINERADOR.md` — ideia do minerador strip
 
-## Regras especificas
+## Outras pastas
 
-- Nao alterar UUIDs dos manifests sem necessidade explicita; isso pode quebrar mundos que ja referenciam os packs.
-- Nao alterar `min_engine_version` sem registrar impacto de compatibilidade.
-- Sempre que houver atualizacao funcional no addon, incrementar igualmente a versao em `behavior_pack/manifest.json` e `resource_pack/manifest.json`.
-- Ao mudar entidade, revisar tambem o par client-side em `resource_pack/entity`, `models`, `animations`, `animation_controllers`, `render_controllers` e texturas.
-- Ao mudar item/bloco/receita, revisar o contrato completo entre `behavior_pack/items`, `behavior_pack/blocks`, `behavior_pack/recipes`, traducoes e textura de item.
-- Ao mudar spawn natural, revisar `spawn_rules` e o grupo de componentes aplicado em `minecraft:entity_spawned`.
-- Ao adicionar identificadores novos, verificar duplicidade e referencias quebradas.
-- Nao mover assets de `assets/` para os packs sem confirmar formato, caminho e referencia nos JSONs Bedrock.
+| Pasta | Uso |
+|-------|-----|
+| `assets/` | Referencias visuais/debug fora dos packs carregados pelo Bedrock |
+| `test_world/` | Mundo local de validacao (foco atual: `gollem_addon`) |
+| `.github/workflows/` | CI (JSON, estrutura, empacotamento `.mcaddon`) |
+| `docs/references/` | Regras operacionais compartilhadas entre agentes |
 
-## Riscos conhecidos
+## Como trabalhar
 
-O fluxo de criacao manual do Stone Golem ainda nao deve ser descrito como validado em jogo ate ser corrigido/testado.
+1. Identifique o addon alvo da task antes de editar.
+2. Siga `docs/references/coding-guidelines.md` para o que pode / nao pode ser alterado por tipo de task.
+3. Prefira mudancas pequenas, locais ao addon alvo e verificaveis.
+4. Nao trate validacao sintatica de JSON como validacao funcional em Bedrock.
+5. Se o comportamento nao foi testado no jogo, declare isso explicitamente.
 
-Pontos conhecidos:
+## Prioridades
 
-- `behavior_pack/recipes/golem_core.json` retorna `addon:golem_core_block`, enquanto existe o item placeable `addon:golem_core`.
-- `behavior_pack/blocks/golem_core.json` verifica `stone` na posicao do proprio bloco interagido.
-- `behavior_pack/blocks/golem_core.json` chama `addon:spawn_stone_golem`, mas a entidade `addon:stone_golem` nao define esse evento.
-
-Ao atuar nessa area, alinhar primeiro o contrato de receita, item, bloco, estrutura e spawn da entidade.
-
-## Validacao local
-
-Validar JSONs antes de concluir mudancas:
-
-```powershell
-Get-ChildItem -Recurse -Filter *.json | ForEach-Object {
-  Get-Content -Raw $_.FullName | ConvertFrom-Json | Out-Null
-}
-```
-
-Quando `jq` estiver disponivel, a validacao equivalente ao workflow principal e:
-
-```bash
-find . -name "*.json" -print0 | xargs -0 -n1 jq empty
-```
-
-Tambem conferir estrutura minima:
-
-```powershell
-Test-Path behavior_pack
-Test-Path resource_pack
-Test-Path behavior_pack/manifest.json
-Test-Path resource_pack/manifest.json
-```
-
-## GitHub Actions
-
-- `.github/workflows/validate_json.yml` valida JSONs e tenta detectar identificadores duplicados.
-- `.github/workflows/validate-structure.yml` valida pastas obrigatorias e UUIDs de manifests.
-- `.github/workflows/build-mcaddon.yml` gera `stone_golems.<version>.mcaddon` em tags `v*`.
-
-Antes de alterar esses workflows, registrar a razao operacional e o impacto em release.
-
-## Documentacao
-
-- Atualizar `README.md` quando mudar instalacao, uso, comportamento, compatibilidade, empacotamento ou riscos conhecidos.
-- Se uma funcionalidade nao foi testada no Bedrock, escrever isso explicitamente.
-- Preferir ASCII nos arquivos Markdown deste projeto, mantendo consistencia com o README atual.
+1. Isolamento entre addons (IDs, UUIDs, scripts, texturas).
+2. Contrato BP ↔ RP coerente dentro do addon alvo.
+3. Compatibilidade com o `min_engine_version` do addon alvo.
+4. Documentar riscos e lacunas de teste in-game.
