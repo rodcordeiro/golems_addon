@@ -13,8 +13,8 @@
           "family": ["stone_golem", "mob", "monster"]
         },
         "minecraft:behavior.nearest_attackable_target": {
-          "priority": 1,
-          "must_reach": true,
+          "priority": 2,
+          "must_reach": false,
           "must_see": true,
           "entity_types": [
             {
@@ -23,7 +23,7 @@
                 "subject": "other",
                 "value": "player"
               },
-              "max_dist": 30
+              "max_dist": 32
             }
           ]
         }
@@ -33,8 +33,8 @@
           "family": ["stone_golem", "mob", "player_golem"]
         },
         "minecraft:behavior.nearest_attackable_target": {
-          "priority": 1,
-          "must_reach": true,
+          "priority": 2,
+          "must_reach": false,
           "must_see": true,
           "entity_types": [
             {
@@ -76,6 +76,55 @@
       },
       "tamed": {
         "minecraft:is_tamed": {},
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "must_reach": false,
+          "must_see": true,
+          "entity_types": [
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "monster"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "stone_golem"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "player_golem"
+                  }
+                ]
+              },
+              "max_dist": 35
+            },
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "is_owner",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": true
+                  }
+                ]
+              },
+              "max_dist": 35
+            }
+          ]
+        },
         "minecraft:behavior.follow_owner": {
           "priority": 3,
           "speed_multiplier": 0.9,
@@ -114,22 +163,33 @@
         "height": 4.0
       },
       "minecraft:attack": {
-        "damage": 12
+        "damage": 12,
+        "attack_owner": false
+      },
+      "minecraft:behavior.ranged_attack": {
+        "priority": 2,
+        "attack_interval_min": 2.0,
+        "attack_interval_max": 4.0,
+        "attack_radius": 28,
+        "attack_radius_min": 3
+      },
+      "minecraft:shooter": {
+        "def": "addon:stone_projectile"
+      },
+      "minecraft:behavior.move_towards_target": {
+        "priority": 3,
+        "speed_multiplier": 1.0,
+        "within_radius": 32
       },
       "minecraft:behavior.delayed_attack": {
-        "priority": 1,
+        "priority": 5,
         "attack_duration": 0.75,
         "hit_delay_pct": 0.54,
         "cooldown_time": 1.2,
         "reach_multiplier": 2.2
       },
-      "minecraft:behavior.move_towards_target": {
-        "priority": 2,
-        "speed_multiplier": 1.0,
-        "within_radius": 32
-      },
       "minecraft:behavior.hurt_by_target": {
-        "priority": 2,
+        "priority": 1,
         "entity_types": {
           "filters": {
             "all_of": [
@@ -155,28 +215,20 @@
           }
         }
       },
-      "minecraft:behavior.random_stroll": {
-        "priority": 7,
-        "speed_multiplier": 0.8
-      },
-      "minecraft:behavior.move_towards_restriction": {
-        "priority": 5,
-        "speed_multiplier": 1.0
-      },
       "minecraft:behavior.restrict_open_door": {
         "priority": 4
       },
-      "minecraft:behavior.ranged_attack": {
+      "minecraft:behavior.move_towards_restriction": {
         "priority": 6,
-        "attack_interval": 40,
-        "attack_radius": 25
-      },
-      "minecraft:shooter": {
-        "def": "addon:stone_projectile"
+        "speed_multiplier": 1.0
       },
       "minecraft:behavior.look_at_player": {
-        "priority": 6,
+        "priority": 7,
         "look_distance": 30
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 8,
+        "speed_multiplier": 0.8
       },
       "minecraft:home": {
         "restriction_radius": 60

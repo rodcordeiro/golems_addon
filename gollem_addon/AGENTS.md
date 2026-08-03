@@ -26,10 +26,11 @@ O fluxo de criacao manual do Stone Golem nao deve ser descrito como validado em 
 
 Em `1.0.18`: removidos `minecraft:projectile`/`minecraft:shoot` invalidos do mob; `player_created` mira monstros; langs; spawn rules; client do projetil.
 Em `1.0.19`: removido `golem_anchor`; tame com `iron_ingot`; anim spawn no controller; impacto via `stone_impact_fx` + particula `addon:stone_impact`.
+Em `1.0.20`: ranged primario (wild + guard); guard mira monstros e outros players (nao owner); `must_reach: false`; melee so fallback.
 
 Ao atuar nessa area, alinhar primeiro o contrato receita ↔ item ↔ bloco ↔ estrutura ↔ spawn/evento da entidade.
 
-Detalhes de backlog e testes: `docs/backlog.md`, `docs/golem-012-004-testes.md`.
+Detalhes de backlog e testes: `docs/backlog.md`, `docs/gauntlet-ranged.md`, `docs/golem-012-004-testes.md`.
 
 ## Validacao local (esta pasta)
 

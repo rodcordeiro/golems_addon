@@ -3,18 +3,19 @@
 Addon proprio de Minecraft Bedrock que adiciona um golem de pedra com comportamento hostil/defensivo, modelo, textura, animacoes, particulas, item/bloco de nucleo, receita, loot table e spawn em biomas de montanha.
 
 **Namespace:** `addon:`  
-**Versao dos packs:** `1.0.19`  
+**Versao dos packs:** `1.0.20`  
 **min_engine_version:** `1.20.10`  
 **Monorepo:** pasta `gollem_addon/` (ver [`../README.md`](../README.md))
 
 ## Estado
 
-Conteudo principal implementado nos packs. Em `1.0.19`: tame/dono, anim de spawn no controller, impacto com `addon:stone_impact`, remocao de `golem_anchor`. Validacao final in-game em `../test_world/` ainda necessaria (GOLEM-010/011).
+Conteudo principal implementado nos packs. Em `1.0.19`: tame/dono, anim de spawn no controller, impacto com `addon:stone_impact`, remocao de `golem_anchor`. Em `1.0.20`: combate **ranged primario**; pre-tame mira so monstros; apos tame mira monstros e outros jogadores (nao o dono). Validacao in-game ainda necessaria (GOLEM-010/011/023).
 
 Docs internos:
 
 - [`AGENTS.md`](AGENTS.md)
 - [`docs/backlog.md`](docs/backlog.md)
+- [`docs/gauntlet-ranged.md`](docs/gauntlet-ranged.md)
 - [`docs/golem-012-004-testes.md`](docs/golem-012-004-testes.md)
 
 ## Conteudo
@@ -101,19 +102,19 @@ A estrutura completa consome os blocos e invoca `addon:stone_golem` com spawn ev
 
 ### Tame / dono (`1.0.19`)
 
-Golem `player_created`: alimentar com **lingote de ferro** para tame. Passa a seguir o dono e a reagir a quem o fere / a quem o dono fere.
+Golem `player_created`: alimentar com **lingote de ferro** para tame. Passa a seguir o dono, reagir a dano do/pelo dono e mirar **outros jogadores** (alem de monstros).
 
 ## Comportamento (resumo)
 
 - Vida inicial `40` / maxima `60`
 - Movimento `0.25`, colisao `1.6 x 4.0`
-- Ataque melee defensivo como caminho principal; projetil preservado (impacto com FX custom)
-- Spawn natural: grupo `wild` (mira jogadores)
-- Criado pelo jogador: grupo `player_created` (mira monstros); tame opcional com iron ingot
+- Ataque primario: **arremesso** de `addon:stone_projectile` (impacto com FX custom); melee so como fallback perto (~3 blocos)
+- Spawn natural: grupo `wild` — hostil a jogadores
+- Criado pelo jogador: `player_created` mira **monstros**; apos tame (`iron_ingot`) mira monstros **e** outros players (nunca o dono)
 
 ## Pontos de atencao
 
-- Criacao manual, tame e FX de impacto precisam de aprovacao in-game — ver `docs/backlog.md` (GOLEM-010/011) e `docs/golem-012-004-testes.md`.
+- Criacao manual, tame, throw ranged e FX de impacto precisam de aprovacao in-game — ver `docs/backlog.md` (GOLEM-010/011/023), `docs/gauntlet-ranged.md` e `docs/golem-012-004-testes.md`.
 - Empacotamento CI: tags `v*` geram `stone_golems.<version>.mcaddon` a partir desta pasta.
 
 ## Validacao local
