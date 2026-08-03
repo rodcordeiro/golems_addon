@@ -27,6 +27,7 @@ O fluxo de criacao manual do Stone Golem nao deve ser descrito como validado em 
 Em `1.0.18`: removidos `minecraft:projectile`/`minecraft:shoot` invalidos do mob; `player_created` mira monstros; langs; spawn rules; client do projetil.
 Em `1.0.19`: removido `golem_anchor`; tame com `iron_ingot`; anim spawn no controller; impacto via `stone_impact_fx` + particula `addon:stone_impact`.
 Em `1.0.20`: ranged primario (wild + guard); guard mira monstros e outros players (nao owner); `must_reach: false`; melee so fallback.
+Em `1.0.21`: contrato pre-tame com swap `pre_tame_targets`/`tamed_targets`; `damage_sensor` ignora dono.
 
 Ao atuar nessa area, alinhar primeiro o contrato receita ↔ item ↔ bloco ↔ estrutura ↔ spawn/evento da entidade.
 
