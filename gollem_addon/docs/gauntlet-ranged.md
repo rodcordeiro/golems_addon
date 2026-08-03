@@ -1,7 +1,7 @@
 # Gauntlet — Stone Golem ranged combat realignment
 
 Atualizado em: 2026-08-03  
-Packs alvo: `1.0.20`  
+Packs alvo: `1.0.21`  
 Escopo: somente `gollem_addon/`  
 Referencia de qualidade: `villager_soldiers` (`iron_golem_guard`, soldados ranged) — extrair padroes, nao copiar pack.
 
@@ -20,6 +20,7 @@ Intent de produto (nao negociavel):
 | ---- | ------ | ------ |
 | GOLEM-018 | Feito (codigo) | Ranged como caminho primario (prioridade + radius); melee fallback |
 | GOLEM-019 | Feito (codigo) | Targeting: wild=`player`; pre-tame=`monster`; tamed=`monster` + `player` nao-owner; `must_reach: false` |
+| GOLEM-024 | Feito (codigo) | Contrato pre-tame explicito: grupos `pre_tame_targets` ↔ `tamed_targets` + owner damage ignore (`1.0.21`) |
 | GOLEM-020 | Feito (codigo) | Contrato BP shooter/projectile ↔ RP client + FX existentes |
 | GOLEM-021 | Feito (codigo) | Controller throw: manter hooks `query.is_using_item` (sem redesenho visual) |
 | GOLEM-022 | Feito (docs) | Bump 1.0.20 + README/backlog/AGENTS alinhados ao fantasy ranged |
@@ -46,12 +47,15 @@ Intent de produto (nao negociavel):
 
 **Acao:**
 
-- Wild: `must_reach: false`, `must_see: true`, family `player`.
-- `player_created` (pre-tame): so `monster` (exclui `stone_golem` / `player_golem`) — evita aggro no builder.
-- `tamed`: sobrescreve target com `monster` + `player` com `is_owner != true`.
-- `attack_owner: false`; `hurt_by_target` ignora self-family e owner; follow/owner_hurt_* no grupo tamed.
+- Grupos separados (swap no tame, sem dois `nearest_attackable_target` ativos):
+  - `pre_tame_targets`: so `monster` (exclui `stone_golem` / `player_golem`).
+  - `tamed_targets`: `monster` + `player` com `is_owner != true`.
+- Evento `player_created`: `player_created` + `can_tame` + `pre_tame_targets`.
+- Evento `addon:tamed`: remove `can_tame` + `pre_tame_targets`; add `tamed` + `tamed_targets`.
+- `tamed`: follow/owner_hurt_* + `damage_sensor` ignora dano do dono.
+- `attack_owner: false`; `hurt_by_target` ignora self-family e owner.
 
-**Mitigacao QA ([Nyx](419e89a6-522b-457a-885a-846323048d28)):** pre-tame nao mira players; PvP guard so apos iron_ingot.
+**Mitigacao QA:** pre-tame nao mira players; PvP guard so apos iron_ingot; swap de grupos evita conflito de targeting.
 
 ### GOLEM-020 — Contrato projetil BP↔RP
 

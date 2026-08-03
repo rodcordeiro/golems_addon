@@ -3,13 +3,13 @@
 Addon proprio de Minecraft Bedrock que adiciona um golem de pedra com comportamento hostil/defensivo, modelo, textura, animacoes, particulas, item/bloco de nucleo, receita, loot table e spawn em biomas de montanha.
 
 **Namespace:** `addon:`  
-**Versao dos packs:** `1.0.20`  
+**Versao dos packs:** `1.0.21`  
 **min_engine_version:** `1.20.10`  
 **Monorepo:** pasta `gollem_addon/` (ver [`../README.md`](../README.md))
 
 ## Estado
 
-Conteudo principal implementado nos packs. Em `1.0.19`: tame/dono, anim de spawn no controller, impacto com `addon:stone_impact`, remocao de `golem_anchor`. Em `1.0.20`: combate **ranged primario**; pre-tame mira so monstros; apos tame mira monstros e outros jogadores (nao o dono). Validacao in-game ainda necessaria (GOLEM-010/011/023).
+Conteudo principal implementado nos packs. Em `1.0.21`: contrato pre-tame explicito (`pre_tame_targets` → `tamed_targets` no tame) + ignore de dano do dono. Combate **ranged primario**. Validacao in-game ainda necessaria (GOLEM-010/011/023).
 
 Docs internos:
 

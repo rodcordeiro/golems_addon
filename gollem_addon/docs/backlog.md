@@ -6,7 +6,7 @@ Regras de escopo: `../../docs/references/coding-guidelines.md` e `../AGENTS.md`.
 Checklist comparativo / testes manuais: `golem-012-004-testes.md`.
 Gauntlet combate ranged: `gauntlet-ranged.md`.
 
-**Status packs:** `1.0.20`  
+**Status packs:** `1.0.21`  
 **Namespace:** `addon:` | **min_engine_version:** `1.20.10`  
 **Gates de release in-game:** GOLEM-010 / GOLEM-011 / GOLEM-023 (ainda abertos).
 
@@ -65,6 +65,7 @@ A detalhar apos Milestone 1.
 | 17 | GOLEM-017 | Feito (codigo) | Impacto: FX `addon:stone_impact_fx` + particula `addon:stone_impact` (`1.0.19`) |
 | 18 | GOLEM-018 | Feito (codigo) | Ranged primario; melee fallback (`1.0.20`) |
 | 19 | GOLEM-019 | Feito (codigo) | Wild=player; pre-tame=monster; tamed=+outros players (`1.0.20`) |
+| 24 | GOLEM-024 | Feito (codigo) | Contrato pre-tame: swap `pre_tame_targets`/`tamed_targets` + owner dmg ignore (`1.0.21`) |
 | 20 | GOLEM-020 | Feito (codigo) | Contrato shooter/projectile BP↔RP auditado (`1.0.20`) |
 | 21 | GOLEM-021 | Feito (codigo) | Hooks throw `is_using_item` mantidos (`1.0.20`) |
 | 22 | GOLEM-022 | Feito (docs) | Bump/docs fantasy ranged (`1.0.20`) |
@@ -124,14 +125,14 @@ Detalhe operacional: `gauntlet-ranged.md`.
 
 `ranged_attack` priority 2 (`attack_interval_min/max` 2–4s, radius 28, min 3); `delayed_attack` priority 5 como fallback; `shooter` → `addon:stone_projectile`.
 
-### GOLEM-019 — Targeting
+### GOLEM-019 / GOLEM-024 — Targeting e contrato pre-tame
 
 - Wild: players; `must_reach: false`.
-- `player_created` (pre-tame): so monsters (exclui familias golem) — evita aggro no builder.
-- `tamed`: monsters + players com `is_owner != true` (sobrescreve target); `attack_owner: false`.
-- `hurt_by_target` continua ignorando self-family e owner.
+- `player_created` + `pre_tame_targets`: so monsters (exclui familias golem) — sem aggro no builder.
+- `addon:tamed`: remove `pre_tame_targets`/`can_tame`; add `tamed` + `tamed_targets` (monsters + players nao-owner).
+- `tamed`: follow/owner_hurt_* + `damage_sensor` ignora dano do dono; `attack_owner: false`.
 
-Mitigacao do WARN do gauntlet: PvP guard so apos tame.
+PvP guard so apos tame. Prova em GOLEM-023.
 
 ### GOLEM-020 / GOLEM-021
 

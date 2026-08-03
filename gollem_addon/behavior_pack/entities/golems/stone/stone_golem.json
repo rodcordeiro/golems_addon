@@ -31,7 +31,9 @@
       "player_created": {
         "minecraft:type_family": {
           "family": ["stone_golem", "mob", "player_golem"]
-        },
+        }
+      },
+      "pre_tame_targets": {
         "minecraft:behavior.nearest_attackable_target": {
           "priority": 2,
           "must_reach": false,
@@ -74,8 +76,7 @@
           }
         }
       },
-      "tamed": {
-        "minecraft:is_tamed": {},
+      "tamed_targets": {
         "minecraft:behavior.nearest_attackable_target": {
           "priority": 2,
           "must_reach": false,
@@ -124,7 +125,10 @@
               "max_dist": 35
             }
           ]
-        },
+        }
+      },
+      "tamed": {
+        "minecraft:is_tamed": {},
         "minecraft:behavior.follow_owner": {
           "priority": 3,
           "speed_multiplier": 0.9,
@@ -138,6 +142,20 @@
         },
         "minecraft:behavior.owner_hurt_target": {
           "priority": 1
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_owner",
+                  "subject": "other",
+                  "value": true
+                }
+              },
+              "deals_damage": false
+            }
+          ]
         }
       }
     },
@@ -260,15 +278,15 @@
           "component_groups": ["wild"]
         },
         "add": {
-          "component_groups": ["player_created", "can_tame"]
+          "component_groups": ["player_created", "can_tame", "pre_tame_targets"]
         }
       },
       "addon:tamed": {
         "remove": {
-          "component_groups": ["can_tame"]
+          "component_groups": ["can_tame", "pre_tame_targets"]
         },
         "add": {
-          "component_groups": ["tamed"]
+          "component_groups": ["tamed", "tamed_targets"]
         }
       }
     }
