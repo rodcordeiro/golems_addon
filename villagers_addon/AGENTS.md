@@ -8,14 +8,16 @@ Addon proprio que complementa `villager_soldiers` (namespace `fv:`). Nao substit
 - README deste addon: `README.md`
 - Regras: `../docs/references/coding-guidelines.md` (secao 2.3)
 - Backlog: `docs/backlog.md`
-- Ideia: `docs/IDEIA_MINERADOR.md`
+- Ideia (miner): `docs/IDEIA_MINERADOR.md`
+- Ideia (railer): `docs/IDEIA_RAILER.md`
 - Referencia: `../villager_soldiers/AGENTS.md`
 
 ## Estado
 
-- Namespace `va:`, versao packs `1.0.1`, `min_engine_version` `[1, 21, 130]`
-- MVP em codigo (hire, strip, inventario, stay); MINER-011 fixado em codigo; **revalidar retomada in-game**
+- Namespace `va:`, versao packs `1.0.2`, `min_engine_version` `[1, 21, 130]`
+- MVP + Milestone 2 (MINER-012..016) em codigo; **revalidar in-game** (incl. MINER-010)
 - Soft-dependencia de uso: Villager Soldiers (`fv:villager_free_handle`)
+- Scripts: `main`, `common`, `hire`, `minerInteract`, `minerLoop`, `deposit`, `tunnelBanner`
 
 ## Ao editar
 

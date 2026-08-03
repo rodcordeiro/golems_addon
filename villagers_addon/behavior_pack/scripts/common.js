@@ -5,9 +5,18 @@ import { ItemStack } from "@minecraft/server";
 export const MINER_ID = "va:villager_miner";
 export const CONTRACT_ID = "va:mining_contract";
 export const FREE_HANDLE_ID = "fv:villager_free_handle";
+export const BANNER_ITEM_ID = "va:tunnel_start_banner";
+export const BANNER_ENTITY_ID = "va:tunnel_start_banner_marker";
 export const OWNER_TAG_PREFIX = "va_owner_";
 export const MAX_DISTANCE = 64;
 export const TICK_INTERVAL = 10;
+export const CHEST_SEARCH_RADIUS = 24;
+export const CHEST_SEARCH_Y = 6;
+export const BRANCH_CHANCE = 0.12;
+export const BRANCH_MIN_LEN = 2;
+export const BRANCH_MAX_LEN = 4;
+export const STAIR_CHANCE = 0.1;
+export const STAIR_STEPS = 2;
 
 /** Inventory slot reserved for the mining pickaxe (cargo uses the rest). */
 export const TOOL_SLOT = 0;
@@ -23,9 +32,17 @@ export const DP = {
   axisZ: "va_axis_z",
   state: "va_state",
   toolSlot: "va_tool_slot",
+  branchRem: "va_branch_rem",
+  branchDirX: "va_branch_dx",
+  branchDirZ: "va_branch_dz",
+  stairRem: "va_stair_rem",
+  stairSign: "va_stair_sign",
+  chestX: "va_chest_x",
+  chestY: "va_chest_y",
+  chestZ: "va_chest_z",
 };
 
-/** @typedef {'mining' | 'returning' | 'waiting' | 'stopped'} MinerState */
+/** @typedef {'mining' | 'returning' | 'waiting' | 'stopped' | 'depositing'} MinerState */
 
 export const FILL_BLOCKS = new Set([
   "minecraft:stone",
@@ -44,6 +61,17 @@ export const FILL_BLOCKS = new Set([
   "minecraft:blackstone",
 ]);
 
+export const COPPER_CHESTS = new Set([
+  "minecraft:copper_chest",
+  "minecraft:exposed_copper_chest",
+  "minecraft:weathered_copper_chest",
+  "minecraft:oxidized_copper_chest",
+  "minecraft:waxed_copper_chest",
+  "minecraft:waxed_exposed_copper_chest",
+  "minecraft:waxed_weathered_copper_chest",
+  "minecraft:waxed_oxidized_copper_chest",
+]);
+
 export const HARD_STOP = new Set([
   "minecraft:bedrock",
   "minecraft:barrier",
@@ -55,11 +83,6 @@ export const HARD_STOP = new Set([
   "minecraft:chest",
   "minecraft:trapped_chest",
   "minecraft:ender_chest",
-  "minecraft:copper_chest",
-  "minecraft:exposed_copper_chest",
-  "minecraft:weathered_copper_chest",
-  "minecraft:oxidized_copper_chest",
-  "minecraft:waxed_copper_chest",
   "minecraft:command_block",
   "minecraft:chain_command_block",
   "minecraft:repeating_command_block",
@@ -69,6 +92,7 @@ export const HARD_STOP = new Set([
   "minecraft:end_portal_frame",
   "minecraft:nether_portal",
   "minecraft:portal",
+  ...COPPER_CHESTS,
 ]);
 
 export const SOFT_STOP = new Set([
@@ -117,6 +141,13 @@ export function isFill(typeId) {
 /**
  * @param {string} typeId
  */
+export function isCopperChest(typeId) {
+  return COPPER_CHESTS.has(typeId);
+}
+
+/**
+ * @param {string} typeId
+ */
 export function isHardStop(typeId) {
   return HARD_STOP.has(typeId);
 }
@@ -141,11 +172,32 @@ export function yawToCardinal(yaw) {
 }
 
 /**
+ * Horizontal perpendicular (left) of a cardinal dig direction.
+ * @param {{x:number,z:number}} d
+ */
+export function perpendicular(d) {
+  return { x: -d.z, z: d.x };
+}
+
+/**
  * @param {import('@minecraft/server').Entity} entity
  * @param {string} playerId
  */
 export function ownerTag(playerId) {
   return `${OWNER_TAG_PREFIX}${playerId}`;
+}
+
+/**
+ * @param {import('@minecraft/server').Entity} entity
+ * @returns {string | undefined}
+ */
+export function getOwnerId(entity) {
+  for (const tag of entity.getTags()) {
+    if (tag.startsWith(OWNER_TAG_PREFIX)) {
+      return tag.slice(OWNER_TAG_PREFIX.length);
+    }
+  }
+  return undefined;
 }
 
 /**
@@ -225,6 +277,22 @@ export function cargoHasSpace(miner) {
 }
 
 /**
+ * True if any inventoriable cargo remains in slots 1+.
+ * @param {import('@minecraft/server').Entity} miner
+ */
+export function hasCargo(miner) {
+  const c = getMinerContainer(miner);
+  if (!c) return false;
+  const size = c.size ?? 0;
+  for (let i = 0; i < size; i++) {
+    if (i === TOOL_SLOT) continue;
+    const item = c.getItem(i);
+    if (!isEmptySlot(item) && !isToolItem(item)) return true;
+  }
+  return false;
+}
+
+/**
  * @param {import('@minecraft/server').Entity} miner
  * @param {string} itemId
  * @param {number} [amount]
@@ -268,4 +336,13 @@ export function blockPos(loc) {
     y: Math.floor(loc.y),
     z: Math.floor(loc.z),
   };
+}
+
+/**
+ * Manhattan horizontal distance.
+ * @param {{x:number,z:number}} a
+ * @param {{x:number,z:number}} b
+ */
+export function horizDist(a, b) {
+  return Math.abs(a.x - b.x) + Math.abs(a.z - b.z);
 }

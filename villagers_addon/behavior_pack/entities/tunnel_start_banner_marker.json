@@ -1,0 +1,70 @@
+{
+  "format_version": "1.21.90",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "va:tunnel_start_banner_marker",
+      "is_spawnable": false,
+      "is_summonable": true
+    },
+    "component_groups": {
+      "va:despawn_drop": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": true
+        },
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "num_to_spawn": 1,
+            "single_use": true,
+            "spawn_item": "va:tunnel_start_banner"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["va_tunnel_banner", "inanimate", "mob"]
+      },
+      "minecraft:collision_box": {
+        "width": 0.4,
+        "height": 1.9
+      },
+      "minecraft:health": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:nameable": {},
+      "minecraft:persistent": {},
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "va_tunnel_banner"
+              },
+              "event": "va:break_banner",
+              "target": "self"
+            },
+            "deals_damage": false
+          }
+        ]
+      }
+    },
+    "events": {
+      "va:break_banner": {
+        "add": {
+          "component_groups": ["va:despawn_drop"]
+        }
+      }
+    }
+  }
+}

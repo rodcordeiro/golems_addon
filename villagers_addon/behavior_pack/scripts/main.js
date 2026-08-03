@@ -4,4 +4,5 @@
  */
 import "./hire.js";
 import "./minerInteract.js";
+import "./tunnelBanner.js";
 import "./minerLoop.js";

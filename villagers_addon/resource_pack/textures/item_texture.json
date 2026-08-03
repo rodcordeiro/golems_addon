@@ -4,6 +4,9 @@
   "texture_data": {
     "va_mining_contract": {
       "textures": "textures/items/mining_contract"
+    },
+    "va_tunnel_start_banner": {
+      "textures": "textures/items/tunnel_start_banner"
     }
   }
 }
