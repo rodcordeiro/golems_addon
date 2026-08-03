@@ -4,5 +4,7 @@
  */
 import "./hire.js";
 import "./minerInteract.js";
+import "./commandFlag.js";
 import "./tunnelBanner.js";
 import "./minerLoop.js";
+// torch.js is pulled in by minerLoop (MINER-019 placement cadence)

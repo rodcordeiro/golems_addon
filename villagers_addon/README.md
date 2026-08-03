@@ -3,14 +3,14 @@
 Addon proprio que complementa o [Villager Soldiers](../villager_soldiers/README.md) com um villager trabalhador que faz tunel 3x3, coleta ores e deposita em copper chest.
 
 **Namespace:** `va:`  
-**Versao dos packs:** `1.0.2`  
+**Versao dos packs:** `1.0.4`  
 **min_engine_version:** `1.21.130`  
-**Script API:** `@minecraft/server` `2.4.0`  
+**Script API:** `@minecraft/server` `2.4.0` + `@minecraft/server-ui` `2.0.0`  
 **Monorepo:** pasta `villagers_addon/` (ver [`../README.md`](../README.md))
 
 ## Estado
 
-MVP + Milestone 2 (MINER-012..016) em codigo. MINER-010 retomada corrigida em 1.0.1 — **revalidar in-game**. Milestone 2 **nao testada in-game**.
+MVP + Milestone 2 (MINER-012..016) + MINER-019 (tochas) + MINER-017 (command flag) em codigo. MINER-010 retomada corrigida em 1.0.1 — **revalidar in-game**. M2 / tochas / flag **nao testadas in-game**. Icone final da flag = MINER-018.
 
 Docs:
 
@@ -38,6 +38,7 @@ Sem Soldiers, o pack carrega, mas o hire do minerador nao tem alvo.
 | `va:villager_miner` | Minerador de Tunel |
 | `va:tunnel_start_banner` | Banner placeable de inicio de tunel (origem compartilhada) |
 | `va:tunnel_start_banner_marker` | Entidade marcadora do banner |
+| `va:command_flag` | Bandeira de comando (direcao + stay via ModalForm) |
 
 - Receita shaped (crafting table): picareta de madeira em cima do papel → contrato (picareta consumida)
 
@@ -48,13 +49,16 @@ A
 
 - `P` = wooden_pickaxe
 - `A` = paper
+- Receita flag: stick sobre paper → `va:command_flag`
 - Tunel **3x3** na direcao do olhar do jogador no hire
 - Ore → inventario; stone/deepslate/netherrack/cobble → destruidos sem loot
 - Inventario cheio → deposita cargo no copper chest mais proximo (raio 24); se nao achar, volta a origem e aguarda
 - Banner de inicio sobrescreve o ponto de hire como origem (distancia / retorno) para miners do mesmo dono
 - Formigueiro: desvios laterais ocasionais; escada ~10% (+/-2 Y)
+- Tochas (`minecraft:torch`): estoque nos slots 1+; coloca a cada ~10 passos (parede preferida); restock no deposito
+- Command flag: dono abre ModalForm (N/E/S/W + stay); retarget eixo na posicao atual
 - Picareta de trabalho entregue depois (interact); sem picareta nao cava
-- Interact (dono, mao vazia) alterna `stay_mode`
+- Interact dono: picareta → tocha → command_flag → mao vazia (stay)
 - Limite 64 blocos; 1 passo a cada 10 ticks; stop em lava/agua/bedrock
 
 Visual baseado no clumper do Soldiers (geo/texturas adaptadas para `va:`). Banner com geo `geometry.va_tp_banner` (padrao Soldiers, IDs `va:`).
@@ -66,7 +70,7 @@ behavior_pack/
   entities/
   items/
   recipes/
-  scripts/          main, hire, minerLoop, deposit, tunnelBanner, ...
+  scripts/          main, hire, minerInteract, commandFlag, minerLoop, deposit, tunnelBanner, torch, ...
   manifest.json
 
 resource_pack/
@@ -95,6 +99,7 @@ docs/
 ```mcfunction
 /give @s va:mining_contract
 /give @s va:tunnel_start_banner
+/give @s va:command_flag
 /summon va:villager_miner
 ```
 
@@ -107,18 +112,19 @@ Fluxo survival previsto:
 5. Entregar uma picareta ao minerador.
 6. Coloque copper chest perto da origem para deposito automatico.
 7. Interact vazio para pausar/retomar (`stay_mode`).
+8. Craft `va:command_flag` (stick sobre paper) para mudar direcao sem recontratar.
 
 ## Ainda nao implementado
 
-- MINER-017 / MINER-018 — flags/comandos de direcao / UI
-- Branch mining, tochas, rails
+- MINER-018 — icone proprio da flag + polish de comando
+- Branch mining dedicado; **RAILER-001**
 
 ## Pontos de atencao
 
 - Nao edita o pack Soldiers; coexistencia por IDs separados.
 - Picareta no free_handle ainda vira `fv:villager_clumper` pelo Soldiers — o caminho deste addon e o **item contrato**.
 - Retorno a origem usa teleport; inventario sem UI dedicada de esvaziar.
-- Comportamento Milestone 2 nao marcado como validado in-game.
+- Comportamento Milestone 2 / 017 / 019 nao marcado como validado in-game.
 
 ## Validacao local
 

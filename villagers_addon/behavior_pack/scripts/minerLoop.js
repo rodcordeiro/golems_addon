@@ -1,6 +1,7 @@
 /**
  * Tunnel Miner work loop.
- * MINER-012 3x3 section, MINER-013 formigueiro, MINER-014 stairs, MINER-016 deposit.
+ * MINER-012 3x3, MINER-013 formigueiro, MINER-014 stairs,
+ * MINER-016 deposit, MINER-019 torches.
  */
 
 import { system, world } from "@minecraft/server";
@@ -28,8 +29,9 @@ import {
   horizDist,
 } from "./common.js";
 import { hasPickaxe, damageTool, ensureToolInSlot0 } from "./minerInteract.js";
-import { locateDepositChest, depositCargoToChest } from "./deposit.js";
+import { locateDepositChest, depositAndRestock } from "./deposit.js";
 import { resolveTunnelOrigin } from "./tunnelBanner.js";
+import { afterSuccessfulMineStep } from "./torch.js";
 
 /**
  * @param {import('@minecraft/server').Entity} miner
@@ -304,7 +306,7 @@ function handleFullCargo(miner) {
   const cp = blockPos(chest.location);
   teleportTo(miner, { x: cp.x, y: cp.y, z: cp.z });
 
-  const { freed } = depositCargoToChest(miner, chest);
+  const { freed } = depositAndRestock(miner, chest);
   if (freed && hasPickaxe(miner) && !stayOn(miner)) {
     setState(miner, "mining");
     return;
@@ -342,7 +344,7 @@ function tickMiner(miner) {
     }
     const cp = blockPos(chest.location);
     teleportTo(miner, { x: cp.x, y: cp.y, z: cp.z });
-    const { freed } = depositCargoToChest(miner, chest);
+    const { freed } = depositAndRestock(miner, chest);
     if (freed && hasPickaxe(miner) && !stayOn(miner)) {
       setState(miner, "mining");
       state = "mining";
@@ -393,6 +395,9 @@ function tickMiner(miner) {
     handleFullCargo(miner);
     return;
   }
+
+  // Cadence counts dig success even if the pickaxe breaks this step.
+  afterSuccessfulMineStep(miner, next, digDir);
 
   if (!damageTool(miner)) {
     setState(miner, "waiting");

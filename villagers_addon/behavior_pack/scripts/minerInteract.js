@@ -6,13 +6,16 @@ import {
 } from "@minecraft/server";
 import {
   MINER_ID,
+  COMMAND_FLAG_ID,
   TOOL_SLOT,
   isOwner,
   isPickaxe,
+  isTorch,
   isEmptySlot,
   getMinerContainer,
   getState,
   setState,
+  tryAddTorches,
 } from "./common.js";
 
 /**
@@ -105,6 +108,7 @@ world.afterEvents.playerInteractWithEntity.subscribe((event) => {
   system.run(() => {
     if (!player.isValid || !target.isValid) return;
 
+    // Priority: pickaxe → torch → command_flag (commandFlag.js) → empty stay
     if (hand && isPickaxe(hand.typeId)) {
       const given = new ItemStack(hand.typeId, 1);
       try {
@@ -143,6 +147,33 @@ world.afterEvents.playerInteractWithEntity.subscribe((event) => {
         }
       }
       player.sendMessage("Picareta entregue ao Minerador de Tunel.");
+      return;
+    }
+
+    if (hand && isTorch(hand.typeId)) {
+      const want = hand.amount;
+      const added = tryAddTorches(target, want);
+      if (added <= 0) {
+        player.sendMessage("Sem espaco para tochas no minerador.");
+        return;
+      }
+      const left = want - added;
+      if (left <= 0) {
+        eq.setEquipment(EquipmentSlot.Mainhand, undefined);
+      } else {
+        hand.amount = left;
+        eq.setEquipment(EquipmentSlot.Mainhand, hand);
+      }
+      player.sendMessage(
+        left > 0
+          ? `Tochas entregues: ${added} (resto na mao: ${left}).`
+          : `Tochas entregues: ${added}.`
+      );
+      return;
+    }
+
+    if (hand && hand.typeId === COMMAND_FLAG_ID) {
+      // ModalForm handled by commandFlag.js (same interact event).
       return;
     }
 

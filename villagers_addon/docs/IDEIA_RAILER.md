@@ -98,13 +98,27 @@ Trilhos sao **logistica/transporte**. No miner misturariam estoque (ore/tocha/ra
 - `va:stay_mode` (client_sync), analogo ao miner.
 - Demissao fase 1: **kill**; carta depois se o miner ganhar.
 
-### 3.6 Fora da fase 1
+### 3.6 Fora da fase 1 / Milestone 2 do Railer
+
+**Fase 1 nao inclui** (permanece backlog ate RAILER M2):
 
 - Rede de formigueiro / “conectar todos”.
 - Detector rail, hopper minecart, unload automatico, estacao.
 - Spawn de minecart por interact (jogador coloca manual).
-- Powered + redstone dust no chao.
 - Banner exclusivo do railer.
+
+#### RAILER-M2 — Alavancas em powered rails (reserva)
+
+| Item | Decisao |
+|------|---------|
+| Quando | Ao colocar (ou ao processar) cada `powered_rail` na linha |
+| O que | Colocar **alavanca** (`minecraft:lever`) ao **lado** do powered rail (parede/piso adjacente elegivel) e **ativar** (estado ligado) |
+| Custo | Alavancas sao **sumonadas** pelo railer — **nao** consomem inventario do jogador nem do chest |
+| Insumo do jogador | Continua so `rail` / `powered_rail`; lever nao e entregue nem restock |
+| Posicao | Preferir face lateral solida adjacente ao trilho; se nao houver suporte, tentar outra face; se impossivel, powered fica sem lever (log/risco) |
+| Objetivo | Alimentar o powered rail sem redstone dust no chao (substitui a nota de “powered cosmetico” da fase 1) |
+
+Detalhe de facing/estado da alavanca e ordem de colocacao: grilling fino na implementacao do RAILER-M2.
 
 ---
 
@@ -183,7 +197,8 @@ Trilhos sao **logistica/transporte**. No miner misturariam estoque (ore/tocha/ra
 - Powered obrigatorio a cada 8 aumenta microgestao de estoque (aceitavel por decisao de produto).
 - Escada Y±1 pode divergir do degrau real do miner se a secao 3x3 nao deixar piso claro.
 - Varios railers no mesmo eixo — sem regra de exclusao ainda (assumir 1 por dono/origem no MVP).
-- Powered sem redstone no chao e cosmetico/parcial em Bedrock — jogador pode completar redstone depois.
+- Fase 1: powered **sem** alavanca pode nao acelerar cart de verdade — resolvido em **RAILER-M2** (lever sumonada + ativada).
+- RAILER-M2: facing da alavanca / bloco de suporte no 3x3 pode falhar em corredores abertos; precisa fallback.
 
 ---
 
@@ -191,7 +206,7 @@ Trilhos sao **logistica/transporte**. No miner misturariam estoque (ore/tocha/ra
 
 1. Manter RAILER-001 em espera ate M2 validado + MINER-019.
 2. Quando priorizar: implementar conforme esta spec (sem reabrir grilling salvo conflito in-game).
-3. Fase 2 (novo grilling): formigueiro, redstone no chao, minecart na origem, multi-railer.
+3. Fase 2 / **RAILER-M2**: alavanca sumonada + ativada ao lado de cada powered rail; depois formigueiro, minecart na origem, multi-railer (grilling).
 
 ---
 

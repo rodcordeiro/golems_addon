@@ -1,15 +1,21 @@
-/** Copper-chest deposit for Tunnel Miner (MINER-016). */
+/** Copper-chest deposit for Tunnel Miner (MINER-016 + MINER-019 restock). */
 
 import {
   DP,
   TOOL_SLOT,
   CHEST_SEARCH_RADIUS,
   CHEST_SEARCH_Y,
+  TORCH_RESTOCK_MIN,
+  TORCH_RESTOCK_TARGET,
   isCopperChest,
   isEmptySlot,
   isToolItem,
+  isTorchItem,
+  isTorch,
   getMinerContainer,
   cargoHasSpace,
+  countTorches,
+  tryAddTorches,
   blockPos,
   horizDist,
 } from "./common.js";
@@ -120,13 +126,14 @@ export function getChestContainer(block) {
 
 /**
  * Move one cargo stack into chest; returns items moved count (>0 if progress).
+ * Torches are stock — never deposited.
  * @param {import('@minecraft/server').Container} from
  * @param {import('@minecraft/server').Container} to
  * @param {number} slot
  */
 function transferSlotToChest(from, to, slot) {
   const item = from.getItem(slot);
-  if (isEmptySlot(item) || isToolItem(item)) return 0;
+  if (isEmptySlot(item) || isToolItem(item) || isTorchItem(item)) return 0;
 
   const before = item.amount;
   try {
@@ -139,7 +146,6 @@ function transferSlotToChest(from, to, slot) {
     from.setItem(slot, leftover);
     return moved;
   } catch (_) {
-    // Fallback: manual slot copy if addItem unavailable/throws
     for (let i = 0; i < to.size; i++) {
       const cur = to.getItem(i);
       if (isEmptySlot(cur)) {
@@ -166,8 +172,8 @@ function transferSlotToChest(from, to, slot) {
 }
 
 /**
- * Deposit all inventoriable cargo (slots 1+) into copper chest.
- * Fill is never stored while mining; any cargo present (ores + misc) goes to chest.
+ * Deposit inventoriable cargo (slots 1+) into copper chest.
+ * Torches stay on the miner; ores/misc still move.
  * @param {import('@minecraft/server').Entity} miner
  * @param {import('@minecraft/server').Block} chestBlock
  * @returns {{ moved: number, freed: boolean }}
@@ -183,6 +189,53 @@ export function depositCargoToChest(miner, chestBlock) {
     moved += transferSlotToChest(src, dst, i);
   }
   return { moved, freed: cargoHasSpace(miner) };
+}
+
+/**
+ * If torch stock < 8, withdraw from chest up to target 16.
+ * @param {import('@minecraft/server').Entity} miner
+ * @param {import('@minecraft/server').Block} chestBlock
+ * @returns {number} torches taken
+ */
+export function restockTorchesFromChest(miner, chestBlock) {
+  const have = countTorches(miner);
+  if (have >= TORCH_RESTOCK_MIN) return 0;
+
+  let need = TORCH_RESTOCK_TARGET - have;
+  const src = getChestContainer(chestBlock);
+  if (!src || need <= 0) return 0;
+
+  let taken = 0;
+  for (let i = 0; i < src.size && need > 0; i++) {
+    const item = src.getItem(i);
+    if (isEmptySlot(item) || !isTorch(item.typeId)) continue;
+
+    const want = Math.min(need, item.amount);
+    const added = tryAddTorches(miner, want);
+    if (added <= 0) break;
+
+    if (added >= item.amount) {
+      src.setItem(i, undefined);
+    } else {
+      item.amount -= added;
+      src.setItem(i, item);
+    }
+    need -= added;
+    taken += added;
+  }
+  return taken;
+}
+
+/**
+ * Deposit cargo then restock torches when below threshold (MINER-016/019).
+ * @param {import('@minecraft/server').Entity} miner
+ * @param {import('@minecraft/server').Block} chestBlock
+ * @returns {{ moved: number, freed: boolean, torches: number }}
+ */
+export function depositAndRestock(miner, chestBlock) {
+  const result = depositCargoToChest(miner, chestBlock);
+  const torches = restockTorchesFromChest(miner, chestBlock);
+  return { ...result, torches };
 }
 
 /**

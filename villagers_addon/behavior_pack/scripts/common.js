@@ -4,6 +4,7 @@ import { ItemStack } from "@minecraft/server";
 
 export const MINER_ID = "va:villager_miner";
 export const CONTRACT_ID = "va:mining_contract";
+export const COMMAND_FLAG_ID = "va:command_flag";
 export const FREE_HANDLE_ID = "fv:villager_free_handle";
 export const BANNER_ITEM_ID = "va:tunnel_start_banner";
 export const BANNER_ENTITY_ID = "va:tunnel_start_banner_marker";
@@ -17,6 +18,16 @@ export const BRANCH_MIN_LEN = 2;
 export const BRANCH_MAX_LEN = 4;
 export const STAIR_CHANCE = 0.1;
 export const STAIR_STEPS = 2;
+
+/** Inventory item for lighting (MINER-019); wall_torch is placement-only. */
+export const TORCH_ID = "minecraft:torch";
+export const WALL_TORCH_ID = "minecraft:wall_torch";
+/** Place a torch every N successful dig steps. */
+export const TORCH_PLACE_EVERY = 10;
+/** Restock from copper chest when below this count. */
+export const TORCH_RESTOCK_MIN = 8;
+/** Target torch count after restock. */
+export const TORCH_RESTOCK_TARGET = 16;
 
 /** Inventory slot reserved for the mining pickaxe (cargo uses the rest). */
 export const TOOL_SLOT = 0;
@@ -40,6 +51,10 @@ export const DP = {
   chestX: "va_chest_x",
   chestY: "va_chest_y",
   chestZ: "va_chest_z",
+  /** Successful dig steps since last placed torch. */
+  torchDist: "va_torch_dist",
+  /** Preferred lateral side for next torch (+1 / -1). */
+  torchSide: "va_torch_side",
 };
 
 /** @typedef {'mining' | 'returning' | 'waiting' | 'stopped' | 'depositing'} MinerState */
@@ -232,6 +247,14 @@ export function isPickaxe(typeId) {
 }
 
 /**
+ * Inventory lighting stock only (`minecraft:torch`).
+ * @param {string} typeId
+ */
+export function isTorch(typeId) {
+  return typeId === TORCH_ID;
+}
+
+/**
  * @param {import('@minecraft/server').Entity} miner
  * @returns {import('@minecraft/server').Container | undefined}
  */
@@ -259,8 +282,17 @@ export function isToolItem(item) {
 }
 
 /**
+ * True if the stack is torch stock (consumption, not cargo).
+ * @param {import('@minecraft/server').ItemStack | undefined} item
+ */
+export function isTorchItem(item) {
+  return !!(item && !isEmptySlot(item) && isTorch(item.typeId));
+}
+
+/**
  * Cargo has room for ore (empty / partial / misplaced pickaxe in slots 1+).
  * Slot 0 is reserved for the pickaxe and never counts as cargo capacity.
+ * Torch stacks are ignored (not ore capacity, not "full cargo" fillers).
  * @param {import('@minecraft/server').Entity} miner
  */
 export function cargoHasSpace(miner) {
@@ -271,13 +303,14 @@ export function cargoHasSpace(miner) {
     if (i === TOOL_SLOT) continue;
     const item = c.getItem(i);
     if (isEmptySlot(item) || isToolItem(item)) return true;
+    if (isTorchItem(item)) continue;
     if (item.amount < item.maxAmount) return true;
   }
   return false;
 }
 
 /**
- * True if any inventoriable cargo remains in slots 1+.
+ * True if any inventoriable cargo remains in slots 1+ (torches ignored).
  * @param {import('@minecraft/server').Entity} miner
  */
 export function hasCargo(miner) {
@@ -287,7 +320,84 @@ export function hasCargo(miner) {
   for (let i = 0; i < size; i++) {
     if (i === TOOL_SLOT) continue;
     const item = c.getItem(i);
-    if (!isEmptySlot(item) && !isToolItem(item)) return true;
+    if (!isEmptySlot(item) && !isToolItem(item) && !isTorchItem(item)) return true;
+  }
+  return false;
+}
+
+/**
+ * Count `minecraft:torch` in slots 1+.
+ * @param {import('@minecraft/server').Entity} miner
+ */
+export function countTorches(miner) {
+  const c = getMinerContainer(miner);
+  if (!c) return 0;
+  let n = 0;
+  const size = c.size ?? 0;
+  for (let i = 0; i < size; i++) {
+    if (i === TOOL_SLOT) continue;
+    const item = c.getItem(i);
+    if (isTorchItem(item)) n += item.amount;
+  }
+  return n;
+}
+
+/**
+ * Add torches into slots 1+ (stack then empty). Returns amount actually added.
+ * @param {import('@minecraft/server').Entity} miner
+ * @param {number} amount
+ */
+export function tryAddTorches(miner, amount) {
+  if (amount <= 0) return 0;
+  const c = getMinerContainer(miner);
+  if (!c) return 0;
+  let left = amount;
+  const size = c.size ?? 0;
+
+  for (let i = 0; i < size && left > 0; i++) {
+    if (i === TOOL_SLOT) continue;
+    const cur = c.getItem(i);
+    if (isEmptySlot(cur) || isToolItem(cur)) continue;
+    if (!isTorch(cur.typeId) || cur.amount >= cur.maxAmount) continue;
+    const space = cur.maxAmount - cur.amount;
+    const add = Math.min(space, left);
+    cur.amount += add;
+    c.setItem(i, cur);
+    left -= add;
+  }
+
+  for (let i = 0; i < size && left > 0; i++) {
+    if (i === TOOL_SLOT) continue;
+    const cur = c.getItem(i);
+    if (isToolItem(cur)) continue;
+    if (!isEmptySlot(cur)) continue;
+    const add = Math.min(64, left);
+    c.setItem(i, new ItemStack(TORCH_ID, add));
+    left -= add;
+  }
+
+  return amount - left;
+}
+
+/**
+ * Remove one torch from slots 1+. Returns false if none.
+ * @param {import('@minecraft/server').Entity} miner
+ */
+export function consumeOneTorch(miner) {
+  const c = getMinerContainer(miner);
+  if (!c) return false;
+  const size = c.size ?? 0;
+  for (let i = 0; i < size; i++) {
+    if (i === TOOL_SLOT) continue;
+    const item = c.getItem(i);
+    if (!isTorchItem(item)) continue;
+    if (item.amount <= 1) {
+      c.setItem(i, undefined);
+    } else {
+      item.amount -= 1;
+      c.setItem(i, item);
+    }
+    return true;
   }
   return false;
 }

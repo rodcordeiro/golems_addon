@@ -4,20 +4,20 @@
     "name": "Villagers Addon Resource Pack",
     "description": "Client assets for Tunnel Miner (va:).",
     "uuid": "3193f76f-3999-48fe-a8b7-09b87db42fd0",
-    "version": [1, 0, 2],
+    "version": [1, 0, 4],
     "min_engine_version": [1, 21, 130]
   },
   "modules": [
     {
       "type": "resources",
       "uuid": "a008ab9d-145d-4c4d-8d02-2f8483610912",
-      "version": [1, 0, 2]
+      "version": [1, 0, 4]
     }
   ],
   "dependencies": [
     {
       "uuid": "a4e9e8e4-4e8b-4175-b71a-5515eb66f043",
-      "version": [1, 0, 2]
+      "version": [1, 0, 4]
     }
   ]
 }

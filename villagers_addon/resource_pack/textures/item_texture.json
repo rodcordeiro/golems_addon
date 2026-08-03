@@ -7,6 +7,9 @@
     },
     "va_tunnel_start_banner": {
       "textures": "textures/items/tunnel_start_banner"
+    },
+    "va_command_flag": {
+      "textures": "textures/items/command_flag"
     }
   }
 }

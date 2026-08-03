@@ -5,8 +5,8 @@ Atualizado em: 2026-08-03
 Decisoes fechadas via grilling. Ideia miner: `docs/IDEIA_MINERADOR.md`. Ideia railer: `docs/IDEIA_RAILER.md`.
 Regras de escopo: `../../docs/references/coding-guidelines.md` e `../AGENTS.md`.
 
-**Status:** MVP em codigo (MINER-001..009). MINER-011 corrigido em `1.0.1`. Milestone 2 (MINER-012..016) em codigo em `1.0.2`. MINER-010 pendente revalidacao in-game.
-**Packs:** `behavior_pack/` + `resource_pack/` (namespace `va:`, versao `1.0.2`, engine `1.21.130` + Script API `2.4.0`).
+**Status:** MVP em codigo (MINER-001..009). MINER-011 corrigido em `1.0.1`. Milestone 2 (MINER-012..016) em codigo em `1.0.2`. MINER-019 (tochas) em codigo em `1.0.3`. MINER-010 pendente revalidacao in-game.
+**Packs:** `behavior_pack/` + `resource_pack/` (namespace `va:`, versao `1.0.3`, engine `1.21.130` + Script API `2.4.0`).
 
 ---
 
@@ -75,8 +75,9 @@ Base: client entity do clumper (texturas por bioma + `geometry.va_villager_miner
 | Banner "inicio de tunel"          | **Feito codigo 1.0.2** (MINER-015)                                              |
 | Caminho randomico ("formigueiro") | **Feito codigo 1.0.2** (MINER-013)                                              |
 | Escada ocasional                  | **Feito codigo 1.0.2** (MINER-014)                                              |
-| Direcao / ordens                  | flags, comandos ou item de comando                                              |
-| Iluminacao (tochas)               | **MINER-019** — decisoes fechadas via grilling (apos M2 in-game; antes 017/018) |
+| Direcao / ordens                  | **Feito codigo 1.0.4** (MINER-017) — placeholder icon; arte final em 018 |
+| Iluminacao (tochas)               | **Feito codigo 1.0.3** (MINER-019); in-game pendente                         |
+| UI/item de comando (polish)       | **MINER-018** — icone proprio da flag (substitui placeholder 017) + extras |
 | Branch mining dedicado            | depois                                                                          |
 | **Railer** (segundo villager)     | **RAILER-001** — spec fechada (`IDEIA_RAILER.md`); nao no minerador             |
 | Carta de demissao                 | opcional; MVP usa kill                                                          |
@@ -136,14 +137,42 @@ Ordem de implementacao fixada pelo produto (abaixo).
 | 3     | MINER-015 | Feito codigo            | Banner `va:tunnel_start_banner` origem compartilhada — in-game pendente    |
 | 4     | MINER-013 | Feito codigo            | Caminho randomico (formigueiro) — in-game pendente                         |
 | 5     | MINER-014 | Feito codigo            | Escada ocasional 10% Y+/-2 — in-game pendente                              |
-| 6     | MINER-019 | Pendente (spec fechada) | **Tochas** — apos validacao in-game M2; **antes** 017/018                  |
-| 7     | MINER-017 | Pendente                | Flags/comandos de direcao                                                  |
-| 8     | MINER-018 | Pendente                | UI/item de comando                                                         |
+| 6     | MINER-019 | Feito codigo            | **Tochas** — in-game pendente                                                  |
+| 7     | MINER-017 | Feito codigo            | `va:command_flag` + ModalForm direcao/stay — placeholder icon; in-game pendente |
+| 8     | MINER-018 | Pendente                | **Icone proprio** `va:command_flag` (substitui placeholder) + polish de comando |
 
 
 ---
 
 
+
+### MINER-017 — Command flag / direcao (spec fechada via grilling 2026-08-03)
+
+**Objetivo:** mudar direcao do miner sem recontratar; quality bar = Soldiers `command_flag` + ModalForm.
+
+| Item | Decisao |
+|------|---------|
+| Item | `va:command_flag` |
+| Receita | shaped: stick sobre paper |
+| Uso | Dono segura flag + interact no miner → ModalForm |
+| Form | Dropdown N/S/E/W (default = dir atual) + toggle stay |
+| Origem | Nao muda (banner/hire); so `va_dir_*` |
+| Ao confirmar dir | Axis = pos atual do miner; cancela branch/stair; sem TP origem; `va_torch_dist` mantem |
+| Se estava stopped | Pode ir a mining se picareta + cargo space + !stay |
+| Mao vazia | Continua toggle stay (atalho) |
+| Quem | So dono |
+| Icone | Placeholder ok em 017; **arte final em MINER-018** |
+| Dep | `@minecraft/server-ui` 2.0.0 (ModalForm `{ defaultValue }`) |
+| Fora | Recall em massa, depositar agora — MINER-018 |
+
+### MINER-018 — UI/comando polish (pendente)
+
+| Item | Escopo |
+|------|--------|
+| Icone | Criar textura/icone **proprio** `va:command_flag` (nao copiar `fv:`; substituir placeholder do 017) |
+| Extras (grilling depois) | Recall/depositar agora / outros comandos se produto pedir |
+
+---
 
 ### MINER-019 — Tochas no tunel (spec fechada via grilling 2026-08-03)
 
@@ -185,8 +214,8 @@ Ordem de implementacao fixada pelo produto (abaixo).
 | ------------ | ------------------------------------------------------------------------------------------------------ |
 | Manifests    | `behavior_pack/manifest.json`, `resource_pack/manifest.json`                                           |
 | Entity       | `behavior_pack/entities/villager_miner.json`, `tunnel_start_banner_marker.json`                        |
-| Item/receita | `behavior_pack/items/mining_contract.json`, `tunnel_start_banner.json`, `recipes/mining_contract.json` |
-| Scripts      | `behavior_pack/scripts/{main,common,hire,minerInteract,minerLoop,deposit,tunnelBanner}.js`             |
+| Item/receita | `behavior_pack/items/mining_contract.json`, `tunnel_start_banner.json`, `command_flag.json`, `recipes/*` |
+| Scripts      | `behavior_pack/scripts/{main,common,hire,minerInteract,commandFlag,minerLoop,deposit,tunnelBanner,torch}.js` |
 | Client       | `resource_pack/entity/villager_miner.entity.json`, `tunnel_start_banner_marker.entity.json`            |
 | Geo/texturas | `resource_pack/models/entity/va_villager_miner.geo.json`, `va_tp_banner.geo.json`, `textures/entity/*` |
 
@@ -239,6 +268,29 @@ Ordem de implementacao fixada pelo produto (abaixo).
 
 **Nenhum ticket 012–016 validado in-game nesta sessao.**
 
+### MINER-019 — Tochas (1.0.3, codigo)
+
+- Estoque `minecraft:torch` em slots 1+; `cargoHasSpace` / `depositCargo` / `hasCargo` ignoram tocha.
+- Interact dono: picareta → stack de tocha (parcial se sem espaco) → command_flag → stay.
+- Cadencia DP `va_torch_dist` (+1 / passo ok); coloca a cada 10; DP `va_torch_side` alterna L/R.
+- Preferencia `wall_torch` em face w=±2; fallback torch no piso lateral; falha nao consome nem zera contador.
+- No deposito: se tochas < 8, saca do copper chest ate 16 (`depositAndRestock`).
+- Modulo `scripts/torch.js`; packs `1.0.3`.
+
+**MINER-019 nao testado in-game nesta sessao.**
+
+### MINER-017 — Command flag (1.0.4, codigo)
+
+- Item `va:command_flag` + receita stick sobre paper.
+- Dono com flag + interact → ModalForm (dropdown N/E/S/W + stay); padrao Soldiers (`system.run` + `{ defaultValue }` / `{ defaultValueIndex }`).
+- Confirma: atualiza `va_dir_*`; eixo = `blockPos` atual; limpa branch/stair DPs; **nao** muda origem; **mantem** `va_torch_dist`.
+- Se `stopped` + !stay + picareta + cargo space → `mining`.
+- Interact: picareta → tocha → flag → stay (mao vazia).
+- Placeholder PNG `textures/items/command_flag.png` — **MINER-018** substitui pela arte final.
+- Dep `@minecraft/server-ui` `2.0.0`; packs `1.0.4`.
+
+**MINER-017 nao testado in-game nesta sessao.** QA estatico (clean-context): `docs/miner-017-qa.md` — **PASS_COM_RESSALVAS**.
+
 ---
 
 
@@ -254,6 +306,8 @@ Ordem de implementacao fixada pelo produto (abaixo).
 - Copper chest inventory API / variantes podem divergir entre builds Bedrock.
 - Retomada apos esvaziar ores: corrigida em codigo (`1.0.1`); **ainda precisa de reteste in-game**.
 - Milestone 2 (3x3, deposito, banner, formigueiro, escada): **nao testado in-game**.
+- MINER-019 (tochas / wall_torch facing / restock): **nao testado in-game**.
+- MINER-017 (command flag / ModalForm / retarget eixo): **nao testado in-game**; icone e placeholder ate 018.
 
 ---
 
@@ -261,11 +315,10 @@ Ordem de implementacao fixada pelo produto (abaixo).
 
 ## 7. Proximo passo
 
-1. Retestar in-game MINER-010 (retomada) com packs `1.0.2`.
-2. Validar in-game MINER-012..016 (checklist abaixo).
-3. Implementar **MINER-019** (spec fechada acima).
-4. Depois: MINER-017 / MINER-018 (flags/UI de comando).
-5. Mais tarde: branch mining dedicado; **RAILER-001** (segundo villager).
+1. Retestar in-game MINER-010 (retomada) com packs `1.0.4`.
+2. Validar in-game MINER-012..016, **MINER-019** e **MINER-017** (checklists).
+3. **MINER-018** — icone proprio da flag (substituir placeholder) + polish de comando.
+4. Mais tarde: branch mining dedicado; **RAILER-001**.
 
 
 
@@ -290,7 +343,18 @@ Ticket **RAILER-001** | Status: **Spec fechada (grilling)** — backlog; nao imp
 | Limite | 64 horizontal |
 | Fora fase 1 | Formigueiro/rede; minecart spawn; detector/unload |
 
-**Quando priorizar:** apos M2 in-game + MINER-019; implementar pela spec (sem reabrir grilling salvo conflito).
+**RAILER-M2** (fase 2 do railer — apos RAILER-001 fase 1):
+
+| Item | Decisao |
+|------|---------|
+| Escopo | Em cada `powered_rail`, **sumonar** `minecraft:lever` ao lado e **ativar** |
+| Custo | Alavanca **nao** vem do jogador/chest — spawn por script (`setBlock`) |
+| Insumo jogador | Continua so rail / powered_rail |
+| Motivo | Powered rail precisa de sinal; evita redstone dust no chao |
+
+Ver detalhe em `IDEIA_RAILER.md` §3.6.
+
+**Quando priorizar:** apos M2 miner in-game + MINER-019; implementar RAILER-001 fase 1 pela spec; RAILER-M2 depois.
 
 ### Checklist Milestone 2 (in-game)
 
@@ -302,3 +366,6 @@ Ticket **RAILER-001** | Status: **Spec fechada (grilling)** — backlog; nao imp
 - [ ] Desvios laterais ocasionais (formigueiro)
 - [ ] Escadas ocasionais +/-2 Y
 - [ ] Hard/soft stops e limite 64 preservados
+- [ ] Command flag: dono abre form; muda N/E/S/W; eixo na posicao atual; stay; nao-dono erro
+- [ ] Flag: branch/stair cancelados; torch_dist preservado; origem intacta
+- [ ] Tochas: entrega, cadencia ~10, parede/chao, restock no deposito, strip sem tocha

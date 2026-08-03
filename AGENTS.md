@@ -12,7 +12,7 @@ Monorepo de addons Minecraft Bedrock. Cada pasta de addon e um pack independente
 |-------|-------|-----------|--------|
 | `gollem_addon/` | Addon proprio de Stone Golems | `addon:` | Ativo; packs em `behavior_pack/` e `resource_pack/` |
 | `villager_soldiers/` | Addon de terceiros (AnhemSteve) — soldados/villagers | `fv:` (+ secundarios) | Referencia; nao reescrever como produto proprio |
-| `villagers_addon/` | Addon proprio que complementa Villager Soldiers | `va:` | MVP + Milestone 2 (012-016) em codigo `1.0.2`; validacao in-game pendente (`docs/backlog.md`) |
+| `villagers_addon/` | Addon proprio que complementa Villager Soldiers | `va:` | MVP + M2 (012-016) + MINER-019 + MINER-017 em codigo `1.0.4`; validacao in-game pendente (`docs/backlog.md`) |
 
 Documentacao especifica por projeto:
 

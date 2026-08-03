@@ -14,10 +14,10 @@ Addon proprio que complementa `villager_soldiers` (namespace `fv:`). Nao substit
 
 ## Estado
 
-- Namespace `va:`, versao packs `1.0.2`, `min_engine_version` `[1, 21, 130]`
-- MVP + Milestone 2 (MINER-012..016) em codigo; **revalidar in-game** (incl. MINER-010)
+- Namespace `va:`, versao packs `1.0.4`, `min_engine_version` `[1, 21, 130]`
+- MVP + Milestone 2 (MINER-012..016) + MINER-019 + MINER-017 em codigo; **revalidar in-game** (incl. MINER-010)
 - Soft-dependencia de uso: Villager Soldiers (`fv:villager_free_handle`)
-- Scripts: `main`, `common`, `hire`, `minerInteract`, `minerLoop`, `deposit`, `tunnelBanner`
+- Scripts: `main`, `common`, `hire`, `minerInteract`, `commandFlag`, `minerLoop`, `deposit`, `tunnelBanner`, `torch`
 
 ## Ao editar
 
