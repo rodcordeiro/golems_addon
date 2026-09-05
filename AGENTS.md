@@ -1,57 +1,35 @@
 # AGENTS.md
 
-Instrucoes locais para agentes neste repositorio. Complementam as instrucoes globais.
+Monorepo de addons Minecraft Bedrock. Os produtos proprios usam Behavior Pack + Resource Pack sob `addon/`; `addon/villager_soldiers/` e referencia de terceiros. Entradas: manifests de cada pack e, em `addon/villagers_addon`, `behavior_pack/scripts/main.js`.
 
-## O que e este repositorio
+## Como usar este contexto
 
-Monorepo de addons Minecraft Bedrock. Cada pasta de addon e um pack independente (Behavior Pack + Resource Pack quando existir). Nao misture namespaces, UUIDs ou assets entre addons sem pedido explicito.
+| Necessidade | Leia |
+| --- | --- |
+| Mapa do monorepo e ownership | `.agents/references/structure.md` |
+| Bootstrap, packs e release | `.agents/references/runtime.md` |
+| Termos e limites de produto | `.agents/references/domain.md` |
+| Regras de mudanca e validacao | `.agents/references/conventions.md` |
+| Padroes BP/RP e Script API | `.agents/references/patterns.md` |
+| Riscos e gaps conhecidos | `.agents/references/tech-debt.md` |
+| Indice completo | `.agents/references/index.md` |
+| Knowledge operacional | `$nero`, projeto `golems_addon`, dominio `minecraft` |
+| Estrutura de codigo | `$nero-code-graph`; confirmar cobertura do extrator antes de confiar |
 
-## Projetos
+## Regras rapidas
 
-| Pasta | Papel | Namespace | Status |
-|-------|-------|-----------|--------|
-| `gollem_addon/` | Addon proprio de Stone Golems | `addon:` | Ativo; packs em `behavior_pack/` e `resource_pack/` |
-| `villager_soldiers/` | Addon de terceiros (AnhemSteve) — soldados/villagers | `fv:` (+ secundarios) | Referencia; nao reescrever como produto proprio |
-| `villagers_addon/` | Addon proprio que complementa Villager Soldiers | `va:` | MVP + M2 (012-016) + MINER-019 + MINER-017 em codigo `1.0.4`; validacao in-game pendente (`docs/backlog.md`) |
+1. Uma task de produto deve ter um unico addon alvo; nao misture namespaces, UUIDs ou assets.
+2. Leia o `AGENTS.md` e o `README.md` do addon alvo antes de editar.
+3. Para itens, blocos, receitas ou arte vanilla, consulte `docs/references/minecraft-textures.md`.
+4. Mudanca funcional exige versoes BP/RP alinhadas; UUID e `min_engine_version` so mudam com pedido e impacto registrado.
+5. Valide JSON e estrutura no addon alvo. Sem teste no Bedrock, declare a validacao in-game pendente.
 
-Documentacao especifica por projeto:
+## Validacao minima
 
-- `gollem_addon/README.md` / `gollem_addon/AGENTS.md`
-- `villager_soldiers/README.md` / `villager_soldiers/AGENTS.md`
-- `villagers_addon/README.md` / `villagers_addon/AGENTS.md`
-- `villagers_addon/docs/backlog.md` — decisoes e tickets do Minerador de Tunel
-- `villagers_addon/docs/IDEIA_MINERADOR.md` — ideia / contexto
-- `README.md` (raiz) — mapa do monorepo
+```powershell
+Get-ChildItem addon/<addon> -Recurse -Filter *.json |
+  Where-Object { $_.FullName -notmatch 'node_modules|test_world' } |
+  ForEach-Object { Get-Content -Raw $_.FullName | ConvertFrom-Json | Out-Null }
+```
 
-Referencias compartilhadas (`docs/references/`):
-
-- `coding-guidelines.md` — o que pode / nao pode alterar por tipo de task
-- `minecraft-textures.md` — mapa de texturas/itens vanilla (`assets/texturas minecraft`); usar ao criar itens, receitas, loot, `item_texture.json` ou arte derivada
-- `minecraft-textures-catalog.md` — listas completas (itens, blocos, entities, ...)
-- `minecraft-textures-inventory.json` — inventario machine-readable; regenerar com `_gen_minecraft_textures_docs.py`
-
-## Outras pastas
-
-| Pasta | Uso |
-|-------|-----|
-| `assets/` | Referencias visuais/debug fora dos packs carregados pelo Bedrock |
-| `assets/texturas minecraft/` | Dump Java de texturas/models vanilla; ver `docs/references/minecraft-textures.md` (nao e RP Bedrock) |
-| `test_world/` | Mundo local de validacao (foco atual: `gollem_addon`) |
-| `.github/workflows/` | CI (JSON, estrutura, empacotamento `.mcaddon`) |
-| `docs/references/` | Regras e inventarios compartilhados entre agentes |
-
-## Como trabalhar
-
-1. Identifique o addon alvo da task antes de editar.
-2. Siga `docs/references/coding-guidelines.md` para o que pode / nao pode ser alterado por tipo de task.
-3. Para IDs/texturas vanilla (itens, blocos, entities), consulte `docs/references/minecraft-textures.md` antes de inventar nomes; item vanilla = `minecraft:<stem>` sem copiar PNG para o pack.
-4. Prefira mudancas pequenas, locais ao addon alvo e verificaveis.
-5. Nao trate validacao sintatica de JSON como validacao funcional em Bedrock.
-6. Se o comportamento nao foi testado no jogo, declare isso explicitamente.
-
-## Prioridades
-
-1. Isolamento entre addons (IDs, UUIDs, scripts, texturas).
-2. Contrato BP ↔ RP coerente dentro do addon alvo.
-3. Compatibilidade com o `min_engine_version` do addon alvo.
-4. Documentar riscos e lacunas de teste in-game.
+Detalhes normativos locais: `docs/references/coding-guidelines.md`.

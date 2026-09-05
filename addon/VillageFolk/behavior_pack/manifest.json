@@ -1,0 +1,29 @@
+{
+  "format_version": 2,
+  "metadata": {
+    "product_type": "addon",
+    "authors": ["Shadowfox6303"]
+  },
+  "header": {
+    "name": "VillageFolk",
+    "description": "§l§cGives every villager a unique name, colored by profession, with dialogue when nearby. §l§aBy: Shadowfox6303",
+    "uuid": "82ff53bd-7f5a-42af-ab12-9c06131e8cfd",
+    "version": [1, 5, 9],
+    "min_engine_version": [1, 26, 20]
+  },
+  "modules": [
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "3f685852-b946-4704-afc0-dacaccd643ee",
+      "entry": "scripts/main.js",
+      "version": [1, 5, 9]
+    }
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "2.7.0"
+    }
+  ]
+}

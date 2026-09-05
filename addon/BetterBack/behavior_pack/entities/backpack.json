@@ -1,0 +1,60 @@
+{
+  "format_version": "1.19.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "bp:backpack_e",
+      "spawn_category": "misc",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "bp_backpack",
+          "inanimate"
+        ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 999,
+        "max": 999
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:movement": {
+        "value": 0.0
+      },
+      "minecraft:physics": {
+        "has_collision": true,
+        "has_gravity": true
+      },
+      "minecraft:collision_box": {
+        "width": 0.7,
+        "height": 0.7
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:persistent": {},
+      "minecraft:fire_immune": {},
+      "minecraft:inventory": {
+        "container_type": "container",
+        "inventory_size": 27,
+        "private": false,
+        "restrict_to_owner": false,
+        "additional_slots_per_strength": 0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+## Better Backpacks v1.3.0
+
+pack.name=Better Backpacks
+pack.description=Better Backpacks v1.3.0
+
+entity.bp:backpack_e.name=Backpack
+item.bp:backpack=Backpack
+
+entity.bp:axolotl_backpack_e.name=Axolotl Backpack
+item.bp:axolotl_backpack=Axolotl Backpack
+
+entity.bp:big_backpack_e.name=Big Backpack
+item.bp:big_backpack=Big Backpack
+
+entity.bp:soul_backpack_e.name=Soul Backpack
+item.bp:soul_backpack=Soul Backpack

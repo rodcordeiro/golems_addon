@@ -1,0 +1,119 @@
+{
+  "namespace": "chest",
+
+  "chest_label": {
+    "$new_container_title|default": "$container_title",
+    "text": "$new_container_title",
+    "layer": 1
+  },
+
+  "big_backpack_grid": {
+    "type": "grid",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "grid_dimensions": [ 9, 6 ],
+    "grid_item_template": "chest.chest_grid_item",
+    "collection_name": "container_items"
+  },
+
+  "big_backpack_panel_top_half": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "offset": [ 0, 12 ],
+    "anchor_to": "top_left",
+    "anchor_from": "top_left",
+    "controls": [
+      {
+        "chest_label@chest.chest_label": {
+          "offset": [ -48, -58 ],
+          "text": "Big Backpack"
+        }
+      },
+      {
+        "big_backpack_grid@chest.big_backpack_grid": {
+          "offset": [ -50, -45 ]
+        }
+      }
+    ]
+  },
+
+  "big_backpack_panel": {
+    "type": "panel",
+    "controls": [
+      { "container_gamepad_helpers@common.container_gamepad_helpers": {} },
+      {
+        "flying_item_renderer@common.flying_item_renderer": {
+          "layer": 14
+        }
+      },
+      { "selected_item_details_factory@common.selected_item_details_factory": {} },
+      { "item_lock_notification_factory@common.item_lock_notification_factory": {} },
+      {
+        "root_panel@common.root_panel": {
+          "layer": 1,
+          "controls": [
+            {
+              "common_panel@common.common_panel": {
+                "size": [ "101%", "135%" ],
+                "offset": [ -1, 0 ],
+                "layer": 3
+              }
+            },
+            {
+              "chest_panel": {
+                "type": "panel",
+                "layer": 5,
+                "controls": [
+                  {
+                    "big_backpack_panel_top_half@chest.big_backpack_panel_top_half": {
+                      "offset": [ 56, 35 ]
+                    }
+                  },
+                  {
+                    "inventory_panel_bottom_half_with_label@common.inventory_panel_bottom_half_with_label": {
+                      "offset": [ -1, 26 ],
+                      "layer": 1
+                    }
+                  },
+                  {
+                    "hotbar_grid@common.hotbar_grid_template": {
+                      "offset": [ -1, 22 ]
+                    }
+                  },
+                  { "inventory_take_progress_icon_button@common.inventory_take_progress_icon_button": {} }
+                ]
+              }
+            },
+            { "inventory_selected_icon_button@common.inventory_selected_icon_button": {} },
+            { "gamepad_cursor@common.gamepad_cursor_button": {} }
+          ]
+        }
+      }
+    ]
+  },
+
+  "small_chest_screen@common.inventory_screen_common": {
+    "$close_on_player_hurt|default": true,
+    "$use_custom_pocket_toast|default": false,
+    "$new_container_title|default": "$container_title",
+    "close_on_player_hurt": "$close_on_player_hurt",
+    "use_custom_pocket_toast": "$use_custom_pocket_toast",
+    "variables": [
+      {
+        "requires": "($pocket_screen)",
+        "$use_custom_pocket_toast": true,
+        "$screen_content": "pocket_containers.small_chest_panel"
+      },
+      {
+        "requires": "($desktop_screen)",
+        "$screen_content": "chest.small_chest_panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "(not (($new_container_title - '§t§r§u§e§r') = $new_container_title))",
+        "$screen_content": "chest.big_backpack_panel",
+        "$screen_bg_content": "common.screen_background"
+      }
+    ]
+  }
+}

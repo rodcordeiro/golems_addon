@@ -16,9 +16,9 @@ Antes de qualquer mudanca, declare mentalmente (e no plano, se houver):
 
 | Tipo de task | Pode alterar | Nao alterar (salvo pedido explicito) |
 |--------------|--------------|--------------------------------------|
-| Feature / bugfix em `gollem_addon` | `gollem_addon/**`, docs do golem, packs em `test_world` se a task pedir sync | `villager_soldiers/**`, `villagers_addon/**` de produto |
-| Estudo / extracao de padrao de `villager_soldiers` | Docs/notas no addon consumidor; leitura do pack | Manifests/UUIDs/IDs do pack de terceiros; rewrite em massa |
-| Feature / ideacao em `villagers_addon` | `villagers_addon/**` | Copiar o pack inteiro de `villager_soldiers`; colidir com `fv:` ou `addon:` sem auditoria |
+| Feature / bugfix em `addon/gollem_addon` | `addon/gollem_addon/**`, docs do golem, packs em `test_world` se a task pedir sync | `addon/villager_soldiers/**`, `addon/villagers_addon/**` de produto |
+| Estudo / extracao de padrao de `addon/villager_soldiers` | Docs/notas no addon consumidor; leitura do pack | Manifests/UUIDs/IDs do pack de terceiros; rewrite em massa |
+| Feature / ideacao em `addon/villagers_addon` | `addon/villagers_addon/**` | Copiar o pack inteiro de `addon/villager_soldiers`; colidir com `fv:` ou `addon:` sem auditoria |
 | Docs / agents | `AGENTS.md` raiz, `docs/**`, `*/AGENTS.md`, README do escopo | Codigo de packs sem necessidade |
 | CI / release | `.github/workflows/**` com razao registrada | UUIDs de packs; versao sem mudanca funcional correspondente |
 | Assets de referencia | `assets/**` (entrada de arte/debug) | Mover para packs sem confirmar caminho/formato/JSON |
@@ -29,14 +29,14 @@ Regra geral: uma task = um addon alvo. Mudanca cross-addon so com pedido explici
 
 ## 2. Politica por projeto
 
-### 2.1 `gollem_addon/` (produto proprio)
+### 2.1 `addon/gollem_addon/` (produto proprio)
 
 Pode:
 
 - Entidades, itens, blocos, receitas, loot, spawn rules, functions
 - Client entity, models, animations, render controllers, textures, texts
 - Incrementar versao BP/RP juntos apos mudanca funcional
-- Atualizar `gollem_addon/docs/*` e sync com `test_world` quando a task for validacao
+- Atualizar `addon/gollem_addon/docs/*` e sync com `test_world` quando a task for validacao
 
 Nao pode sem pedido explicito:
 
@@ -49,11 +49,11 @@ Riscos conhecidos (alinhar contrato antes de afirmar "funciona"):
 - Fluxo de criacao manual do Stone Golem: validar receita ↔ item ↔ bloco ↔ estrutura ↔ evento/summon
 - Validacao JSON != validacao in-game; usar `test_world/` quando a task exigir evidencia
 
-### 2.2 `villager_soldiers/` (terceiros / referencia)
+### 2.2 `addon/villager_soldiers/` (terceiros / referencia)
 
 Pode:
 
-- Ler e citar padroes em docs do monorepo ou de `villagers_addon`
+- Ler e citar padroes em docs do monorepo ou de `addon/villagers_addon`
 - Correcoes pontuais se o usuario pedir (typo path, nota local)
 - Atualizar o proprio `AGENTS.md` se a documentacao de referencia estiver desatualizada
 
@@ -64,9 +64,9 @@ Nao pode por padrao:
 - Apagar ou reorganizar em massa pastas do pack
 - Empacotar/release deste pack sem pedido explicito (licenca/uso comercial nao documentados)
 
-Ao portar ideias: extrair o minimo necessario para `villagers_addon` ou `gollem_addon`, com IDs proprios.
+Ao portar ideias: extrair o minimo necessario para `addon/villagers_addon` ou `addon/gollem_addon`, com IDs proprios.
 
-### 2.3 `villagers_addon/` (complemento em construcao)
+### 2.3 `addon/villagers_addon/` (complemento em construcao)
 
 Pode:
 
@@ -76,7 +76,7 @@ Pode:
 
 Nao pode por padrao:
 
-- Substituir ou patchar entidades `fv:*` dentro de `villager_soldiers/`
+- Substituir ou patchar entidades `fv:*` dentro de `addon/villager_soldiers/`
 - Reusar UUIDs de outro addon do monorepo
 - Assumir que coexistencia com Villager Soldiers foi testada sem evidencia
 
@@ -90,13 +90,13 @@ Namespace: definir e registrar antes do primeiro manifest (candidatos: `va:` ind
 | `test_world/` | Copiar packs do addon sob teste; ajustar world_*_packs.json | Commits grandes de mundo sem pedido; misturar packs de addons nao envolvidos na task |
 | `.github/workflows/` | Ajustar validacao/empacote com impacto documentado | Mudar sem registrar razao operacional e efeito em release |
 
-Nota: workflows validam estrutura de `gollem_addon/` e `villagers_addon/` (manifests). Empacotamento `.mcaddon` em tags `v*` permanece focado em `gollem_addon/`. So adicionar build separado para villagers sob pedido explicito.
+Nota: workflows validam estrutura de `addon/gollem_addon/` e `addon/villagers_addon/` (manifests). Empacotamento `.mcaddon` em tags `v*` gera artifacts separados a partir dessas pastas.
 
 ---
 
 ## 3. Regras Bedrock (qualquer addon proprio)
 
-Aplicam-se a `gollem_addon` e, quando existir implementacao, a `villagers_addon`.
+Aplicam-se a `addon/gollem_addon` e, quando existir implementacao, a `addon/villagers_addon`.
 
 ### 3.1 Manifests e versao
 
@@ -186,9 +186,9 @@ Antes de alterar workflows: registrar razao operacional e impacto em release. Co
 
 | Pedido | Resposta padrao |
 |--------|-----------------|
-| Corrigir Stone Golem | Sim, so em `gollem_addon/` (+ test_world se pedido) |
+| Corrigir Stone Golem | Sim, so em `addon/gollem_addon/` (+ test_world se pedido) |
 | Copiar soldado `fv:` para o golem pack | Nao; extrair padrao e reimplementar com IDs proprios se for o caso |
-| Implementar minerador | Sim, em `villagers_addon/`; consultar `villager_soldiers` so como referencia |
+| Implementar minerador | Sim, em `addon/villagers_addon/`; consultar `addon/villager_soldiers` so como referencia |
 | "Melhorar" Villager Soldiers inteiro | Nao, salvo task explicita e escopo fechado |
 | Mudar UUID de qualquer pack | Nao, salvo pedido explicito |
 | Bump so de um manifest | Nao; BP e RP juntos apos mudanca funcional |

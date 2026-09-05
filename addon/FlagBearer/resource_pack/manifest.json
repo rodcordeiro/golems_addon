@@ -1,0 +1,18 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Flagbearer's Banners",
+		"description": "Raise the banner to represent your Faction!",
+		"uuid": "27dac7c9-9a4e-425d-7317-c71203b724ee",
+		"version": [3, 0, 0],
+		"min_engine_version": [1, 16, 0]
+	},
+	"modules": [
+		{
+			"description": "Raise the banner to represent your Faction!",
+			"type": "resources",
+			"uuid": "d1b79112-aa62-4d2b-9543-af017bd0f6bd",
+			"version": [1, 0, 0]
+		}
+	]
+}

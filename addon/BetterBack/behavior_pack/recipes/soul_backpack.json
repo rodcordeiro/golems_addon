@@ -1,0 +1,15 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "bp:soul_backpack_recipe" },
+    "tags": ["crafting_table"],
+    "pattern": ["LSL", "LCL", "LLL"],
+    "key": {
+      "L": { "item": "minecraft:leather" },
+      "S": { "item": "minecraft:soul_sand" },
+      "C": { "item": "minecraft:chest" }
+    },
+    "result": { "item": "bp:soul_backpack" },
+    "unlock": [{ "item": "minecraft:soul_sand" }]
+  }
+}

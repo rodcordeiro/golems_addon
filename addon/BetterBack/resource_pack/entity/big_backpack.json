@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "bp:big_backpack_e",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/big_backpack"
+      },
+      "geometry": {
+        "default": "geometry.big_backpack"
+      },
+      "animations": {
+        "idle": "animation.bp.backpack.idle"
+      },
+      "scripts": {
+        "animate": ["idle"]
+      },
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

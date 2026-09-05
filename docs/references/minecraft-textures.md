@@ -147,7 +147,7 @@ Checklist pratico:
 2. Para item **vanilla** em receita/loot/script, use ID `minecraft:<nome>` — nao precisa copiar textura.
 3. Para item **custom** (`addon:`, `va:`), crie PNG novo no RP do addon + entrada em `item_texture.json` + lang.
 4. Se precisar **derivar** arte vanilla (recolor, remix), trabalhe a partir destes PNG e renomeie para namespace proprio.
-5. Mantenha isolamento: nao misture texturas entre `gollem_addon`, `villagers_addon` e `villager_soldiers` sem pedido.
+5. Mantenha isolamento: nao misture texturas entre `addon/gollem_addon`, `addon/villagers_addon` e `addon/villager_soldiers` sem pedido.
 
 Namespaces do monorepo: `addon:`, `va:`, `fv:` (+ secundarios do pack de soldados). Vanilla permanece `minecraft:`.
 

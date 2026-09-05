@@ -1,0 +1,15 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "bp:big_backpack_recipe" },
+    "tags": ["crafting_table"],
+    "pattern": ["LIL", "LCL", "LCL"],
+    "key": {
+      "L": { "item": "minecraft:leather" },
+      "I": { "item": "minecraft:iron_ingot" },
+      "C": { "item": "minecraft:chest" }
+    },
+    "result": { "item": "bp:big_backpack" },
+    "unlock": [{ "item": "minecraft:iron_ingot" }]
+  }
+}

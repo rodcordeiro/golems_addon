@@ -1,0 +1,16 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "bp:axolotl_backpack",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/entity/axolotl_backpack" },
+      "geometry": { "default": "geometry.axolotl_backpack.wearable" },
+      "scripts": { "animate": ["position"] },
+      "render_controllers": ["controller.render.default"],
+      "animations": {
+        "position": "animation.bp.axolotl_backpack.wearable_position"
+      }
+    }
+  }
+}

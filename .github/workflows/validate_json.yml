@@ -14,11 +14,11 @@ jobs:
       - name: Validate JSON files
         run: |
           sudo apt-get install -y jq
-          find gollem_addon villager_soldiers villagers_addon -name "*.json" -print0 2>/dev/null | xargs -0 -n1 jq empty
+          find addon/gollem_addon addon/villager_soldiers addon/villagers_addon -name "*.json" -print0 2>/dev/null | xargs -0 -n1 jq empty
 
       - name: Check duplicated identifiers in gollem_addon
         run: |
-          DUPLICATES=$(grep -R "\"identifier\"" gollem_addon/behavior_pack 2>/dev/null | sort | uniq -d || true)
+          DUPLICATES=$(grep -R "\"identifier\"" addon/gollem_addon/behavior_pack 2>/dev/null | sort | uniq -d || true)
           if [ -n "$DUPLICATES" ]; then
             echo "Identifiers duplicados encontrados:"
             echo "$DUPLICATES"

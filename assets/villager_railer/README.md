@@ -8,7 +8,7 @@ A entity usa **`geometry.villager_handle`** (igual `fv:villager_clumper` / miner
 
 ## Biomas
 
-Pack: `villagers_addon/resource_pack/textures/entity/villager_railer/{plains,desert,jungle,savanna,snow,swamp,taiga}.png`
+Pack: `addon/villagers_addon/resource_pack/textures/entity/villager_railer/{plains,desert,jungle,savanna,snow,swamp,taiga}.png`
 
 DNA railer (vs clumper / miner): bone de couro + oculos de aco, avental couro, gema/alavanca redstone, hash de trilho nos bracos, caneleiras de aco.
 

@@ -1,0 +1,14 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "bp:backpack_recipe" },
+    "tags": ["crafting_table"],
+    "pattern": ["LLL", "LCL", "LLL"],
+    "key": {
+      "L": { "item": "minecraft:leather" },
+      "C": { "item": "minecraft:chest" }
+    },
+    "result": { "item": "bp:backpack" },
+    "unlock": [{ "item": "minecraft:leather" }]
+  }
+}

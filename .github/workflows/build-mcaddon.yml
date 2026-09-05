@@ -27,14 +27,14 @@ jobs:
       - name: Prepare gollem build folder
         run: |
           mkdir -p build/gollem
-          cp -r gollem_addon/behavior_pack build/gollem/
-          cp -r gollem_addon/resource_pack build/gollem/
+          cp -r addon/gollem_addon/behavior_pack build/gollem/
+          cp -r addon/gollem_addon/resource_pack build/gollem/
 
       - name: Prepare villagers_addon build folder
         run: |
           mkdir -p build/villagers
-          cp -r villagers_addon/behavior_pack build/villagers/
-          cp -r villagers_addon/resource_pack build/villagers/
+          cp -r addon/villagers_addon/behavior_pack build/villagers/
+          cp -r addon/villagers_addon/resource_pack build/villagers/
 
       - name: Create mcaddon packages
         run: |

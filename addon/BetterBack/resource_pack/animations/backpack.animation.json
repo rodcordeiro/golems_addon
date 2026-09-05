@@ -1,0 +1,31 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.bp.backpack.idle": {
+      "loop": "hold_on_last_frame"
+    },
+    "animation.bp.backpack.wearable_move": {
+      "loop": true,
+      "bones": {
+        "backpack": {
+          "rotation": ["math.lerp(0.0, 30.0, query.cape_flap_amount)", 0.0, 0.0]
+        }
+      }
+    },
+    "animation.bp.axolotl_backpack.wearable_position": {
+      "loop": true,
+      "bones": {
+        "backpack": { "position": [0, 14, 4] }
+      }
+    },
+    "animation.bp.soul_backpack.wearable_position": {
+      "loop": true,
+      "bones": {
+        "backpack": {
+          "position": [0, 14, 4],
+          "rotation": ["math.lerp(0.0, 15.0, query.cape_flap_amount)", 180.0, 0.0]
+        }
+      }
+    }
+  }
+}

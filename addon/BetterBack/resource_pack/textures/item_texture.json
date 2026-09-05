@@ -1,0 +1,10 @@
+{
+  "resource_pack_name": "Better Backpacks",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "backpack_icon": { "textures": "textures/items/backpack_icon" },
+    "axolotl_backpack_icon": { "textures": "textures/items/axolotl_backpack_icon" },
+    "big_backpack_icon": { "textures": "textures/items/big_backpack_icon" },
+    "soul_backpack_icon": { "textures": "textures/items/soul_backpack_icon" }
+  }
+}

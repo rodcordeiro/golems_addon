@@ -1,0 +1,16 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "bp:soul_backpack",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/entity/soul_backpack" },
+      "geometry": { "default": "geometry.soul_backpack.wearable" },
+      "scripts": { "animate": ["position"] },
+      "render_controllers": ["controller.render.default"],
+      "animations": {
+        "position": "animation.bp.soul_backpack.wearable_position"
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "bp:backpack",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/entity/backpack" },
+      "geometry": { "default": "geometry.backpack.wearable" },
+      "scripts": { "animate": ["move"] },
+      "render_controllers": ["controller.render.default"],
+      "animations": {
+        "move": "animation.bp.backpack.wearable_move"
+      }
+    }
+  }
+}

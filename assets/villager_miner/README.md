@@ -12,4 +12,4 @@ Agora: visual inspirado em `fv_miner_trader` (túnica carvao, calça marrom, bon
 | `villager_miner_preview_strip.png` | Todos os biomas |
 | `_make_miner_tex.py` | Regenera os 7 biomas |
 
-Pack: `villagers_addon/resource_pack/textures/entity/villager_miner/*.png`
+Pack: `addon/villagers_addon/resource_pack/textures/entity/villager_miner/*.png`
